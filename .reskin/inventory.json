@@ -1,0 +1,3470 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T18:47:06.251Z",
+  "project": {
+    "root": "E:/workspace/chuangye/solana/702/website",
+    "name": "settiva",
+    "vueVersion": "latest",
+    "nuxt": false,
+    "dependencies": [
+      "@axe-core/playwright",
+      "@solana/web3.js",
+      "@vitejs/plugin-vue",
+      "buffer",
+      "playwright",
+      "vite",
+      "vue"
+    ],
+    "packageManager": "npm",
+    "scripts": {
+      "dev": "vite",
+      "build": "vite build",
+      "preview": "vite preview",
+      "sync:mirror": "node scripts/sync-mirror.mjs",
+      "build:all": "npm run build && npm run sync:mirror && npm --prefix a702 run build",
+      "check:logic": "node --test scripts/check-solana-logic.mjs scripts/check-solana-client.mjs",
+      "check:site": "node scripts/check-site.mjs",
+      "check:ui": "node scripts/check-ui.mjs",
+      "check:experience": "node scripts/check-experience.mjs"
+    },
+    "frameworks": []
+  },
+  "stats": {
+    "filesScanned": 31,
+    "vueFiles": 16,
+    "routes": 1,
+    "staticTextTokens": 568,
+    "bindingTokens": 493,
+    "eventTokens": 203,
+    "classNames": 283,
+    "colors": 445
+  },
+  "routes": [
+    {
+      "path": "/",
+      "dynamic": false
+    }
+  ],
+  "unresolvedRoutes": [],
+  "archetype": {
+    "id": "orbital",
+    "family": "spatial",
+    "traits": {
+      "sidebar": true,
+      "topbar": false,
+      "cards": true,
+      "hero": true,
+      "table": false,
+      "grid": true,
+      "tabs": true,
+      "modal": true,
+      "charts": false,
+      "sticky": true,
+      "orbital": true,
+      "terminal": true,
+      "bento": false,
+      "ticker": false,
+      "gallery": false
+    }
+  },
+  "palette": [
+    {
+      "hex": "#151c25",
+      "count": 15
+    },
+    {
+      "hex": "#10161e",
+      "count": 9
+    },
+    {
+      "hex": "#11161e",
+      "count": 9
+    },
+    {
+      "hex": "#130d24",
+      "count": 9
+    },
+    {
+      "hex": "#18231a",
+      "count": 9
+    },
+    {
+      "hex": "#172319",
+      "count": 5
+    },
+    {
+      "hex": "#ffffff",
+      "count": 5
+    },
+    {
+      "hex": "#0b131d",
+      "count": 4
+    },
+    {
+      "hex": "#171027",
+      "count": 4
+    },
+    {
+      "hex": "#1e1a15",
+      "count": 4
+    },
+    {
+      "hex": "#34505a",
+      "count": 4
+    },
+    {
+      "hex": "#3b2857",
+      "count": 4
+    },
+    {
+      "hex": "#3e5d38",
+      "count": 4
+    },
+    {
+      "hex": "#0a111a",
+      "count": 3
+    },
+    {
+      "hex": "#100a1c",
+      "count": 3
+    },
+    {
+      "hex": "#111a26",
+      "count": 3
+    },
+    {
+      "hex": "#111c2d",
+      "count": 3
+    },
+    {
+      "hex": "#1a102c",
+      "count": 3
+    },
+    {
+      "hex": "#1c4b3c",
+      "count": 3
+    },
+    {
+      "hex": "#4b3470",
+      "count": 3
+    },
+    {
+      "hex": "#aab6c2",
+      "count": 3
+    },
+    {
+      "hex": "#aeb9c6",
+      "count": 3
+    },
+    {
+      "hex": "#000000",
+      "count": 2
+    },
+    {
+      "hex": "#05070c",
+      "count": 2
+    },
+    {
+      "hex": "#081007",
+      "count": 2
+    },
+    {
+      "hex": "#09070e",
+      "count": 2
+    },
+    {
+      "hex": "#0a0e17",
+      "count": 2
+    },
+    {
+      "hex": "#0a1119",
+      "count": 2
+    },
+    {
+      "hex": "#0b0715",
+      "count": 2
+    },
+    {
+      "hex": "#0b111a",
+      "count": 2
+    },
+    {
+      "hex": "#0c6f68",
+      "count": 2
+    },
+    {
+      "hex": "#0d131a",
+      "count": 2
+    }
+  ],
+  "fonts": [
+    {
+      "value": "\"JetBrains Mono\"",
+      "count": 2
+    },
+    {
+      "value": "\"Space Grotesk\"",
+      "count": 2
+    },
+    {
+      "value": "\"Workspace Sans\"",
+      "count": 2
+    },
+    {
+      "value": "\"Quill Display\"",
+      "count": 1
+    },
+    {
+      "value": "\"Quill Sans\"",
+      "count": 1
+    }
+  ],
+  "classNames": [
+    "?",
+    "account-address",
+    "action-form",
+    "allocation-line",
+    "awarded",
+    "back-link",
+    "bar",
+    "base-cluster",
+    "base-grid",
+    "base-head",
+    "base-note",
+    "bookmark-feedback",
+    "button",
+    "byline-row",
+    "chain-actions",
+    "chain-brand",
+    "chain-header",
+    "chain-readout",
+    "chain-wordmark",
+    "chip",
+    "chip-divider",
+    "chip-set",
+    "clear-search",
+    "close",
+    "colophon",
+    "colophon-bottom",
+    "colophon-fine",
+    "colophon-grid",
+    "colophon-tagline",
+    "colophon-top",
+    "colophon-word",
+    "create-brief",
+    "create-progress",
+    "cyan",
+    "deck",
+    "deck-base",
+    "deck-body",
+    "deliverables",
+    "detail-tags",
+    "dialog-actions",
+    "dossier",
+    "dossier-actions",
+    "dossier-body",
+    "dossier-copy",
+    "dossier-foot",
+    "dossier-head",
+    "dossier-section",
+    "dossier-standfirst",
+    "dossier-tags",
+    "dossier-title",
+    "edition-card",
+    "edition-copy",
+    "edition-figures",
+    "edition-gate",
+    "empty",
+    "empty-note",
+    "empty-state",
+    "entry",
+    "entry-body",
+    "entry-deadline",
+    "entry-desc",
+    "entry-meta",
+    "entry-no",
+    "entry-open",
+    "entry-pool",
+    "entry-save",
+    "entry-stack",
+    "entry-state",
+    "entry-title",
+    "entry-topic",
+    "error",
+    "error:",
+    "escrow",
+    "evidence-card",
+    "evidence-entry",
+    "evidence-head",
+    "evidence-link",
+    "evidence-top",
+    "eyebrow",
+    "fact-row",
+    "faqs",
+    "field-error",
+    "field-note",
+    "filter-bar",
+    "filter-label",
+    "filter-lines",
+    "filter-link",
+    "filter-row",
+    "filter-tail",
+    "fine-print",
+    "footer-divider",
+    "footer-line",
+    "form-intro",
+    "form-kicker",
+    "form-row",
+    "full",
+    "gate-list",
+    "ghost",
+    "guide-actions",
+    "guide-byline",
+    "guide-faq",
+    "guide-hero",
+    "guide-intro",
+    "guide-notes",
+    "guide-notes-head",
+    "guide-page",
+    "guide-section",
+    "guide-split",
+    "guide-standfirst",
+    "guide-steps",
+    "guide-view",
+    "hero",
+    "hero-actions",
+    "hero-grid",
+    "hero-kicker",
+    "hero-lede",
+    "hero-title",
+    "icon-button",
+    "icon-close",
+    "index-count",
+    "index-lead",
+    "index-lead-actions",
+    "index-lead-copy",
+    "index-note",
+    "index-sheet",
+    "index-title",
+    "index-tools",
+    "ink-button",
+    "inline-form",
+    "inline-input",
+    "insp-actions",
+    "insp-backdrop",
+    "insp-copy",
+    "insp-empty",
+    "insp-facts",
+    "insp-foot",
+    "insp-head",
+    "insp-list",
+    "insp-section",
+    "insp-summary",
+    "insp-tabs",
+    "insp-title",
+    "insp-val",
+    "inspector",
+    "is-cta",
+    "is-error",
+    "is-gate",
+    "is-inline",
+    "is-legend",
+    "is-live",
+    "is-open",
+    "is-optional",
+    "is-sample",
+    "is-static",
+    "item.approvedByCreator",
+    "ledger-cluster",
+    "ledger-figures",
+    "ledger-note",
+    "ledger-summary",
+    "lime",
+    "loop-grid",
+    "margin-note",
+    "masthead",
+    "masthead-bar",
+    "masthead-cta",
+    "masthead-meta",
+    "masthead-nav",
+    "masthead-tagline",
+    "masthead-tools",
+    "menu-button",
+    "message",
+    "meter-track",
+    "meter-value",
+    "micro",
+    "mission.sample",
+    "modal",
+    "modal-actions",
+    "modal-head",
+    "modal-intro",
+    "modal-note",
+    "modal-scroll",
+    "modal-shell",
+    "modal-top",
+    "nav-backdrop",
+    "nav-link",
+    "nav-overlay",
+    "nav-overlay-foot",
+    "nav-overlay-head",
+    "nav-overlay-kicker",
+    "nav-overlay-link",
+    "nav-scrim",
+    "nav-sheet",
+    "nav-sheet-foot",
+    "nav-sheet-head",
+    "nav-toggle",
+    "network-pill",
+    "neutral",
+    "node-line",
+    "note",
+    "notice-slip",
+    "num",
+    "order-line",
+    "outline-button",
+    "page",
+    "page-head",
+    "pane-head",
+    "paper-form",
+    "pool-band",
+    "pool-figure",
+    "primary",
+    "progress-rule",
+    "published-link",
+    "quiet-action",
+    "readout-cell",
+    "refresh-rewards",
+    "refund-panel",
+    "reg-actions",
+    "reg-col-deadline",
+    "reg-deadline",
+    "reg-head",
+    "reg-meter",
+    "reg-pool",
+    "reg-row",
+    "reg-state",
+    "reg-title",
+    "reg-topic",
+    "registry",
+    "registry-body",
+    "registry-pane",
+    "registry-status",
+    "reset-action",
+    "review-empty",
+    "review-mission",
+    "reward-balance",
+    "row-id",
+    "rule",
+    "rule-columns",
+    "save-link",
+    "seal",
+    "search-field",
+    "search-line",
+    "secondary",
+    "section-actions",
+    "section-head",
+    "section-no",
+    "site-footer",
+    "skeleton-entry",
+    "skeleton-row",
+    "skip-link",
+    "slip-grid",
+    "sort-field",
+    "spinner",
+    "split-bar",
+    "split-legend",
+    "sr-only",
+    "stat-dot",
+    "state-panel",
+    "state-stamp",
+    "stateClass",
+    "stateClass(mission)",
+    "status-strip",
+    "step-copy",
+    "step-label",
+    "step-number",
+    "strip-cell",
+    "tab-button",
+    "tab-count",
+    "tab-rail",
+    "tag",
+    "text-action",
+    "text-button",
+    "toast",
+    "toast-undo",
+    "topic-stamp",
+    "topics",
+    "transaction-state",
+    "txError",
+    "violet",
+    "wallet-button",
+    "wallet-link",
+    "wordmark",
+    "wordmark-text",
+    "}"
+  ],
+  "designSignals": {
+    "frameworks": [],
+    "cssVars": [
+      "--accent",
+      "--accent-deep",
+      "--accent-hover",
+      "--accent-on-dark",
+      "--accent-soft",
+      "--alert",
+      "--alert-line",
+      "--blue",
+      "--blue-soft",
+      "--brand",
+      "--brand-hover",
+      "--brand-soft",
+      "--canvas",
+      "--cel-brand",
+      "--cel-brass",
+      "--cel-panel",
+      "--cel-sheet",
+      "--chrome",
+      "--content",
+      "--content-width",
+      "--control",
+      "--cyan",
+      "--cyan-deep",
+      "--deep",
+      "--dim",
+      "--display",
+      "--duration",
+      "--ease",
+      "--ease-pop",
+      "--ease-soft",
+      "--ember-soft",
+      "--error",
+      "--error-bg",
+      "--error-line",
+      "--field",
+      "--focus",
+      "--gold",
+      "--graphite",
+      "--grotesk",
+      "--gutter",
+      "--h-filter",
+      "--h-header",
+      "--h-strip",
+      "--h-tabs",
+      "--header-height",
+      "--ice",
+      "--ink",
+      "--ink-soft",
+      "--lime",
+      "--line",
+      "--line-strong",
+      "--mono",
+      "--moss",
+      "--muted",
+      "--ok",
+      "--overlay",
+      "--pane",
+      "--panel",
+      "--paper",
+      "--paper-deep",
+      "--paper-raised",
+      "--pill",
+      "--plum-soft",
+      "--purple",
+      "--purple-soft",
+      "--r0",
+      "--r1",
+      "--r2",
+      "--radius",
+      "--radius-card",
+      "--radius-lg",
+      "--radius-sm",
+      "--radius-xl",
+      "--rail-width",
+      "--raise",
+      "--raised",
+      "--rank",
+      "--reward",
+      "--rule",
+      "--rule-strong",
+      "--sans",
+      "--serif",
+      "--shadow",
+      "--shadow-card",
+      "--shadow-lg",
+      "--shadow-pop",
+      "--shadow-slip",
+      "--sidebar-width",
+      "--spruce",
+      "--spruce-2",
+      "--spruce-ink",
+      "--spruce-muted",
+      "--success",
+      "--success-bg",
+      "--success-line",
+      "--support",
+      "--surface",
+      "--surface-2",
+      "--surface-3",
+      "--t",
+      "--t-base",
+      "--t-fast",
+      "--text",
+      "--violet",
+      "--violet-ink",
+      "--void",
+      "--white",
+      "--yellow"
+    ],
+    "colorVars": [
+      {
+        "name": "--accent",
+        "value": "#ad3a24"
+      },
+      {
+        "name": "--accent-deep",
+        "value": "#7b2817"
+      },
+      {
+        "name": "--accent-hover",
+        "value": "#66450f"
+      },
+      {
+        "name": "--accent-on-dark",
+        "value": "#d2a24e"
+      },
+      {
+        "name": "--accent-soft",
+        "value": "#f1d5c5"
+      },
+      {
+        "name": "--alert",
+        "value": "#ff8a8a"
+      },
+      {
+        "name": "--alert-line",
+        "value": "#7a2f34"
+      },
+      {
+        "name": "--blue",
+        "value": "#26465f"
+      },
+      {
+        "name": "--blue-soft",
+        "value": "#dbe4e8"
+      },
+      {
+        "name": "--brand",
+        "value": "#1c4b3c"
+      },
+      {
+        "name": "--brand-hover",
+        "value": "#123328"
+      },
+      {
+        "name": "--brand-soft",
+        "value": "#dde8e0"
+      },
+      {
+        "name": "--canvas",
+        "value": "#f4f0e7"
+      },
+      {
+        "name": "--cyan",
+        "value": "#38e8d0"
+      },
+      {
+        "name": "--cyan-deep",
+        "value": "#0c6f68"
+      },
+      {
+        "name": "--deep",
+        "value": "#0a0e17"
+      },
+      {
+        "name": "--dim",
+        "value": "#6b5e4c"
+      },
+      {
+        "name": "--ember-soft",
+        "value": "#fbe6df"
+      },
+      {
+        "name": "--error",
+        "value": "#9d3226"
+      },
+      {
+        "name": "--error-bg",
+        "value": "#fbeae6"
+      },
+      {
+        "name": "--error-line",
+        "value": "#e0b3a8"
+      },
+      {
+        "name": "--focus",
+        "value": "#1b4d74"
+      },
+      {
+        "name": "--gold",
+        "value": "#82601c"
+      },
+      {
+        "name": "--graphite",
+        "value": "#0b0715"
+      },
+      {
+        "name": "--ice",
+        "value": "#e6eefa"
+      },
+      {
+        "name": "--ink",
+        "value": "#1e1a15"
+      },
+      {
+        "name": "--ink-soft",
+        "value": "#453c31"
+      },
+      {
+        "name": "--lime",
+        "value": "#c9f24d"
+      },
+      {
+        "name": "--line",
+        "value": "#1f2a3b"
+      },
+      {
+        "name": "--line-strong",
+        "value": "#2e3d54"
+      },
+      {
+        "name": "--moss",
+        "value": "#40573f"
+      },
+      {
+        "name": "--muted",
+        "value": "#5f5446"
+      },
+      {
+        "name": "--panel",
+        "value": "#0f141e"
+      },
+      {
+        "name": "--paper",
+        "value": "#f3ede1"
+      },
+      {
+        "name": "--paper-deep",
+        "value": "#e7ddcb"
+      },
+      {
+        "name": "--paper-raised",
+        "value": "#fbf7ee"
+      },
+      {
+        "name": "--plum-soft",
+        "value": "#f0e7e3"
+      },
+      {
+        "name": "--purple",
+        "value": "#54406b"
+      },
+      {
+        "name": "--purple-soft",
+        "value": "#ece7f3"
+      },
+      {
+        "name": "--raise",
+        "value": "#151c28"
+      },
+      {
+        "name": "--rank",
+        "value": "#5c6660"
+      },
+      {
+        "name": "--reward",
+        "value": "#9b3a25"
+      },
+      {
+        "name": "--rule",
+        "value": "#cbbda6"
+      },
+      {
+        "name": "--rule-strong",
+        "value": "#1e1a15"
+      },
+      {
+        "name": "--spruce",
+        "value": "#10241c"
+      },
+      {
+        "name": "--spruce-2",
+        "value": "#17332a"
+      },
+      {
+        "name": "--spruce-ink",
+        "value": "#e9e4d7"
+      },
+      {
+        "name": "--spruce-muted",
+        "value": "#93a89a"
+      },
+      {
+        "name": "--success",
+        "value": "#1c4b3c"
+      },
+      {
+        "name": "--success-bg",
+        "value": "#dfeae2"
+      },
+      {
+        "name": "--success-line",
+        "value": "#9dbcaa"
+      },
+      {
+        "name": "--support",
+        "value": "#d4dbe2"
+      },
+      {
+        "name": "--surface",
+        "value": "#fffdf8"
+      },
+      {
+        "name": "--surface-2",
+        "value": "#eae4d7"
+      },
+      {
+        "name": "--surface-3",
+        "value": "#f1ece0"
+      },
+      {
+        "name": "--violet",
+        "value": "#8b6cff"
+      },
+      {
+        "name": "--violet-ink",
+        "value": "#a78bff"
+      },
+      {
+        "name": "--void",
+        "value": "#05070c"
+      },
+      {
+        "name": "--white",
+        "value": "#ffffff"
+      },
+      {
+        "name": "--yellow",
+        "value": "#302811"
+      }
+    ],
+    "mediaQueries": [
+      "@media (forced-colors: active)",
+      "@media (max-width: 1099px)",
+      "@media (max-width: 1100px)",
+      "@media (max-width: 1100px) and (min-width: 761px)",
+      "@media (max-width: 1190px)",
+      "@media (max-width: 1240px)",
+      "@media (max-width: 380px)",
+      "@media (max-width: 390px)",
+      "@media (max-width: 560px)",
+      "@media (max-width: 620px)",
+      "@media (max-width: 760px)",
+      "@media (max-width: 900px)",
+      "@media (max-width: 999px)",
+      "@media (min-width: 1700px)",
+      "@media (min-width: 761px) and (max-width: 1000px)",
+      "@media (min-width: 901px)",
+      "@media (prefers-reduced-motion: reduce)",
+      "@media print",
+      "@media(forced-colors:active)",
+      "@media(max-width:1190px)",
+      "@media(max-width:380px)",
+      "@media(max-width:760px)",
+      "@media(min-width:761px) and (max-width:1000px)",
+      "@media(prefers-reduced-motion:reduce)"
+    ],
+    "darkMode": false
+  },
+  "structure": {
+    "tagCounts": {
+      "a": 21,
+      "article": 12,
+      "aside": 8,
+      "b": 21,
+      "br": 5,
+      "briefdossier": 2,
+      "briefguide": 3,
+      "briefindex": 2,
+      "briefinspector": 1,
+      "briefregistry": 1,
+      "button": 171,
+      "chainreadout": 1,
+      "code": 13,
+      "dd": 47,
+      "details": 15,
+      "dialog": 3,
+      "div": 284,
+      "dl": 13,
+      "dt": 47,
+      "em": 6,
+      "footer": 5,
+      "form": 12,
+      "h1": 10,
+      "h2": 27,
+      "h3": 34,
+      "h4": 6,
+      "header": 23,
+      "i": 30,
+      "img": 4,
+      "input": 24,
+      "label": 30,
+      "li": 23,
+      "main": 3,
+      "nav": 6,
+      "ol": 4,
+      "option": 15,
+      "p": 214,
+      "path": 3,
+      "section": 21,
+      "select": 6,
+      "small": 30,
+      "span": 198,
+      "strong": 26,
+      "summary": 15,
+      "sup": 6,
+      "svg": 3,
+      "template": 26,
+      "textarea": 3,
+      "uiicon": 189,
+      "ul": 12
+    },
+    "depthHistogram": {
+      "0": 16,
+      "1": 85,
+      "2": 242,
+      "3": 332,
+      "4": 357,
+      "5": 232,
+      "6": 201,
+      "7": 129,
+      "8": 76,
+      "9": 14
+    },
+    "maxDepth": 9,
+    "topLevelTags": [
+      "div",
+      "article",
+      "article",
+      "section",
+      "svg",
+      "div",
+      "div",
+      "aside",
+      "div",
+      "div",
+      "svg",
+      "div",
+      "article",
+      "article",
+      "section",
+      "svg"
+    ],
+    "skeletonSample": [
+      "div",
+      "  a",
+      "  header",
+      "    div",
+      "      span",
+      "      span",
+      "    div",
+      "      button",
+      "        img",
+      "        span",
+      "          i",
+      "      nav",
+      "        button",
+      "          sup",
+      "      div",
+      "        button",
+      "          uiicon",
+      "        button",
+      "          uiicon",
+      "          span",
+      "        button",
+      "          uiicon",
+      "    p",
+      "  main",
+      "    template",
+      "      briefguide",
+      "    template",
+      "      briefdossier",
+      "    template",
+      "      section",
+      "        p",
+      "        h1",
+      "          br",
+      "          em",
+      "        div",
+      "          div",
+      "            p",
+      "            div",
+      "              button",
+      "                uiicon",
+      "              button",
+      "              button",
+      "          aside",
+      "            p",
+      "            p",
+      "            dl",
+      "              div",
+      "                dt",
+      "                dd",
+      "              div",
+      "                dt",
+      "                dd",
+      "              div",
+      "                dt",
+      "                dd",
+      "                  small",
+      "            p",
+      "      header",
+      "        p",
+      "        h1",
+      "        p",
+      "      briefindex",
+      "  footer",
+      "    div",
+      "      p",
+      "        span",
+      "      p",
+      "    dl",
+      "      div",
+      "        dt",
+      "        dd",
+      "      div",
+      "        dt",
+      "        dd",
+      "      div",
+      "        dt",
+      "        dd",
+      "      div",
+      "        dt",
+      "        dd",
+      "    p",
+      "      strong",
+      "      strong",
+      "    div",
+      "      span",
+      "      button",
+      "        uiicon",
+      "  template",
+      "    button",
+      "    nav",
+      "      header",
+      "        span",
+      "        button",
+      "          uiicon",
+      "      button",
+      "        span",
+      "        small",
+      "      button",
+      "        span",
+      "        uiicon",
+      "      button",
+      "        span",
+      "        small",
+      "      div",
+      "        span",
+      "        span",
+      "  dialog",
+      "    div",
+      "      div",
+      "        p",
+      "        h2",
+      "        button",
+      "          uiicon",
+      "      div",
+      "        div",
+      "          p",
+      "          button",
+      "        template",
+      "          p",
+      "          div"
+    ]
+  },
+  "contentContract": {
+    "schemaVersion": 1,
+    "meta": {
+      "projectName": "settiva",
+      "title": "settiva",
+      "lang": "en"
+    },
+    "routes": [
+      "/"
+    ],
+    "visibleText": [
+      {
+        "value": ". New funding and submissions are unavailable.",
+        "count": 3
+      },
+      {
+        "value": "· Every record is an illustrative testnet brief. Rewards carry no intended monetary value, no platform token or CA is live, and no action on this page signs or sends a transaction.",
+        "count": 2
+      },
+      {
+        "value": "· sample edition ·",
+        "count": 2
+      },
+      {
+        "value": "· writes disabled",
+        "count": 2
+      },
+      {
+        "value": "\\2014",
+        "count": 2
+      },
+      {
+        "value": "\\2726",
+        "count": 1
+      },
+      {
+        "value": "\\2727",
+        "count": 1
+      },
+      {
+        "value": "&copy; 2026 Settiva · an independent Solana testnet project",
+        "count": 2
+      },
+      {
+        "value": "&copy; 2026 Tallyvein",
+        "count": 1
+      },
+      {
+        "value": "01",
+        "count": 6
+      },
+      {
+        "value": "01 · Shape the brief",
+        "count": 2
+      },
+      {
+        "value": "01 Shape the brief",
+        "count": 1
+      },
+      {
+        "value": "02",
+        "count": 6
+      },
+      {
+        "value": "02 · Review & fund",
+        "count": 2
+      },
+      {
+        "value": "02 Review & fund",
+        "count": 1
+      },
+      {
+        "value": "03",
+        "count": 6
+      },
+      {
+        "value": "A clear view of the work you have earned rewards for.",
+        "count": 3
+      },
+      {
+        "value": "A market for careful work",
+        "count": 2
+      },
+      {
+        "value": "A submission is not a guaranteed payment. Additional funding is not an investment and is not an individually refundable deposit.",
+        "count": 3
+      },
+      {
+        "value": "Accepted contributions and returned unallocated funds appear here. Claiming sends the balance to your connected wallet.",
+        "count": 3
+      },
+      {
+        "value": "accepting evidence",
+        "count": 3
+      },
+      {
+        "value": "Add to the reward pool. The creator controls allocations and any unspent balance after the deadline.",
+        "count": 3
+      },
+      {
+        "value": "After the deadline the creator can move the unallocated balance to their claimable rewards, then withdraw it. Additional funders do not receive an individual refund under the current program design.",
+        "count": 1
+      },
+      {
+        "value": "After the deadline the creator can return the unallocated balance to their reward-token account, then withdraw it. Additional funders do not receive an individual refund under the current program design.",
+        "count": 2
+      },
+      {
+        "value": "After the deadline, return any unallocated balance to the creator's reward-token account. Approved contribution rewards stay claimable separately.",
+        "count": 3
+      },
+      {
+        "value": "Allocated reward:",
+        "count": 3
+      },
+      {
+        "value": "Allocation",
+        "count": 3
+      },
+      {
+        "value": "Amount ·",
+        "count": 3
+      },
+      {
+        "value": "An independent project.",
+        "count": 2
+      },
+      {
+        "value": "Ask one focused question. Publish it at a public URL, set a deadline, and fund the reward pool on Solana testnet. The brief is the contract every contribution is read against.",
+        "count": 2
+      },
+      {
+        "value": "Available to claim",
+        "count": 3
+      },
+      {
+        "value": "Available to the creator after the deadline.",
+        "count": 3
+      },
+      {
+        "value": "Awarded",
+        "count": 3
+      },
+      {
+        "value": "Back to the index",
+        "count": 2
+      },
+      {
+        "value": "Back to top",
+        "count": 2
+      },
+      {
+        "value": "Back to top &uarr;",
+        "count": 1
+      },
+      {
+        "value": "before you begin",
+        "count": 1
+      },
+      {
+        "value": "Before you begin",
+        "count": 2
+      },
+      {
+        "value": "Bounty creator",
+        "count": 3
+      },
+      {
+        "value": "brief",
+        "count": 1
+      },
+      {
+        "value": "Brief pool ·",
+        "count": 3
+      },
+      {
+        "value": "Brief scope",
+        "count": 3
+      },
+      {
+        "value": "Brief topic",
+        "count": 3
+      },
+      {
+        "value": "Briefs",
+        "count": 2
+      },
+      {
+        "value": "Browse the index",
+        "count": 2
+      },
+      {
+        "value": "Choose a row in the registry to read its scope, pool split, evidence and creator review in this inspector.",
+        "count": 1
+      },
+      {
+        "value": "Choose a title to read the full dossier",
+        "count": 2
+      },
+      {
+        "value": "Cite primary sources, separate facts from interpretation, and make your limitations as clear as your findings.",
+        "count": 3
+      },
+      {
+        "value": "Cite primary sources, separate observation from assumption, and make your limitations as clear as your findings. Submit the public proof URL before the deadline.",
+        "count": 2
+      },
+      {
+        "value": "Cite primary sources, separate observation from assumption, and submit the public proof URL before the deadline.",
+        "count": 1
+      },
+      {
+        "value": "Closing soon",
+        "count": 3
+      },
+      {
+        "value": "cluster",
+        "count": 1
+      },
+      {
+        "value": "Cluster",
+        "count": 6
+      },
+      {
+        "value": "CLUSTER",
+        "count": 1
+      },
+      {
+        "value": "Common questions",
+        "count": 2
+      },
+      {
+        "value": "Compiled for Solana",
+        "count": 2
+      },
+      {
+        "value": "Connect to see your rewards.",
+        "count": 3
+      },
+      {
+        "value": "Connect wallet",
+        "count": 3
+      },
+      {
+        "value": "Contents",
+        "count": 2
+      },
+      {
+        "value": "Contribution ·",
+        "count": 3
+      },
+      {
+        "value": "Contributor / reward recipient",
+        "count": 3
+      },
+      {
+        "value": "deadline",
+        "count": 1
+      },
+      {
+        "value": "Deadline",
+        "count": 3
+      },
+      {
+        "value": "Deadline · your local time",
+        "count": 3
+      },
+      {
+        "value": "deck summary",
+        "count": 1
+      },
+      {
+        "value": "Download brief",
+        "count": 3
+      },
+      {
+        "value": "Download draft",
+        "count": 3
+      },
+      {
+        "value": "Download your brief",
+        "count": 3
+      },
+      {
+        "value": "Edit brief",
+        "count": 3
+      },
+      {
+        "value": "Edition",
+        "count": 2
+      },
+      {
+        "value": "Editor's note",
+        "count": 2
+      },
+      {
+        "value": "Entry",
+        "count": 3
+      },
+      {
+        "value": "Entry one",
+        "count": 2
+      },
+      {
+        "value": "Entry two",
+        "count": 2
+      },
+      {
+        "value": "epoch",
+        "count": 1
+      },
+      {
+        "value": "Escrow",
+        "count": 3
+      },
+      {
+        "value": "Every record here is an illustrative testnet brief: rewards carry no intended monetary value, nothing signs or sends a transaction, and each dossier reads pool, evidence and review state only.",
+        "count": 2
+      },
+      {
+        "value": "Every record here is an illustrative testnet brief: rewards carry no intended monetary value, nothing signs or sends a transaction, and the inspector reads pool, evidence and review state only.",
+        "count": 1
+      },
+      {
+        "value": "Evidence",
+        "count": 3
+      },
+      {
+        "value": "Evidence and creator review",
+        "count": 3
+      },
+      {
+        "value": "Evidence URI is unavailable or uses an unsupported protocol.",
+        "count": 3
+      },
+      {
+        "value": "feed",
+        "count": 1
+      },
+      {
+        "value": "Field guide · edition one",
+        "count": 2
+      },
+      {
+        "value": "Find a question worth asking",
+        "count": 1
+      },
+      {
+        "value": "For a stronger commons",
+        "count": 1
+      },
+      {
+        "value": "For the brief writers",
+        "count": 1
+      },
+      {
+        "value": "For the evidence seekers",
+        "count": 1
+      },
+      {
+        "value": "Frequently asked",
+        "count": 2
+      },
+      {
+        "value": "Frequently settled",
+        "count": 1
+      },
+      {
+        "value": "Fund a brief",
+        "count": 1
+      },
+      {
+        "value": "Fund the pool",
+        "count": 3
+      },
+      {
+        "value": "GATE",
+        "count": 1
+      },
+      {
+        "value": "Gated: create, fund, submit, allocate, refund, claim",
+        "count": 3
+      },
+      {
+        "value": "Good briefs start with clear expectations. Here is how the tally is kept.",
+        "count": 1
+      },
+      {
+        "value": "Guide",
+        "count": 1
+      },
+      {
+        "value": "Highest pool",
+        "count": 3
+      },
+      {
+        "value": "How a brief becomes a record.",
+        "count": 2
+      },
+      {
+        "value": "id",
+        "count": 1
+      },
+      {
+        "value": "Illustrative pool",
+        "count": 6
+      },
+      {
+        "value": "In escrow · available to allocate",
+        "count": 1
+      },
+      {
+        "value": "Independent project.",
+        "count": 1
+      },
+      {
+        "value": "Initial reward",
+        "count": 3
+      },
+      {
+        "value": "Know the settlement rules.",
+        "count": 1
+      },
+      {
+        "value": "Loading evidence…",
+        "count": 3
+      },
+      {
+        "value": "Make your proof verifiable.",
+        "count": 3
+      },
+      {
+        "value": "Network",
+        "count": 2
+      },
+      {
+        "value": "Network fee balance:",
+        "count": 3
+      },
+      {
+        "value": "Newest record",
+        "count": 3
+      },
+      {
+        "value": "No brief selected.",
+        "count": 1
+      },
+      {
+        "value": "No evidence submitted yet.",
+        "count": 3
+      },
+      {
+        "value": "NO WRITES",
+        "count": 2
+      },
+      {
+        "value": "NO WRITES · SAMPLE TESTNET DATA",
+        "count": 1
+      },
+      {
+        "value": "On this device only. Bookmarks are stored in local storage under the settiva-saved key, and older project keys migrate into it without clearing your list.",
+        "count": 2
+      },
+      {
+        "value": "On this device only. Bookmarks are stored in local storage under the tallyvein-saved key, and older project keys migrate into it without clearing your list.",
+        "count": 1
+      },
+      {
+        "value": "One record out.",
+        "count": 2
+      },
+      {
+        "value": "Open",
+        "count": 5
+      },
+      {
+        "value": "OPEN",
+        "count": 1
+      },
+      {
+        "value": "Open contribution options",
+        "count": 3
+      },
+      {
+        "value": "Open the brief.",
+        "count": 1
+      },
+      {
+        "value": "Open the brief. Settle the tally.",
+        "count": 2
+      },
+      {
+        "value": "Open the index",
+        "count": 2
+      },
+      {
+        "value": "Open the registry",
+        "count": 1
+      },
+      {
+        "value": "optional · stays in this page until you leave",
+        "count": 3
+      },
+      {
+        "value": "Order",
+        "count": 2
+      },
+      {
+        "value": "pool",
+        "count": 1
+      },
+      {
+        "value": "Pool",
+        "count": 2
+      },
+      {
+        "value": "Post a brief",
+        "count": 15
+      },
+      {
+        "value": "Post brief",
+        "count": 1
+      },
+      {
+        "value": "Program",
+        "count": 3
+      },
+      {
+        "value": "PROGRAM",
+        "count": 1
+      },
+      {
+        "value": "Public brief",
+        "count": 3
+      },
+      {
+        "value": "Public brief URL",
+        "count": 3
+      },
+      {
+        "value": "Public evidence URL",
+        "count": 3
+      },
+      {
+        "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Settiva.",
+        "count": 2
+      },
+      {
+        "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Tallyvein.",
+        "count": 1
+      },
+      {
+        "value": "Publish your findings, then link the public evidence for creator review.",
+        "count": 3
+      },
+      {
+        "value": "Publishing is not available in this preview. Download your draft to keep it for later.",
+        "count": 3
+      },
+      {
+        "value": "questions",
+        "count": 1
+      },
+      {
+        "value": "Read every entry, then close the record.",
+        "count": 2
+      },
+      {
+        "value": "Read the brief before beginning. Cite original sources, distinguish observations from assumptions, and state what remains uncertain. Publish your proof and submit the public URL. The creator decides which work they accept.",
+        "count": 1
+      },
+      {
+        "value": "Read the field guide",
+        "count": 2
+      },
+      {
+        "value": "Read the published brief",
+        "count": 3
+      },
+      {
+        "value": "Reads: index, pool split, evidence list",
+        "count": 2
+      },
+      {
+        "value": "Reads: registry, pool split, evidence list",
+        "count": 1
+      },
+      {
+        "value": "Recommended",
+        "count": 3
+      },
+      {
+        "value": "Record",
+        "count": 3
+      },
+      {
+        "value": "Records",
+        "count": 3
+      },
+      {
+        "value": "Refresh",
+        "count": 3
+      },
+      {
+        "value": "Refresh balance",
+        "count": 3
+      },
+      {
+        "value": "Refresh wallet balance",
+        "count": 3
+      },
+      {
+        "value": "Reload samples",
+        "count": 1
+      },
+      {
+        "value": "Rescan",
+        "count": 1
+      },
+      {
+        "value": "Reset",
+        "count": 3
+      },
+      {
+        "value": "Reset view",
+        "count": 3
+      },
+      {
+        "value": "Return unallocated funds",
+        "count": 3
+      },
+      {
+        "value": "Review and settle",
+        "count": 1
+      },
+      {
+        "value": "Review brief",
+        "count": 3
+      },
+      {
+        "value": "Review is creator-led.",
+        "count": 3
+      },
+      {
+        "value": "Reviewer",
+        "count": 3
+      },
+      {
+        "value": "Reviewers allocate rewards to accepted contributions. Contributors withdraw from Rewards. A submission is not a guaranteed payment; additional funding is not an investment or an individually refundable deposit.",
+        "count": 1
+      },
+      {
+        "value": "REWARD",
+        "count": 1
+      },
+      {
+        "value": "Reward allocation",
+        "count": 3
+      },
+      {
+        "value": "Reward-token balance:",
+        "count": 3
+      },
+      {
+        "value": "Rewards",
+        "count": 1
+      },
+      {
+        "value": "Rewards use",
+        "count": 2
+      },
+      {
+        "value": "Rewards use testnet SOL, which has no intended monetary value. Tallyvein has no platform token, no investment return and no guaranteed payout.",
+        "count": 1
+      },
+      {
+        "value": "SAMPLE TESTNET DATA",
+        "count": 2
+      },
+      {
+        "value": "Sample testnet data.",
+        "count": 3
+      },
+      {
+        "value": "SELECT A ROW TO OPEN THE INSPECTOR",
+        "count": 1
+      },
+      {
+        "value": "Settiva",
+        "count": 4
+      },
+      {
+        "value": "Settiva is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
+        "count": 2
+      },
+      {
+        "value": "Settiva is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
+        "count": 2
+      },
+      {
+        "value": "Settiva is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
+        "count": 2
+      },
+      {
+        "value": "Settle the tally.",
+        "count": 1
+      },
+      {
+        "value": "settlement",
+        "count": 1
+      },
+      {
+        "value": "SOL",
+        "count": 8
+      },
+      {
+        "value": "SOL, which has no intended monetary value. Settiva has no platform token, no investment return and no guaranteed payout.",
+        "count": 2
+      },
+      {
+        "value": "SOL. Sample records hold no escrow and accept no transactions.",
+        "count": 3
+      },
+      {
+        "value": "Solana",
+        "count": 2
+      },
+      {
+        "value": "Standing",
+        "count": 2
+      },
+      {
+        "value": "Standing ·",
+        "count": 2
+      },
+      {
+        "value": "state",
+        "count": 1
+      },
+      {
+        "value": "STATE FILTER ·",
+        "count": 1
+      },
+      {
+        "value": "Submission deadline",
+        "count": 3
+      },
+      {
+        "value": "Submit evidence",
+        "count": 1
+      },
+      {
+        "value": "Submit evidence & fund the pool",
+        "count": 2
+      },
+      {
+        "value": "Submit proof",
+        "count": 3
+      },
+      {
+        "value": "Submit verifiable evidence.",
+        "count": 2
+      },
+      {
+        "value": "Switch network",
+        "count": 3
+      },
+      {
+        "value": "Switch to Solana testnet to view and claim your rewards.",
+        "count": 3
+      },
+      {
+        "value": "TALLYVEIN",
+        "count": 1
+      },
+      {
+        "value": "tallyvein / navigation",
+        "count": 1
+      },
+      {
+        "value": "Tallyvein is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
+        "count": 1
+      },
+      {
+        "value": "Tallyvein is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs.",
+        "count": 1
+      },
+      {
+        "value": "testnet SOL",
+        "count": 3
+      },
+      {
+        "value": "The bounty creator decides which contributions meet the published brief. Read the scope and acceptance criteria before you begin; submitting work does not guarantee a reward.",
+        "count": 3
+      },
+      {
+        "value": "the bounty loop",
+        "count": 1
+      },
+      {
+        "value": "The creator allocates rewards to accepted contributions. Accepted contributors claim their allocation from the rewards ledger.",
+        "count": 1
+      },
+      {
+        "value": "The creator allocates rewards to accepted contributions. Accepted contributors claim their allocation from the rewards ledger. A submission is never a guaranteed payment.",
+        "count": 2
+      },
+      {
+        "value": "The deployed Anchor program accepts a supplied classic SPL mint per brief, but the website keeps every write disabled until that mint and the deployment parameters are verified. Reads stay open.",
+        "count": 3
+      },
+      {
+        "value": "The index could not be printed.",
+        "count": 2
+      },
+      {
+        "value": "The index ships with illustrative briefs and testnet SOL that has no intended monetary value. Nothing on this desk signs or sends a transaction.",
+        "count": 2
+      },
+      {
+        "value": "The registry could not be read.",
+        "count": 1
+      },
+      {
+        "value": "The registry ships with illustrative briefs and testnet SOL that has no intended monetary value. Nothing on this desk signs or sends a transaction.",
+        "count": 1
+      },
+      {
+        "value": "The reward mint and deployed program schema must be verified before any instruction is enabled.",
+        "count": 3
+      },
+      {
+        "value": "The rules of settlement.",
+        "count": 2
+      },
+      {
+        "value": "The sample edition · no. 01",
+        "count": 2
+      },
+      {
+        "value": "The Solana bounty program is live on testnet, but claimable rewards cannot be read until a classic SPL reward mint is configured.",
+        "count": 3
+      },
+      {
+        "value": "This brief is",
+        "count": 3
+      },
+      {
+        "value": "This edition at a glance",
+        "count": 2
+      },
+      {
+        "value": "This is the sample edition. Four illustrative briefs show the shape of the market; no wallet is asked to sign and no transaction is sent.",
+        "count": 2
+      },
+      {
+        "value": "This preview is educational. Keep private information off-chain.",
+        "count": 1
+      },
+      {
+        "value": "topic",
+        "count": 1
+      },
+      {
+        "value": "TOPIC",
+        "count": 1
+      },
+      {
+        "value": "Topics",
+        "count": 2
+      },
+      {
+        "value": "Try again",
+        "count": 9
+      },
+      {
+        "value": "Try connecting again",
+        "count": 3
+      },
+      {
+        "value": "Turn a focused question into an open brief. Define the scope, then review and fund it.",
+        "count": 3
+      },
+      {
+        "value": "Two paths in.",
+        "count": 2
+      },
+      {
+        "value": "Two paths in. One record out.",
+        "count": 4
+      },
+      {
+        "value": "Unallocated funds",
+        "count": 3
+      },
+      {
+        "value": "Undo",
+        "count": 6
+      },
+      {
+        "value": "Up to 96 UTF-8 bytes. Keep the question focused.",
+        "count": 3
+      },
+      {
+        "value": "Use a permanent public URL. Keep personal information off-chain.",
+        "count": 3
+      },
+      {
+        "value": "Use the wallet you contributed with on Solana testnet.",
+        "count": 3
+      },
+      {
+        "value": "utc",
+        "count": 1
+      },
+      {
+        "value": "View confirmed transaction ↗",
+        "count": 3
+      },
+      {
+        "value": "View transaction ↗",
+        "count": 6
+      },
+      {
+        "value": "Wallet",
+        "count": 1
+      },
+      {
+        "value": "Wallet balance:",
+        "count": 3
+      },
+      {
+        "value": "What do testnet rewards mean?",
+        "count": 3
+      },
+      {
+        "value": "What happens to unused funds?",
+        "count": 3
+      },
+      {
+        "value": "What should this brief answer?",
+        "count": 3
+      },
+      {
+        "value": "Where do saved briefs live?",
+        "count": 3
+      },
+      {
+        "value": "Who reviews the work?",
+        "count": 3
+      },
+      {
+        "value": "Why are writes gated?",
+        "count": 3
+      },
+      {
+        "value": "Write a narrow brief.",
+        "count": 2
+      },
+      {
+        "value": "Write a narrow question with specific acceptance criteria. Publish the brief at an accessible URL, choose a deadline, and fund its testnet SOL pool. You review the work and allocate rewards before the deadline.",
+        "count": 1
+      },
+      {
+        "value": "Write a narrow question, publish it at a public URL, set a deadline and fund the pool on Solana testnet.",
+        "count": 1
+      },
+      {
+        "value": "Writes stay gated.",
+        "count": 3
+      },
+      {
+        "value": "You will fund the reward pool and become this brief's reviewer. Contributors rely on your published scope and acceptance criteria.",
+        "count": 3
+      },
+      {
+        "value": "Your working brief",
+        "count": 3
+      }
+    ],
+    "hiddenText": [
+      {
+        "value": "Loading briefs…",
+        "count": 3
+      },
+      {
+        "value": "Row actions",
+        "count": 1
+      },
+      {
+        "value": "Sort briefs",
+        "count": 1
+      },
+      {
+        "value": "Tallyvein brief registry —",
+        "count": 1
+      }
+    ],
+    "attributes": [
+      {
+        "name": "name",
+        "value": "arrow",
+        "count": 23
+      },
+      {
+        "name": "name",
+        "value": "arrowleft",
+        "count": 5
+      },
+      {
+        "name": "name",
+        "value": "arrowup",
+        "count": 2
+      },
+      {
+        "name": "name",
+        "value": "book",
+        "count": 5
+      },
+      {
+        "name": "name",
+        "value": "bookmark",
+        "count": 9
+      },
+      {
+        "name": "name",
+        "value": "check",
+        "count": 3
+      },
+      {
+        "name": "name",
+        "value": "close",
+        "count": 19
+      },
+      {
+        "name": "name",
+        "value": "download",
+        "count": 9
+      },
+      {
+        "name": "name",
+        "value": "external",
+        "count": 6
+      },
+      {
+        "name": "name",
+        "value": "info",
+        "count": 23
+      },
+      {
+        "name": "name",
+        "value": "ledger",
+        "count": 1
+      },
+      {
+        "name": "name",
+        "value": "link",
+        "count": 1
+      },
+      {
+        "name": "name",
+        "value": "menu",
+        "count": 3
+      },
+      {
+        "name": "name",
+        "value": "network",
+        "count": 1
+      },
+      {
+        "name": "name",
+        "value": "plus",
+        "count": 29
+      },
+      {
+        "name": "name",
+        "value": "quote",
+        "count": 2
+      },
+      {
+        "name": "name",
+        "value": "refresh",
+        "count": 20
+      },
+      {
+        "name": "name",
+        "value": "scale",
+        "count": 1
+      },
+      {
+        "name": "name",
+        "value": "search",
+        "count": 3
+      },
+      {
+        "name": "name",
+        "value": "wallet",
+        "count": 13
+      },
+      {
+        "name": "placeholder",
+        "value": "0.01",
+        "count": 6
+      },
+      {
+        "name": "placeholder",
+        "value": "0.05",
+        "count": 3
+      },
+      {
+        "name": "placeholder",
+        "value": "Define the question, scope, primary sources, and what an accepted contribution should include.",
+        "count": 3
+      },
+      {
+        "name": "placeholder",
+        "value": "Give the brief a clear, narrow title",
+        "count": 3
+      },
+      {
+        "name": "placeholder",
+        "value": "https://… or ipfs://…",
+        "count": 6
+      },
+      {
+        "name": "placeholder",
+        "value": "SEARCH BRIEFS, TOPICS, EVIDENCE",
+        "count": 1
+      },
+      {
+        "name": "placeholder",
+        "value": "Search titles, topics and scope",
+        "count": 2
+      },
+      {
+        "name": "title",
+        "value": "Chain status strip — focus it to scroll",
+        "count": 1
+      },
+      {
+        "name": "value",
+        "value": "deadline",
+        "count": 3
+      },
+      {
+        "name": "value",
+        "value": "newest",
+        "count": 3
+      },
+      {
+        "name": "value",
+        "value": "recommended",
+        "count": 3
+      },
+      {
+        "name": "value",
+        "value": "reward",
+        "count": 3
+      }
+    ],
+    "bindings": [
+      {
+        "kind": "asset",
+        "expr": "logo",
+        "count": 2
+      },
+      {
+        "kind": "asset",
+        "expr": "seal",
+        "count": 2
+      },
+      {
+        "kind": "attr",
+        "expr": "approvalFor(index)",
+        "count": 3
+      },
+      {
+        "kind": "attr",
+        "expr": "claimableAmount + ' ' + rewardSymbol",
+        "count": 3
+      },
+      {
+        "kind": "attr",
+        "expr": "contribution",
+        "count": 3
+      },
+      {
+        "kind": "attr",
+        "expr": "evidence",
+        "count": 3
+      },
+      {
+        "kind": "attr",
+        "expr": "explorerLink(txHash)",
+        "count": 9
+      },
+      {
+        "kind": "attr",
+        "expr": "filtered ? 'search' : savedView ? 'bookmark' : activityView ? 'wallet' : 'ledger'",
+        "count": 3
+      },
+      {
+        "kind": "attr",
+        "expr": "item.icon",
+        "count": 2
+      },
+      {
+        "kind": "attr",
+        "expr": "lane === 'guide' ? '#guide' : '#missions'",
+        "count": 1
+      },
+      {
+        "kind": "attr",
+        "expr": "logo",
+        "count": 2
+      },
+      {
+        "kind": "attr",
+        "expr": "page === 'guide' ? '#guide' : selected ? '#dossier-title' : '#brief-index'",
+        "count": 2
+      },
+      {
+        "kind": "attr",
+        "expr": "safeExternalUrl(item.evidenceURI)",
+        "count": 3
+      },
+      {
+        "kind": "attr",
+        "expr": "safeExternalUrl(mission.descriptionURI)",
+        "count": 3
+      },
+      {
+        "kind": "attr",
+        "expr": "safeExternalUrl(missionForm.uri)",
+        "count": 3
+      },
+      {
+        "kind": "attr",
+        "expr": "seal",
+        "count": 2
+      },
+      {
+        "kind": "attr",
+        "expr": "search",
+        "count": 2
+      },
+      {
+        "kind": "attr",
+        "expr": "sortBy",
+        "count": 2
+      },
+      {
+        "kind": "attr",
+        "expr": "txError ? 'info' : 'check'",
+        "count": 6
+      },
+      {
+        "kind": "form",
+        "expr": "filtered ? 'search' : savedView ? 'bookmark' : activityView ? 'wallet' : 'ledger'",
+        "count": 3
+      },
+      {
+        "kind": "form",
+        "expr": "item.icon",
+        "count": 2
+      },
+      {
+        "kind": "form",
+        "expr": "txError ? 'info' : 'check'",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "account",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "account ? \"Your rewards\" : \"Connect wallet\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "account ? shortAccount : \"Wallet\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "account ? shortAddress(account) : \"Not connected\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "activeTransaction === \"fund\" && busy ? \"Funding…\" : \"Fund brief\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "activeTransaction === \"submit\" && busy ? \"Submitting…\" : \"Submit proof\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "allocation",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "amount(awarded)",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "amount(displayPool)",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "amount(escrow)",
+        "count": 4
+      },
+      {
+        "kind": "interpolation",
+        "expr": "amountText(rewardBalance)",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "amountText(walletBalance)",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "approvalError",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "busy ? \"Claiming…\" : Number(claimableAmount) > 0 ? \"Claim rewards\" : \"No rewards to claim yet\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "busy ? \"Publishing…\" : \"Publish & fund\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "busy && isApproving(index) ? \"Approving…\" : \"Approve\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "clock",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "cluster",
+        "count": 4
+      },
+      {
+        "kind": "interpolation",
+        "expr": "cluster.toUpperCase()",
+        "count": 4
+      },
+      {
+        "kind": "interpolation",
+        "expr": "configured ? \"An independent Solana testnet project\" : \"You are exploring the preview\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "configured ? \"Rescan the chain\" : \"Reload samples\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "configured ? \"Tallyvein runs on Solana testnet. Testnet SOL has no intended monetary value.\" : \"Sample briefs let you explore topics, save records, and draft a brief. They are examples with illustrative rewards and cannot receive transactions.\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "configured ? \"writes gated\" : \"preview only\"",
+        "count": 9
+      },
+      {
+        "kind": "interpolation",
+        "expr": "configured ? `The configured reward mint is on ${SOLANA_CLUSTER}; test assets have no intended monetary value.` : `${SOLANA_CLUSTER} SOL has no intended monetary value.`",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "configured ? SOLANA_CLUSTER.toUpperCase() : \"PREVIEW\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "configured && SOLANA_PROGRAM_ID ? \"· PROGRAM GATED\" : \"· PREVIEW\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "connecting ? \"Connecting…\" : \"Connect wallet\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "connecting ? \"Connecting…\" : shortAccount",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "contributionError",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "contributions.length",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "contributionsError",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "deadlineText(mission)",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "error",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "evidenceError",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "filtered ? \"after filters\" : \"in this view\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Settiva-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "filtered ? \"Clear the search, topic or state filter and the full registry returns.\" : savedView ? \"Save a brief from any row and it is kept on this device under the tallyvein-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the registry.\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "filtered ? \"Filtered view.\" : \"Full index.\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "filtered ? \"Filtered view.\" : \"Full registry.\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "filtered ? \"No brief matches this view.\" : savedView ? \"Nothing saved yet.\" : activityView ? \"No briefs from this wallet yet.\" : \"The index is empty.\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "filtered ? \"No brief matches this view.\" : savedView ? \"Nothing saved yet.\" : activityView ? \"No briefs from this wallet yet.\" : \"The registry is empty.\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "group(slot)",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "isSaved(mission) ? \"Kept\" : \"Keep\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "item.approved",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "item.approvedByCreator ? \"Allocated\" : \"Pending review\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "item.contributor",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "item.count",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "item.evidenceURI",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "item.label",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "lane === \"guide\" ? \"Skip to the guide\" : \"Skip to the brief registry\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "line",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "loadError",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "meterLabel(mission)",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission ? mission.sample ? \"sample inspector\" : `brief / ${mission.id}` : \"inspector\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.brief || mission.description",
+        "count": 5
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.category",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.closed ? \"closed\" : \"past its deadline\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.creator",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.description",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.id",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.reward",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.rewardSymbol || \"SOL\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.sample ? \"Illustrative pool · sample record\" : \"In escrow · available to allocate\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.sample ? \"ILLUSTRATIVE\" : \"LOCAL TIME\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.sample ? \"Illustrative\" : mission.deadline",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.sample ? \"None\" : `${contributions.length} submitted`",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.sample ? \"POOL\" : \"OPEN\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.sample ? \"Sample dossier · illustrative record\" : `Dossier no. ${mission.id}`",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.sample ? \"SAMPLE\" : `#${mission.id}`",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.sample ? \"Sample\" : mission.closed ? \"Closed\" : mission.expired ? \"Ended\" : \"Open\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.sample ? \"This sample shows the shape of a brief record.\" : \"The first public source can open the review.\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "mission.title",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "missionForm.category",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "missionForm.reward",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "missionForm.title",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "missionForm.uri",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "missions.length",
+        "count": 4
+      },
+      {
+        "kind": "interpolation",
+        "expr": "missions.length === 1 ? \"brief\" : \"briefs\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "missions.length === 1 ? \"record\" : \"records\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "modalKicker",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "modalTitle",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "name",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "new Date(missionForm.deadline).toLocaleString()",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "notice",
+        "count": 9
+      },
+      {
+        "kind": "interpolation",
+        "expr": "option.count",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "option.label",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "pad(epoch, 3)",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "pad(index + 1)",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "pad(missions.length)",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "pad(openCount)",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "page === \"guide\" ? \"Skip to the field guide\" : selected ? \"Skip to the dossier\" : \"Skip to the brief index\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "page === \"saved\" ? \"Your reading list\" : \"Wallet activity\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "pageNote",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "pageTitle",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "poolText(mission)",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "poolTotal",
+        "count": 5
+      },
+      {
+        "kind": "interpolation",
+        "expr": "programLabel",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "rewardSymbol",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "rewardUnitLabel",
+        "count": 15
+      },
+      {
+        "kind": "interpolation",
+        "expr": "sample ? \"SAMPLE DATA\" : live ? \"LIVE READ\" : \"PREVIEW\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "sampleFeed ? \"Sample testnet data\" : \"Live read\"",
+        "count": 4
+      },
+      {
+        "kind": "interpolation",
+        "expr": "saved ? \"Remove\" : \"Save\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "saved ? \"Saved to your list\" : \"Save this brief\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "saved ? \"Saved\" : \"Save\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "savedView ? \"Your reading list\" : activityView ? \"Your briefs\" : \"The brief index\"",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "selectedIsCreator ? \"This wallet\" : \"External signer\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "simulated ? \"sim slot\" : \"slot\"",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "SOLANA_CLUSTER",
+        "count": 13
+      },
+      {
+        "kind": "interpolation",
+        "expr": "SOLANA_CLUSTER.toUpperCase()",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "stateLabel",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "stateLabel(mission)",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "statsError",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "statsLoading ? \"…\" : amountText(claimableAmount)",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "statsLoading ? \"…\" : amountText(walletBalance)",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "statusFilter.toUpperCase()",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "String(index + 1).padStart(2, \"0\")",
+        "count": 4
+      },
+      {
+        "kind": "interpolation",
+        "expr": "String(missionItems.length).padStart(2, \"0\")",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "String(missions.length).padStart(2, \"0\")",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "String(openCount).padStart(2, \"0\")",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "symbolText(mission)",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "topic",
+        "count": 6
+      },
+      {
+        "kind": "interpolation",
+        "expr": "topic === \"All topics\" ? missionItems.length : missionItems.filter((m) => m.category === topic).length",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "topic === \"All topics\" ? topicCounts.all || 0 : topicCounts[topic] || 0",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "txError || \"Transaction confirmed.\"",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "txError || (txStatus === \"wallet\" ? \"Confirm the transaction in your wallet.\" : txStatus === \"pending\" ? \"Submitted. Waiting for network confirmation…\" : \"Transaction confirmed.\")",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "viewLabel(activeView)",
+        "count": 1
+      },
+      {
+        "kind": "interpolation",
+        "expr": "viewNote",
+        "count": 2
+      },
+      {
+        "kind": "interpolation",
+        "expr": "viewTitle",
+        "count": 3
+      },
+      {
+        "kind": "interpolation",
+        "expr": "walletError",
+        "count": 6
+      },
+      {
+        "kind": "link",
+        "expr": "explorerLink(txHash)",
+        "count": 9
+      },
+      {
+        "kind": "link",
+        "expr": "lane === 'guide' ? '#guide' : '#missions'",
+        "count": 1
+      },
+      {
+        "kind": "link",
+        "expr": "page === 'guide' ? '#guide' : selected ? '#dossier-title' : '#brief-index'",
+        "count": 2
+      },
+      {
+        "kind": "link",
+        "expr": "safeExternalUrl(item.evidenceURI)",
+        "count": 3
+      },
+      {
+        "kind": "link",
+        "expr": "safeExternalUrl(mission.descriptionURI)",
+        "count": 3
+      },
+      {
+        "kind": "link",
+        "expr": "safeExternalUrl(missionForm.uri)",
+        "count": 3
+      },
+      {
+        "kind": "model",
+        "expr": "missionForm.category",
+        "count": 3
+      },
+      {
+        "kind": "model",
+        "expr": "missionForm.deadline",
+        "count": 3
+      },
+      {
+        "kind": "model",
+        "expr": "missionForm.description",
+        "count": 3
+      },
+      {
+        "kind": "model",
+        "expr": "missionForm.reward",
+        "count": 3
+      },
+      {
+        "kind": "model",
+        "expr": "missionForm.title",
+        "count": 3
+      },
+      {
+        "kind": "model",
+        "expr": "missionForm.uri",
+        "count": 3
+      },
+      {
+        "kind": "model",
+        "expr": "search",
+        "count": 1
+      },
+      {
+        "kind": "model",
+        "expr": "sortBy",
+        "count": 1
+      }
+    ],
+    "events": [
+      {
+        "event": "change",
+        "handler": "emit('update:sortBy', $event.target.value)",
+        "count": 2
+      },
+      {
+        "event": "click",
+        "handler": "(event) => event.target === dialog && closeAll()",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "$emit('board')",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "$emit('start')",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "account ? openRewards() : connectWallet()",
+        "count": 5
+      },
+      {
+        "event": "click",
+        "handler": "activeCategory = topic",
+        "count": 1
+      },
+      {
+        "event": "click",
+        "handler": "backToTop",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "clearSearch",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "closeAll",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "closeAll(); selectLane('board');",
+        "count": 1
+      },
+      {
+        "event": "click",
+        "handler": "closeDetail",
+        "count": 1
+      },
+      {
+        "event": "click",
+        "handler": "connectWallet",
+        "count": 6
+      },
+      {
+        "event": "click",
+        "handler": "dismissNotice",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "downloadBrief",
+        "count": 6
+      },
+      {
+        "event": "click",
+        "handler": "editDraft",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "emit('close')",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "emit('connect')",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "emit('create')",
+        "count": 6
+      },
+      {
+        "event": "click",
+        "handler": "emit('dismiss')",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "emit('download')",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "emit('open', mission)",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "emit('refresh')",
+        "count": 6
+      },
+      {
+        "event": "click",
+        "handler": "emit('refund')",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "emit('reset')",
+        "count": 5
+      },
+      {
+        "event": "click",
+        "handler": "emit('retry')",
+        "count": 7
+      },
+      {
+        "event": "click",
+        "handler": "emit('save', mission)",
+        "count": 9
+      },
+      {
+        "event": "click",
+        "handler": "emit('undo')",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "emit('update:activeCategory', topic)",
+        "count": 2
+      },
+      {
+        "event": "click",
+        "handler": "emit('update:statusFilter', option.value)",
+        "count": 2
+      },
+      {
+        "event": "click",
+        "handler": "goContribute",
+        "count": 2
+      },
+      {
+        "event": "click",
+        "handler": "goHome",
+        "count": 2
+      },
+      {
+        "event": "click",
+        "handler": "goPage('guide')",
+        "count": 2
+      },
+      {
+        "event": "click",
+        "handler": "goPage(item.id)",
+        "count": 4
+      },
+      {
+        "event": "click",
+        "handler": "mobileNav = !mobileNav",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "mobileNav = false",
+        "count": 6
+      },
+      {
+        "event": "click",
+        "handler": "openRewards",
+        "count": 1
+      },
+      {
+        "event": "click",
+        "handler": "refreshAll",
+        "count": 6
+      },
+      {
+        "event": "click",
+        "handler": "resetView",
+        "count": 1
+      },
+      {
+        "event": "click",
+        "handler": "scrollToIndex",
+        "count": 2
+      },
+      {
+        "event": "click",
+        "handler": "selectLane('board'); backToTop();",
+        "count": 1
+      },
+      {
+        "event": "click",
+        "handler": "selectLane('guide')",
+        "count": 1
+      },
+      {
+        "event": "click",
+        "handler": "selectLane(item.id)",
+        "count": 2
+      },
+      {
+        "event": "click",
+        "handler": "selectTab('Contribute')",
+        "count": 1
+      },
+      {
+        "event": "click",
+        "handler": "selectTab(name)",
+        "count": 1
+      },
+      {
+        "event": "click",
+        "handler": "startCreate",
+        "count": 7
+      },
+      {
+        "event": "click",
+        "handler": "statusFilter = option.value",
+        "count": 1
+      },
+      {
+        "event": "click",
+        "handler": "switchNetwork",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "transact('claim')",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "transact('create')",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "undoSavedChange",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "updateWalletStats",
+        "count": 3
+      },
+      {
+        "event": "click",
+        "handler": "walletError = ''",
+        "count": 3
+      },
+      {
+        "event": "close",
+        "handler": "closeDetail",
+        "count": 3
+      },
+      {
+        "event": "input",
+        "handler": "emit('update:approval', item.id ?? index, $event.target.value)",
+        "count": 3
+      },
+      {
+        "event": "input",
+        "handler": "emit('update:contribution', $event.target.value)",
+        "count": 3
+      },
+      {
+        "event": "input",
+        "handler": "emit('update:evidence', $event.target.value)",
+        "count": 3
+      },
+      {
+        "event": "input",
+        "handler": "emit('update:search', $event.target.value)",
+        "count": 2
+      },
+      {
+        "event": "keydown",
+        "handler": "emit('open', mission)",
+        "count": 2
+      },
+      {
+        "event": "keydown",
+        "handler": "handleEntryKey",
+        "count": 2
+      },
+      {
+        "event": "keydown",
+        "handler": "handleRowsKey",
+        "count": 1
+      },
+      {
+        "event": "keydown",
+        "handler": "handleTabsKey",
+        "count": 1
+      },
+      {
+        "event": "open",
+        "handler": "openDetails",
+        "count": 3
+      },
+      {
+        "event": "submit",
+        "handler": "emit('approve', item.id ?? index, approvalFor(index))",
+        "count": 3
+      },
+      {
+        "event": "submit",
+        "handler": "emit('fund')",
+        "count": 3
+      },
+      {
+        "event": "submit",
+        "handler": "emit('submit')",
+        "count": 3
+      },
+      {
+        "event": "submit",
+        "handler": "reviewDraft",
+        "count": 3
+      },
+      {
+        "event": "submit",
+        "handler": "transact('submit')",
+        "count": 3
+      }
+    ],
+    "links": [],
+    "assets": [],
+    "forms": [
+      {
+        "tag": "input",
+        "name": "",
+        "type": "",
+        "count": 18
+      },
+      {
+        "tag": "input",
+        "name": "",
+        "type": "datetime-local",
+        "count": 3
+      },
+      {
+        "tag": "input",
+        "name": "",
+        "type": "search",
+        "count": 3
+      },
+      {
+        "tag": "select",
+        "name": "",
+        "type": "",
+        "count": 6
+      },
+      {
+        "tag": "textarea",
+        "name": "",
+        "type": "",
+        "count": 3
+      }
+    ],
+    "i18n": [],
+    "i18nKeys": [],
+    "i18nFiles": [],
+    "api": [],
+    "env": [
+      "BASE_URL",
+      "VITE_SOLANA_CLUSTER",
+      "VITE_SOLANA_EXPLORER_URL",
+      "VITE_SOLANA_PROGRAM_ID",
+      "VITE_SOLANA_PROGRAM_READY",
+      "VITE_SOLANA_RPC_URL",
+      "VITE_SOLANA_TOKEN_MINT",
+      "VITE_SOLANA_TOKEN_SYMBOL"
+    ]
+  },
+  "contentContractHash": "1ace2a9a98344cef700cbc5fd5b92afa11cb08850d05343181c906b18f6cdb25"
+}

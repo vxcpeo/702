@@ -1,0 +1,183 @@
+{
+  "date": "2026-10-19T18:09:34.466Z",
+  "url": "http://127.0.0.1:42713/",
+  "identity": {
+    "title": "Settiva - Two paths in. One record out.",
+    "canonical": "https://settiva.xyz/",
+    "themeColor": "#f3ede1",
+    "favicon": "/settiva-favicon.svg",
+    "ogSiteName": "Settiva",
+    "twitterMeta": 0,
+    "wordmark": "Settiva.",
+    "tagline": "Two paths in. One record out.",
+    "footer": "Settiva.Two paths in. One record out.ClustertestnetProgram5ibh…gwDu · GATEDEditionSample testnet dataNetworkSolanaNO WRITES · SAMPLE TESTNET DATA · Every record is an illustrative testnet brief. Rewards carry no intended monetary value, no platform token or CA is live, and no action on this page signs or sends a transaction. © 2026 Settiva · an independent Solana testnet project Back to top",
+    "retired": 0,
+    "editorial": 6
+  },
+  "flows": [
+    "Legacy bookmark keys (yovinx-saved, tallyvein-saved, quilsted-saved, buidlspur-saved, citevra-saved, attestora-saved) migrate into settiva-saved, keep their row state and leave the legacy record in place",
+    "Identity, canonical URL, paper theme colour, mark, wordmark, tagline and no-writes notice ship; the terminal skeleton is absent",
+    "Selecting an entry replaces the index with an in-flow dossier, focuses its heading and returns focus to the index",
+    "Dossier scope, contribution, review and gate copy all render; sample writes are disabled and the section action focuses the evidence field",
+    "Search, four topic filters, four standing filters, four sort choices and Reset drive the index and recover from an empty result",
+    "Keep, toast Undo, dismiss, reload persistence, the Saved page and its empty state all behave",
+    "Index, Saved, My briefs and Guide are full pages; Guide replaces the index, keeps the masthead, carries the FAQ and has one marker per row",
+    "Draft sheet: invalid URL and zero reward are rejected with focus management, review echoes the exact amount, the draft downloads as a Settiva markdown file, and the draft survives close and reopen",
+    "The wallet gate stays gated at every entry point and exposes no enabled write",
+    "Skip link leads the tab order to an existing target; ArrowDown/End and Enter drive the entry index",
+    "Below 900 px the dossier stays in flow with focus return, and navigation is a full-screen contents menu that Escape closes",
+    "Six viewports fit without sideways scroll, keep the Georgia reading voice and carry the sample gate into the colophon"
+  ],
+  "viewports": [
+    {
+      "width": 320,
+      "height": 844,
+      "scrollWidth": 320,
+      "rowInsideViewport": true,
+      "rowRect": {
+        "left": 15,
+        "right": 305,
+        "width": 290
+      },
+      "displayFont": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+      "bodyFont": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+      "footerText": "Settiva.Two paths in. One record out.ClustertestnetProgram5ibh…gwDu · GATEDEditionSample testnet dataNetworkSolanaNO WRITES · SAMPLE TESTNET DATA · Every record is an illustrative testnet brief. Rewards carry no intended monetary value, no platform token or CA is live, and no action on this page signs or sends a transaction. © 2026 Settiva · an independent Solana testnet project Back to top"
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "scrollWidth": 390,
+      "rowInsideViewport": true,
+      "rowRect": {
+        "left": 15,
+        "right": 375,
+        "width": 360
+      },
+      "displayFont": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+      "bodyFont": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+      "footerText": "Settiva.Two paths in. One record out.ClustertestnetProgram5ibh…gwDu · GATEDEditionSample testnet dataNetworkSolanaNO WRITES · SAMPLE TESTNET DATA · Every record is an illustrative testnet brief. Rewards carry no intended monetary value, no platform token or CA is live, and no action on this page signs or sends a transaction. © 2026 Settiva · an independent Solana testnet project Back to top"
+    },
+    {
+      "width": 768,
+      "height": 1000,
+      "scrollWidth": 768,
+      "rowInsideViewport": true,
+      "rowRect": {
+        "left": 31,
+        "right": 737,
+        "width": 707
+      },
+      "displayFont": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+      "bodyFont": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+      "footerText": "Settiva.Two paths in. One record out.ClustertestnetProgram5ibh…gwDu · GATEDEditionSample testnet dataNetworkSolanaNO WRITES · SAMPLE TESTNET DATA · Every record is an illustrative testnet brief. Rewards carry no intended monetary value, no platform token or CA is live, and no action on this page signs or sends a transaction. © 2026 Settiva · an independent Solana testnet project Back to top"
+    },
+    {
+      "width": 1024,
+      "height": 1000,
+      "scrollWidth": 1024,
+      "rowInsideViewport": true,
+      "rowRect": {
+        "left": 41,
+        "right": 947,
+        "width": 906
+      },
+      "displayFont": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+      "bodyFont": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+      "footerText": "Settiva.Two paths in. One record out.ClustertestnetProgram5ibh…gwDu · GATEDEditionSample testnet dataNetworkSolanaNO WRITES · SAMPLE TESTNET DATA · Every record is an illustrative testnet brief. Rewards carry no intended monetary value, no platform token or CA is live, and no action on this page signs or sends a transaction. © 2026 Settiva · an independent Solana testnet project Back to top"
+    },
+    {
+      "width": 1440,
+      "height": 1000,
+      "scrollWidth": 1440,
+      "rowInsideViewport": true,
+      "rowRect": {
+        "left": 124,
+        "right": 1280,
+        "width": 1156
+      },
+      "displayFont": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+      "bodyFont": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+      "footerText": "Settiva.Two paths in. One record out.ClustertestnetProgram5ibh…gwDu · GATEDEditionSample testnet dataNetworkSolanaNO WRITES · SAMPLE TESTNET DATA · Every record is an illustrative testnet brief. Rewards carry no intended monetary value, no platform token or CA is live, and no action on this page signs or sends a transaction. © 2026 Settiva · an independent Solana testnet project Back to top"
+    },
+    {
+      "width": 1920,
+      "height": 1000,
+      "scrollWidth": 1920,
+      "rowInsideViewport": true,
+      "rowRect": {
+        "left": 364,
+        "right": 1520,
+        "width": 1156
+      },
+      "displayFont": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+      "bodyFont": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+      "footerText": "Settiva.Two paths in. One record out.ClustertestnetProgram5ibh…gwDu · GATEDEditionSample testnet dataNetworkSolanaNO WRITES · SAMPLE TESTNET DATA · Every record is an illustrative testnet brief. Rewards carry no intended monetary value, no platform token or CA is live, and no action on this page signs or sends a transaction. © 2026 Settiva · an independent Solana testnet project Back to top"
+    }
+  ],
+  "accessibility": [
+    {
+      "name": "page-320",
+      "viewport": 320,
+      "violations": []
+    },
+    {
+      "name": "page-768",
+      "viewport": 768,
+      "violations": []
+    },
+    {
+      "name": "page-1440",
+      "viewport": 1440,
+      "violations": []
+    },
+    {
+      "name": "desktop-dossier",
+      "viewport": 1440,
+      "violations": []
+    },
+    {
+      "name": "mobile-dossier",
+      "viewport": 420,
+      "violations": []
+    },
+    {
+      "name": "desktop-guide",
+      "viewport": 1440,
+      "violations": []
+    },
+    {
+      "name": "draft-sheet",
+      "viewport": 1440,
+      "violations": []
+    }
+  ],
+  "gates": [
+    {
+      "label": "sample-dossier",
+      "gates": [
+        {
+          "label": "Submit proof",
+          "disabled": true
+        },
+        {
+          "label": "Fund brief",
+          "disabled": true
+        }
+      ]
+    },
+    {
+      "label": "create-review",
+      "gates": []
+    },
+    {
+      "label": "wallet-gate-toast",
+      "gates": []
+    }
+  ],
+  "errors": [],
+  "download": {
+    "suggestedFilename": "settiva-bounty-brief.md",
+    "bytes": 416
+  },
+  "result": "passed"
+}

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Quilsted</title>
+  <desc id="desc">A brass pen nib standing point-up, split down the centre by a throat and a round counter: the brief written at the point, the proof recorded below it.</desc>
+  <rect width="256" height="256" rx="32" fill="#10241C"/>
+  <polygon points="128,10 163,60 160,176 152,196 104,196 96,176 93,60" fill="#B8862F"/>
+  <polygon points="128,34 132.5,64 136,138 120,138 123.5,64" fill="#10241C"/>
+  <circle cx="128" cy="138" r="21" fill="#10241C"/>
+</svg>

@@ -1,0 +1,1041 @@
+{
+  "date": "2026-10-19T18:10:14.666Z",
+  "url": "http://127.0.0.1:42713/",
+  "flows": [
+    "Desktop: Georgia carries display headings, Segoe UI carries reading copy and labels, no web font loads and no chrome is monospace",
+    "Touch mobile: topic tap, empty search, tap Clear search and All topics restore the full index",
+    "Touch mobile: keep a brief, open its dossier, return to the index and land back on the same saved entry",
+    "Touch mobile: draft, recover from an invalid URL, review the exact one-lamport pool, and download a Settiva markdown draft",
+    "At five viewports the colophon follows the field guide, the page scrolls without sideways overflow and the index fits"
+  ],
+  "performance": {
+    "viewport": {
+      "width": 1440,
+      "height": 1000
+    },
+    "fcpMs": 460,
+    "lcpMs": 460,
+    "lcpElement": {
+      "startTime": 460,
+      "size": 236022,
+      "element": "H1",
+      "text": "Two paths in.One record out."
+    },
+    "cls": 0,
+    "layoutShifts": [],
+    "measuredAfterLoadMs": 1589.4000000059605,
+    "navigation": {
+      "name": "http://127.0.0.1:42713/",
+      "entryType": "navigation",
+      "startTime": 0,
+      "duration": 506.09999999403954,
+      "navigationId": 7432,
+      "initiatorType": "navigation",
+      "deliveryType": "",
+      "nextHopProtocol": "http/1.1",
+      "renderBlockingStatus": "non-blocking",
+      "contentType": "text/html",
+      "contentEncoding": "",
+      "workerStart": 0,
+      "workerRouterEvaluationStart": 0,
+      "workerCacheLookupStart": 0,
+      "workerMatchedSourceType": "",
+      "workerFinalSourceType": "",
+      "redirectStart": 0,
+      "redirectEnd": 0,
+      "fetchStart": 0.19999998807907104,
+      "domainLookupStart": 8.599999994039536,
+      "domainLookupEnd": 10.099999994039536,
+      "connectStart": 10.099999994039536,
+      "secureConnectionStart": 0,
+      "connectEnd": 11,
+      "requestStart": 11.199999988079071,
+      "responseStart": 14.299999982118607,
+      "firstInterimResponseStart": 0,
+      "finalResponseHeadersStart": 14.299999982118607,
+      "responseEnd": 15.099999994039536,
+      "transferSize": 1639,
+      "encodedBodySize": 1339,
+      "decodedBodySize": 1339,
+      "responseStatus": 200,
+      "serverTiming": [],
+      "unloadEventStart": 0,
+      "unloadEventEnd": 0,
+      "domInteractive": 24.69999998807907,
+      "domContentLoadedEventStart": 297.7999999821186,
+      "domContentLoadedEventEnd": 297.90000000596046,
+      "domComplete": 506.09999999403954,
+      "loadEventStart": 506.09999999403954,
+      "loadEventEnd": 506.09999999403954,
+      "type": "navigate",
+      "redirectCount": 0,
+      "activationStart": 0,
+      "criticalCHRestart": 0,
+      "notRestoredReasons": null,
+      "confidence": {
+        "randomizedTriggerRate": 0.4994798,
+        "value": "high"
+      }
+    }
+  },
+  "resources": {
+    "fontFaces": [],
+    "remoteFontRequests": [],
+    "logos": [
+      {
+        "src": "http://127.0.0.1:42713/settiva-seal.svg",
+        "complete": true,
+        "naturalWidth": 150,
+        "naturalHeight": 150
+      }
+    ],
+    "timing": [
+      {
+        "path": "/@vite/client",
+        "initiatorType": "script",
+        "transferSize": 210983,
+        "encodedBodySize": 210683,
+        "decodedBodySize": 210683,
+        "durationMs": 18.5
+      },
+      {
+        "path": "/src/main.js",
+        "initiatorType": "script",
+        "transferSize": 1435,
+        "encodedBodySize": 1135,
+        "decodedBodySize": 1135,
+        "durationMs": 19
+      },
+      {
+        "path": "/node_modules/.vite/deps/vue.js",
+        "initiatorType": "script",
+        "transferSize": 1196128,
+        "encodedBodySize": 1195828,
+        "decodedBodySize": 1195828,
+        "durationMs": 17.900000005960464
+      },
+      {
+        "path": "/src/App.vue",
+        "initiatorType": "script",
+        "transferSize": 239712,
+        "encodedBodySize": 239412,
+        "decodedBodySize": 239412,
+        "durationMs": 20.200000017881393
+      },
+      {
+        "path": "/src/styles/settiva-ledger.css",
+        "initiatorType": "script",
+        "transferSize": 57988,
+        "encodedBodySize": 57688,
+        "decodedBodySize": 57688,
+        "durationMs": 20.599999994039536
+      },
+      {
+        "path": "/node_modules/vite/dist/client/env.mjs",
+        "initiatorType": "script",
+        "transferSize": 4195,
+        "encodedBodySize": 3895,
+        "decodedBodySize": 3895,
+        "durationMs": 19.099999994039536
+      },
+      {
+        "path": "/src/composables/useMissions.js",
+        "initiatorType": "script",
+        "transferSize": 185592,
+        "encodedBodySize": 185292,
+        "decodedBodySize": 185292,
+        "durationMs": 23.5
+      },
+      {
+        "path": "/src/components/UiIcon.vue",
+        "initiatorType": "script",
+        "transferSize": 21089,
+        "encodedBodySize": 20789,
+        "decodedBodySize": 20789,
+        "durationMs": 24.299999982118607
+      },
+      {
+        "path": "/src/components/BriefIndex.vue",
+        "initiatorType": "script",
+        "transferSize": 62074,
+        "encodedBodySize": 61774,
+        "decodedBodySize": 61774,
+        "durationMs": 25.299999982118607
+      },
+      {
+        "path": "/src/components/BriefDossier.vue",
+        "initiatorType": "script",
+        "transferSize": 92377,
+        "encodedBodySize": 92077,
+        "decodedBodySize": 92077,
+        "durationMs": 26.299999982118607
+      },
+      {
+        "path": "/src/utils/format.js",
+        "initiatorType": "script",
+        "transferSize": 1944,
+        "encodedBodySize": 1644,
+        "decodedBodySize": 1644,
+        "durationMs": 27.19999998807907
+      },
+      {
+        "path": "/src/components/BriefGuide.vue",
+        "initiatorType": "script",
+        "transferSize": 19945,
+        "encodedBodySize": 19645,
+        "decodedBodySize": 19645,
+        "durationMs": 26.900000005960464
+      },
+      {
+        "path": "/src/config.js",
+        "initiatorType": "script",
+        "transferSize": 11640,
+        "encodedBodySize": 11340,
+        "decodedBodySize": 11340,
+        "durationMs": 28.100000023841858
+      },
+      {
+        "path": "/@id/__x00__plugin-vue:export-helper",
+        "initiatorType": "script",
+        "transferSize": 1374,
+        "encodedBodySize": 1074,
+        "decodedBodySize": 1074,
+        "durationMs": 28.5
+      },
+      {
+        "path": "/src/utils/solanaProgram.js",
+        "initiatorType": "script",
+        "transferSize": 109499,
+        "encodedBodySize": 109199,
+        "decodedBodySize": 109199,
+        "durationMs": 36.900000005960464
+      },
+      {
+        "path": "/node_modules/.vite/deps/buffer.js",
+        "initiatorType": "script",
+        "transferSize": 1062,
+        "encodedBodySize": 762,
+        "decodedBodySize": 762,
+        "durationMs": 8.800000011920929
+      },
+      {
+        "path": "/node_modules/.vite/deps/@solana_web3__js.js",
+        "initiatorType": "script",
+        "transferSize": 2481985,
+        "encodedBodySize": 2481685,
+        "decodedBodySize": 2481685,
+        "durationMs": 41.70000001788139
+      },
+      {
+        "path": "/node_modules/.vite/deps/buffer-Dtlf74KK.js",
+        "initiatorType": "script",
+        "transferSize": 198370,
+        "encodedBodySize": 198070,
+        "decodedBodySize": 198070,
+        "durationMs": 28.69999998807907
+      },
+      {
+        "path": "/settiva-seal.svg",
+        "initiatorType": "img",
+        "transferSize": 876,
+        "encodedBodySize": 576,
+        "decodedBodySize": 576,
+        "durationMs": 8.5
+      }
+    ],
+    "stylesheets": [],
+    "responses": [
+      {
+        "path": "/",
+        "status": 200,
+        "contentType": "text/html",
+        "decodedBytes": 1339,
+        "redirected": false
+      },
+      {
+        "path": "/src/main.js",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 1135,
+        "redirected": false
+      },
+      {
+        "path": "/@vite/client",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 210683,
+        "redirected": false
+      },
+      {
+        "path": "/node_modules/vite/dist/client/env.mjs",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 3895,
+        "redirected": false
+      },
+      {
+        "path": "/src/styles/settiva-ledger.css",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 57688,
+        "redirected": false
+      },
+      {
+        "path": "/src/App.vue",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 239412,
+        "redirected": false
+      },
+      {
+        "path": "/node_modules/.vite/deps/vue.js",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 1195828,
+        "redirected": false
+      },
+      {
+        "path": "/src/components/UiIcon.vue",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 20789,
+        "redirected": false
+      },
+      {
+        "path": "/src/composables/useMissions.js",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 185292,
+        "redirected": false
+      },
+      {
+        "path": "/src/components/BriefIndex.vue",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 61774,
+        "redirected": false
+      },
+      {
+        "path": "/src/utils/format.js",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 1644,
+        "redirected": false
+      },
+      {
+        "path": "/src/components/BriefGuide.vue",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 19645,
+        "redirected": false
+      },
+      {
+        "path": "/src/components/BriefDossier.vue",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 92077,
+        "redirected": false
+      },
+      {
+        "path": "/src/config.js",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 11340,
+        "redirected": false
+      },
+      {
+        "path": "/@id/__x00__plugin-vue:export-helper",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 1074,
+        "redirected": false
+      },
+      {
+        "path": "/src/utils/solanaProgram.js",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 109199,
+        "redirected": false
+      },
+      {
+        "path": "/node_modules/.vite/deps/buffer.js",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 762,
+        "redirected": false
+      },
+      {
+        "path": "/node_modules/.vite/deps/buffer-Dtlf74KK.js",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 198070,
+        "redirected": false
+      },
+      {
+        "path": "/node_modules/.vite/deps/@solana_web3__js.js",
+        "status": 200,
+        "contentType": "text/javascript",
+        "decodedBytes": 2481685,
+        "redirected": false
+      },
+      {
+        "path": "/settiva-seal.svg",
+        "status": 200,
+        "contentType": "image/svg+xml",
+        "decodedBytes": 576,
+        "redirected": false
+      }
+    ],
+    "totalDecodedBytes": 4893907,
+    "totalResourceTransferBytes": 4898268
+  },
+  "preferences": {
+    "reducedMotion": {
+      "matches": true,
+      "scrollBehavior": "auto",
+      "animatedSkeletons": 0,
+      "transitionsOverOneMillisecond": 0
+    },
+    "forcedColors": {
+      "matches": true,
+      "textureDropped": true,
+      "entry": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(255, 255, 255, 0)",
+        "borderColor": "rgb(0, 0, 0)",
+        "borderStyle": "none",
+        "borderWidth": "0px",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "1px",
+        "boxShadow": "none"
+      },
+      "section": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgba(255, 255, 255, 0)",
+        "borderColor": "rgb(0, 0, 0)",
+        "borderStyle": "double",
+        "borderWidth": "3px",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "1px",
+        "boxShadow": "none"
+      },
+      "button": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(255, 255, 255)",
+        "borderColor": "rgb(0, 0, 0)",
+        "borderStyle": "solid",
+        "borderWidth": "2px",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "2px",
+        "boxShadow": "none"
+      },
+      "edition": {
+        "color": "rgb(0, 0, 0)",
+        "background": "rgb(255, 255, 255)",
+        "borderColor": "rgb(0, 0, 0)",
+        "borderStyle": "solid",
+        "borderWidth": "2px",
+        "borderBottomStyle": "solid",
+        "borderBottomWidth": "2px",
+        "boxShadow": "none"
+      }
+    }
+  },
+  "typography": {
+    "index": {
+      "display": [
+        {
+          "selector": ".hero-title",
+          "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+          "resolved": "Georgia",
+          "size": "138px",
+          "weight": "700",
+          "letterSpacing": "-8.004px",
+          "transform": "none"
+        },
+        {
+          "selector": ".entry-title",
+          "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+          "resolved": "Georgia",
+          "size": "29px",
+          "weight": "700",
+          "letterSpacing": "-0.812px",
+          "transform": "none"
+        },
+        {
+          "selector": ".index-title",
+          "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+          "resolved": "Georgia",
+          "size": "48px",
+          "weight": "700",
+          "letterSpacing": "-1.68px",
+          "transform": "none"
+        },
+        {
+          "selector": ".colophon-word",
+          "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+          "resolved": "Georgia",
+          "size": "44px",
+          "weight": "700",
+          "letterSpacing": "-1.76px",
+          "transform": "none"
+        }
+      ],
+      "reading": [
+        {
+          "selector": ".hero-lede > p",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "19.44px",
+          "weight": "400",
+          "letterSpacing": "normal",
+          "transform": "none"
+        },
+        {
+          "selector": ".entry-desc",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "13.5px",
+          "weight": "400",
+          "letterSpacing": "normal",
+          "transform": "none"
+        }
+      ],
+      "labels": [
+        {
+          "selector": ".eyebrow",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "10px",
+          "weight": "600",
+          "letterSpacing": "1.8px",
+          "transform": "uppercase"
+        },
+        {
+          "selector": ".filter-label",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "9px",
+          "weight": "600",
+          "letterSpacing": "1.53px",
+          "transform": "uppercase"
+        },
+        {
+          "selector": ".entry-topic",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "9px",
+          "weight": "600",
+          "letterSpacing": "1.53px",
+          "transform": "uppercase"
+        },
+        {
+          "selector": ".colophon-grid dt",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "8.5px",
+          "weight": "600",
+          "letterSpacing": "1.275px",
+          "transform": "uppercase"
+        }
+      ],
+      "bodyFont": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+      "displayAvailable": true,
+      "readingAvailable": true,
+      "noMonoChrome": true
+    },
+    "dossier": {
+      "display": [
+        {
+          "selector": ".dossier-title",
+          "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+          "resolved": "Georgia",
+          "size": "94px",
+          "weight": "700",
+          "letterSpacing": "-4.7px",
+          "transform": "none"
+        }
+      ],
+      "reading": [
+        {
+          "selector": ".dossier-copy",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "16.5px",
+          "weight": "400",
+          "letterSpacing": "normal",
+          "transform": "none"
+        },
+        {
+          "selector": ".form-intro",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "12.5px",
+          "weight": "400",
+          "letterSpacing": "normal",
+          "transform": "none"
+        }
+      ],
+      "labels": [
+        {
+          "selector": ".fact-row dt",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "8.5px",
+          "weight": "600",
+          "letterSpacing": "1.275px",
+          "transform": "uppercase"
+        },
+        {
+          "selector": ".form-kicker",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "8.5px",
+          "weight": "600",
+          "letterSpacing": "1.36px",
+          "transform": "uppercase"
+        }
+      ]
+    },
+    "guide": {
+      "display": [
+        {
+          "selector": ".guide-hero h1",
+          "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+          "resolved": "Georgia",
+          "size": "112px",
+          "weight": "700",
+          "letterSpacing": "-6.16px",
+          "transform": "none"
+        },
+        {
+          "selector": ".guide-notes-head h2",
+          "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+          "resolved": "Georgia",
+          "size": "52px",
+          "weight": "700",
+          "letterSpacing": "-1.3px",
+          "transform": "none"
+        },
+        {
+          "selector": ".rule h3",
+          "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+          "resolved": "Georgia",
+          "size": "24px",
+          "weight": "700",
+          "letterSpacing": "-0.6px",
+          "transform": "none"
+        }
+      ],
+      "reading": [
+        {
+          "selector": ".guide-standfirst",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "21px",
+          "weight": "400",
+          "letterSpacing": "normal",
+          "transform": "none"
+        },
+        {
+          "selector": ".step-copy p",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "15.5px",
+          "weight": "400",
+          "letterSpacing": "normal",
+          "transform": "none"
+        }
+      ],
+      "labels": [
+        {
+          "selector": ".guide-byline",
+          "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+          "resolved": "Segoe UI",
+          "size": "9.5px",
+          "weight": "600",
+          "letterSpacing": "1.33px",
+          "transform": "uppercase"
+        }
+      ]
+    },
+    "display": [
+      {
+        "selector": ".hero-title",
+        "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+        "resolved": "Georgia",
+        "size": "138px",
+        "weight": "700",
+        "letterSpacing": "-8.004px",
+        "transform": "none"
+      },
+      {
+        "selector": ".entry-title",
+        "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+        "resolved": "Georgia",
+        "size": "29px",
+        "weight": "700",
+        "letterSpacing": "-0.812px",
+        "transform": "none"
+      },
+      {
+        "selector": ".index-title",
+        "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+        "resolved": "Georgia",
+        "size": "48px",
+        "weight": "700",
+        "letterSpacing": "-1.68px",
+        "transform": "none"
+      },
+      {
+        "selector": ".colophon-word",
+        "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+        "resolved": "Georgia",
+        "size": "44px",
+        "weight": "700",
+        "letterSpacing": "-1.76px",
+        "transform": "none"
+      },
+      {
+        "selector": ".dossier-title",
+        "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+        "resolved": "Georgia",
+        "size": "94px",
+        "weight": "700",
+        "letterSpacing": "-4.7px",
+        "transform": "none"
+      },
+      {
+        "selector": ".guide-hero h1",
+        "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+        "resolved": "Georgia",
+        "size": "112px",
+        "weight": "700",
+        "letterSpacing": "-6.16px",
+        "transform": "none"
+      },
+      {
+        "selector": ".guide-notes-head h2",
+        "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+        "resolved": "Georgia",
+        "size": "52px",
+        "weight": "700",
+        "letterSpacing": "-1.3px",
+        "transform": "none"
+      },
+      {
+        "selector": ".rule h3",
+        "family": "Georgia, \"Iowan Old Style\", \"Palatino Linotype\", \"Book Antiqua\", \"Times New Roman\", serif",
+        "resolved": "Georgia",
+        "size": "24px",
+        "weight": "700",
+        "letterSpacing": "-0.6px",
+        "transform": "none"
+      }
+    ],
+    "reading": [
+      {
+        "selector": ".hero-lede > p",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "19.44px",
+        "weight": "400",
+        "letterSpacing": "normal",
+        "transform": "none"
+      },
+      {
+        "selector": ".entry-desc",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "13.5px",
+        "weight": "400",
+        "letterSpacing": "normal",
+        "transform": "none"
+      },
+      {
+        "selector": ".dossier-copy",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "16.5px",
+        "weight": "400",
+        "letterSpacing": "normal",
+        "transform": "none"
+      },
+      {
+        "selector": ".form-intro",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "12.5px",
+        "weight": "400",
+        "letterSpacing": "normal",
+        "transform": "none"
+      },
+      {
+        "selector": ".guide-standfirst",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "21px",
+        "weight": "400",
+        "letterSpacing": "normal",
+        "transform": "none"
+      },
+      {
+        "selector": ".step-copy p",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "15.5px",
+        "weight": "400",
+        "letterSpacing": "normal",
+        "transform": "none"
+      }
+    ],
+    "labels": [
+      {
+        "selector": ".eyebrow",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "10px",
+        "weight": "600",
+        "letterSpacing": "1.8px",
+        "transform": "uppercase"
+      },
+      {
+        "selector": ".filter-label",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "9px",
+        "weight": "600",
+        "letterSpacing": "1.53px",
+        "transform": "uppercase"
+      },
+      {
+        "selector": ".entry-topic",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "9px",
+        "weight": "600",
+        "letterSpacing": "1.53px",
+        "transform": "uppercase"
+      },
+      {
+        "selector": ".colophon-grid dt",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "8.5px",
+        "weight": "600",
+        "letterSpacing": "1.275px",
+        "transform": "uppercase"
+      },
+      {
+        "selector": ".fact-row dt",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "8.5px",
+        "weight": "600",
+        "letterSpacing": "1.275px",
+        "transform": "uppercase"
+      },
+      {
+        "selector": ".form-kicker",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "8.5px",
+        "weight": "600",
+        "letterSpacing": "1.36px",
+        "transform": "uppercase"
+      },
+      {
+        "selector": ".guide-byline",
+        "family": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif",
+        "resolved": "Segoe UI",
+        "size": "9.5px",
+        "weight": "600",
+        "letterSpacing": "1.33px",
+        "transform": "uppercase"
+      }
+    ],
+    "displayAvailable": true,
+    "readingAvailable": true,
+    "noMonoChrome": true,
+    "bodyFont": "\"Segoe UI\", \"Helvetica Neue\", system-ui, -apple-system, Arial, sans-serif"
+  },
+  "syntheticContent": [
+    {
+      "name": "Synthetic long unbroken entry title, topic and uint64-scale pool",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "boxes": [
+        {
+          "selector": ".entry-stack > li:nth-child(2) .entry",
+          "clientWidth": 360,
+          "scrollWidth": 360,
+          "left": 15,
+          "right": 375,
+          "width": 360,
+          "scrollOverflow": false,
+          "contentOutsideBox": false,
+          "overflowX": "visible",
+          "overflowWrap": "normal"
+        },
+        {
+          "selector": ".entry-stack > li:nth-child(2) .entry-title",
+          "clientWidth": 310,
+          "scrollWidth": 310,
+          "left": 65,
+          "right": 375,
+          "width": 310,
+          "scrollOverflow": false,
+          "contentOutsideBox": false,
+          "overflowX": "visible",
+          "overflowWrap": "anywhere"
+        },
+        {
+          "selector": ".entry-stack > li:nth-child(2) .entry-pool",
+          "clientWidth": 265,
+          "scrollWidth": 265,
+          "left": 65,
+          "right": 329.875,
+          "width": 264.875,
+          "scrollOverflow": false,
+          "contentOutsideBox": false,
+          "overflowX": "visible",
+          "overflowWrap": "normal"
+        },
+        {
+          "selector": ".entry-stack > li:nth-child(2) .entry-topic",
+          "clientWidth": 310,
+          "scrollWidth": 310,
+          "left": 65,
+          "right": 375,
+          "width": 310,
+          "scrollOverflow": false,
+          "contentOutsideBox": false,
+          "overflowX": "visible",
+          "overflowWrap": "anywhere"
+        }
+      ]
+    },
+    {
+      "name": "Synthetic long multilingual dossier title",
+      "viewport": 390,
+      "scrollWidth": 390,
+      "boxes": [
+        {
+          "selector": ".dossier",
+          "clientWidth": 360,
+          "scrollWidth": 360,
+          "left": 15,
+          "right": 375,
+          "width": 360,
+          "scrollOverflow": false,
+          "contentOutsideBox": false,
+          "overflowX": "visible",
+          "overflowWrap": "normal"
+        },
+        {
+          "selector": ".dossier-title",
+          "clientWidth": 360,
+          "scrollWidth": 360,
+          "left": 15,
+          "right": 375,
+          "width": 360,
+          "scrollOverflow": false,
+          "contentOutsideBox": false,
+          "overflowX": "visible",
+          "overflowWrap": "anywhere"
+        }
+      ]
+    },
+    {
+      "name": "Synthetic long unbroken topic filter",
+      "viewport": 390,
+      "documentWidth": 390,
+      "rowLeft": 15,
+      "rowRight": 375,
+      "rowScrolls": true,
+      "rowOverflowX": "auto",
+      "barWidth": 360
+    }
+  ],
+  "screenshots": [
+    "settiva-edition-guide.png",
+    "settiva-edition-desktop.png",
+    "settiva-edition-dossier.png",
+    "settiva-edition-forced-colors.png",
+    "settiva-edition-touch-dossier.png",
+    "settiva-edition-touch-review.png",
+    "settiva-edition-synthetic-entry.png",
+    "settiva-edition-synthetic-dossier.png",
+    "settiva-edition-synthetic-filter.png"
+  ],
+  "clearance": [
+    {
+      "width": 320,
+      "documentWidth": 320,
+      "footerTop": 262,
+      "footerBottom": 720,
+      "guideBottom": 208,
+      "scrollY": 2615,
+      "scrollHeight": 3335,
+      "viewportHeight": 720
+    },
+    {
+      "width": 390,
+      "documentWidth": 390,
+      "footerTop": 417,
+      "footerBottom": 844,
+      "guideBottom": 363,
+      "scrollY": 2117,
+      "scrollHeight": 2961,
+      "viewportHeight": 844
+    },
+    {
+      "width": 768,
+      "documentWidth": 768,
+      "footerTop": 746,
+      "footerBottom": 1024,
+      "guideBottom": 684,
+      "scrollY": 1338,
+      "scrollHeight": 2362,
+      "viewportHeight": 1024
+    },
+    {
+      "width": 1440,
+      "documentWidth": 1440,
+      "footerTop": 710,
+      "footerBottom": 1000,
+      "guideBottom": 614,
+      "scrollY": 1615,
+      "scrollHeight": 2615,
+      "viewportHeight": 1000
+    },
+    {
+      "width": 1920,
+      "documentWidth": 1920,
+      "footerTop": 790,
+      "footerBottom": 1080,
+      "guideBottom": 694,
+      "scrollY": 1535,
+      "scrollHeight": 2615,
+      "viewportHeight": 1080
+    }
+  ],
+  "errors": [],
+  "failedRequests": [],
+  "blockedExternalRequests": [],
+  "scope": "Local Chromium emulation; cold browser context, no CPU or network throttling; no real-device or field-performance claim. Synthetic DOM content is not production data.",
+  "mobile": {
+    "width": 390,
+    "height": 844,
+    "maxTouchPoints": 1,
+    "coarsePointer": true,
+    "hover": false
+  },
+  "download": {
+    "suggestedFilename": "settiva-bounty-brief.md",
+    "bytes": 416,
+    "exactOneLamport": true,
+    "validation": "Brief URI must be a public https://, http:// or ipfs:// URI."
+  },
+  "result": "passed"
+}

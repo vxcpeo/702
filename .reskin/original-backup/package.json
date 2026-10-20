@@ -1,0 +1,31 @@
+{
+    "name": "settiva",
+    "private": true,
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "sync:mirror": "node scripts/sync-mirror.mjs",
+        "build:all": "npm run build && npm run sync:mirror && npm --prefix a702 run build",
+        "check:logic": "node --test scripts/check-solana-logic.mjs scripts/check-solana-client.mjs",
+        "check:site": "node scripts/check-site.mjs",
+        "check:ui": "node scripts/check-ui.mjs",
+        "check:experience": "node scripts/check-experience.mjs"
+    },
+    "dependencies": {
+        "@solana/web3.js": "^1.99.0",
+        "@vitejs/plugin-vue": "latest",
+        "buffer": "6.0.3",
+        "vite": "latest",
+        "vue": "latest"
+    },
+    "devDependencies": {
+        "@axe-core/playwright": "^4.13.0",
+        "playwright": "^1.63.0"
+    },
+    "overrides": {
+        "jayson": "5.0.0"
+    }
+}

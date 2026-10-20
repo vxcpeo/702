@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 1,
+  "generatedAt": "2026-10-19T19:03:52.251Z",
+  "project": {
+    "root": "E:/workspace/chuangye/solana/702/website",
+    "name": "settiva",
+    "baseUrl": "http://127.0.0.1:4931/"
+  },
+  "passed": true,
+  "thresholds": {
+    "maxStructureSimilarity": 0.5,
+    "maxLandmarkSimilarity": 0.68,
+    "maxClassOverlap": 0.1,
+    "minAccentDistance": 30,
+    "maxContrastFailures": 0,
+    "maxAxeSerious": 0
+  },
+  "gates": {
+    "sourceContract": {
+      "passed": true,
+      "issues": [],
+      "warnings": [],
+      "hash": "1ace2a9a98344cef700cbc5fd5b92afa11cb08850d05343181c906b18f6cdb25"
+    },
+    "skeleton": {
+      "passed": true,
+      "original": {
+        "id": "orbital",
+        "family": "spatial",
+        "traits": {
+          "sidebar": true,
+          "topbar": false,
+          "cards": true,
+          "hero": true,
+          "table": false,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": false,
+          "sticky": true,
+          "orbital": true,
+          "terminal": true,
+          "bento": false,
+          "ticker": false,
+          "gallery": false
+        }
+      },
+      "current": {
+        "id": "ticker-stage",
+        "family": "linear",
+        "traits": {
+          "sidebar": false,
+          "topbar": false,
+          "cards": true,
+          "hero": false,
+          "table": false,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": false,
+          "sticky": true,
+          "orbital": false,
+          "terminal": false,
+          "bento": false,
+          "ticker": true,
+          "gallery": false
+        }
+      },
+      "accent": {
+        "original": "#ad3a24",
+        "current": "#9945ff",
+        "deltaE": 119.58,
+        "min": 30
+      }
+    },
+    "pages": [
+      {
+        "route": "/",
+        "passed": true,
+        "skipped": false,
+        "failures": [],
+        "warnings": [
+          "aria attribute added: aria-label=Toggle navigation"
+        ],
+        "structure": {
+          "fingerprintSimilarity": 0.269,
+          "landmarkSimilarity": 0.667,
+          "classOverlap": 0.022
+        },
+        "content": {
+          "missing": [],
+          "extra": [],
+          "numeric": {
+            "baseline": {
+              "tokens": 14,
+              "total": 29
+            },
+            "current": {
+              "tokens": 14,
+              "total": 29
+            }
+          }
+        },
+        "usability": {
+          "passed": true,
+          "failures": [],
+          "warnings": [],
+          "axe": {
+            "serious": [],
+            "moderate": []
+          }
+        },
+        "screenshots": {
+          "desktop": "current/home-desktop.png",
+          "mobile": "current/home-mobile.png"
+        }
+      }
+    ]
+  },
+  "failures": [],
+  "warnings": [
+    "/: aria attribute added: aria-label=Toggle navigation"
+  ],
+  "baseline": {
+    "generatedAt": "2026-10-19T18:48:56.289Z",
+    "routes": [
+      "/"
+    ]
+  }
+}
