@@ -1,11 +1,11 @@
-# Reskin verification — PASS
+# Reskin verification — FAIL
 
-Generated: 2026-10-21T13:38:44.489Z
+Generated: 2026-10-21T13:58:37.376Z
 
 - Project: **ledgiva**
 - URL: http://127.0.0.1:4317/
 - Original skeleton: `document-flow` (editorial)
-- New skeleton: `gallery-scroll` (spatial)
+- New skeleton: `marketing-stack` (editorial)
 - Accent: #40b3ff -> #8f4b00 (105.32 ΔE; min 30)
 - Source contract: intact (`5ff8d84d0492`)
 
@@ -15,7 +15,7 @@ Generated: 2026-10-21T13:38:44.489Z
 
 ## Blocking issues
 
-- None.
+- source: archetype still marketing-stack (editorial); expected a different skeleton family
 
 ## Warnings
 
