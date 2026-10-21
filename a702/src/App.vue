@@ -1151,14 +1151,14 @@ onBeforeUnmount(() => {
       </div>
     </dialog>
 
-    <div v-if="walletError && !modalOpen" class="press-banner is-fault" role="alert">
+    <div v-if="walletError && !modalOpen" class="press-chit is-fault" role="alert">
       <UiIcon name="info" :size="17" />
       <p>{{ walletError }}</p>
       <button class="ghost-key" type="button" aria-label="Dismiss wallet error" @click="walletError = ''">
         <UiIcon name="close" :size="15" />
       </button>
     </div>
-    <div v-if="notice && !modalOpen && !walletError && !selected" class="press-banner" role="status">
+    <div v-if="notice && !modalOpen && !walletError && !selected" class="press-chit" role="status">
       <UiIcon name="info" :size="17" />
       <p>
         {{ notice
@@ -1169,7 +1169,7 @@ onBeforeUnmount(() => {
           rel="noopener noreferrer"
           >View confirmed transaction ↗</a>
       </p>
-      <button v-if="canUndoSavedChange" class="press-link banner-undo" type="button" @click="undoSavedChange">
+      <button v-if="canUndoSavedChange" class="press-link chit-undo" type="button" @click="undoSavedChange">
         Undo
       </button>
       <button class="ghost-key" type="button" aria-label="Dismiss notification" @click="dismissNotice">

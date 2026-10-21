@@ -2401,7 +2401,7 @@
     background: var(--wash);
   }
 
-  .press-banner {
+  .press-chit {
     position: fixed;
     left: 50%;
     bottom: calc(var(--dock-h) + 34px);
@@ -2419,17 +2419,17 @@
     line-height: 1.5;
   }
 
-  .press-banner.is-fault {
+  .press-chit.is-fault {
     border-color: var(--danger);
     background: #ffeceb;
     color: var(--danger);
   }
 
-  .press-banner p {
+  .press-chit p {
     flex: 1 1 auto;
   }
 
-  .banner-undo {
+  .chit-undo {
     white-space: nowrap;
   }
 
@@ -2632,7 +2632,7 @@
       max-height: calc(100dvh - 6px);
     }
 
-    .press-banner {
+    .press-chit {
       bottom: calc(var(--dock-h) + 22px);
     }
   }

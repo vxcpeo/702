@@ -159,8 +159,8 @@ await page.waitForTimeout(250);
 
 await page.locator('.wallet-tag').click();
 await page.waitForTimeout(400);
-check((await page.locator('.press-banner').count()) === 1, 'connect without a wallet shows the fault toast');
-await page.locator('.press-banner .ghost-key').last().click().catch(() => {});
+check((await page.locator('.press-chit').count()) === 1, 'connect without a wallet shows the fault toast');
+await page.locator('.press-chit .ghost-key').last().click().catch(() => {});
 await page.waitForTimeout(200);
 
 await page.locator('.foot-base .press-link').click();

@@ -1,5 +1,5 @@
 {
-  "base": "http://127.0.0.1:56379/",
+  "base": "http://127.0.0.1:60736/",
   "captures": [
     {
       "label": "01-index-desktop",

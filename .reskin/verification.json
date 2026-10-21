@@ -1,12 +1,12 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-21T13:58:37.376Z",
+  "generatedAt": "2026-10-21T13:59:34.470Z",
   "project": {
     "root": "E:/workspace/chuangye/solana/702/website",
     "name": "ledgiva",
     "baseUrl": "http://127.0.0.1:4317/"
   },
-  "passed": false,
+  "passed": true,
   "thresholds": {
     "maxStructureSimilarity": 0.5,
     "maxLandmarkSimilarity": 0.68,
@@ -31,7 +31,7 @@
       "hash": "5ff8d84d0492f12bab275c7c81b58f4b8ccac51461b83c5fe0a9ec5860a5befe"
     },
     "skeleton": {
-      "passed": false,
+      "passed": true,
       "original": {
         "id": "document-flow",
         "family": "editorial",
@@ -54,13 +54,13 @@
         }
       },
       "current": {
-        "id": "marketing-stack",
-        "family": "editorial",
+        "id": "gallery-scroll",
+        "family": "spatial",
         "traits": {
           "sidebar": false,
           "topbar": false,
           "cards": true,
-          "hero": true,
+          "hero": false,
           "table": false,
           "grid": true,
           "tabs": true,
@@ -135,9 +135,7 @@
       }
     ]
   },
-  "failures": [
-    "source: archetype still marketing-stack (editorial); expected a different skeleton family"
-  ],
+  "failures": [],
   "warnings": [
     "attributes: \"name=plus\" count increased 9 -> 10",
     "bindings: added \"attr:'#' + item.id\"",

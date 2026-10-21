@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "current",
-  "generatedAt": "2026-10-21T13:58:32.646Z",
+  "generatedAt": "2026-10-21T13:59:29.950Z",
   "baseUrl": "http://127.0.0.1:4317/",
   "browser": {
     "executablePath": "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright\\chromium-1247\\chrome-win64\\chrome.exe",
@@ -1194,7 +1194,7 @@
           {
             "tag": "header",
             "role": "",
-            "top": -23,
+            "top": -12,
             "left": 0,
             "width": 1440,
             "height": 90
@@ -1202,7 +1202,7 @@
           {
             "tag": "main",
             "role": "",
-            "top": 67,
+            "top": 78,
             "left": 0,
             "width": 1440,
             "height": 2900
@@ -1210,7 +1210,7 @@
           {
             "tag": "nav",
             "role": "",
-            "top": 95,
+            "top": 106,
             "left": 58,
             "width": 1325,
             "height": 136
@@ -1218,7 +1218,7 @@
           {
             "tag": "footer",
             "role": "",
-            "top": 2967,
+            "top": 2978,
             "left": 0,
             "width": 1440,
             "height": 430
