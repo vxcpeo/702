@@ -1,32 +1,32 @@
-# Reskin art direction — Spectrum Terminal
+# Reskin art direction — Cosmos Orbit
 
 > Selected automatically. Do not ask the user to confirm or choose another direction.
 
-- **Style DNA:** `solana-spectrum` (performance-brutalist)
-- **Skeleton:** `ticker-stage` (linear)
-- **Seed:** `165a5e063d61554915751e2526c885648008286758d5bf702942b60b2ff4f6fc`
-- **Source DNA:** [https://solana.com](https://solana.com)
-- **Live sampled:** yes — https://solana.com (2266 ms)
-- **Original:** orbital / dark / accent #ad3a24
+- **Style DNA:** `cosmos-orbit` (spatial-futurist)
+- **Skeleton:** `documentary` (editorial)
+- **Seed:** `6c5d3f5a3d1dbc5938a93066b331abfa88767f748e8e574f8a825e71a6ab741f`
+- **Source DNA:** [https://cosmos.network](https://cosmos.network)
+- **Live sampled:** yes — https://cosmos.network (3415 ms)
+- **Original:** ticker-stage / dark / accent #9945ff
 
 ## Why this direction
 
-The selector sampled 9/10 blockchain references, scored every direction for perceptual distance from the original accent (#ad3a24) and background (#f4f0e7), added a deterministic seed jitter, and chose Spectrum Terminal because it is 120 ΔE away from the original accent and pairs with Ticker Stage, a linear skeleton rather than the original orbital.
+The selector sampled 4/10 blockchain references, scored every direction for perceptual distance from the original accent (#9945ff) and background (#000000), added a deterministic seed jitter, and chose Cosmos Orbit because it is 85 ΔE away from the original accent and pairs with Documentary Ledger, a editorial skeleton rather than the original ticker-stage.
 
 ## Live reference sampling
 
 | Style | URL | Result | Accent sampled | Ground sampled |
 |---|---|---|---|---|
-| ethereum-paper | https://ethereum.org | ok (1161 ms) | #0c5681 | #ffffff |
-| base-cobalt | https://www.base.org | ok (1464 ms) | #0000ff | #dde3e9 |
-| polygon-agora | https://polygon.technology | ok (1541 ms) | #670de5 | #000000 |
-| solana-spectrum | https://solana.com | ok (2266 ms) | #9945ff | #000000 |
+| polygon-agora | https://polygon.technology | ok (2558 ms) | #670de5 | #000000 |
+| base-cobalt | https://www.base.org | ok (3089 ms) | #0000ff | #dde3e9 |
+| solana-spectrum | https://solana.com | failed: timeout | — | — |
+| ethereum-paper | https://ethereum.org | failed: timeout | — | — |
+| aave-abyss | https://aave.com | failed: fetch failed | — | — |
 | arbitrum-signal | https://arbitrum.io | failed: HTTP 403 | — | — |
-| aave-abyss | https://aave.com | ok (1077 ms) | #ff0000 | #000000 |
-| uniswap-bubblegum | https://uniswap.org | ok (1394 ms) | — | #ffffff |
-| optimism-poster | https://www.optimism.io | ok (2188 ms) | #ff0421 | #fafaf9 |
-| cosmos-orbit | https://cosmos.network | ok (1914 ms) | #40b3ff | #000000 |
-| sui-tidal | https://sui.io | ok (2047 ms) | #298dff | #ffffff |
+| optimism-poster | https://www.optimism.io | failed: timeout | — | — |
+| uniswap-bubblegum | https://uniswap.org | failed: timeout | — | — |
+| cosmos-orbit | https://cosmos.network | ok (3415 ms) | #40b3ff | #000000 |
+| sui-tidal | https://sui.io | ok (3440 ms) | #298dff | #ffffff |
 
 Live sampling is evidence, not a copy target. Never download or reuse a reference site's logo, imagery, copy, or code. Use only the abstract tokens below.
 
@@ -34,68 +34,68 @@ Live sampling is evidence, not a copy target. Never download or reuse a referenc
 
 | Candidate | Score | Accent ΔE from original | Layout | Live |
 |---|---:|---:|---|---|
-| Spectrum Terminal | 0.9624 | 119.6 | ticker-stage | yes |
-| Cobalt Blueprint | 0.9252 | 150.3 | command-rail | yes |
-| Signal Navy | 0.8918 | 97.6 | command-rail | no |
-| Paper Protocol | 0.8912 | 85.1 | documentary | yes |
-| Agora Violet | 0.8866 | 118.7 | documentary | yes |
-| Abyss Liquidity | 0.8671 | 46.4 | command-rail | yes |
-| Cosmos Orbit | 0.8463 | 104.4 | documentary | yes |
-| Poster Optimism | 0.7152 | 35.6 | ticker-stage | yes |
-| Tidal Sui | 0.5089 | 107.3 | split-stage | yes |
-| Bubblegum Exchange | 0.4755 | 40.5 | split-stage | yes |
+| Cosmos Orbit | 0.8968 | 85.1 | documentary | yes |
+| Bubblegum Exchange | 0.8896 | 84 | bento-canvas | no |
+| Poster Optimism | 0.8412 | 120.4 | documentary | no |
+| Signal Navy | 0.8366 | 90.8 | bento-canvas | no |
+| Paper Protocol | 0.8198 | 49.1 | documentary | no |
+| Spectrum Terminal | 0.7769 | 56.4 | gallery-scroll | no |
+| Abyss Liquidity | 0.774 | 76.4 | orbital | no |
+| Tidal Sui | 0.7448 | 53 | split-stage | yes |
+| Cobalt Blueprint | 0.6346 | 35.6 | split-stage | yes |
+| Agora Violet | 0.3654 | 1.7 | documentary | yes |
 
 ## Skeleton brief
 
-**Ticker Stage** — horizontal ticker band as primary navigation and status; full-width horizontal sections stacked like a broadcast; oversized figures with hard rules; no sidebar and no conventional top app bar; content reveals in horizontal beats.
+**Documentary Ledger** — masthead instead of app bar; serif or high-contrast display voice with running-text rhythm; numbered sections and marginalia; tables styled as ledger rules, not cards; navigation is an index line under the masthead.
 
-Navigation: A ticker strip under the wordmark; route names repeat as short labels; active route is marked by a moving underline. Keyboard arrows move the ticker.
+Navigation: Masthead with the brand as a wordmark, route names as an index line, and a thin rule. No pills, no filled app bar, no sidebar.
 
 Structure:
-1. wordmark + ticker strip
-1. full-bleed statement band
-1. three horizontal data beats
-1. ledger band
-1. status footer
+1. masthead with issue/date line
+1. index line of routes
+1. hero statement spanning 9 columns
+1. two-column body: 7-column ledger + 3-column marginalia
+1. footnotes and colophon
 
-Content mapping: Each metric becomes a horizontal beat with a huge figure and a small caption. Tables become full-width ledger bands. Forms become a single horizontal strip with inline labels.
+Content mapping: Turn dashboard metrics into a lede paragraph with displayed figures. Tables become ledger rows with rules and tabular numerals. Forms become a typeset questionnaire. Keep every label and value; restyle hierarchy only.
 
-Recipe: `.ticker{display:flex;gap:0;overflow:auto;border-block:1px solid var(--line);white-space:nowrap}.ticker a{padding:14px 22px;border-right:1px solid var(--line)}.beat{display:grid;grid-template-columns:minmax(140px,.6fr) minmax(0,2fr);gap:24px;padding:clamp(24px,4vw,56px) 0;border-bottom:1px solid var(--line)}.figure{font-size:clamp(2.4rem,6vw,6rem);line-height:.9}`
+Recipe: `.masthead{display:grid;grid-template-columns:1fr auto;align-items:end;border-bottom:2px solid var(--ink);padding-bottom:12px}.index{display:flex;gap:28px;border-bottom:1px solid var(--line);padding:12px 0;font:500 12px/1 var(--font-mono);letter-spacing:.12em;text-transform:uppercase}.body{display:grid;grid-template-columns:minmax(0,7fr) minmax(220px,3fr);gap:clamp(24px,5vw,72px)}.lede{font-size:clamp(2rem,4vw,4.6rem);line-height:.98}`
 
-Risks: horizontal overflow must be intentional and keyboard reachable; ticker must not trap focus
+Risks: serif font alone is not a skeleton change; dense dashboards need tabular numerals and generous line-height
 
 ## Design tokens
 
 ```css
 :root {
   --bg: #000000;
-  --surface: #0B0B0C;
-  --surface-alt: #161618;
-  --ink: #FFFFFF;
-  --muted: #9B9B9F;
-  --accent: #9945ff;
-  --accent-safe: #9945ff;
-  --accent-2: #14F195;
-  --line: #29292D;
-  --success: #14F195;
-  --danger: #FF5C7A;
-  --warning: #FFD166;
+  --surface: #12121E;
+  --surface-alt: #191927;
+  --ink: #F5F4FA;
+  --muted: #9A98AD;
+  --accent: #40b3ff;
+  --accent-safe: #40b3ff;
+  --accent-2: #A78BFA;
+  --line: #262536;
+  --success: #5CE1A0;
+  --danger: #FF8A8A;
+  --warning: #F2C94C;
 
-  --font-display: "Arial Narrow", "Helvetica Neue", "Segoe UI", sans-serif;
-  --font-body: "Helvetica Neue", "Segoe UI", sans-serif;
-  --font-mono: "IBM Plex Mono", "Cascadia Mono", ui-monospace, monospace;
-  --display-weight: 800;
-  --display-tracking: -0.055em;
-  --label-tracking: 0.2em;
+  --font-display: "Century Gothic", "Futura", "Segoe UI", sans-serif;
+  --font-body: "Segoe UI", "Helvetica Neue", sans-serif;
+  --font-mono: "Cascadia Mono", ui-monospace, monospace;
+  --display-weight: 400;
+  --display-tracking: 0.02em;
+  --label-tracking: 0.24em;
 
-  --radius-sm: 0px;
-  --radius-md: 2px;
-  --radius-lg: 4px;
+  --radius-sm: 999px;
+  --radius-md: 999px;
+  --radius-lg: 28px;
   --border: 1px solid var(--line);
-  --shadow: 0 0 40px rgba(153, 69, 255, 0.24);
+  --shadow: 0 0 60px rgba(110, 123, 255, 0.16);
 
-  --motion-duration: 120ms;
-  --motion-ease: cubic-bezier(.2,.9,.1,1);
+  --motion-duration: 420ms;
+  --motion-ease: cubic-bezier(.16,1,.3,1);
   --space-1: clamp(4px, .35vw, 6px);
   --space-2: clamp(8px, .7vw, 12px);
   --space-3: clamp(14px, 1.2vw, 20px);
@@ -109,18 +109,18 @@ Risks: horizontal overflow must be intentional and keyboard reachable; ticker mu
 
 ## Component grammar
 
-- Surface: 1px solid var(--line); radius 2px; shadow 0 0 40px rgba(153, 69, 255, 0.24).
-- Type: display **"Arial Narrow", "Helvetica Neue", "Segoe UI", sans-serif** at weight 800, tracking -0.055em; body **"Helvetica Neue", "Segoe UI", sans-serif**; numerals and micro-labels **"IBM Plex Mono", "Cascadia Mono", ui-monospace, monospace**.
-- Texture: spectrum gradient shards, scanline grain, status LEDs, ticker strips.
-- Motion: fast, 120ms, cubic-bezier(.2,.9,.1,1). Always wrap non-essential motion in `@media (prefers-reduced-motion: no-preference)`.
-- Density: dense. Keep body text >= 14px and body contrast >= 4.5:1.
+- Surface: 1px solid var(--line); radius 999px; shadow 0 0 60px rgba(110, 123, 255, 0.16).
+- Type: display **"Century Gothic", "Futura", "Segoe UI", sans-serif** at weight 400, tracking 0.02em; body **"Segoe UI", "Helvetica Neue", sans-serif**; numerals and micro-labels **"Cascadia Mono", ui-monospace, monospace**.
+- Texture: orbital rings, star fields, thin constellation lines, radial glows.
+- Motion: slow-orbit, 420ms, cubic-bezier(.16,1,.3,1). Always wrap non-essential motion in `@media (prefers-reduced-motion: no-preference)`.
+- Density: airy. Keep body text >= 14px and body contrast >= 4.5:1.
 - Use `--accent-safe` for text and icons on `--bg`; use `--accent` for fills and large shapes.
 
 ## Originality guard
 
 The replacement must satisfy all of these:
 
-1. The source inventory archetype is `orbital`; the new skeleton is `ticker-stage`. Do not fall back to the old shell during implementation.
+1. The source inventory archetype is `ticker-stage`; the new skeleton is `documentary`. Do not fall back to the old shell during implementation.
 2. Do not reuse any original class name, CSS selector, design token name, or original accent family.
 3. Rewrite templates, not only CSS. Every route must visibly use the new skeleton.
 4. Keep every token in `.reskin/content-contract.json`; move it, never rewrite it.
@@ -128,4 +128,4 @@ The replacement must satisfy all of these:
 
 ## Commit statement
 
-Use this sentence in the final report: "The UI was rebuilt around Spectrum Terminal / Ticker Stage; the original orbital shell and palette were removed while the content contract stayed byte-for-byte intact."
+Use this sentence in the final report: "The UI was rebuilt around Cosmos Orbit / Documentary Ledger; the original ticker-stage shell and palette were removed while the content contract stayed byte-for-byte intact."

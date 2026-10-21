@@ -6,10 +6,10 @@ import { chromium } from 'playwright';
 
 const output = fileURLToPath(new URL('../output/playwright/', import.meta.url));
 const defaultOrigin = 'http://127.0.0.1:42705';
-const briefFile = 'settiva-bounty-brief.md';
+const briefFile = 'trovane-bounty-brief.md';
 
 /**
- * Independent experience checks for the Settiva paper edition.
+ * Independent experience checks for the Trovane paper edition.
  *
  * Covers touch behaviour, reduced motion, forced colours, long-content
  * resilience, the draft download and the two system voices (Georgia for
@@ -225,12 +225,12 @@ export async function runExperienceQa(browser, url = `${defaultOrigin}/`) {
     assert(report.typography.reading.every(entry => !entry.missing && /Segoe UI/.test(entry.family)), 'Every reading paragraph resolves to Segoe UI');
     assert(report.typography.labels.every(entry => !entry.missing && /Segoe UI/.test(entry.family)), 'Every label resolves to Segoe UI');
     assert(report.typography.noMonoChrome, 'No interface chrome may resolve to a monospace face');
-    await capture(desktop, 'settiva-edition-guide.png', true);
+    await capture(desktop, 'trovane-edition-guide.png', true);
     await openPage(desktop, 'Index', false);
-    await capture(desktop, 'settiva-edition-desktop.png', true);
+    await capture(desktop, 'trovane-edition-desktop.png', true);
     await desktop.locator('.entry-open').first().click();
     await desktop.waitForTimeout(300);
-    await capture(desktop, 'settiva-edition-dossier.png', true);
+    await capture(desktop, 'trovane-edition-dossier.png', true);
     report.flows.push('Desktop: Georgia carries display headings, Segoe UI carries reading copy and labels, no web font loads and no chrome is monospace');
 
     // Return to the index for preference and forced-colour checks.
@@ -282,7 +282,7 @@ export async function runExperienceQa(browser, url = `${defaultOrigin}/`) {
     assert.notEqual(report.preferences.forcedColors.section.borderStyle, 'none', 'The ledger rule survives forced colours');
     assert.equal(report.preferences.forcedColors.edition?.boxShadow, 'none', 'Paper shadows are dropped under forced colours');
     assert(!/rgb\(30, 26, 21\)|rgb\(173, 58, 36\)/.test(report.preferences.forcedColors.button.background), 'Controls hand their background to the system palette');
-    await capture(desktop, 'settiva-edition-forced-colors.png', true);
+    await capture(desktop, 'trovane-edition-forced-colors.png', true);
     await desktop.emulateMedia({ forcedColors: 'none', reducedMotion: 'no-preference' });
 
     // -- Touch mobile -------------------------------------------------------
@@ -314,7 +314,7 @@ export async function runExperienceQa(browser, url = `${defaultOrigin}/`) {
     await mobile.locator('.entry-open').first().tap();
     await mobile.locator('.dossier').waitFor();
     assert.equal(await mobile.locator('.dossier-title').innerText(), savedTitle);
-    await capture(mobile, 'settiva-edition-touch-dossier.png');
+    await capture(mobile, 'trovane-edition-touch-dossier.png');
     await mobile.locator('.back-link').tap();
     assert.equal(await mobile.locator('.entry-title').innerText(), savedTitle);
     assert.match(await mobile.locator('.index-title').innerText(), /Saved briefs/, 'The Saved page stays selected');
@@ -340,17 +340,17 @@ export async function runExperienceQa(browser, url = `${defaultOrigin}/`) {
     await mobile.locator('.review-mission').waitFor();
     assert.match(await mobile.locator('.review-mission').innerText(), /0\.000000001 testnet SOL/);
     assert.match(await mobile.locator('.create-progress .is-on').innerText(), /02.*REVIEW & FUND/i);
-    await capture(mobile, 'settiva-edition-touch-review.png');
+    await capture(mobile, 'trovane-edition-touch-review.png');
     const downloadPromise = mobile.waitForEvent('download');
     await mobile.getByRole('button', { name: 'Download brief', exact: true }).tap();
     const download = await downloadPromise;
     assert.equal(download.suggestedFilename(), briefFile);
     const downloadedBrief = await readFile(await download.path(), 'utf8');
-    assert.match(downloadedBrief, /Settiva/);
+    assert.match(downloadedBrief, /Trovane/);
     assert.match(downloadedBrief, /0\.000000001 testnet SOL/);
     assert.match(downloadedBrief, /no intended monetary value/);
     report.download = { suggestedFilename: download.suggestedFilename(), bytes: Buffer.byteLength(downloadedBrief), exactOneLamport: true, validation };
-    report.flows.push('Touch mobile: draft, recover from an invalid URL, review the exact one-lamport pool, and download a Settiva markdown draft');
+    report.flows.push('Touch mobile: draft, recover from an invalid URL, review the exact one-lamport pool, and download a Trovane markdown draft');
     await mobile.getByRole('button', { name: 'Close dialog', exact: true }).tap();
 
     // -- Synthetic long content ---------------------------------------------
@@ -369,12 +369,12 @@ export async function runExperienceQa(browser, url = `${defaultOrigin}/`) {
       '.entry-stack > li:nth-child(2) .entry-topic',
     ]);
     await mobile.locator('.entry-stack > li:nth-child(2) .entry-open').scrollIntoViewIfNeeded();
-    await capture(mobile, 'settiva-edition-synthetic-entry.png');
+    await capture(mobile, 'trovane-edition-synthetic-entry.png');
     await mobile.locator('.entry-stack > li:nth-child(2) .entry-open').tap();
     await mobile.locator('.dossier').waitFor();
     await mobile.locator('.dossier-title').evaluate(el => { el.dataset.qaSyntheticContent = 'true'; el.textContent = 'MultilingualResearchResearch'.repeat(18); });
     await fit(mobile, 'Synthetic long multilingual dossier title', ['.dossier', '.dossier-title']);
-    await capture(mobile, 'settiva-edition-synthetic-dossier.png');
+    await capture(mobile, 'trovane-edition-synthetic-dossier.png');
     await mobile.locator('.back-link').tap();
 
     // Synthetic long filter label. The filter row scrolls inside the index by
@@ -404,7 +404,7 @@ export async function runExperienceQa(browser, url = `${defaultOrigin}/`) {
     assert(filterFit.rowLeft >= 0 && filterFit.rowRight <= filterFit.viewport, 'The filter row stays inside the viewport');
     assert(filterFit.rowScrolls && filterFit.rowOverflowX === 'auto', 'The filter row contains long labels by scrolling in place');
     await mobile.locator('[aria-label="Filter by topic"]').scrollIntoViewIfNeeded();
-    await capture(mobile, 'settiva-edition-synthetic-filter.png');
+    await capture(mobile, 'trovane-edition-synthetic-filter.png');
     await mobile.reload({ waitUntil: 'networkidle' });
     await mobile.locator('.entry-open').first().waitFor();
 
@@ -454,7 +454,7 @@ export async function runExperienceQa(browser, url = `${defaultOrigin}/`) {
     report.failure = error.stack;
     throw error;
   } finally {
-    await writeFile(path.join(output, 'settiva-edition-experience.json'), JSON.stringify(report, null, 2) + '\n');
+    await writeFile(path.join(output, 'trovane-edition-experience.json'), JSON.stringify(report, null, 2) + '\n');
     for (const current of contexts) await current.close();
   }
 }

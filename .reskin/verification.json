@@ -1,10 +1,10 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T19:03:52.251Z",
+  "generatedAt": "2026-10-20T16:26:41.537Z",
   "project": {
     "root": "E:/workspace/chuangye/solana/702/website",
-    "name": "settiva",
-    "baseUrl": "http://127.0.0.1:4931/"
+    "name": "trovane",
+    "baseUrl": "http://127.0.0.1:4317/"
   },
   "passed": true,
   "thresholds": {
@@ -20,38 +20,17 @@
       "passed": true,
       "issues": [],
       "warnings": [],
-      "hash": "1ace2a9a98344cef700cbc5fd5b92afa11cb08850d05343181c906b18f6cdb25"
+      "hash": "e01a6837d0475ea611cbf21414a24ec53ff45c1795e764802d08ad36ade2a00b"
     },
     "skeleton": {
       "passed": true,
       "original": {
-        "id": "orbital",
-        "family": "spatial",
-        "traits": {
-          "sidebar": true,
-          "topbar": false,
-          "cards": true,
-          "hero": true,
-          "table": false,
-          "grid": true,
-          "tabs": true,
-          "modal": true,
-          "charts": false,
-          "sticky": true,
-          "orbital": true,
-          "terminal": true,
-          "bento": false,
-          "ticker": false,
-          "gallery": false
-        }
-      },
-      "current": {
         "id": "ticker-stage",
         "family": "linear",
         "traits": {
           "sidebar": false,
           "topbar": false,
-          "cards": true,
+          "cards": false,
           "hero": false,
           "table": false,
           "grid": true,
@@ -66,10 +45,31 @@
           "gallery": false
         }
       },
+      "current": {
+        "id": "document-flow",
+        "family": "editorial",
+        "traits": {
+          "sidebar": false,
+          "topbar": false,
+          "cards": true,
+          "hero": false,
+          "table": false,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": false,
+          "sticky": true,
+          "orbital": false,
+          "terminal": false,
+          "bento": false,
+          "ticker": false,
+          "gallery": false
+        }
+      },
       "accent": {
-        "original": "#ad3a24",
-        "current": "#9945ff",
-        "deltaE": 119.58,
+        "original": "#9945ff",
+        "current": "#40b3ff",
+        "deltaE": 85.09,
         "min": 30
       }
     },
@@ -80,12 +80,12 @@
         "skipped": false,
         "failures": [],
         "warnings": [
-          "aria attribute added: aria-label=Toggle navigation"
+          "aria attribute added: aria-label=This edition at a glance"
         ],
         "structure": {
-          "fingerprintSimilarity": 0.269,
-          "landmarkSimilarity": 0.667,
-          "classOverlap": 0.022
+          "fingerprintSimilarity": 0.268,
+          "landmarkSimilarity": 0.429,
+          "classOverlap": 0.007
         },
         "content": {
           "missing": [],
@@ -119,10 +119,10 @@
   },
   "failures": [],
   "warnings": [
-    "/: aria attribute added: aria-label=Toggle navigation"
+    "/: aria attribute added: aria-label=This edition at a glance"
   ],
   "baseline": {
-    "generatedAt": "2026-10-19T18:48:56.289Z",
+    "generatedAt": "2026-10-20T16:05:28.577Z",
     "routes": [
       "/"
     ]

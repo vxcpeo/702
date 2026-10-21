@@ -1,4 +1,4 @@
-﻿import { createApp } from 'vue';
+import { createApp } from 'vue';
 import App from './App.vue';
-import './styles/spectrum-deck.css';
+import './styles/meridian-ledger.css';
 createApp(App).mount('#app');

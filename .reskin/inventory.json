@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-19T18:47:06.251Z",
+  "generatedAt": "2026-10-20T16:26:12.384Z",
   "project": {
     "root": "E:/workspace/chuangye/solana/702/website",
-    "name": "settiva",
+    "name": "trovane",
     "vueVersion": "latest",
     "nuxt": false,
     "dependencies": [
@@ -36,8 +36,8 @@
     "staticTextTokens": 568,
     "bindingTokens": 493,
     "eventTokens": 203,
-    "classNames": 283,
-    "colors": 445
+    "classNames": 321,
+    "colors": 469
   },
   "routes": [
     {
@@ -47,21 +47,21 @@
   ],
   "unresolvedRoutes": [],
   "archetype": {
-    "id": "orbital",
-    "family": "spatial",
+    "id": "document-flow",
+    "family": "editorial",
     "traits": {
-      "sidebar": true,
+      "sidebar": false,
       "topbar": false,
       "cards": true,
-      "hero": true,
+      "hero": false,
       "table": false,
       "grid": true,
       "tabs": true,
       "modal": true,
       "charts": false,
       "sticky": true,
-      "orbital": true,
-      "terminal": true,
+      "orbital": false,
+      "terminal": false,
       "bento": false,
       "ticker": false,
       "gallery": false
@@ -71,6 +71,10 @@
     {
       "hex": "#151c25",
       "count": 15
+    },
+    {
+      "hex": "#000000",
+      "count": 14
     },
     {
       "hex": "#10161e",
@@ -89,6 +93,14 @@
       "count": 9
     },
     {
+      "hex": "#f5f4fa",
+      "count": 8
+    },
+    {
+      "hex": "#40b3ff",
+      "count": 6
+    },
+    {
       "hex": "#172319",
       "count": 5
     },
@@ -105,10 +117,6 @@
       "count": 4
     },
     {
-      "hex": "#1e1a15",
-      "count": 4
-    },
-    {
       "hex": "#34505a",
       "count": 4
     },
@@ -118,6 +126,10 @@
     },
     {
       "hex": "#3e5d38",
+      "count": 4
+    },
+    {
+      "hex": "#ff8a8a",
       "count": 4
     },
     {
@@ -157,11 +169,15 @@
       "count": 3
     },
     {
-      "hex": "#000000",
+      "hex": "#00131f",
       "count": 2
     },
     {
       "hex": "#05070c",
+      "count": 2
+    },
+    {
+      "hex": "#08080e",
       "count": 2
     },
     {
@@ -178,22 +194,6 @@
     },
     {
       "hex": "#0a1119",
-      "count": 2
-    },
-    {
-      "hex": "#0b0715",
-      "count": 2
-    },
-    {
-      "hex": "#0b111a",
-      "count": 2
-    },
-    {
-      "hex": "#0c6f68",
-      "count": 2
-    },
-    {
-      "hex": "#0d131a",
       "count": 2
     }
   ],
@@ -222,134 +222,122 @@
   "classNames": [
     "?",
     "account-address",
+    "action-core",
     "action-form",
+    "action-halo",
     "allocation-line",
+    "approval-form",
     "awarded",
-    "back-link",
     "bar",
     "base-cluster",
     "base-grid",
     "base-head",
     "base-note",
+    "blank-slate",
     "bookmark-feedback",
     "button",
-    "byline-row",
+    "byline",
     "chain-actions",
     "chain-brand",
     "chain-header",
     "chain-readout",
     "chain-wordmark",
+    "chapter",
+    "chapter-acts",
+    "chapter-copy",
+    "chapter-head",
+    "chapter-no",
+    "chapter-title",
     "chip",
     "chip-divider",
     "chip-set",
-    "clear-search",
     "close",
     "colophon",
-    "colophon-bottom",
+    "colophon-base",
+    "colophon-facts",
     "colophon-fine",
-    "colophon-grid",
-    "colophon-tagline",
+    "colophon-motto",
     "colophon-top",
     "colophon-word",
+    "contents-foot",
+    "contents-head",
+    "contents-item",
+    "contents-kicker",
+    "contents-plate",
+    "contents-veil",
     "create-brief",
     "create-progress",
     "cyan",
     "deck",
     "deck-base",
     "deck-body",
-    "deliverables",
+    "deliverable-list",
     "detail-tags",
     "dialog-actions",
-    "dossier",
+    "document",
     "dossier-actions",
-    "dossier-body",
-    "dossier-copy",
+    "dossier-aside",
+    "dossier-columns",
+    "dossier-facts",
+    "dossier-file",
     "dossier-foot",
-    "dossier-head",
-    "dossier-section",
+    "dossier-main",
+    "dossier-mast",
+    "dossier-nav",
     "dossier-standfirst",
     "dossier-tags",
     "dossier-title",
-    "edition-card",
-    "edition-copy",
-    "edition-figures",
-    "edition-gate",
     "empty",
-    "empty-note",
     "empty-state",
-    "entry",
-    "entry-body",
-    "entry-deadline",
-    "entry-desc",
-    "entry-meta",
-    "entry-no",
-    "entry-open",
-    "entry-pool",
-    "entry-save",
-    "entry-stack",
-    "entry-state",
-    "entry-title",
-    "entry-topic",
+    "entry-ask",
+    "entry-columns",
+    "entry-lede",
     "error",
     "error:",
     "escrow",
     "evidence-card",
-    "evidence-entry",
+    "evidence-file",
     "evidence-head",
-    "evidence-link",
+    "evidence-sig",
     "evidence-top",
-    "eyebrow",
-    "fact-row",
+    "evidence-url",
+    "faq-answer",
+    "faq-item",
+    "faq-ledger",
+    "faq-summary",
     "faqs",
     "field-error",
+    "field-fault",
+    "field-help",
+    "field-label",
     "field-note",
+    "figure-register",
+    "figure-row",
     "filter-bar",
-    "filter-label",
-    "filter-lines",
-    "filter-link",
-    "filter-row",
     "filter-tail",
     "fine-print",
     "footer-divider",
     "footer-line",
-    "form-intro",
-    "form-kicker",
+    "form-grid",
     "form-row",
     "full",
     "gate-list",
     "ghost",
-    "guide-actions",
+    "glyph-key",
+    "guide-acts",
     "guide-byline",
-    "guide-faq",
-    "guide-hero",
+    "guide-file",
     "guide-intro",
+    "guide-mast",
     "guide-notes",
-    "guide-notes-head",
-    "guide-page",
     "guide-section",
     "guide-split",
     "guide-standfirst",
-    "guide-steps",
+    "guide-title",
     "guide-view",
-    "hero",
-    "hero-actions",
-    "hero-grid",
-    "hero-kicker",
-    "hero-lede",
-    "hero-title",
     "icon-button",
-    "icon-close",
-    "index-count",
-    "index-lead",
-    "index-lead-actions",
-    "index-lead-copy",
-    "index-note",
-    "index-sheet",
-    "index-title",
-    "index-tools",
-    "ink-button",
+    "inline-ask",
     "inline-form",
-    "inline-input",
     "insp-actions",
     "insp-backdrop",
     "insp-copy",
@@ -364,75 +352,83 @@
     "insp-title",
     "insp-val",
     "inspector",
-    "is-cta",
     "is-error",
+    "is-fault",
     "is-gate",
-    "is-inline",
+    "is-key",
     "is-legend",
     "is-live",
     "is-open",
     "is-optional",
+    "is-quiet",
     "is-sample",
-    "is-static",
     "item.approvedByCreator",
-    "ledger-cluster",
-    "ledger-figures",
-    "ledger-note",
-    "ledger-summary",
+    "jump-start",
+    "lede-acts",
+    "lede-copy",
+    "lede-prose",
+    "lede-spread",
+    "lede-title",
     "lime",
+    "loading-ledger",
+    "loading-row",
     "loop-grid",
-    "margin-note",
+    "marginalia",
+    "marginalia-copy",
+    "marginalia-foot",
+    "marginalia-head",
+    "mast-edition",
+    "mast-edition__stamp",
+    "mast-identity",
+    "mast-lockup",
+    "mast-motto",
+    "mast-plate",
+    "mast-sigil",
+    "mast-tools",
+    "mast-word",
     "masthead",
-    "masthead-bar",
-    "masthead-cta",
-    "masthead-meta",
-    "masthead-nav",
-    "masthead-tagline",
-    "masthead-tools",
     "menu-button",
+    "menu-glyph",
     "message",
     "meter-track",
     "meter-value",
     "micro",
     "mission.sample",
     "modal",
-    "modal-actions",
-    "modal-head",
     "modal-intro",
-    "modal-note",
     "modal-scroll",
     "modal-shell",
     "modal-top",
     "nav-backdrop",
-    "nav-link",
-    "nav-overlay",
-    "nav-overlay-foot",
-    "nav-overlay-head",
-    "nav-overlay-kicker",
-    "nav-overlay-link",
-    "nav-scrim",
     "nav-sheet",
     "nav-sheet-foot",
     "nav-sheet-head",
-    "nav-toggle",
     "network-pill",
     "neutral",
     "node-line",
     "note",
-    "notice-slip",
+    "note-card",
     "num",
-    "order-line",
-    "outline-button",
-    "page",
+    "observatory",
+    "overline",
     "page-head",
     "pane-head",
-    "paper-form",
     "pool-band",
     "pool-figure",
+    "pool-note",
+    "pool-number",
     "primary",
     "progress-rule",
+    "progress-track",
     "published-link",
-    "quiet-action",
+    "pulse-spinner",
+    "query-clear",
+    "query-field",
+    "query-order",
+    "query-row",
+    "questionnaire",
+    "quiet-link",
+    "readout",
     "readout-cell",
     "refresh-rewards",
     "refund-panel",
@@ -446,62 +442,104 @@
     "reg-state",
     "reg-title",
     "reg-topic",
+    "register",
+    "register-brief",
+    "register-copy",
+    "register-foot",
+    "register-keep",
+    "register-no",
+    "register-open",
+    "register-pool",
+    "register-row",
+    "register-state",
+    "register-stats",
+    "register-title",
+    "register-topic",
+    "register-when",
     "registry",
+    "registry-acts",
     "registry-body",
+    "registry-head",
+    "registry-ledger",
+    "registry-note",
     "registry-pane",
+    "registry-section",
     "registry-status",
-    "reset-action",
+    "registry-title",
+    "review-brief",
     "review-empty",
     "review-mission",
     "reward-balance",
+    "reward-ledger",
+    "route-count",
+    "route-item",
+    "route-line",
     "row-id",
-    "rule",
+    "rule-chapter",
     "rule-columns",
-    "save-link",
-    "seal",
+    "rule-head",
+    "rule-note",
     "search-field",
-    "search-line",
     "secondary",
-    "section-actions",
-    "section-head",
-    "section-no",
+    "sheet",
+    "sheet-actions",
+    "sheet-body",
+    "sheet-crest",
+    "sheet-frame",
+    "sheet-intro",
+    "sheet-note",
     "site-footer",
-    "skeleton-entry",
     "skeleton-row",
     "skip-link",
-    "slip-grid",
     "sort-field",
     "spinner",
     "split-bar",
+    "split-empty",
+    "split-fill--awarded",
+    "split-fill--escrow",
+    "split-key",
     "split-legend",
+    "split-track",
     "sr-only",
+    "stamp-state",
+    "stamp-topic",
     "stat-dot",
     "state-panel",
-    "state-stamp",
     "stateClass",
     "stateClass(mission)",
     "status-strip",
-    "step-copy",
+    "step-body",
+    "step-index",
     "step-label",
-    "step-number",
+    "step-register",
+    "step-row",
+    "step-title",
+    "stretch",
     "strip-cell",
+    "summary-aside",
+    "summary-cluster",
+    "summary-figure",
+    "summary-figures",
+    "summary-note",
     "tab-button",
     "tab-count",
     "tab-rail",
     "tag",
-    "text-action",
     "text-button",
+    "text-link",
     "toast",
     "toast-undo",
-    "topic-stamp",
+    "topic-chip",
+    "topic-line",
+    "topic-rail",
+    "topic-rail__label",
     "topics",
     "transaction-state",
     "txError",
     "violet",
+    "visually-hidden",
     "wallet-button",
-    "wallet-link",
-    "wordmark",
-    "wordmark-text",
+    "wallet-pill",
     "}"
   ],
   "designSignals": {
@@ -514,8 +552,6 @@
       "--accent-soft",
       "--alert",
       "--alert-line",
-      "--blue",
-      "--blue-soft",
       "--brand",
       "--brand-hover",
       "--brand-soft",
@@ -525,14 +561,19 @@
       "--cel-panel",
       "--cel-sheet",
       "--chrome",
+      "--column-gap",
       "--content",
       "--content-width",
       "--control",
       "--cyan",
       "--cyan-deep",
+      "--danger",
       "--deep",
       "--dim",
       "--display",
+      "--display-tracking",
+      "--drift-ease",
+      "--drift-time",
       "--duration",
       "--ease",
       "--ease-pop",
@@ -542,8 +583,7 @@
       "--error-bg",
       "--error-line",
       "--field",
-      "--focus",
-      "--gold",
+      "--glow",
       "--graphite",
       "--grotesk",
       "--gutter",
@@ -553,21 +593,20 @@
       "--h-tabs",
       "--header-height",
       "--ice",
+      "--index-tracking",
       "--ink",
       "--ink-soft",
       "--lime",
       "--line",
       "--line-strong",
       "--mono",
-      "--moss",
       "--muted",
       "--ok",
       "--overlay",
+      "--page",
       "--pane",
       "--panel",
       "--paper",
-      "--paper-deep",
-      "--paper-raised",
       "--pill",
       "--plum-soft",
       "--purple",
@@ -576,7 +615,6 @@
       "--r1",
       "--r2",
       "--radius",
-      "--radius-card",
       "--radius-lg",
       "--radius-sm",
       "--radius-xl",
@@ -585,16 +623,13 @@
       "--raised",
       "--rank",
       "--reward",
-      "--rule",
-      "--rule-strong",
+      "--ring",
       "--sans",
-      "--serif",
       "--shadow",
-      "--shadow-card",
       "--shadow-lg",
       "--shadow-pop",
-      "--shadow-slip",
-      "--sidebar-width",
+      "--sheet-pad",
+      "--sidedock-width",
       "--spruce",
       "--spruce-2",
       "--spruce-ink",
@@ -606,24 +641,28 @@
       "--surface",
       "--surface-2",
       "--surface-3",
-      "--t",
+      "--surface-alt",
       "--t-base",
       "--t-fast",
       "--text",
       "--violet",
       "--violet-ink",
+      "--voice-body",
+      "--voice-display",
+      "--voice-mono",
       "--void",
+      "--warning",
       "--white",
       "--yellow"
     ],
     "colorVars": [
       {
         "name": "--accent",
-        "value": "#ad3a24"
+        "value": "#40b3ff"
       },
       {
         "name": "--accent-deep",
-        "value": "#7b2817"
+        "value": "#0e6fae"
       },
       {
         "name": "--accent-hover",
@@ -635,7 +674,7 @@
       },
       {
         "name": "--accent-soft",
-        "value": "#f1d5c5"
+        "value": "#10283b"
       },
       {
         "name": "--alert",
@@ -644,14 +683,6 @@
       {
         "name": "--alert-line",
         "value": "#7a2f34"
-      },
-      {
-        "name": "--blue",
-        "value": "#26465f"
-      },
-      {
-        "name": "--blue-soft",
-        "value": "#dbe4e8"
       },
       {
         "name": "--brand",
@@ -678,12 +709,16 @@
         "value": "#0c6f68"
       },
       {
+        "name": "--danger",
+        "value": "#ff8a8a"
+      },
+      {
         "name": "--deep",
-        "value": "#0a0e17"
+        "value": "#08080e"
       },
       {
         "name": "--dim",
-        "value": "#6b5e4c"
+        "value": "#7e7c92"
       },
       {
         "name": "--ember-soft",
@@ -702,14 +737,6 @@
         "value": "#e0b3a8"
       },
       {
-        "name": "--focus",
-        "value": "#1b4d74"
-      },
-      {
-        "name": "--gold",
-        "value": "#82601c"
-      },
-      {
         "name": "--graphite",
         "value": "#0b0715"
       },
@@ -719,11 +746,11 @@
       },
       {
         "name": "--ink",
-        "value": "#1e1a15"
+        "value": "#f5f4fa"
       },
       {
         "name": "--ink-soft",
-        "value": "#453c31"
+        "value": "#d6d4e4"
       },
       {
         "name": "--lime",
@@ -731,19 +758,15 @@
       },
       {
         "name": "--line",
-        "value": "#1f2a3b"
+        "value": "#262536"
       },
       {
         "name": "--line-strong",
-        "value": "#2e3d54"
-      },
-      {
-        "name": "--moss",
-        "value": "#40573f"
+        "value": "#3a3950"
       },
       {
         "name": "--muted",
-        "value": "#5f5446"
+        "value": "#9a98ad"
       },
       {
         "name": "--panel",
@@ -751,15 +774,7 @@
       },
       {
         "name": "--paper",
-        "value": "#f3ede1"
-      },
-      {
-        "name": "--paper-deep",
-        "value": "#e7ddcb"
-      },
-      {
-        "name": "--paper-raised",
-        "value": "#fbf7ee"
+        "value": "#e4ded1"
       },
       {
         "name": "--plum-soft",
@@ -786,14 +801,6 @@
         "value": "#9b3a25"
       },
       {
-        "name": "--rule",
-        "value": "#cbbda6"
-      },
-      {
-        "name": "--rule-strong",
-        "value": "#1e1a15"
-      },
-      {
         "name": "--spruce",
         "value": "#10241c"
       },
@@ -811,7 +818,7 @@
       },
       {
         "name": "--success",
-        "value": "#1c4b3c"
+        "value": "#5ce1a0"
       },
       {
         "name": "--success-bg",
@@ -827,7 +834,7 @@
       },
       {
         "name": "--surface",
-        "value": "#fffdf8"
+        "value": "#12121e"
       },
       {
         "name": "--surface-2",
@@ -838,8 +845,12 @@
         "value": "#f1ece0"
       },
       {
+        "name": "--surface-alt",
+        "value": "#191927"
+      },
+      {
         "name": "--violet",
-        "value": "#8b6cff"
+        "value": "#a78bfa"
       },
       {
         "name": "--violet-ink",
@@ -847,7 +858,11 @@
       },
       {
         "name": "--void",
-        "value": "#05070c"
+        "value": "#000000"
+      },
+      {
+        "name": "--warning",
+        "value": "#f2c94c"
       },
       {
         "name": "--white",
@@ -860,21 +875,19 @@
     ],
     "mediaQueries": [
       "@media (forced-colors: active)",
+      "@media (max-width: 1080px)",
       "@media (max-width: 1099px)",
-      "@media (max-width: 1100px)",
       "@media (max-width: 1100px) and (min-width: 761px)",
       "@media (max-width: 1190px)",
       "@media (max-width: 1240px)",
       "@media (max-width: 380px)",
       "@media (max-width: 390px)",
-      "@media (max-width: 560px)",
       "@media (max-width: 620px)",
       "@media (max-width: 760px)",
-      "@media (max-width: 900px)",
+      "@media (max-width: 820px)",
       "@media (max-width: 999px)",
       "@media (min-width: 1700px)",
       "@media (min-width: 761px) and (max-width: 1000px)",
-      "@media (min-width: 901px)",
       "@media (prefers-reduced-motion: reduce)",
       "@media print",
       "@media(forced-colors:active)",
@@ -890,7 +903,6 @@
     "tagCounts": {
       "a": 21,
       "article": 12,
-      "aside": 8,
       "b": 21,
       "br": 5,
       "briefdossier": 2,
@@ -904,17 +916,17 @@
       "dd": 47,
       "details": 15,
       "dialog": 3,
-      "div": 284,
+      "div": 318,
       "dl": 13,
       "dt": 47,
       "em": 6,
-      "footer": 5,
+      "footer": 3,
       "form": 12,
       "h1": 10,
       "h2": 27,
       "h3": 34,
       "h4": 6,
-      "header": 23,
+      "header": 9,
       "i": 30,
       "img": 4,
       "input": 24,
@@ -924,15 +936,15 @@
       "nav": 6,
       "ol": 4,
       "option": 15,
-      "p": 214,
+      "p": 212,
       "path": 3,
-      "section": 21,
+      "section": 23,
       "select": 6,
       "small": 30,
-      "span": 198,
+      "span": 204,
       "strong": 26,
       "summary": 15,
-      "sup": 6,
+      "sup": 4,
       "svg": 3,
       "template": 26,
       "textarea": 3,
@@ -941,17 +953,18 @@
     },
     "depthHistogram": {
       "0": 16,
-      "1": 85,
-      "2": 242,
-      "3": 332,
-      "4": 357,
-      "5": 232,
-      "6": 201,
-      "7": 129,
-      "8": 76,
-      "9": 14
+      "1": 77,
+      "2": 208,
+      "3": 286,
+      "4": 337,
+      "5": 292,
+      "6": 237,
+      "7": 143,
+      "8": 74,
+      "9": 24,
+      "10": 4
     },
-    "maxDepth": 9,
+    "maxDepth": 10,
     "topLevelTags": [
       "div",
       "article",
@@ -960,7 +973,7 @@
       "svg",
       "div",
       "div",
-      "aside",
+      "div",
       "div",
       "div",
       "svg",
@@ -981,10 +994,9 @@
       "      button",
       "        img",
       "        span",
-      "          i",
-      "      nav",
-      "        button",
-      "          sup",
+      "          span",
+      "            i",
+      "          span",
       "      div",
       "        button",
       "          uiicon",
@@ -993,64 +1005,66 @@
       "          span",
       "        button",
       "          uiicon",
-      "    p",
       "  main",
+      "    nav",
+      "      button",
+      "        span",
       "    template",
       "      briefguide",
       "    template",
       "      briefdossier",
       "    template",
       "      section",
-      "        p",
-      "        h1",
-      "          br",
-      "          em",
       "        div",
+      "          p",
+      "          h1",
+      "            br",
+      "            em",
+      "          p",
       "          div",
-      "            p",
+      "            button",
+      "              uiicon",
+      "            button",
+      "            button",
+      "        div",
+      "          p",
+      "          p",
+      "          dl",
       "            div",
-      "              button",
-      "                uiicon",
-      "              button",
-      "              button",
-      "          aside",
-      "            p",
-      "            p",
-      "            dl",
-      "              div",
-      "                dt",
-      "                dd",
-      "              div",
-      "                dt",
-      "                dd",
-      "              div",
-      "                dt",
-      "                dd",
-      "                  small",
-      "            p",
-      "      header",
+      "              dt",
+      "              dd",
+      "            div",
+      "              dt",
+      "              dd",
+      "            div",
+      "              dt",
+      "              dd",
+      "                small",
+      "          p",
+      "      section",
       "        p",
       "        h1",
       "        p",
       "      briefindex",
       "  footer",
       "    div",
-      "      p",
-      "        span",
-      "      p",
-      "    dl",
       "      div",
-      "        dt",
-      "        dd",
-      "      div",
-      "        dt",
-      "        dd",
-      "      div",
-      "        dt",
-      "        dd",
-      "      div",
-      "        dt",
-      "        dd",
+      "        p",
+      "          span",
+      "        p",
+      "      dl",
+      "        div",
+      "          dt",
+      "          dd",
+      "        div",
+      "          dt",
+      "          dd",
+      "        div",
+      "          dt",
+      "          dd",
+      "        div",
+      "          dt",
+      "          dd",
       "    p",
       "      strong",
       "      strong",
@@ -1061,7 +1075,7 @@
       "  template",
       "    button",
       "    nav",
-      "      header",
+      "      div",
       "        span",
       "        button",
       "          uiicon",
@@ -1080,24 +1094,23 @@
       "  dialog",
       "    div",
       "      div",
-      "        p",
-      "        h2",
+      "        div",
+      "          p",
+      "          h2",
       "        button",
       "          uiicon",
       "      div",
       "        div",
       "          p",
       "          button",
-      "        template",
-      "          p",
-      "          div"
+      "        template"
     ]
   },
   "contentContract": {
     "schemaVersion": 1,
     "meta": {
-      "projectName": "settiva",
-      "title": "settiva",
+      "projectName": "trovane",
+      "title": "trovane",
       "lang": "en"
     },
     "routes": [
@@ -1133,12 +1146,12 @@
         "count": 1
       },
       {
-        "value": "&copy; 2026 Settiva · an independent Solana testnet project",
-        "count": 2
-      },
-      {
         "value": "&copy; 2026 Tallyvein",
         "count": 1
+      },
+      {
+        "value": "&copy; 2026 Trovane · an independent Solana testnet project",
+        "count": 2
       },
       {
         "value": "01",
@@ -1553,12 +1566,12 @@
         "count": 1
       },
       {
-        "value": "On this device only. Bookmarks are stored in local storage under the settiva-saved key, and older project keys migrate into it without clearing your list.",
-        "count": 2
-      },
-      {
         "value": "On this device only. Bookmarks are stored in local storage under the tallyvein-saved key, and older project keys migrate into it without clearing your list.",
         "count": 1
+      },
+      {
+        "value": "On this device only. Bookmarks are stored in local storage under the trovane-saved key, and older project keys migrate into it without clearing your list.",
+        "count": 2
       },
       {
         "value": "One record out.",
@@ -1637,12 +1650,12 @@
         "count": 3
       },
       {
-        "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Settiva.",
-        "count": 2
-      },
-      {
         "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Tallyvein.",
         "count": 1
+      },
+      {
+        "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Trovane.",
+        "count": 2
       },
       {
         "value": "Publish your findings, then link the public evidence for creator review.",
@@ -1781,22 +1794,6 @@
         "count": 1
       },
       {
-        "value": "Settiva",
-        "count": 4
-      },
-      {
-        "value": "Settiva is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
-        "count": 2
-      },
-      {
-        "value": "Settiva is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
-        "count": 2
-      },
-      {
-        "value": "Settiva is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
-        "count": 2
-      },
-      {
         "value": "Settle the tally.",
         "count": 1
       },
@@ -1809,7 +1806,7 @@
         "count": 8
       },
       {
-        "value": "SOL, which has no intended monetary value. Settiva has no platform token, no investment return and no guaranteed payout.",
+        "value": "SOL, which has no intended monetary value. Trovane has no platform token, no investment return and no guaranteed payout.",
         "count": 2
       },
       {
@@ -1962,6 +1959,22 @@
       },
       {
         "value": "Topics",
+        "count": 2
+      },
+      {
+        "value": "Trovane",
+        "count": 4
+      },
+      {
+        "value": "Trovane is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
+        "count": 2
+      },
+      {
+        "value": "Trovane is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
+        "count": 2
+      },
+      {
+        "value": "Trovane is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
         "count": 2
       },
       {
@@ -2541,7 +2554,7 @@
       },
       {
         "kind": "interpolation",
-        "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Settiva-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
+        "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Trovane-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
         "count": 2
       },
       {
@@ -3466,5 +3479,5 @@
       "VITE_SOLANA_TOKEN_SYMBOL"
     ]
   },
-  "contentContractHash": "1ace2a9a98344cef700cbc5fd5b92afa11cb08850d05343181c906b18f6cdb25"
+  "contentContractHash": "4d886e810c0a0928c6019839dcbfda5f5ee16f039c1346303fb31849a4c82bda"
 }

@@ -1,9 +1,9 @@
 {
-  "base": "http://127.0.0.1:4944/",
+  "base": "http://127.0.0.1:4318/",
   "captures": [
     {
       "label": "01-index-desktop",
-      "title": "Settiva - Two paths in. One record out.",
+      "title": "Trovane - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -11,17 +11,12 @@
       "noAlt": 0,
       "scrollWidth": 1440,
       "clientWidth": 1440,
-      "height": 2272,
-      "headings": [
-        "H1:Two paths in.One record out.",
-        "H2:The brief index"
-      ],
-      "axe": 0,
+      "axe": [],
       "overflow": false
     },
     {
       "label": "02-guide-desktop",
-      "title": "Settiva - Two paths in. One record out.",
+      "title": "Trovane - Two paths in. One record out.",
       "h1": [
         "How a brief becomes a record."
       ],
@@ -29,24 +24,12 @@
       "noAlt": 0,
       "scrollWidth": 1440,
       "clientWidth": 1440,
-      "height": 2409,
-      "headings": [
-        "H1:How a brief becomes a record.",
-        "H2:Write a narrow brief.",
-        "H2:Submit verifiable evidence.",
-        "H2:Read every entry, then close the record.",
-        "H2:The rules of settlement.",
-        "H3:Sample testnet data.",
-        "H3:Review is creator-led.",
-        "H3:An independent project.",
-        "H2:Frequently asked"
-      ],
-      "axe": 0,
+      "axe": [],
       "overflow": false
     },
     {
       "label": "03-saved-desktop",
-      "title": "Settiva - Two paths in. One record out.",
+      "title": "Trovane - Two paths in. One record out.",
       "h1": [
         "Saved briefs"
       ],
@@ -54,18 +37,12 @@
       "noAlt": 0,
       "scrollWidth": 1440,
       "clientWidth": 1440,
-      "height": 1612,
-      "headings": [
-        "H1:Saved briefs",
-        "H2:Saved briefs",
-        "H3:Nothing saved yet."
-      ],
-      "axe": 0,
+      "axe": [],
       "overflow": false
     },
     {
       "label": "04-activity-desktop",
-      "title": "Settiva - Two paths in. One record out.",
+      "title": "Trovane - Two paths in. One record out.",
       "h1": [
         "Briefs from this wallet"
       ],
@@ -73,41 +50,12 @@
       "noAlt": 0,
       "scrollWidth": 1440,
       "clientWidth": 1440,
-      "height": 1657,
-      "headings": [
-        "H1:Briefs from this wallet",
-        "H2:Briefs from this wallet",
-        "H3:No briefs from this wallet yet."
-      ],
-      "axe": 0,
+      "axe": [],
       "overflow": false
     },
     {
-      "label": "05-dossier-desktop",
-      "title": "Settiva - Two paths in. One record out.",
-      "h1": [
-        "What does a tokenized stock actually represent?"
-      ],
-      "nameless": [],
-      "noAlt": 0,
-      "scrollWidth": 1440,
-      "clientWidth": 1440,
-      "height": 2594,
-      "headings": [
-        "H1:What does a tokenized stock actually represent?",
-        "H2:Brief scope",
-        "H2:Submit evidence & fund the pool",
-        "H3:Submit proof",
-        "H3:Fund the pool",
-        "H2:Evidence and creator review",
-        "H3:No evidence submitted yet."
-      ],
-      "axe": 0,
-      "overflow": false
-    },
-    {
-      "label": "06-create-desktop",
-      "title": "Settiva - Two paths in. One record out.",
+      "label": "05-filtered-desktop",
+      "title": "Trovane - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -115,18 +63,38 @@
       "noAlt": 0,
       "scrollWidth": 1440,
       "clientWidth": 1440,
-      "height": 2272,
-      "headings": [
-        "H1:Two paths in.One record out.",
-        "H2:The brief index",
-        "H2:Post a brief"
-      ],
-      "axe": 0,
+      "axe": [],
       "overflow": false
     },
     {
-      "label": "07-index-mobile",
-      "title": "Settiva - Two paths in. One record out.",
+      "label": "06-dossier-desktop",
+      "title": "Trovane - Two paths in. One record out.",
+      "h1": [
+        "What does a tokenized stock actually represent?"
+      ],
+      "nameless": [],
+      "noAlt": 0,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "label": "07-create-desktop",
+      "title": "Trovane - Two paths in. One record out.",
+      "h1": [
+        "Two paths in.One record out."
+      ],
+      "nameless": [],
+      "noAlt": 0,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "label": "08-index-mobile",
+      "title": "Trovane - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -134,17 +102,12 @@
       "noAlt": 0,
       "scrollWidth": 390,
       "clientWidth": 390,
-      "height": 3581,
-      "headings": [
-        "H1:Two paths in.One record out.",
-        "H2:The brief index"
-      ],
-      "axe": 0,
+      "axe": [],
       "overflow": false
     },
     {
-      "label": "08-menu-mobile",
-      "title": "Settiva - Two paths in. One record out.",
+      "label": "09-contents-mobile",
+      "title": "Trovane - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -152,17 +115,12 @@
       "noAlt": 0,
       "scrollWidth": 390,
       "clientWidth": 390,
-      "height": 3581,
-      "headings": [
-        "H1:Two paths in.One record out.",
-        "H2:The brief index"
-      ],
-      "axe": 0,
+      "axe": [],
       "overflow": false
     },
     {
-      "label": "09-dossier-mobile",
-      "title": "Settiva - Two paths in. One record out.",
+      "label": "10-dossier-mobile",
+      "title": "Trovane - Two paths in. One record out.",
       "h1": [
         "What does a tokenized stock actually represent?"
       ],
@@ -170,22 +128,12 @@
       "noAlt": 0,
       "scrollWidth": 390,
       "clientWidth": 390,
-      "height": 3537,
-      "headings": [
-        "H1:What does a tokenized stock actually represent?",
-        "H2:Brief scope",
-        "H2:Submit evidence & fund the pool",
-        "H3:Submit proof",
-        "H3:Fund the pool",
-        "H2:Evidence and creator review",
-        "H3:No evidence submitted yet."
-      ],
-      "axe": 0,
+      "axe": [],
       "overflow": false
     },
     {
-      "label": "10-create-mobile",
-      "title": "Settiva - Two paths in. One record out.",
+      "label": "11-create-mobile",
+      "title": "Trovane - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -193,16 +141,9 @@
       "noAlt": 0,
       "scrollWidth": 390,
       "clientWidth": 390,
-      "height": 3581,
-      "headings": [
-        "H1:Two paths in.One record out.",
-        "H2:The brief index",
-        "H2:Post a brief"
-      ],
-      "axe": 0,
+      "axe": [],
       "overflow": false
     }
   ],
-  "violations": [],
   "console": []
 }

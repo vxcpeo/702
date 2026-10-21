@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Trovane</title>
+  <desc id="desc">The Trovane mark in white on the black edition field.</desc>
+  <rect width="256" height="256" fill="#000000"/>
+  <polygon points="56.24,46.88 199.76,46.88 199.76,96.8 143.6,96.8 143.6,209.12 112.4,209.12 112.4,96.8 56.24,96.8" fill="#FFFFFF"/>
+  <polygon points="171.68,187.28 193.52,187.28 193.52,209.12 171.68,209.12" fill="#FFFFFF"/>
+</svg>

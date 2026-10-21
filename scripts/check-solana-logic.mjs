@@ -11,7 +11,7 @@ const configText = await readFile(path.join(root, 'src/config.js'), 'utf8');
 const env = await readFile(path.join(root, '.env'), 'utf8').catch(() => '');
 const moduleSource = source
   .replace("from 'vue'", `from '${import.meta.resolve('vue')}'`)
-  .replace(/import \{\s*APP_NAME,[\s\S]*?\} from '\.\.\/config';/, `const APP_NAME = 'Settiva', LAMPORTS_PER_SOL = 1_000_000_000n, SOLANA_CLUSTER = 'testnet', SOLANA_EXPLORER_URL = 'https://explorer.solana.com', SOLANA_NETWORK_NAME = 'Solana Testnet', SOLANA_PROGRAM_ID = '5ibhioLv21ShH9EXjRDkhygREtXqHHTZ6vtEC3DGgwDu', SOLANA_PROGRAM_READY = false, SOLANA_RPC_URL = 'https://api.testnet.solana.com', SOLANA_TOKEN_MINT = '', SOLANA_TOKEN_SYMBOL = 'TOKEN';`)
+  .replace(/import \{\s*APP_NAME,[\s\S]*?\} from '\.\.\/config';/, `const APP_NAME = 'Trovane', LAMPORTS_PER_SOL = 1_000_000_000n, SOLANA_CLUSTER = 'testnet', SOLANA_EXPLORER_URL = 'https://explorer.solana.com', SOLANA_NETWORK_NAME = 'Solana Testnet', SOLANA_PROGRAM_ID = '5ibhioLv21ShH9EXjRDkhygREtXqHHTZ6vtEC3DGgwDu', SOLANA_PROGRAM_READY = false, SOLANA_RPC_URL = 'https://api.testnet.solana.com', SOLANA_TOKEN_MINT = '', SOLANA_TOKEN_SYMBOL = 'TOKEN';`)
   .replace("import { createSolanaProgramClient } from '../utils/solanaProgram';", 'const createSolanaProgramClient = () => { throw new Error("Live client should not be created in preview tests."); };');
 const app = await import(`data:text/javascript;base64,${Buffer.from(moduleSource).toString('base64')}`);
 const { parseTokenAmount, formatTokenAmount } = app;

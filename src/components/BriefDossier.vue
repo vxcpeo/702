@@ -105,13 +105,13 @@ async function goContribute() {
 </script>
 
 <template>
-  <article class="dossier-deck" aria-labelledby="dossier-title">
-    <div class="dossier-top">
-      <button class="back-key" type="button" @click="emit('close')">
+  <article class="dossier-file" aria-labelledby="dossier-title">
+    <div class="dossier-nav">
+      <button class="text-link" type="button" @click="emit('close')">
         <UiIcon name="arrowleft" :size="15" />Back to the index
       </button>
       <button
-        class="save-key"
+        class="action-halo"
         type="button"
         :aria-pressed="saved"
         @click="emit('save', mission)"
@@ -122,8 +122,8 @@ async function goContribute() {
       </button>
     </div>
 
-    <div class="dossier-mast">
-      <p class="kicker">
+    <header class="dossier-mast">
+      <p class="overline">
         {{
           mission.sample
             ? "Sample dossier · illustrative record"
@@ -135,10 +135,10 @@ async function goContribute() {
       </h1>
       <p class="dossier-standfirst">{{ mission.brief || mission.description }}</p>
       <div class="dossier-tags">
-        <span class="topic-stamp">{{ mission.category }}</span>
-        <span class="state-stamp" :class="stateClass">{{ stateLabel }}</span>
+        <span class="stamp-topic">{{ mission.category }}</span>
+        <span class="stamp-state" :class="stateClass">{{ stateLabel }}</span>
       </div>
-    </div>
+    </header>
 
     <div
       v-if="notice && noticeKind === 'bookmark'"
@@ -148,7 +148,7 @@ async function goContribute() {
       <p>{{ notice }}</p>
       <button
         v-if="canUndoSavedChange"
-        class="line-action"
+        class="text-link"
         type="button"
         @click="emit('undo')"
       >
@@ -164,7 +164,7 @@ async function goContribute() {
       </button>
     </div>
 
-    <dl class="fact-ticker">
+    <dl class="dossier-facts">
       <div>
         <dt>Record</dt>
         <dd>{{ mission.sample ? "SAMPLE" : `#${mission.id}` }}</dd>
@@ -185,40 +185,42 @@ async function goContribute() {
       </div>
     </dl>
 
-    <section class="pool-deck" aria-label="Reward pool">
+    <section class="pool-band" aria-label="Reward pool">
       <div class="pool-figure">
-        <p class="kicker">
+        <p class="overline">
           {{
             mission.sample
               ? "Illustrative pool · sample record"
               : "In escrow · available to allocate"
           }}
         </p>
-        <strong>{{ amount(displayPool) }} <small>{{ mission.rewardSymbol || "SOL" }}</small></strong>
-        <p v-if="mission.sample" class="fine-print">
+        <strong class="pool-number"
+          >{{ amount(displayPool) }} <small>{{ mission.rewardSymbol || "SOL" }}</small></strong
+        >
+        <p v-if="mission.sample" class="pool-note">
           Illustrative pool {{ mission.reward }} SOL. Sample records hold no escrow
           and accept no transactions.
         </p>
       </div>
       <div class="split-bar">
         <div
-          class="bar"
+          class="split-track"
           role="img"
           :aria-label="`Awarded ${amount(awarded)}, in escrow ${amount(escrow)}, allocation ${allocation} percent`"
         >
           <i
             v-if="awardedShare > 0"
-            class="awarded"
+            class="split-fill--awarded"
             :style="{ width: `${awardedShare}%` }"
           ></i>
           <i
             v-if="escrowShare > 0"
-            class="escrow"
+            class="split-fill--escrow"
             :style="{ width: `${escrowShare}%` }"
           ></i>
-          <i v-if="awardedShare + escrowShare <= 0" class="empty"></i>
+          <i v-if="awardedShare + escrowShare <= 0" class="split-empty"></i>
         </div>
-        <div class="split-legend">
+        <div class="split-key">
           <span :class="{ 'is-zero': awarded <= 0 }"
             ><i class="awarded"></i>Awarded <b>{{ amount(awarded) }}</b></span
           >
@@ -232,31 +234,280 @@ async function goContribute() {
       </div>
     </section>
 
-    <div class="dossier-body">
-      <section id="scope" class="dossier-section" aria-labelledby="scope-title">
-        <div class="section-head">
-          <span class="section-no">01</span>
-          <h2 id="scope-title">Brief scope</h2>
+    <div class="dossier-columns">
+      <div class="dossier-main">
+        <section id="scope" class="chapter" aria-labelledby="scope-title">
+          <div class="chapter-head">
+            <span class="chapter-no">01</span>
+            <h2 id="scope-title" class="chapter-title">Brief scope</h2>
+          </div>
+          <p class="chapter-copy">{{ mission.brief || mission.description }}</p>
+          <ul v-if="mission.deliverables?.length" class="deliverable-list">
+            <li v-for="line in mission.deliverables" :key="line">
+              <UiIcon name="check" :size="15" />{{ line }}
+            </li>
+          </ul>
+          <div v-if="mission.creator" class="byline">
+            <span>Bounty creator</span><code>{{ mission.creator }}</code>
+          </div>
+          <p v-if="safeExternalUrl(mission.descriptionURI)" class="published-link">
+            <a
+              :href="safeExternalUrl(mission.descriptionURI)"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="action-halo"
+              >Read the published brief<UiIcon name="external" :size="14"
+            /></a>
+          </p>
+          <div class="chapter-acts">
+            <button class="action-core" type="button" @click="goContribute">
+              Open contribution options<UiIcon name="arrow" :size="15" />
+            </button>
+          </div>
+        </section>
+
+        <section id="contribute" class="chapter" aria-labelledby="contribute-title">
+          <div class="chapter-head">
+            <span class="chapter-no">02</span>
+            <h2 id="contribute-title" class="chapter-title">Submit evidence &amp; fund the pool</h2>
+          </div>
+          <div
+            v-if="!mission.sample && !selectedIsOpen"
+            class="readout is-quiet"
+            role="status"
+          >
+            <p>
+              This brief is {{ mission.closed ? "closed" : "past its deadline" }}.
+              New funding and submissions are unavailable.
+            </p>
+          </div>
+          <div class="entry-columns">
+            <form class="questionnaire" @submit.prevent="emit('submit')">
+              <p class="entry-ask">Entry one</p>
+              <h3>Submit proof</h3>
+              <p class="entry-lede">
+                Publish your findings, then link the public evidence for creator
+                review.
+              </p>
+              <label class="field-label" for="evidence-uri">Public evidence URL</label>
+              <input
+                id="evidence-uri"
+                :value="evidence"
+                placeholder="https://… or ipfs://…"
+                :aria-invalid="!!evidenceError"
+                :aria-describedby="
+                  evidenceError ? 'evidence-help evidence-error' : 'evidence-help'
+                "
+                required
+                @input="emit('update:evidence', $event.target.value)"
+              />
+              <small id="evidence-help" class="field-help"
+                >Use a permanent public URL. Keep personal information off-chain.</small
+              >
+              <p v-if="evidenceError" id="evidence-error" class="field-fault">
+                {{ evidenceError }}
+              </p>
+              <button
+                class="action-core stretch"
+                :disabled="mission.sample || !selectedIsOpen || busy"
+              >
+                {{
+                  activeTransaction === "submit" && busy
+                    ? "Submitting…"
+                    : "Submit proof"
+                }}<UiIcon name="arrow" :size="15" />
+              </button>
+            </form>
+
+            <form class="questionnaire" @submit.prevent="emit('fund')">
+              <p class="entry-ask">Entry two</p>
+              <h3>Fund the pool</h3>
+              <p class="entry-lede">
+                Add to the reward pool. The creator controls allocations and any
+                unspent balance after the deadline.
+              </p>
+              <label class="field-label" for="fund-amount">Contribution · {{ rewardUnitLabel }}</label>
+              <input
+                id="fund-amount"
+                inputmode="decimal"
+                placeholder="0.01"
+                :value="contribution"
+                :aria-invalid="!!contributionError"
+                :aria-describedby="contributionError ? 'fund-error' : undefined"
+                required
+                @input="emit('update:contribution', $event.target.value)"
+              />
+              <p v-if="contributionError" id="fund-error" class="field-fault">
+                {{ contributionError }}
+              </p>
+              <button
+                class="action-halo stretch"
+                :disabled="mission.sample || !selectedIsOpen || busy"
+              >
+                {{ activeTransaction === "fund" && busy ? "Funding…" : "Fund brief" }}
+                <UiIcon name="plus" :size="15" />
+              </button>
+            </form>
+          </div>
+        </section>
+
+        <section id="review" class="chapter" aria-labelledby="review-title">
+          <div class="chapter-head">
+            <span class="chapter-no">03</span>
+            <h2 id="review-title" class="chapter-title">Evidence and creator review</h2>
+          </div>
+          <div v-if="contributionsLoading" class="readout is-quiet" role="status">
+            <span class="pulse-spinner"></span>
+            <p>Loading evidence…</p>
+          </div>
+          <div v-else-if="contributionsError" class="readout is-fault" role="alert">
+            <p>{{ contributionsError }}</p>
+            <button class="text-link" type="button" @click="emit('refresh')">
+              Try again
+            </button>
+          </div>
+          <div v-else-if="!contributions.length" class="review-empty">
+            <UiIcon name="book" :size="24" />
+            <h3>No evidence submitted yet.</h3>
+            <p>
+              {{
+                mission.sample
+                  ? "This sample shows the shape of a brief record."
+                  : "The first public source can open the review."
+              }}
+            </p>
+          </div>
+          <template v-else>
+            <article
+              v-for="(item, index) in contributions"
+              :key="item.id ?? index"
+              class="evidence-file"
+            >
+              <div class="evidence-head">
+                <span class="evidence-sig">Entry {{ String(index + 1).padStart(2, "0") }}</span>
+                <span class="stamp-state" :class="item.approvedByCreator ? 'state-open' : 'state-sample'">{{
+                  item.approvedByCreator ? "Allocated" : "Pending review"
+                }}</span>
+              </div>
+              <a
+                v-if="safeExternalUrl(item.evidenceURI)"
+                :href="safeExternalUrl(item.evidenceURI)"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="evidence-url"
+                >{{ item.evidenceURI }}<UiIcon name="external" :size="13"
+              /></a>
+              <p v-else>
+                Evidence URI is unavailable or uses an unsupported protocol.
+              </p>
+              <div class="byline">
+                <span>Contributor / reward recipient</span
+                ><code>{{ item.contributor }}</code>
+              </div>
+              <p v-if="item.approvedByCreator" class="allocation-line">
+                Allocated reward: <b>{{ item.approved }}</b> {{ rewardUnitLabel }}
+              </p>
+              <form
+                v-if="selectedIsCreator && !item.approvedByCreator"
+                class="approval-form"
+                @submit.prevent="emit('approve', item.id ?? index, approvalFor(index))"
+              >
+                <h4>Reward allocation</h4>
+                <label class="field-label" :for="`approval-amount-${index}`">Amount · {{ rewardUnitLabel }}</label>
+                <div class="inline-ask">
+                  <input
+                    :id="`approval-amount-${index}`"
+                    inputmode="decimal"
+                    placeholder="0.01"
+                    :value="approvalFor(index)"
+                    :aria-invalid="!!approvalError && isApproving(index)"
+                    :aria-describedby="
+                      approvalError && isApproving(index)
+                        ? `approval-error-${index}`
+                        : undefined
+                    "
+                    required
+                    @input="emit('update:approval', item.id ?? index, $event.target.value)"
+                  />
+                  <button class="action-core" :disabled="busy || !selectedIsOpen">
+                    {{ busy && isApproving(index) ? "Approving…" : "Approve" }}
+                  </button>
+                </div>
+                <p
+                  v-if="approvalError && isApproving(index)"
+                  :id="`approval-error-${index}`"
+                  class="field-fault"
+                >
+                  {{ approvalError }}
+                </p>
+              </form>
+            </article>
+          </template>
+          <div v-if="selectedIsCreator && !mission.sample" class="refund-panel">
+            <h3>Unallocated funds</h3>
+            <p class="chapter-copy">
+              After the deadline, return any unallocated balance to the creator's
+              reward-token account. Approved contribution rewards stay claimable
+              separately.
+            </p>
+            <button
+              class="action-halo"
+              :disabled="!selectedCanRefund || busy"
+              type="button"
+              @click="emit('refund')"
+            >
+              Return unallocated funds
+            </button>
+            <small v-if="!selectedCanRefund" class="fine-print"
+              >Available to the creator after the deadline.</small
+            >
+          </div>
+        </section>
+
+        <div class="dossier-foot">
+          <div class="dossier-actions">
+            <button class="action-halo" type="button" @click="emit('download')">
+              <UiIcon name="download" :size="14" />Download draft
+            </button>
+            <button
+              class="text-link"
+              type="button"
+              :aria-pressed="saved"
+              @click="emit('save', mission)"
+            >
+              <UiIcon name="bookmark" :size="14" />{{ saved ? "Remove" : "Save" }}
+            </button>
+            <button
+              class="text-link"
+              type="button"
+              :disabled="busy"
+              @click="emit('refresh')"
+            >
+              <UiIcon name="refresh" :size="14" />Refresh
+            </button>
+          </div>
+          <div
+            v-if="txStatus !== 'idle' && (txError || txHash)"
+            class="readout is-quiet"
+            :class="{ 'is-fault': txError }"
+            :role="txError ? 'alert' : 'status'"
+          >
+            <UiIcon :name="txError ? 'info' : 'check'" :size="16" />
+            <p>
+              {{ txError || "Transaction confirmed." }}
+              <a
+                v-if="explorerLink(txHash)"
+                :href="explorerLink(txHash)"
+                target="_blank"
+                rel="noopener noreferrer"
+                >View transaction ↗</a>
+            </p>
+          </div>
         </div>
-        <p class="dossier-copy">{{ mission.brief || mission.description }}</p>
-        <ul v-if="mission.deliverables?.length" class="deliverables">
-          <li v-for="line in mission.deliverables" :key="line">
-            <UiIcon name="check" :size="15" />{{ line }}
-          </li>
-        </ul>
-        <div v-if="mission.creator" class="byline-row">
-          <span>Bounty creator</span><code>{{ mission.creator }}</code>
-        </div>
-        <p v-if="safeExternalUrl(mission.descriptionURI)" class="published-link">
-          <a
-            :href="safeExternalUrl(mission.descriptionURI)"
-            target="_blank"
-            rel="noopener noreferrer"
-            class="ghost-action"
-            >Read the published brief<UiIcon name="external" :size="14"
-          /></a>
-        </p>
-        <div class="margin-note">
+      </div>
+
+      <div class="dossier-aside" role="complementary" aria-label="Marginalia">
+        <div class="note-card">
           <UiIcon name="quote" :size="19" />
           <p>
             <strong>Make your proof verifiable.</strong> Cite primary sources,
@@ -264,97 +515,7 @@ async function goContribute() {
             as your findings.
           </p>
         </div>
-        <div class="section-actions">
-          <button class="key-action" type="button" @click="goContribute">
-            Open contribution options<UiIcon name="arrow" :size="15" />
-          </button>
-        </div>
-      </section>
-
-      <section id="contribute" class="dossier-section" aria-labelledby="contribute-title">
-        <div class="section-head">
-          <span class="section-no">02</span>
-          <h2 id="contribute-title">Submit evidence &amp; fund the pool</h2>
-        </div>
-        <div
-          v-if="!mission.sample && !selectedIsOpen"
-          class="readout is-static"
-          role="status"
-        >
-          <p>
-            This brief is {{ mission.closed ? "closed" : "past its deadline" }}.
-            New funding and submissions are unavailable.
-          </p>
-        </div>
-        <div class="entry-grid">
-          <form class="entry-form" @submit.prevent="emit('submit')">
-            <p class="form-kicker">Entry one</p>
-            <h3>Submit proof</h3>
-            <p class="form-intro">
-              Publish your findings, then link the public evidence for creator
-              review.
-            </p>
-            <label for="evidence-uri">Public evidence URL</label>
-            <input
-              id="evidence-uri"
-              :value="evidence"
-              placeholder="https://… or ipfs://…"
-              :aria-invalid="!!evidenceError"
-              :aria-describedby="
-                evidenceError ? 'evidence-help evidence-error' : 'evidence-help'
-              "
-              required
-              @input="emit('update:evidence', $event.target.value)"
-            />
-            <small id="evidence-help"
-              >Use a permanent public URL. Keep personal information off-chain.</small
-            >
-            <p v-if="evidenceError" id="evidence-error" class="field-error">
-              {{ evidenceError }}
-            </p>
-            <button
-              class="key-action wide"
-              :disabled="mission.sample || !selectedIsOpen || busy"
-            >
-              {{
-                activeTransaction === "submit" && busy
-                  ? "Submitting…"
-                  : "Submit proof"
-              }}<UiIcon name="arrow" :size="15" />
-            </button>
-          </form>
-
-          <form class="entry-form" @submit.prevent="emit('fund')">
-            <p class="form-kicker">Entry two</p>
-            <h3>Fund the pool</h3>
-            <p class="form-intro">
-              Add to the reward pool. The creator controls allocations and any
-              unspent balance after the deadline.
-            </p>
-            <label for="fund-amount">Contribution · {{ rewardUnitLabel }}</label>
-            <input
-              id="fund-amount"
-              inputmode="decimal"
-              placeholder="0.01"
-              :value="contribution"
-              :aria-invalid="!!contributionError"
-              :aria-describedby="contributionError ? 'fund-error' : undefined"
-              required
-              @input="emit('update:contribution', $event.target.value)"
-            />
-            <p v-if="contributionError" id="fund-error" class="field-error">
-              {{ contributionError }}
-            </p>
-            <button
-              class="ghost-action wide"
-              :disabled="mission.sample || !selectedIsOpen || busy"
-            >
-              {{ activeTransaction === "fund" && busy ? "Funding…" : "Fund brief" }}
-              <UiIcon name="plus" :size="15" />
-            </button>
-          </form>
-        </div>
-        <div class="margin-note is-gate">
+        <div class="note-card">
           <UiIcon name="info" :size="19" />
           <div>
             <p>
@@ -367,161 +528,8 @@ async function goContribute() {
             </ul>
           </div>
         </div>
-      </section>
-
-      <section id="review" class="dossier-section" aria-labelledby="review-title">
-        <div class="section-head">
-          <span class="section-no">03</span>
-          <h2 id="review-title">Evidence and creator review</h2>
-        </div>
-        <div v-if="contributionsLoading" class="readout is-static" role="status">
-          <span class="spinner"></span>
-          <p>Loading evidence…</p>
-        </div>
-        <div v-else-if="contributionsError" class="readout is-alert" role="alert">
-          <p>{{ contributionsError }}</p>
-          <button class="line-action" type="button" @click="emit('refresh')">
-            Try again
-          </button>
-        </div>
-        <div v-else-if="!contributions.length" class="review-empty">
-          <UiIcon name="book" :size="24" />
-          <h3>No evidence submitted yet.</h3>
-          <p>
-            {{
-              mission.sample
-                ? "This sample shows the shape of a brief record."
-                : "The first public source can open the review."
-            }}
-          </p>
-        </div>
-        <template v-else>
-          <article
-            v-for="(item, index) in contributions"
-            :key="item.id ?? index"
-            class="evidence-row"
-          >
-            <div class="evidence-head">
-              <span class="kicker">Entry {{ String(index + 1).padStart(2, "0") }}</span>
-              <span class="state-stamp" :class="item.approvedByCreator ? 'state-open' : 'state-sample'">{{
-                item.approvedByCreator ? "Allocated" : "Pending review"
-              }}</span>
-            </div>
-            <a
-              v-if="safeExternalUrl(item.evidenceURI)"
-              :href="safeExternalUrl(item.evidenceURI)"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="evidence-link"
-              >{{ item.evidenceURI }}<UiIcon name="external" :size="13"
-            /></a>
-            <p v-else>
-              Evidence URI is unavailable or uses an unsupported protocol.
-            </p>
-            <div class="byline-row">
-              <span>Contributor / reward recipient</span
-              ><code>{{ item.contributor }}</code>
-            </div>
-            <p v-if="item.approvedByCreator" class="allocation-line">
-              Allocated reward: <b>{{ item.approved }}</b> {{ rewardUnitLabel }}
-            </p>
-            <form
-              v-if="selectedIsCreator && !item.approvedByCreator"
-              class="entry-form is-inline"
-              @submit.prevent="emit('approve', item.id ?? index, approvalFor(index))"
-            >
-              <h4>Reward allocation</h4>
-              <label :for="`approval-amount-${index}`">Amount · {{ rewardUnitLabel }}</label>
-              <div class="inline-input">
-                <input
-                  :id="`approval-amount-${index}`"
-                  inputmode="decimal"
-                  placeholder="0.01"
-                  :value="approvalFor(index)"
-                  :aria-invalid="!!approvalError && isApproving(index)"
-                  :aria-describedby="
-                    approvalError && isApproving(index)
-                      ? `approval-error-${index}`
-                      : undefined
-                  "
-                  required
-                  @input="emit('update:approval', item.id ?? index, $event.target.value)"
-                />
-                <button class="key-action" :disabled="busy || !selectedIsOpen">
-                  {{ busy && isApproving(index) ? "Approving…" : "Approve" }}
-                </button>
-              </div>
-              <p
-                v-if="approvalError && isApproving(index)"
-                :id="`approval-error-${index}`"
-                class="field-error"
-              >
-                {{ approvalError }}
-              </p>
-            </form>
-          </article>
-        </template>
-        <div v-if="selectedIsCreator && !mission.sample" class="refund-block">
-          <h3>Unallocated funds</h3>
-          <p class="dossier-copy">
-            After the deadline, return any unallocated balance to the creator's
-            reward-token account. Approved contribution rewards stay claimable
-            separately.
-          </p>
-          <button
-            class="ghost-action"
-            :disabled="!selectedCanRefund || busy"
-            type="button"
-            @click="emit('refund')"
-          >
-            Return unallocated funds
-          </button>
-          <small v-if="!selectedCanRefund" class="fine-print"
-            >Available to the creator after the deadline.</small
-          >
-        </div>
-      </section>
-
-      <div class="dossier-foot">
-        <div class="dossier-actions">
-          <button class="ghost-action" type="button" @click="emit('download')">
-            <UiIcon name="download" :size="14" />Download draft
-          </button>
-          <button
-            class="line-action"
-            type="button"
-            :aria-pressed="saved"
-            @click="emit('save', mission)"
-          >
-            <UiIcon name="bookmark" :size="14" />{{ saved ? "Remove" : "Save" }}
-          </button>
-          <button
-            class="line-action"
-            type="button"
-            :disabled="busy"
-            @click="emit('refresh')"
-          >
-            <UiIcon name="refresh" :size="14" />Refresh
-          </button>
-        </div>
-        <div
-          v-if="txStatus !== 'idle' && (txError || txHash)"
-          class="readout is-static"
-          :class="{ 'is-alert': txError }"
-          :role="txError ? 'alert' : 'status'"
-        >
-          <UiIcon :name="txError ? 'info' : 'check'" :size="16" />
-          <p>
-            {{ txError || "Transaction confirmed." }}
-            <a
-              v-if="explorerLink(txHash)"
-              :href="explorerLink(txHash)"
-              target="_blank"
-              rel="noopener noreferrer"
-              >View transaction ↗</a>
-          </p>
-        </div>
       </div>
     </div>
   </article>
 </template>
+

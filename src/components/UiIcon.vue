@@ -4,8 +4,9 @@ defineProps({
   size: { type: [Number, String], default: 18 },
 });
 /*
- * A softer, hand-set icon family for the paper edition: rounded caps, a 1.7
- * stroke on a 24-unit grid, and no glyph borrowed from the retired edition. Decorative only; every control carries its own text or accessible name.
+ * A fine-line icon family for the documentary ledger: rounded caps, a 1.7
+ * stroke on a 24-unit grid, and no glyph borrowed from an earlier edition.
+ * Decorative only; every control carries its own text or accessible name.
  */
 const paths = {
   arrow: "M4 12h15.5 M13.5 6l6.5 6-6.5 6",

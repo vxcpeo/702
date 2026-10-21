@@ -81,11 +81,11 @@ const {
   transact,
 } = useMissions();
 
-const seal = import.meta.env.BASE_URL + "settiva-seal.svg";
-/* The paper edition has four pages and two overlays: a reading index, a saved
-   list, a wallet activity list, a field guide, the draft sheet and the rewards
-   ledger. A selected brief replaces the index in the flow rather than opening a
-   side pane or a dialog. */
+const seal = import.meta.env.BASE_URL + "trovane-seal.svg";
+/* The documentary ledger has four pages and two overlays: the registry, a
+   saved list, a wallet activity list, a field guide, the draft sheet and the
+   rewards ledger. A selected brief replaces the registry in the document flow
+   rather than opening a side pane or a dialog. */
 const page = ref("index");
 const statusFilter = ref("all");
 const dialog = ref(null);
@@ -404,7 +404,7 @@ function downloadBrief() {
   const text = [
     "# " + (f.title || "Untitled brief"),
     "",
-    "Settiva / " + f.category,
+    "Trovane / " + f.category,
     "",
     "## Bounty brief",
     f.description || "Add scope, primary sources and acceptance criteria here.",
@@ -426,7 +426,7 @@ function downloadBrief() {
   );
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = "settiva-bounty-brief.md";
+  anchor.download = "trovane-bounty-brief.md";
   anchor.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   notify(
@@ -486,34 +486,33 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div class="shell">
-    <div class="deck">
+  <div class="observatory">
     <a
-      class="jump-link"
+      class="jump-start"
       :href="page === 'guide' ? '#guide' : selected ? '#dossier-title' : '#brief-index'"
       :inert="mobileNav"
       >{{ page === "guide" ? "Skip to the field guide" : selected ? "Skip to the dossier" : "Skip to the brief index" }}</a
     >
 
-    <header class="mast">
-      <div class="sig-line">
-        <span>The sample edition · no. 01</span>
+    <header class="masthead">
+      <div class="mast-edition">
+        <span class="mast-edition__stamp">The sample edition · no. 01</span>
         <span>{{ SOLANA_CLUSTER }} · {{ configured ? "writes gated" : "preview only" }}</span>
       </div>
-      <div class="mast-row">
-        <div class="mast-brand">
-          <button class="brand-key" type="button" aria-label="Settiva home" @click="goHome">
-            <img class="brand-seal" :src="seal" alt="" width="34" height="34" />
-            <span class="brand-word">Settiva<i>.</i></span>
-          </button>
-          <p class="brand-line">Two paths in. One record out.</p>
-        </div>
-        <div class="deck-tools">
-          <button class="key-action" type="button" @click="startCreate">
+      <div class="mast-plate">
+        <button class="mast-identity" type="button" aria-label="Trovane home" @click="goHome">
+          <img class="mast-sigil" :src="seal" alt="" width="38" height="38" />
+          <span class="mast-lockup">
+            <span class="mast-word">Trovane<i>.</i></span>
+            <span class="mast-motto">Two paths in. One record out.</span>
+          </span>
+        </button>
+        <div class="mast-tools">
+          <button class="action-core" type="button" @click="startCreate">
             Post a brief<UiIcon name="arrow" :size="14" />
           </button>
           <button
-            class="wallet-key"
+            class="wallet-pill"
             type="button"
             :aria-label="
               connecting
@@ -529,7 +528,7 @@ onBeforeUnmount(() => {
             <span>{{ connecting ? "Connecting…" : shortAccount }}</span>
           </button>
           <button
-            class="deck-menu"
+            class="menu-glyph"
             type="button"
             :aria-expanded="mobileNav"
             aria-controls="site-navigation"
@@ -540,22 +539,23 @@ onBeforeUnmount(() => {
           </button>
         </div>
       </div>
-      <nav class="ticker" aria-label="Primary navigation">
+    </header>
+
+    <main id="main-content" class="document">
+      <nav class="route-line" aria-label="Primary navigation">
         <button
           v-for="item in navItems"
           :key="item.id"
-          class="ticker-chan"
+          class="route-item"
           type="button"
-          :class="{ 'is-on': page === item.id }"
+          :class="{ 'is-active': page === item.id }"
           :aria-current="page === item.id ? 'page' : undefined"
           @click="goPage(item.id)"
         >
-          {{ item.label }}<sup v-if="item.id !== 'guide'">{{ item.count }}</sup>
+          {{ item.label }}<span v-if="item.id !== 'guide'" class="route-count">{{ item.count }}</span>
         </button>
       </nav>
-    </header>
 
-    <main id="main-content">
       <template v-if="page === 'guide'">
         <BriefGuide
           :configured="configured"
@@ -610,51 +610,51 @@ onBeforeUnmount(() => {
       </template>
 
       <template v-else>
-        <section v-if="page === 'index'" class="statement" aria-labelledby="statement-title">
-          <div class="statement-copy">
-            <p class="kicker">A market for careful work</p>
-            <h1 id="statement-title" class="statement-title">
+        <section v-if="page === 'index'" class="lede-spread" aria-labelledby="statement-title">
+          <div class="lede-copy">
+            <p class="overline">A market for careful work</p>
+            <h1 id="statement-title" class="lede-title">
               Two paths in.<br /><em>One record out.</em>
             </h1>
-            <p class="statement-lede">
-              Settiva is a Solana bounty market for focused research. Creators
+            <p class="lede-prose">
+              Trovane is a Solana bounty market for focused research. Creators
               publish a brief with a funded pool. Builders answer with
               source-linked evidence. The creator reads every entry before a
               single unit is allocated.
             </p>
-            <div class="statement-actions">
-              <button class="key-action" type="button" @click="scrollToIndex">
+            <div class="lede-acts">
+              <button class="action-core" type="button" @click="scrollToIndex">
                 Browse the index<UiIcon name="arrow" :size="15" />
               </button>
-              <button class="line-action" type="button" @click="startCreate">
+              <button class="text-link" type="button" @click="startCreate">
                 Post a brief
               </button>
-              <button class="line-action" type="button" @click="goPage('guide')">
+              <button class="text-link" type="button" @click="goPage('guide')">
                 Read the field guide
               </button>
             </div>
           </div>
-          <div class="edition-notice" role="note" aria-label="Edition notice">
-            <p class="kicker">Editor's note</p>
-            <p class="notice-copy">
+          <div class="marginalia" role="complementary" aria-label="Edition notice">
+            <p class="marginalia-head">Editor's note</p>
+            <p class="marginalia-copy">
               This is the sample edition. Four illustrative briefs show the
               shape of the market; no wallet is asked to sign and no
               transaction is sent.
             </p>
-            <dl class="notice-figures">
-              <div><dt>Briefs</dt><dd>{{ String(missionItems.length).padStart(2, "0") }}</dd></div>
-              <div><dt>Open</dt><dd>{{ String(openCount).padStart(2, "0") }}</dd></div>
-              <div><dt>Pool</dt><dd>{{ poolTotal }}<small>SOL</small></dd></div>
+            <dl class="figure-register">
+              <div class="figure-row"><dt>Briefs</dt><dd>{{ String(missionItems.length).padStart(2, "0") }}</dd></div>
+              <div class="figure-row"><dt>Open</dt><dd>{{ String(openCount).padStart(2, "0") }}</dd></div>
+              <div class="figure-row"><dt>Pool</dt><dd>{{ poolTotal }}<small>SOL</small></dd></div>
             </dl>
-            <p class="notice-gate">
+            <p class="marginalia-foot">
               {{ sampleFeed ? "Sample testnet data" : "Live read" }} · writes
               disabled
             </p>
           </div>
         </section>
 
-        <section v-else class="list-head">
-          <p class="kicker">{{ page === "saved" ? "Your reading list" : "Wallet activity" }}</p>
+        <section v-else class="page-head">
+          <p class="overline">{{ page === "saved" ? "Your reading list" : "Wallet activity" }}</p>
           <h1>{{ pageTitle }}</h1>
           <p>{{ pageNote }}</p>
         </section>
@@ -696,26 +696,28 @@ onBeforeUnmount(() => {
       </template>
     </main>
 
-    <footer class="status-foot" aria-label="Publication colophon">
-      <div class="foot-brand">
-        <p class="foot-word">Settiva<span>.</span></p>
-        <p class="foot-tag">Two paths in. One record out.</p>
+    <footer class="colophon" aria-label="Publication colophon">
+      <div class="colophon-top">
+        <div>
+          <p class="colophon-word">Trovane<span>.</span></p>
+          <p class="colophon-motto">Two paths in. One record out.</p>
+        </div>
+        <dl class="colophon-facts">
+          <div><dt>Cluster</dt><dd>{{ SOLANA_CLUSTER }}</dd></div>
+          <div><dt>Program</dt><dd>{{ programLabel }}</dd></div>
+          <div><dt>Edition</dt><dd>{{ sampleFeed ? "Sample testnet data" : "Live read" }}</dd></div>
+          <div><dt>Network</dt><dd>Solana</dd></div>
+        </dl>
       </div>
-      <dl class="foot-facts">
-        <div><dt>Cluster</dt><dd>{{ SOLANA_CLUSTER }}</dd></div>
-        <div><dt>Program</dt><dd>{{ programLabel }}</dd></div>
-        <div><dt>Edition</dt><dd>{{ sampleFeed ? "Sample testnet data" : "Live read" }}</dd></div>
-        <div><dt>Network</dt><dd>Solana</dd></div>
-      </dl>
-      <p class="foot-fine">
+      <p class="colophon-fine">
         <strong>NO WRITES</strong> · <strong>SAMPLE TESTNET DATA</strong> · Every
         record is an illustrative testnet brief. Rewards carry no intended monetary
         value, no platform token or CA is live, and no action on this page signs or
         sends a transaction.
       </p>
-      <div class="foot-base">
-        <span>&copy; 2026 Settiva · an independent Solana testnet project</span>
-        <button class="line-action" type="button" @click="backToTop">
+      <div class="colophon-base">
+        <span>&copy; 2026 Trovane · an independent Solana testnet project</span>
+        <button class="quiet-link" type="button" @click="backToTop">
           Back to top<UiIcon name="arrowup" :size="14" />
         </button>
       </div>
@@ -723,14 +725,14 @@ onBeforeUnmount(() => {
 
     <template v-if="mobileNav">
       <button
-        class="channel-scrim"
+        class="contents-veil"
         type="button"
         aria-label="Close navigation"
         @click="mobileNav = false"
       ></button>
-      <nav id="site-navigation" class="channel-deck" aria-label="Site navigation">
-        <div class="channel-head">
-          <span class="channel-kicker">Contents</span>
+      <nav id="site-navigation" class="contents-plate" aria-label="Site navigation">
+        <div class="contents-head">
+          <span class="contents-kicker">Contents</span>
           <button
             class="glyph-key"
             type="button"
@@ -743,22 +745,22 @@ onBeforeUnmount(() => {
         <button
           v-for="item in navItems"
           :key="`nav-${item.id}`"
-          class="channel-chan"
+          class="contents-item"
           type="button"
-          :class="{ 'is-on': page === item.id }"
+          :class="{ 'is-active': page === item.id }"
           @click="goPage(item.id)"
         >
           <span>{{ item.label }}</span>
           <small v-if="item.id !== 'guide'">{{ item.count }}</small>
         </button>
-        <button class="channel-chan is-key" type="button" @click="startCreate">
+        <button class="contents-item is-key" type="button" @click="startCreate">
           <span>Post a brief</span><UiIcon name="plus" :size="18" />
         </button>
-        <button class="channel-chan" type="button" @click="account ? openRewards() : connectWallet()">
+        <button class="contents-item" type="button" @click="account ? openRewards() : connectWallet()">
           <span>{{ account ? "Your rewards" : "Connect wallet" }}</span>
           <small>{{ account ? shortAccount : "Wallet" }}</small>
         </button>
-        <div class="channel-foot">
+        <div class="contents-foot">
           <span>{{ SOLANA_CLUSTER }} · {{ configured ? "writes gated" : "preview only" }}</span>
           <span>{{ programLabel }}</span>
         </div>
@@ -772,10 +774,12 @@ onBeforeUnmount(() => {
       @cancel.prevent="closeAll"
       @click="(event) => event.target === dialog && closeAll()"
     >
-      <div v-if="modalOpen" class="sheet-shell">
-        <div class="sheet-head">
-          <p class="kicker">{{ modalKicker }}</p>
-          <h2 id="dialog-title">{{ modalTitle }}</h2>
+      <div v-if="modalOpen" class="sheet-frame">
+        <div class="sheet-crest">
+          <div>
+            <p class="overline">{{ modalKicker }}</p>
+            <h2 id="dialog-title">{{ modalTitle }}</h2>
+          </div>
           <button
             class="glyph-key"
             type="button"
@@ -787,10 +791,10 @@ onBeforeUnmount(() => {
           </button>
         </div>
         <div class="sheet-body">
-          <div v-if="walletError" class="readout is-alert" role="alert">
+          <div v-if="walletError" class="readout is-fault" role="alert">
             <p>{{ walletError }}</p>
             <button
-              class="line-action"
+              class="text-link"
               type="button"
               @click="connectWallet"
               :disabled="connecting"
@@ -805,9 +809,9 @@ onBeforeUnmount(() => {
               review and fund it.
             </p>
             <div class="progress-track" aria-label="Creation progress">
-              <span :class="{ 'is-on': createStep === 1 }">01 · Shape the brief</span>
+              <span :class="{ 'is-current': createStep === 1 }">01 · Shape the brief</span>
               <span class="progress-rule" aria-hidden="true"></span>
-              <span :class="{ 'is-on': createStep === 2 }">02 · Review &amp; fund</span>
+              <span :class="{ 'is-current': createStep === 2 }">02 · Review &amp; fund</span>
             </div>
             <form v-if="createStep === 1" @submit.prevent="reviewDraft">
               <label for="mission-title">What should this brief answer?</label>
@@ -837,14 +841,14 @@ onBeforeUnmount(() => {
                 rows="4"
                 placeholder="Define the question, scope, primary sources, and what an accepted contribution should include."
               ></textarea>
-              <button class="line-action" type="button" @click="downloadBrief">
+              <button class="text-link" type="button" @click="downloadBrief">
                 <UiIcon name="download" :size="14" />Download your brief
               </button>
               <div class="sheet-note">
                 <UiIcon name="info" :size="17" />
                 <p>
                   Publish your brief on a public host, then paste its URL below.
-                  Draft text is not uploaded or stored on-chain by Settiva.
+                  Draft text is not uploaded or stored on-chain by Trovane.
                 </p>
               </div>
               <label for="brief-uri">Public brief URL</label>
@@ -891,13 +895,13 @@ onBeforeUnmount(() => {
                   {{ error }}
                 </li>
               </ul>
-              <button class="key-action wide" type="submit">
+              <button class="action-core stretch" type="submit">
                 Review brief<UiIcon name="arrow" :size="15" />
               </button>
             </form>
 
             <div v-else class="review-brief">
-              <span class="topic-stamp">{{ missionForm.category }}</span>
+              <span class="stamp-topic">{{ missionForm.category }}</span>
               <h3 tabindex="-1">{{ missionForm.title }}</h3>
               <dl>
                 <div>
@@ -941,12 +945,12 @@ onBeforeUnmount(() => {
                 </li>
               </ul>
               <div class="sheet-actions">
-                <button class="ghost-action" type="button" @click="editDraft" :disabled="busy">
+                <button class="action-halo" type="button" @click="editDraft" :disabled="busy">
                   <UiIcon name="arrowleft" :size="15" />Edit brief
                 </button>
                 <button
                   v-if="!configured"
-                  class="key-action"
+                  class="action-core"
                   type="button"
                   @click="downloadBrief"
                 >
@@ -954,7 +958,7 @@ onBeforeUnmount(() => {
                 </button>
                 <button
                   v-else
-                  class="key-action"
+                  class="action-core"
                   type="button"
                   @click="transact('create')"
                   :disabled="busy"
@@ -974,19 +978,19 @@ onBeforeUnmount(() => {
               <UiIcon name="wallet" :size="30" />
               <h3>Connect to see your rewards.</h3>
               <p>Use the wallet you contributed with on Solana testnet.</p>
-              <button class="key-action" type="button" @click="connectWallet" :disabled="connecting">
+              <button class="action-core" type="button" @click="connectWallet" :disabled="connecting">
                 {{ connecting ? "Connecting…" : "Connect wallet" }}
               </button>
             </div>
             <template v-else>
               <code class="account-address">{{ account }}</code>
-              <div v-if="!correctChain" class="readout is-static">
+              <div v-if="!correctChain" class="readout is-quiet">
                 <p>Switch to Solana testnet to view and claim your rewards.</p>
-                <button class="ghost-action" type="button" @click="switchNetwork">
+                <button class="action-halo" type="button" @click="switchNetwork">
                   Switch network
                 </button>
               </div>
-              <div v-else-if="!configured" class="readout is-static" role="status">
+              <div v-else-if="!configured" class="readout is-quiet" role="status">
                 <p>
                   The Solana bounty program is live on testnet, but claimable
                   rewards cannot be read until a classic SPL reward mint is
@@ -998,17 +1002,17 @@ onBeforeUnmount(() => {
                   {{ statsLoading ? "…" : amountText(walletBalance) }}
                   {{ SOLANA_CLUSTER }} SOL
                 </p>
-                <button class="line-action" type="button" @click="updateWalletStats" :disabled="statsLoading">
+                <button class="text-link" type="button" @click="updateWalletStats" :disabled="statsLoading">
                   <UiIcon name="refresh" :size="14" />Refresh wallet balance
                 </button>
               </div>
-              <div v-else-if="statsError" class="readout is-alert" role="alert">
+              <div v-else-if="statsError" class="readout is-fault" role="alert">
                 <p>{{ statsError }}</p>
-                <button class="line-action" type="button" @click="refreshAll">Try again</button>
+                <button class="text-link" type="button" @click="refreshAll">Try again</button>
               </div>
               <div v-else>
                 <div class="reward-ledger">
-                  <p class="kicker">Available to claim</p>
+                  <p class="overline">Available to claim</p>
                   <strong :title="claimableAmount + ' ' + rewardSymbol"
                     >{{ statsLoading ? "…" : amountText(claimableAmount) }}
                     <small>{{ rewardSymbol }}</small></strong
@@ -1025,7 +1029,7 @@ onBeforeUnmount(() => {
                   here. Claiming sends the balance to your connected wallet.
                 </p>
                 <button
-                  class="key-action wide"
+                  class="action-core stretch"
                   type="button"
                   @click="transact('claim')"
                   :disabled="
@@ -1043,7 +1047,7 @@ onBeforeUnmount(() => {
                         : "No rewards to claim yet"
                   }}<UiIcon name="wallet" :size="15" />
                 </button>
-                <button class="line-action" type="button" @click="refreshAll" :disabled="statsLoading || busy">
+                <button class="text-link" type="button" @click="refreshAll" :disabled="statsLoading || busy">
                   <UiIcon name="refresh" :size="14" />Refresh balance
                 </button>
               </div>
@@ -1059,11 +1063,11 @@ onBeforeUnmount(() => {
 
           <div
             v-if="txStatus !== 'idle' && (busy || txError || txHash)"
-            class="readout is-static"
-            :class="{ 'is-alert': txError }"
+            class="readout is-quiet"
+            :class="{ 'is-fault': txError }"
             :role="txError ? 'alert' : 'status'"
           >
-            <span v-if="busy" class="spinner"></span>
+            <span v-if="busy" class="pulse-spinner"></span>
             <UiIcon v-else :name="txError ? 'info' : 'check'" :size="16" />
             <p>
               {{
@@ -1083,7 +1087,7 @@ onBeforeUnmount(() => {
           </div>
           <div
             v-if="notice && noticeKind !== 'bookmark' && !txHash && !txError"
-            class="readout is-static"
+            class="readout is-quiet"
             role="status"
           >
             <p>{{ notice }}</p>
@@ -1092,7 +1096,7 @@ onBeforeUnmount(() => {
       </div>
     </dialog>
 
-    <div v-if="walletError && !modalOpen" class="toast is-alert" role="alert">
+    <div v-if="walletError && !modalOpen" class="toast is-fault" role="alert">
       <UiIcon name="info" :size="17" />
       <p>{{ walletError }}</p>
       <button class="glyph-key" type="button" aria-label="Dismiss wallet error" @click="walletError = ''">
@@ -1110,13 +1114,13 @@ onBeforeUnmount(() => {
           rel="noopener noreferrer"
           >View confirmed transaction ↗</a>
       </p>
-      <button v-if="canUndoSavedChange" class="line-action toast-undo" type="button" @click="undoSavedChange">
+      <button v-if="canUndoSavedChange" class="text-link toast-undo" type="button" @click="undoSavedChange">
         Undo
       </button>
       <button class="glyph-key" type="button" aria-label="Dismiss notification" @click="dismissNotice">
         <UiIcon name="close" :size="15" />
       </button>
     </div>
-    </div>
   </div>
 </template>
+

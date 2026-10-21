@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "meta": {
-    "projectName": "settiva",
-    "title": "settiva",
+    "projectName": "trovane",
+    "title": "trovane",
     "lang": "en"
   },
   "routes": [
@@ -38,12 +38,12 @@
       "count": 1
     },
     {
-      "value": "&copy; 2026 Settiva · an independent Solana testnet project",
-      "count": 2
-    },
-    {
       "value": "&copy; 2026 Tallyvein",
       "count": 1
+    },
+    {
+      "value": "&copy; 2026 Trovane · an independent Solana testnet project",
+      "count": 2
     },
     {
       "value": "01",
@@ -458,12 +458,12 @@
       "count": 1
     },
     {
-      "value": "On this device only. Bookmarks are stored in local storage under the settiva-saved key, and older project keys migrate into it without clearing your list.",
-      "count": 2
-    },
-    {
       "value": "On this device only. Bookmarks are stored in local storage under the tallyvein-saved key, and older project keys migrate into it without clearing your list.",
       "count": 1
+    },
+    {
+      "value": "On this device only. Bookmarks are stored in local storage under the trovane-saved key, and older project keys migrate into it without clearing your list.",
+      "count": 2
     },
     {
       "value": "One record out.",
@@ -542,12 +542,12 @@
       "count": 3
     },
     {
-      "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Settiva.",
-      "count": 2
-    },
-    {
       "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Tallyvein.",
       "count": 1
+    },
+    {
+      "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Trovane.",
+      "count": 2
     },
     {
       "value": "Publish your findings, then link the public evidence for creator review.",
@@ -686,22 +686,6 @@
       "count": 1
     },
     {
-      "value": "Settiva",
-      "count": 4
-    },
-    {
-      "value": "Settiva is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
-      "count": 2
-    },
-    {
-      "value": "Settiva is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
-      "count": 2
-    },
-    {
-      "value": "Settiva is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
-      "count": 2
-    },
-    {
       "value": "Settle the tally.",
       "count": 1
     },
@@ -714,7 +698,7 @@
       "count": 8
     },
     {
-      "value": "SOL, which has no intended monetary value. Settiva has no platform token, no investment return and no guaranteed payout.",
+      "value": "SOL, which has no intended monetary value. Trovane has no platform token, no investment return and no guaranteed payout.",
       "count": 2
     },
     {
@@ -867,6 +851,22 @@
     },
     {
       "value": "Topics",
+      "count": 2
+    },
+    {
+      "value": "Trovane",
+      "count": 4
+    },
+    {
+      "value": "Trovane is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
+      "count": 2
+    },
+    {
+      "value": "Trovane is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
+      "count": 2
+    },
+    {
+      "value": "Trovane is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
       "count": 2
     },
     {
@@ -1446,7 +1446,7 @@
     },
     {
       "kind": "interpolation",
-      "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Settiva-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
+      "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Trovane-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
       "count": 2
     },
     {

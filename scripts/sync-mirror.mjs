@@ -85,10 +85,10 @@ await cp(
 );
 await writeFile(
   path.join(mirror, "README.md"),
-  "# Settiva a702 entry point\n\nThis is the distribution mirror of the [main Settiva website](../README.md). Edit the parent source. From the parent website directory, run npm run sync:mirror or npm run build:all, then npm run check:site. The sync removes obsolete files from the mirror's src/public directories.\n\nOnly public source, public assets and fixed build entry points are distributed here. QA scripts, screenshots, reports and legacy contract records belong to the parent workspace and are not mirrored. Run all validation from the parent website directory.\n\nFrom this directory, use npm run dev, npm run build, or npm run preview. Public asset paths support subpath hosting. Local environment files are independent and never copied by the sync script.\n\nSee [brand guidelines](../../BRANDING.md) and [Solana configuration](../README.md).\n",
+  "# Trovane a702 entry point\n\nThis is the distribution mirror of the [main Trovane website](../README.md). Edit the parent source. From the parent website directory, run npm run sync:mirror or npm run build:all, then npm run check:site. The sync removes obsolete files from the mirror's src/public directories.\n\nOnly public source, public assets and fixed build entry points are distributed here. QA scripts, screenshots, reports and legacy contract records belong to the parent workspace and are not mirrored. Run all validation from the parent website directory.\n\nFrom this directory, use npm run dev, npm run build, or npm run preview. Public asset paths support subpath hosting. Local environment files are independent and never copied by the sync script.\n\nSee [brand guidelines](../../BRANDING.md) and [Solana configuration](../README.md).\n",
 );
 console.log(
-  "Settiva a702 mirror synchronized; environment files remain local.",
+  "Trovane a702 mirror synchronized; environment files remain local.",
 );
 
 

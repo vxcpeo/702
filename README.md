@@ -1,4 +1,4 @@
-# Settiva website
+# Trovane website
 
 Two paths in. One record out.
 
@@ -25,61 +25,48 @@ material reaches any public output.
 
 ## Interface
 
-The UI is a paper broadsheet: a warm masthead, a typographic hero, a numbered
-brief index, an in-flow dossier, a field guide and a colophon at the foot of the
-page. The terminal deck is gone rather than restyled: there is no chain header,
-tab rail, inline filter strip, registry table, sticky inspector pane or fixed
-bottom status bar.
+The interface is a **documentary ledger** on a dark Cosmos field: an issue line
+and masthead lockup, a mono route index inside the document, a nine-column lede
+with a three-column editor's note, a seven/three registry with a marginal
+summary, ruled ledger rows, numbered chapters and a colophon. Its direction,
+skeleton, content contract and validation are recorded in
+[`../RESKIN-VALIDATION.md`](../RESKIN-VALIDATION.md). The component tree is small
+and the presentation layer is a single stylesheet:
 
-| Region | Role |
-| --- | --- |
-| Masthead | Ink seal and serif wordmark, four text navigation links with live counts, the draft-sheet action, the wallet gate and the mobile contents toggle |
-| Hero | The edition's two-line statement, the market lede and the editor's note with sample figures |
-| Index | Search line, topic and standing filters, order control, numbered entries with pool, deadline, state and a keep action |
-| Dossier | A selected brief replaces the index in the flow: scope, contribution forms, evidence review, pool split and draft actions |
-| Field guide | The three-step loop, settlement rules, FAQ and page actions |
-| Colophon | Cluster, abbreviated program id, edition, the no-writes and sample-data notice, and the back-to-top action |
+- `src/App.vue` — the shell: masthead, route index, lede and marginalia,
+  colophon, floating sheet and contents plate;
+- `src/components/BriefIndex.vue` — the registry, query row, index-line filters,
+  sort and the marginal summary figures;
+- `src/components/BriefDossier.vue` — a selected brief's fact register, pool
+  band, numbered chapters, entry forms, evidence ledger and review panel;
+- `src/components/BriefGuide.vue` — the field guide, rules and FAQ ledger;
+- `src/components/UiIcon.vue` — the inline icon family;
+- `src/styles/meridian-ledger.css` — every token, layout, rule and motion curve.
 
-A selected brief is an in-flow page, not a dialog and not a side pane. Below
-900 px the dossier stays in the reading flow and navigation becomes a full-screen
-contents menu; below 760 px the filter rows scroll in place and the entries stack
-into full-width rows.
-
-Styling lives in one file, `src/styles/settiva-ledger.css`. Its `:root` tokens
-hold every colour, rule, radius and easing curve. The edition uses warm cream
-stock, 1–3 px ink rules, an asymmetric card radius, a cinnabar accent and no
-shadows on the reading surface; motion is minimal and is dropped under
-`prefers-reduced-motion`, the ruled-paper texture and paper shadows are dropped
-under `forced-colors`, and print hides the controls.
-
-Type uses the operating-system stacks: Georgia for the display voice and Segoe
-UI for reading copy and labels. No web font is shipped, preloaded or requested.
-The previous JetBrains Mono and Space Grotesk faces are retired from the site and
-kept only under `twitter/fonts/` for reproducible social-kit generation.
+The application logic (composables, Solana client, formatting, sample data and
+the write gates) is separate from the presentation and is not part of the
+reskin surface.
 
 ## Identity
 
-The canonical identity is Settiva (settiva.xyz, @settiva). The mark is the seal:
-one solid block cut by two openings that enter from opposite edges and end on a
-45° bias, so two paths cut in and one record stays continuous between them. It
-ships as public/settiva-mark.svg and is served as the social-kit mark. The paper
-edition serves public/settiva-favicon.svg (ink on paper), public/settiva-seal.svg
-(the in-page masthead seal) and public/settiva-edition-social.png for Open Graph.
-Regenerate the mark and the X kit with twitter/generate_assets.py
---sync-public, which writes twitter/ and mirrors only the site mark into
-website/public/, then run npm run sync:mirror so a702/ matches. The paper
-favicon, seal and edition social card come from
-twitter/generate_edition_assets.py, which imports the same seal geometry, so no
-asset is drawn twice.
+The canonical identity is Trovane (trovane.xyz, @trovane). The mark is the T and
+its full stop: a bold T with a 64-unit crossbar, a 40-unit stem and a square
+period on the baseline. It ships as `public/trovane-mark.svg` (white on black)
+and is also the masthead mark. The site serves `public/trovane-favicon.svg`
+(white on black), `public/trovane-seal.svg` (the fieldless in-page masthead mark,
+inverted by the stylesheet) and `public/trovane-edition-social.png` for Open
+Graph.
 
-Saved briefs migrate older project keys, including yovinx-saved, tallyvein-saved,
-quilsted-saved, buidlspur-saved, citevra-saved and attestora-saved, into
-settiva-saved. Search, filters, sorting, mobile navigation, modal focus handling
-and the sample-only preview remain available.
+Regenerate the X kit with `twitter/generate_assets.py --sync-public`, which
+writes `twitter/` and mirrors only the site mark into `website/public/`, then run
+`npm run sync:mirror` so `a702/` matches. The favicon, seal, mark and edition
+social card come from `twitter/generate_edition_assets.py`, which imports the
+same mark geometry, so no asset is drawn twice.
 
-The superseded terminal deck and the duplicate snapshot of the previous paper
-edition were removed in the Settiva rebrand; their files are preserved in the
-rebrand backup and are not built or served.
+Saved briefs migrate older project keys, including settiva-saved, yovinx-saved,
+tallyvein-saved, quilsted-saved, buidlspur-saved, citevra-saved and
+attestora-saved, into trovane-saved. Search, filters, sorting, mobile
+navigation, modal focus handling and the sample-only preview remain available.
 
 The deployed program id is preserved as a Solana technical identifier:
 5ibhioLv21ShH9EXjRDkhygREtXqHHTZ6vtEC3DGgwDu (testnet). The legacy

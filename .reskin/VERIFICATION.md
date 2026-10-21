@@ -1,17 +1,17 @@
 # Reskin verification — PASS
 
-Generated: 2026-10-19T19:03:52.251Z
+Generated: 2026-10-20T16:26:41.537Z
 
-- Project: **settiva**
-- URL: http://127.0.0.1:4931/
-- Original skeleton: `orbital` (spatial)
-- New skeleton: `ticker-stage` (linear)
-- Accent: #ad3a24 -> #9945ff (119.58 ΔE; min 30)
-- Source contract: intact (`1ace2a9a9834`)
+- Project: **trovane**
+- URL: http://127.0.0.1:4317/
+- Original skeleton: `ticker-stage` (linear)
+- New skeleton: `document-flow` (editorial)
+- Accent: #9945ff -> #40b3ff (85.09 ΔE; min 30)
+- Source contract: intact (`e01a6837d047`)
 
 | Route | Result | DOM similarity | Landmark similarity | Axe serious | Screenshot |
 |---|---|---:|---:|---:|---|
-| `/` | PASS | 0.269 | 0.667 | 0 | [desktop](current/home-desktop.png) |
+| `/` | PASS | 0.268 | 0.429 | 0 | [desktop](current/home-desktop.png) |
 
 ## Blocking issues
 
@@ -19,7 +19,7 @@ Generated: 2026-10-19T19:03:52.251Z
 
 ## Warnings
 
-- /: aria attribute added: aria-label=Toggle navigation
+- /: aria attribute added: aria-label=This edition at a glance
 
 ## Thresholds
 

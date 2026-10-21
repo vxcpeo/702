@@ -10,12 +10,12 @@ const AxeBuilder = require('@axe-core/playwright').default;
 const output = fileURLToPath(new URL('../output/playwright/', import.meta.url));
 const socialHost = /(^|\.)(twitter\.com|x\.com|t\.co)\.*$/i;
 const tags = ['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa', 'best-practice'];
-const briefFile = 'settiva-bounty-brief.md';
-const savedKey = 'settiva-saved';
-const legacyKeys = ['yovinx-saved', 'tallyvein-saved', 'quilsted-saved', 'buidlspur-saved', 'citevra-saved', 'attestora-saved'];
+const briefFile = 'trovane-bounty-brief.md';
+const savedKey = 'trovane-saved';
+const legacyKeys = ['settiva-saved', 'yovinx-saved', 'tallyvein-saved', 'quilsted-saved', 'buidlspur-saved', 'citevra-saved', 'attestora-saved'];
 
 /**
- * User-flow, viewport and accessibility checks for the Settiva paper edition.
+ * User-flow, viewport and accessibility checks for the Trovane paper edition.
  *
  * The edition is a single editorial column: masthead, index spread, dossier
  * article, field guide and colophon. A selected brief replaces the index in the
@@ -83,7 +83,7 @@ export async function runUiQa(browser, url = 'http://127.0.0.1:42705/') {
   }
   async function capture(name, fullPage = false) {
     await page.evaluate(() => new Promise(resolve => requestAnimationFrame(() => requestAnimationFrame(resolve))));
-    await page.screenshot({ path: path.join(output, `settiva-edition-${name}.png`), fullPage, scale: 'css' });
+    await page.screenshot({ path: path.join(output, `trovane-edition-${name}.png`), fullPage, scale: 'css' });
   }
   async function auditWriteGates(label) {
     const gates = await page.evaluate(() => {
@@ -128,13 +128,13 @@ export async function runUiQa(browser, url = 'http://127.0.0.1:42705/') {
       retired: document.querySelectorAll('.chain-header, .tab-rail, .filter-bar, .reg-row, .inspector, .status-strip, .pane-head, .deck-body, .nav-sheet').length,
       editorial: ['.masthead', '.hero', '.index-sheet', '.entry', '.ledger-summary', '.colophon'].filter(selector => document.querySelector(selector)).length,
     }));
-    assert.match(report.identity.title, /^Settiva/);
-    assert.match(report.identity.canonical, /^https:\/\/settiva\.xyz\/$/);
+    assert.match(report.identity.title, /^Trovane/);
+    assert.match(report.identity.canonical, /^https:\/\/trovane\.xyz\/$/);
     assert.equal(report.identity.themeColor, '#f3ede1');
-    assert.match(report.identity.favicon, /settiva-favicon\.svg$/);
-    assert.equal(report.identity.ogSiteName, 'Settiva');
+    assert.match(report.identity.favicon, /trovane-favicon\.svg$/);
+    assert.equal(report.identity.ogSiteName, 'Trovane');
     assert.equal(report.identity.twitterMeta, 0, 'No twitter: metadata may ship');
-    assert.equal(report.identity.wordmark, 'Settiva.');
+    assert.equal(report.identity.wordmark, 'Trovane.');
     assert.equal(report.identity.tagline, 'Two paths in. One record out.');
     assert.match(report.identity.footer, /NO WRITES/);
     assert.match(report.identity.footer, /SAMPLE TESTNET DATA/);
@@ -255,7 +255,7 @@ export async function runUiQa(browser, url = 'http://127.0.0.1:42705/') {
     assert.equal(await page.locator('.search-line').count(), 0, 'The field guide drops the index controls');
     assert.equal(await page.locator('.masthead-nav').count(), 1, 'The masthead stays available for navigation');
     assert.equal(await page.locator('dialog[open]').count(), 0, 'The field guide is not a modal');
-    assert.match(await page.locator('.colophon').innerText(), /Settiva/);
+    assert.match(await page.locator('.colophon').innerText(), /Trovane/);
     assert((await page.locator('.guide-faq details').count()) >= 4, 'The guide carries the FAQ');
     for (const summary of await page.locator('.guide-faq summary').all()) {
       await summary.click();
@@ -300,7 +300,7 @@ export async function runUiQa(browser, url = 'http://127.0.0.1:42705/') {
     assert.equal(download.suggestedFilename(), briefFile);
     const draft = await readFile(await download.path(), 'utf8');
     assert.match(draft, /^# Which primary sources explain settlement risk\?/m);
-    assert.match(draft, /Settiva \/ Market structure/);
+    assert.match(draft, /Trovane \/ Market structure/);
     assert.match(draft, /0\.000000001 testnet SOL/);
     assert.match(draft, /no intended monetary value/);
     report.download = { suggestedFilename: download.suggestedFilename(), bytes: Buffer.byteLength(draft) };
@@ -314,7 +314,7 @@ export async function runUiQa(browser, url = 'http://127.0.0.1:42705/') {
     assert.equal(await page.locator('#mission-title').inputValue(), 'Which primary sources explain settlement risk?', 'The draft survives a reopen');
     await page.keyboard.press('Escape');
     await page.waitForTimeout(300);
-    report.flows.push('Draft sheet: invalid URL and zero reward are rejected with focus management, review echoes the exact amount, the draft downloads as a Settiva markdown file, and the draft survives close and reopen');
+    report.flows.push('Draft sheet: invalid URL and zero reward are rejected with focus management, review echoes the exact amount, the draft downloads as a Trovane markdown file, and the draft survives close and reopen');
 
     // -- Flow 9: the wallet gate stays gated -------------------------------
     await clearOverlays();
@@ -451,7 +451,7 @@ export async function runUiQa(browser, url = 'http://127.0.0.1:42705/') {
     await capture('ui-failure').catch(() => {});
     throw error;
   } finally {
-    await writeFile(path.join(output, 'settiva-edition-ui-results.json'), JSON.stringify(report, null, 2) + '\n');
+    await writeFile(path.join(output, 'trovane-edition-ui-results.json'), JSON.stringify(report, null, 2) + '\n');
     await context.close();
   }
 }

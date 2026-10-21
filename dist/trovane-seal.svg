@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Trovane mark</title>
+  <desc id="desc">The Trovane mark in one ink: a bold T with a 64-unit crossbar, a 40-unit stem and a square full stop on its baseline, so the initial and the record's closing period read as one sign. The interface inverts it to white.</desc>
+  <polygon points="50.72,40.64 205.28,40.64 205.28,94.4 144.8,94.4 144.8,215.36 111.2,215.36 111.2,94.4 50.72,94.4" fill="#000000"/>
+  <polygon points="175.04,191.84 198.56,191.84 198.56,215.36 175.04,215.36" fill="#000000"/>
+</svg>

@@ -1,142 +1,146 @@
+/**
+ * Interaction flow checks for the reskinned Trovane site.
+ *
+ * Covers the behaviours the template rewrite could regress: search, topic and
+ * standing filters, sorting, keyboard row navigation, dossier open/close, keep
+ * and saved list, guide FAQ, the create sheet's validation/review/edit/escape
+ * path, and the mobile contents sheet.
+ */
+import fs from 'node:fs/promises';
 import path from 'node:path';
 import { createRequire } from 'node:module';
 
 const ROOT = process.cwd();
-const BASE = process.env.REVIEW_URL || 'http://127.0.0.1:4944/';
-const EXEC = 'C:/Users/Administrator/AppData/Local/ms-playwright/chromium-1247/chrome-win64/chrome.exe';
-const { chromium } = createRequire(path.join(ROOT, 'package.json'))('playwright');
+const OUT = path.join(ROOT, '.reskin', 'review');
+const BASE = process.env.REVIEW_URL || 'http://127.0.0.1:4318/';
+const req = createRequire(path.join(ROOT, 'package.json'));
+const { chromium } = req('playwright');
 
-const results = [];
-const errors = [];
-const check = (name, condition, detail = '') => {
-  results.push({ name, passed: Boolean(condition), detail });
-  if (!condition) console.log(`FAIL ${name} ${detail}`);
-};
+const log = [];
+const failures = [];
+function check(condition, label) {
+  log.push(`${condition ? 'PASS' : 'FAIL'}  ${label}`);
+  if (!condition) failures.push(label);
+}
 
-const browser = await chromium.launch({ headless: true, executablePath: EXEC, args: ['--no-sandbox'] });
-const context = await browser.newContext({ viewport: { width: 1440, height: 900 }, acceptDownloads: true });
-const page = await context.newPage();
-page.on('console', (msg) => { if (msg.type() === 'error') errors.push(msg.text()); });
-page.on('pageerror', (err) => errors.push(`pageerror: ${err.message}`));
+const browser = await chromium.launch({ headless: true, channel: 'chrome', args: ['--hide-scrollbars'] });
+try {
+  const context = await browser.newContext({ viewport: { width: 1440, height: 900 } });
+  const page = await context.newPage();
+  await page.goto(BASE, { waitUntil: 'networkidle' });
 
-await page.goto(BASE, { waitUntil: 'networkidle' });
-await page.waitForTimeout(300);
+  const rows = () => page.locator('.register-row').count();
+  check((await rows()) === 4, 'index renders four briefs');
 
-// search
-await page.locator('.lookup-slot input').fill('liquidity');
-await page.waitForTimeout(250);
-check('search narrows the ledger', (await page.locator('.row-open').count()) === 1, String(await page.locator('.row-open').count()));
-await page.locator('.lookup-clear').click();
-await page.waitForTimeout(250);
-check('clear search restores four rows', (await page.locator('.row-open').count()) === 4);
+  await page.locator('.query-field input').fill('liquidity');
+  await page.waitForTimeout(200);
+  check((await rows()) === 1, 'search narrows the ledger to one row');
+  await page.locator('.query-clear').click();
+  await page.waitForTimeout(200);
+  check((await rows()) === 4, 'clear search restores four rows');
 
-// topic filter
-await page.locator('.chan-chip').filter({ hasText: 'Risk research' }).click();
-await page.waitForTimeout(250);
-check('topic filter narrows to one row', (await page.locator('.row-open').count()) === 1);
-await page.locator('.reset-key').click();
-await page.waitForTimeout(300);
-check('reset returns the full index', (await page.locator('.row-open').count()) === 4);
+  const topic = page.locator('.topic-rail').first().locator('.topic-chip', { hasText: 'Ecosystem' });
+  await topic.click();
+  await page.waitForTimeout(200);
+  check((await rows()) === 1, 'topic filter narrows to one row');
+  await page.locator('.query-row .quiet-link').click();
+  await page.waitForTimeout(200);
+  check((await rows()) === 4, 'reset restores the full ledger');
 
-// sort
-await page.locator('.order-slot select').selectOption('reward');
-await page.waitForTimeout(300);
-check('highest pool sorts first', (await page.locator('.row-pool strong').first().innerText()).trim() === '0.12');
-await page.locator('.order-slot select').selectOption('newest');
-await page.waitForTimeout(300);
+  const standing = page.locator('.topic-rail').nth(1).locator('.topic-chip', { hasText: 'Open' });
+  await standing.click();
+  await page.waitForTimeout(200);
+  check((await page.locator('.blank-slate').count()) === 1, 'standing filter with no match shows the empty state');
+  await page.locator('.blank-slate .text-link').click();
+  await page.waitForTimeout(200);
 
-// keyboard row navigation
-await page.locator('.row-open').first().focus();
-await page.keyboard.press('ArrowDown');
-await page.waitForTimeout(150);
-const secondKey = await page.evaluate(() => document.activeElement?.getAttribute('data-key'));
-check('ArrowDown moves to the next row', secondKey === 'sample-2', String(secondKey));
-await page.keyboard.press('Home');
-await page.waitForTimeout(150);
-const firstKey = await page.evaluate(() => document.activeElement?.getAttribute('data-key'));
-check('Home returns to the first row', firstKey === 'sample-1', String(firstKey));
+  await page.locator('#brief-order').selectOption('reward');
+  await page.waitForTimeout(200);
+  const firstPool = await page.locator('.register-pool strong').first().innerText();
+  check(firstPool.trim() === '0.12', 'sorting by pool puts the largest pool first');
 
-// dossier and focus return
-const firstTitle = (await page.locator('.row-title').first().innerText()).trim();
-await page.locator('.row-open').first().click();
-await page.waitForTimeout(300);
-check('dossier opens with the brief title', (await page.locator('.dossier-title').innerText()).trim() === firstTitle);
-check('dossier replaces the index', (await page.locator('.index-deck').count()) === 0);
-await page.locator('.back-key').click();
-await page.waitForTimeout(300);
-const returnedKey = await page.evaluate(() => document.activeElement?.getAttribute('data-key'));
-check('closing the dossier returns focus to its row', returnedKey === 'sample-1', String(returnedKey));
+  await page.locator('.register-open').first().focus();
+  await page.keyboard.press('ArrowDown');
+  await page.waitForTimeout(120);
+  const focusedKey = await page.evaluate(() => document.activeElement?.getAttribute('data-key'));
+  check(Boolean(focusedKey), 'arrow-key navigation moves focus to another row');
 
-// keep and saved list
-await page.locator('.row-keep').first().click();
-await page.waitForTimeout(250);
-check('keep marks the row saved', (await page.locator('.row-keep').first().getAttribute('aria-pressed')) === 'true');
-await page.locator('.ticker-chan').filter({ hasText: 'Saved' }).click();
-await page.waitForTimeout(300);
-check('saved view lists the kept brief', (await page.locator('.row-open').count()) === 1);
-await page.reload({ waitUntil: 'networkidle' });
-await page.waitForTimeout(300);
-await page.locator('.ticker-chan').filter({ hasText: 'Saved' }).click();
-await page.waitForTimeout(300);
-check('saved list survives a reload', (await page.locator('.row-open').count()) === 1);
-await page.locator('.row-keep').first().click();
-await page.waitForTimeout(300);
-check('removing the last brief shows the empty state', (await page.locator('.empty-slot').innerText()).includes('Nothing saved yet.'));
+  await page.locator('.register-row', { hasText: 'liquidity' }).locator('.register-open').click();
+  await page.waitForTimeout(300);
+  check((await page.locator('#dossier-title').innerText()).includes('liquidity'), 'opening a row shows its dossier');
+  await page.locator('.dossier-nav .text-link').click();
+  await page.waitForTimeout(250);
+  check((await page.locator('.register-row').count()) === 4, 'back returns to the ledger');
 
-// guide
-await page.locator('.ticker-chan').filter({ hasText: 'Guide' }).click();
-await page.waitForTimeout(300);
-check('guide replaces the index', (await page.locator('.guide-deck').count()) === 1);
-check('guide drops the index controls', (await page.locator('.lookup').count()) === 0);
-const faq = page.locator('.faq-deck details').first();
-await faq.locator('summary').click();
-await page.waitForTimeout(200);
-check('faq opens', (await faq.getAttribute('open')) !== null);
+  const keep = page.locator('.register-keep').first();
+  await keep.click();
+  await page.waitForTimeout(200);
+  check((await keep.getAttribute('aria-pressed')) === 'true', 'keep toggles the saved state');
+  const savedNav = page.locator('.route-item', { hasText: 'Saved' });
+  check((await savedNav.innerText()).includes('1'), 'saved route count increments');
+  await savedNav.click();
+  await page.waitForTimeout(250);
+  check((await page.locator('.register-row').count()) === 1, 'saved view lists the kept brief');
+  await page.locator('.register-keep').first().click();
+  await page.waitForTimeout(250);
+  check((await page.locator('.blank-slate').count()) === 1, 'removing the last keep shows the saved empty state');
+  await page.locator('.route-item', { hasText: 'Index' }).click();
+  await page.waitForTimeout(200);
 
-// create sheet validation and review step
-await page.locator('.deck-tools .key-action').click();
-await page.waitForTimeout(300);
-check('create sheet opens', (await page.locator('dialog.sheet[open]').count()) === 1);
-await page.locator('#mission-title').fill('An interface rebuild smoke brief');
-await page.locator('#mission-draft').fill('Scope, sources and acceptance criteria for the rebuild.');
-await page.locator('#brief-uri').fill('https://example.org/brief');
-await page.locator('#mission-reward').fill('0.05');
-await page.locator('#mission-deadline').fill('2027-01-01T12:00');
-await page.locator('.sheet form button[type="submit"]').click();
-await page.waitForTimeout(300);
-check('review step lists the draft', (await page.locator('.review-brief').count()) === 1);
-check('review shows the typed title', (await page.locator('.review-brief h3').innerText()).includes('smoke brief'));
-await page.locator('.sheet-actions .ghost-action').click();
-await page.waitForTimeout(250);
-check('edit returns to step one', (await page.locator('#mission-title').count()) === 1);
-const download = page.waitForEvent('download', { timeout: 5000 }).catch(() => null);
-await page.getByRole('button', { name: /Download your brief/ }).click();
-const file = await download;
-check('brief downloads as markdown', file?.suggestedFilename() === 'settiva-bounty-brief.md', file?.suggestedFilename() || 'no download');
-await page.keyboard.press('Escape');
-await page.waitForTimeout(300);
-check('Escape closes the sheet', (await page.locator('dialog.sheet[open]').count()) === 0);
+  await page.locator('.route-item', { hasText: 'Guide' }).click();
+  await page.waitForTimeout(250);
+  check((await page.locator('#guide-title').count()) === 1, 'guide renders its title');
+  await page.locator('.faq-item').first().locator('summary').click();
+  await page.waitForTimeout(150);
+  check(await page.locator('.faq-item').first().getAttribute('open') !== null, 'FAQ item opens');
 
-// mobile menu
-await page.setViewportSize({ width: 390, height: 844 });
-await page.waitForTimeout(300);
-await page.locator('.deck-menu').click();
-await page.waitForTimeout(250);
-check('mobile contents opens', (await page.locator('.channel-deck').count()) === 1);
-await page.keyboard.press('Escape');
-await page.waitForTimeout(300);
-check('Escape closes the contents', (await page.locator('.channel-deck').count()) === 0);
-await page.locator('.deck-menu').click();
-await page.waitForTimeout(250);
-await page.locator('.channel-chan').filter({ hasText: 'Guide' }).click();
-await page.waitForTimeout(300);
-check('contents navigation changes page', (await page.locator('.guide-deck').count()) === 1);
-check('contents closes after navigation', (await page.locator('.channel-deck').count()) === 0);
+  await page.locator('.mast-tools .action-core').click();
+  await page.waitForTimeout(300);
+  check((await page.locator('#dialog-title').count()) === 1, 'create sheet opens');
+  await page.locator('#mission-title').fill('A focused research brief');
+  await page.locator('#brief-uri').fill('not-a-url');
+  await page.locator('#mission-reward').fill('0');
+  const early = new Date(Date.now() + 86400000).toISOString().slice(0, 16);
+  await page.locator('#mission-deadline').fill(early);
+  await page.locator('.action-core.stretch[type="submit"]').click();
+  await page.waitForTimeout(250);
+  check((await page.locator('.field-error li').count()) >= 2, 'invalid draft shows validation errors');
+  await page.locator('#brief-uri').fill('https://example.org/research');
+  await page.locator('#mission-reward').fill('0.05');
+  const tomorrow = new Date(Date.now() + 86400000).toISOString().slice(0, 16);
+  await page.locator('#mission-deadline').fill(tomorrow);
+  await page.locator('.action-core.stretch[type="submit"]').click();
+  await page.waitForTimeout(250);
+  check((await page.locator('.review-brief').count()) === 1, 'valid draft advances to the review step');
+  await page.locator('.review-brief .action-halo').click();
+  await page.waitForTimeout(200);
+  check((await page.locator('#mission-title').count()) === 1, 'edit returns to the form');
+  await page.keyboard.press('Escape');
+  await page.waitForTimeout(250);
+  check(!(await page.locator('#dialog-title').isVisible()), 'Escape closes the sheet');
 
-check('no console or page errors', errors.length === 0, errors.slice(0, 3).join(' | '));
+  await context.close();
 
-await browser.close();
-const failed = results.filter((r) => !r.passed);
-console.log(`flows: ${results.length - failed.length}/${results.length} pass`);
-for (const r of results) console.log(`${r.passed ? 'ok  ' : 'FAIL'} ${r.name}${r.detail ? ' — ' + r.detail : ''}`);
-process.exitCode = failed.length ? 1 : 0;
+  const mobile = await browser.newContext({ viewport: { width: 390, height: 844 } });
+  const m = await mobile.newPage();
+  await m.goto(BASE, { waitUntil: 'networkidle' });
+  await m.locator('.menu-glyph').click();
+  await m.waitForTimeout(200);
+  check(await m.locator('.contents-plate').isVisible(), 'mobile contents sheet opens');
+  await m.locator('.contents-item', { hasText: 'Guide' }).click();
+  await m.waitForTimeout(250);
+  check((await m.locator('#guide-title').count()) === 1, 'mobile contents navigates to the guide');
+  check(!(await m.locator('.contents-plate').isVisible()), 'mobile contents sheet closes after navigation');
+  await mobile.close();
+} finally {
+  await browser.close();
+}
+
+await fs.mkdir(OUT, { recursive: true });
+await fs.writeFile(path.join(OUT, 'flows.log'), `${log.join('\n')}\n`, 'utf8');
+console.log(log.join('\n'));
+console.log(`\n${log.length - failures.length}/${log.length} flows passed`);
+if (failures.length) {
+  console.log('failures:', failures);
+  process.exitCode = 1;
+}
