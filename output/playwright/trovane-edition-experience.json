@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-21T12:54:48.070Z",
+  "url": "http://127.0.0.1:42705/",
+  "flows": [],
+  "performance": {},
+  "resources": {},
+  "preferences": {},
+  "typography": {},
+  "syntheticContent": [],
+  "screenshots": [],
+  "clearance": [],
+  "errors": [],
+  "failedRequests": [
+    {
+      "url": "http://127.0.0.1:42705/",
+      "failure": "net::ERR_CONNECTION_REFUSED"
+    }
+  ],
+  "blockedExternalRequests": [],
+  "scope": "Local Chromium emulation; cold browser context, no CPU or network throttling; no real-device or field-performance claim. Synthetic DOM content is not production data.",
+  "result": "failed",
+  "failure": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:42705/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:42705/\", waiting until \"networkidle\"\u001b[22m\n\n    at ready (E:\\workspace\\chuangye\\solana\\702\\website\\scripts\\check-experience.mjs:53:16)\n    at runExperienceQa (E:\\workspace\\chuangye\\solana\\702\\website\\scripts\\check-experience.mjs:135:11)\n    at async file:///E:/workspace/chuangye/solana/702/website/scripts/check-experience.mjs:465:20"
+}

@@ -1,6 +1,6 @@
-# Reskin inventory — trovane
+# Reskin inventory — ledgiva
 
-Generated: 2026-10-20T16:26:12.384Z
+Generated: 2026-10-21T13:12:11.591Z
 
 ## Project
 
@@ -11,14 +11,14 @@ Generated: 2026-10-20T16:26:12.384Z
 | Package manager | npm |
 | Nuxt | no |
 | CSS frameworks | none detected |
-| Files scanned | 31 (16 SFCs) |
+| Files scanned | 11 (5 SFCs) |
 
 ## Original skeleton
 
 - Archetype: **document-flow** (editorial)
 - Traits: cards, grid, tabs, modal, sticky
 - Max template depth: 10
-- Top-level tags: div, article, article, section, svg, div, div, div, div, div, svg, div, article, article, section, svg
+- Top-level tags: div, article, article, section, svg
 
 The replacement skeleton must not be `document-flow` and must not be in the same family (`editorial`).
 
@@ -28,14 +28,14 @@ The replacement skeleton must not be `document-flow` and must not be in the same
 
 ## Palette (most used first)
 
-`#151c25` (15) · `#000000` (14) · `#10161e` (9) · `#11161e` (9) · `#130d24` (9) · `#18231a` (9) · `#f5f4fa` (8) · `#40b3ff` (6) · `#172319` (5) · `#ffffff` (5)
+`#000000` (7) · `#f5f4fa` (4) · `#40b3ff` (3) · `#00131f` (1) · `#08080e` (1) · `#0e6fae` (1) · `#10283b` (1) · `#12121e` (1) · `#191927` (1) · `#262536` (1)
 
 ## Content lock
 
-- Static visible text tokens: **568**
-- Binding expressions: **493**
-- Event handlers: **203**
-- Contract hash: `4d886e810c0a0928c6019839dcbfda5f5ee16f039c1346303fb31849a4c82bda`
+- Static visible text tokens: **188**
+- Binding expressions: **163**
+- Event handlers: **67**
+- Contract hash: `53a0606f352ef4f5ad768993c7abefdce4dbe04213f52ec9b010897d0b4a23b4`
 
 Everything in `.reskin/content-contract.json` is immutable: visible copy, placeholders, labels, routes, link targets, asset sources, bindings, handlers, API endpoints and i18n values. A reskin may move these tokens to new markup but may not rewrite, remove or hide them.
 

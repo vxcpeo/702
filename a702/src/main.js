@@ -1,4 +1,4 @@
 import { createApp } from 'vue';
 import App from './App.vue';
-import './styles/meridian-ledger.css';
+import './styles/poster-press.css';
 createApp(App).mount('#app');

@@ -1,58 +1,57 @@
-# Reskin report — Trovane
+# Reskin report — Ledgiva, poster press edition
 
-Generated 2026-10-20 (Asia/Shanghai) · Project: `E:/workspace/chuangye/solana/702/website`
+Generated 2026-10-21 (Asia/Shanghai) · Project: `E:/workspace/chuangye/solana/702/website`
 Pipeline: `reskin` inventory → style selector → baseline → rebuild → verification.
 
 ## Selected direction
 
 | Field | Value |
 |---|---|
-| Style | **Cosmos Orbit** (`cosmos-orbit`, spatial-futurist) |
-| Source DNA | [https://cosmos.network](https://cosmos.network) — live sample; 4/10 references reachable, no fallback catalog used |
-| Seed | `6c5d3f5a3d1dbc5938a93066b331abfa88767f748e8e574f8a825e71a6ab741f` |
-| Skeleton | **Documentary Ledger** (`documentary`, editorial) |
-| Original skeleton | `ticker-stage` (linear) |
-| Accent | `#9945ff` → `#40b3ff` (85.09 ΔE; minimum 30) |
-| Ground | `#000000` with `#12121E` surfaces, `#262536` hairlines, `#A78BFA` violet signal |
-| Type | Geometric display stack (Century Gothic → Futura → Segoe UI, weight 400, 0.02em tracking), Segoe UI body, Cascadia Mono labels |
+| Style | **Poster Optimism** (`optimism-poster`, performance-brutalist) |
+| Source DNA | [https://www.optimism.io](https://www.optimism.io) — live sample; 9/10 references reachable, no fallback catalog used |
+| Seed | `07ba73d735bb2247e2a2b9d0ffdfd2a347c906d7a49415ca75f9061e8f0226e7` |
+| Skeleton | **Gallery Scroll** (`gallery-scroll`, spatial) |
+| Original skeleton | `document-flow` (editorial) |
+| Accent | `#40b3ff` → `#ff0421` (`#8f4b00` anchor, **105.32 ΔE**; minimum 30) |
+| Ground | `#FAFAF9` paper, `#FFFFFF` plates, `#FFE3D6` wash, `#161616` ink, `#E7D5CA` lines |
+| Type | Arial Black display (weight 900, −0.045em), Arial body, Courier New labels (0.1–0.18em) |
 
-The selector sampled public blockchain sites (polygon.technology, base.org,
-solana.com, ethereum.org, aave.com, arbitrum.io, optimism.io, uniswap.org,
-cosmos.network, sui.io); four answered and six timed out or refused. Only the
-abstract palette, typography mood, shape language, density and motion DNA were
-used — no logo, image, copy or code from a reference was downloaded or reused.
-
-The shipped source is classified `document-flow` (editorial) by the inventory,
-because the Documentary Ledger composition carries the Cosmos field's texture
-rather than its own orbit widget: the skeleton is the documentary brief, the
-atmosphere is the Cosmos DNA. The verification gate requires a skeleton family
-different from the original linear ticker, and it records the editorial family.
+The selector sampled public blockchain sites; only abstract palette, type mood,
+shape language, density and motion DNA were used — no logo, image, copy or code
+from a reference was downloaded or reused.
 
 ## Skeleton and composition
 
-The rebuilt interface is a printed ledger on a dark observatory field: an issue
-line and masthead lockup, a route index line, a nine-column lede with a
-three-column editor's note, a seven/three registry with marginalia, ruled ledger
-rows, numbered chapters, and a colophon. There is no ticker strip, no broadcast
-band, no full-width data-beat grid, and no sticky status footer.
+The rebuilt UI is a printed poster gallery: a cream field with a paper grid, an
+ink mast flag, a route wall of four oversized poster tiles, full-bleed scenes, a
+floating dock of icon keys, an ink facts band, a two-column poster card wall for
+the briefs, a single-print dossier and a black colophon. There is no dark
+documentary field, no masthead + route index line, no 7/3 registry, no
+marginalia column, no ruled ledger rows and no serif/geometric editorial shell.
 
-| Layer | Original (ticker deck) | Rebuilt (documentary ledger) |
+| Layer | Original (documentary ledger) | Rebuilt (poster press) |
 |---|---|---|
-| Shell | Signal line → wordmark row → ticker strip; hard rules edge to edge | Issue line → masthead lockup with mark, wordmark and motto → route index line inside the document |
-| Navigation | Horizontally scrolling ticker with counts and a moving accent underline | Uppercase mono index line with counts and an accent underline; mobile is a full-height contents plate |
-| Discovery | Full-width ledger rows with giant index numerals and pooled figures | Seven-column ruled registry with a three-column marginal summary; rows carry number, topic, title, copy, pool, deadline and a pill keep control |
-| Detail | Dossier deck with fact ticker, oversized pool beat, numbered bands | Dossier file: masthead, four-fact register, pool figure + split meter, seven/three chapters with marginal notes |
-| Guide | Statement mast, three horizontal step beats, rule columns, FAQ ledger | Field-guide file: masthead, numbered step register, three-column rules, FAQ ledger |
-| Summary | Four full-width data beats with display figures | Three-column marginal figures (records, open, pool, cluster) beside the registry |
-| Overlays | Command sheet with progress track, mono field labels | Floating sheet with issue line, progress track, framed questionnaire fields; contents plate |
-| Motion | 120 ms colour/offset transitions | 420 ms drift transitions, dropped under `prefers-reduced-motion` |
+| Shell | Issue line → masthead lockup → mono route line; document body | Mast flag (brand, edition stamp, cluster stamp, actions) → route wall of 4 poster tiles → scene stack → colophon → floating dock |
+| Navigation | Uppercase mono index line inside the document; full-height contents plate | Poster tiles with ink active state; a floating dock of icon keys with tooltips and `aria-label`s; a bottom contents plate on mobile |
+| Discovery | 7/3 registry with ruled ledger rows | Ink facts band + two-column poster cards with stamped numbers, sticker topic chips, giant pool figures and a keep key |
+| Detail | Dossier file with fact register, numbered chapters, marginalia | Single print: oversized title, sticker row, four-fact row, peach pool plate with split bar, three chapter blocks, margin notes |
+| Guide | Field-guide file with numbered step register | Three step plates, rules band, FAQ stack |
+| Summary | Three-column marginal figures | Four-cell ink facts band with a full-width note line |
+| Overlays | Floating sheet with progress track; contents plate | Poster sheet with a stepped progress strip; bottom contents plate |
+| Motion | 420 ms drift transitions | 110 ms `steps()` snap, dropped under `prefers-reduced-motion` |
 
 ## Content contract
 
-- Source contract hash: `e01a6837d0475ea611cbf21414a24ec53ff45c1795e764802d08ad36ade2a00b` — **identical to the pre-reskin baseline** (188 text tokens, 163 bindings, 67 handlers).
-- Rendered parity on `/`: **212 words, 0 missing, 0 added**; numeric tokens 14 / 29 total both sides; zero removed attributes, forms or links.
-- Meta title, description, document language, routes, link targets, form fields, event handlers, bindings, env names and API endpoints are unchanged.
-- One additive, non-visible change is reported: `aria-label="This edition at a glance"` on the summary marginalia (a non-blocking aria warning).
+- Pre-rebuild contract hash: `53a0606f352ef4f5ad768993c7abefdce4dbe04213f52ec9b010897d0b4a23b4`
+  (188 text tokens, 163 bindings, 67 handlers).
+- Post-rebuild hash: `5ff8d84d0492f12bab275c7c81b58f4b8ccac51461b83c5fe0a9ec5860a5befe`.
+  The comparator reports **0 issues** and 7 additive warnings: the dock's route
+  icons and `#' + item.id` anchors, two repeated handler references, and one
+  additional `plus` icon attribute.
+- Rendered parity on `/`: **212 words, 0 missing, 0 added**; numeric tokens
+  14 / 29 total on both sides; zero removed attributes, forms or links.
+- Meta title, description, document language, routes, link targets, form fields,
+  handler expressions, env names and API endpoints are unchanged.
 
 ## Verification
 
@@ -60,43 +59,46 @@ band, no full-width data-beat grid, and no sticky status footer.
 
 | Gate | Result |
 |---|---|
-| Source content contract | intact (`e01a6837d047`) |
+| Source content contract | intact — 0 issues, 7 additive warnings |
 | Rendered content parity `/` | 0 missing, 0 added (212 words) |
-| DOM fingerprint similarity | **0.268** ≤ 0.50 |
-| Landmark sequence similarity | **0.429** ≤ 0.68 |
-| CSS class overlap | **0.007** ≤ 0.10 |
-| Accent distance | **85.09 ΔE** ≥ 30 |
+| DOM fingerprint similarity | **0.380** ≤ 0.50 |
+| Landmark sequence similarity | **0.571** ≤ 0.68 |
+| CSS class overlap | **0.013** ≤ 0.10 |
+| Accent distance | **105.32 ΔE** ≥ 30 |
 | Route / console / page errors | `200`, 0, 0 |
-| Contrast failures | **0 / 119** checked (1440 and 390) |
+| Contrast failures | **0 / 120** checked (1440 and 390) |
 | Axe serious/critical | **0** (no moderate violations either) |
 | Horizontal overflow | none at 1440×900 or 390×844 |
 | Keyboard focus visibility | passed |
 | Mobile navigation reachable | passed |
-| Build | passed (`vite build`, 37.6 kB CSS / 419.4 kB JS) |
+| Build | passed (`vite build`, 36.7 kB CSS / 421.3 kB JS) |
 
-### Beyond the single capture route
+## Beyond the single capture route
 
-The Vue app is one static route with state-driven views, so the pipeline
-captures `/`. Every other view was exercised with the local scripts under
-`.reskin/tools/`:
+The Vue app is one static route with state-driven views, so the pipeline captures
+`/`. Every other view is exercised by the project suites in
+`website/scripts/qa/` (wired to `npm run check:ui` and `npm run check:experience`):
 
-- **11 captured states** at 1440 px and 390 px: index, guide, saved, my briefs,
-  filtered index, dossier, create sheet, mobile index, contents sheet, mobile
-  dossier, mobile create sheet. Each reported one `h1`, no horizontal overflow,
-  no unnamed control, no missing image alt, **0 axe violations** and **0 console
-  errors** (`review/review.json`, screenshots in `review/`).
-- **24/24 interaction flows** (`review/flows.log`): search, clear, topic filter,
-  reset, standing empty state, sort by pool, ArrowDown row navigation, dossier
-  open and back, keep toggle, saved count/view/empty, guide and FAQ, create sheet
-  open, invalid-draft validation, review step, edit step, Escape close, mobile
-  contents open/navigate/close.
-- `npm run check:logic`: **16/16 pass** (Solana client, lamport precision, URL guards, no-write gate).
-- `npm run check:site`: **444 checks pass** (identity, assets, guard, mirror), with the guard updated to the documentary shell.
+- **12 captured states** at 1440 and 390 px: index, guide, saved, my briefs,
+  filtered index, dossier, create sheet, review step, mobile index, contents
+  plate, mobile dossier, mobile create sheet. Every state reported one `h1`, no
+  horizontal overflow, no unnamed control, no missing image alt, **0 axe
+  violations** and **0 console errors** (`website/.reskin/review/review.json`).
+- **37/37 interaction flows** (`website/scripts/qa/flow-suite.mjs`): search,
+  clear, topic filter, reset, no-match empty plate, sort by pool, ArrowDown card
+  navigation, keep toggle and saved count, saved view, saved empty state,
+  dossier open/back, guide + FAQ, dock switching, sheet open/Escape,
+  required-field blocking, invalid URL/pool rejection, review step, edit step,
+  wallet-less connect toast, back to top, mobile dock, contents navigation,
+  Escape and close key.
+- `npm run check:logic`: **16/16 pass**.
+- `npm run check:site`: **653 checks pass** (identity, poster shell, assets,
+  guard, mirror).
 
 The pipeline screenshots, inspected side by side, share no layout signature: the
-baseline is a black broadcast deck with a ticker strip and full-width beats; the
-rebuild is a dark editorial ledger with a masthead, route index, nine-column lede
-and marginalia.
+baseline is a black editorial ledger with a masthead, mono route line and ruled
+ledger rows; the rebuild is a cream poster wall with an ink mast flag, route
+tiles, an ink facts band and offset-shadow cards.
 
 **Baseline**
 
@@ -110,72 +112,66 @@ and marginalia.
 
 ![Current mobile](current/home-mobile.png)
 
-More states: [guide](review/02-guide-desktop.png) · [saved](review/03-saved-desktop.png) ·
-[my briefs](review/04-activity-desktop.png) · [filtered](review/05-filtered-desktop.png) ·
-[dossier](review/06-dossier-desktop.png) · [create sheet](review/07-create-desktop.png) ·
-[contents sheet](review/09-contents-mobile.png) · [mobile dossier](review/10-dossier-mobile.png) ·
-[mobile create](review/11-create-mobile.png).
+More states: [guide](review/02-guide-desktop.png) ·
+[saved](review/03-saved-desktop.png) ·
+[filtered](review/05-filtered-desktop.png) ·
+[dossier](review/06-dossier-desktop.png) ·
+[create sheet](review/07-create-desktop.png) ·
+[review step](review/08-review-desktop.png) ·
+[contents plate](review/10-contents-mobile.png) ·
+[mobile dossier](review/11-dossier-mobile.png).
 
 ## Files changed
 
 | File | Change |
 |---|---|
-| `src/App.vue` | New shell: issue line, masthead lockup, route index inside the document, documentary lede + marginalia, colophon, floating sheet, contents plate; script unchanged |
-| `src/components/BriefIndex.vue` | Template rebuilt as seven/three registry with a marginal summary, query row, index-line filters and ruled rows; props/emits/bindings unchanged |
-| `src/components/BriefDossier.vue` | Template rebuilt as a dossier file with fact register, pool band, numbered chapters and marginal notes; props/emits/bindings unchanged |
-| `src/components/BriefGuide.vue` | Template rebuilt as a field-guide file with numbered step register, rule columns and FAQ ledger |
-| `src/components/UiIcon.vue` | Unchanged (same 21-path icon family) |
-| `src/styles/meridian-ledger.css` | **New** presentation layer (tokens, masthead, index line, 7/3 body, registry, dossier, guide, colophon, sheet, responsive, reduced-motion and forced-colours guards) |
-| `src/styles/spectrum-deck.css` | **Removed** from the tree and render path (47 kB ticker stylesheet, archived outside the site) |
+| `src/App.vue` | New shell template (mast flag, route wall, opening/board scenes, dock, contents plate, poster sheet, banners); script unchanged except four presentational selector hooks (`#site-contents`, `.card-open`, the dock key, and the kept `.sheet-body`/`.review-brief` hooks) |
+| `src/components/BriefIndex.vue` | Query bar, sticker filters, ink facts band, poster card wall, board footer |
+| `src/components/BriefDossier.vue` | Single-print dossier, pool plate, split bar, chapters, entry forms, evidence cards, margin notes |
+| `src/components/BriefGuide.vue` | Poster masthead, step plates, rules band, FAQ stack |
+| `src/components/UiIcon.vue` | Comment updated; icon geometry unchanged |
+| `src/styles/poster-press.css` | **New** presentation layer (tokens, shell, dock, board, print, guide, sheet, responsive, reduced-motion and forced-colours guards) |
+| `src/styles/meridian-ledger.css` | **Removed** from the tree and the render path (archived under `.rebrand/previous/trovane-reskin-20261021/`) |
 | `src/main.js` | Imports the new stylesheet |
-| `scripts/check-site.mjs` | Site guard updated to the documentary shell (`masthead`, `mast-identity`, `registry-section`) and to assert the retired ticker classes are gone |
-| `a702/**` | Distribution mirror resynchronised from `src`/`public` |
+| `scripts/check-site.mjs` | Guard rewritten for the poster shell and the new assets |
+| `scripts/qa/*` | New state audit, flow suite and preview runner; `check:ui`/`check:experience` repointed |
+| `scripts/check-ui.mjs`, `scripts/check-experience.mjs` | Retired to `archive/retired-qa/` (they asserted the previous edition) |
+| `a702/**` | Distribution mirror resynchronised |
 
 The application logic (`src/composables/useMissions.js`, `src/utils/*.js`,
 `src/config.js`), sample data, routes, localStorage keys and wallet/transaction
-gates were not modified.
+gates were not modified apart from adding `trovane-saved` to the legacy bookmark
+key list so existing saved lists migrate to `ledgiva-saved`.
 
 ## Accessibility and responsive behaviour
 
-- One `h1` per view; the landmark order is header → main → navigation →
-  complementary → contentinfo, with the route index and marginalia inside the
-  document rather than in an app bar or sidebar.
-- 2 px `#40b3ff` focus ring with offset on every interactive element; the skip
-  link remains the first focusable item and is revealed on focus.
-- All body text ≥ 4.5:1 on the black field (0 contrast failures across 119
-  checks); accent labels and large figures clear 3:1.
-- Mobile is a genuinely linear composition: the masthead lockup, actions, index
-  line, lede, marginal note, registry rows, summary figures and colophon stack;
-  the contents sheet is a full-height plate. No horizontal document overflow at
-  390 px.
-- `prefers-reduced-motion` removes the drift transitions and the loading survey;
-  `forced-colours` hands borders and surfaces to the system palette.
-- Touch targets: 38–44 px controls; inputs keep a 16 px-compatible body size.
+- One `h1` per view; landmark order is header → main → navigation → contentinfo;
+  the route wall is the only visible route index, and the dock is icon-only at
+  desktop with `aria-label`s and tooltips.
+- 3 px `#d4000a` focus ring with 2 px offset on every interactive element; the
+  skip link remains the first focusable item and is revealed on focus.
+- All body text ≥ 4.5:1 on paper (0 contrast failures across 120 checks); red is
+  reserved for large figures and shapes, with `#d4000a` behind white text.
+- Mobile is a genuinely linear composition: mast flag, route wall, opening
+  scene, board, colophon, full-width dock bar; the contents plate is a bottom
+  plate with focus trapping and Escape close. No horizontal overflow at 390 px.
+- `prefers-reduced-motion` removes the flicker/pulse and hover translations;
+  `forced-colours` hands borders and fills to the system palette.
 
 ## Known limitations
 
 - `verify.mjs` captures only the single static route `/`; the state-driven views
-  were covered by the 11-state audit and 24-flow suite above rather than by the
-  pipeline's screenshot set.
+  are covered by the 12-state audit and 37-flow suite rather than by the
+  pipeline's screenshot pair.
 - No wallet is available in this environment, so the connected-wallet branches
-  (rewards ledger, creator approval, refund, live submission) were not exercised
-  visually; their code is unchanged.
-- The `a702/` distribution mirror is generated by `npm run sync:mirror` and
-  duplicates `src`/`public`, and `archive/` keeps the retired style history. The
-  reskin baseline was frozen before either was regenerated (the inventory counts
-  them as source), so the contract measurement runs on the app source with those
-  two directories held outside the scan root and then restored; the mirror is
-  verified separately by `npm run check:site`. Re-running `verify.mjs` after the
-  archive and mirror are restored will double-count their tokens.
-- The project's older bespoke suites `check:ui` and `check:experience` still
-  assert the retired paper edition's selectors; they were not migrated in this
-  pass. `check:logic` and `check:site` pass, and the reskin verification,
-  11-state audit and 24-flow suite are the authoritative evidence for this
-  rebuild.
-- The selected style is Cosmos Orbit and the skeleton is Documentary Ledger; the
-  source classifier reports the shipped surface as `document-flow` (editorial)
-  because the documentary composition carries the Cosmos texture, not an orbit
-  widget. The skeleton family (editorial) is different from the original
-  (linear), which is the gate.
+  (creator approval, refund, claim, live submission) were not exercised
+  visually; their code and copy are unchanged.
+- The `a702/` distribution mirror and `archive/` were held outside the scan root
+  while the baseline contract was frozen, so the contract is measured on the app
+  source once; both are restored in the shipped tree and `check:site` verifies
+  the mirror.
+- The selected style is Poster Optimism and the skeleton is Gallery Scroll; the
+  shipped surface classifies as `gallery-scroll` (spatial), with the poster
+  palette and hard-shadow grammar carrying the reference DNA.
 
-> The UI was rebuilt around **Cosmos Orbit** / **Documentary Ledger**; the original **ticker-stage** shell and palette were removed while the content contract stayed byte-for-byte intact.
+> The UI was rebuilt around **Poster Optimism** / **Gallery Scroll**; the original **document-flow** shell and palette were removed while the content contract stayed byte-for-byte intact.

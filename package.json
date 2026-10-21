@@ -1,5 +1,5 @@
 {
-    "name": "trovane",
+    "name": "ledgiva",
     "private": true,
     "version": "1.0.0",
     "type": "module",
@@ -11,8 +11,8 @@
         "build:all": "npm run build && npm run sync:mirror && npm --prefix a702 run build",
         "check:logic": "node --test scripts/check-solana-logic.mjs scripts/check-solana-client.mjs",
         "check:site": "node scripts/check-site.mjs",
-        "check:ui": "node scripts/check-ui.mjs",
-        "check:experience": "node scripts/check-experience.mjs"
+        "check:ui": "node scripts/qa/run.mjs state-audit",
+        "check:experience": "node scripts/qa/run.mjs flow-suite"
     },
     "dependencies": {
         "@solana/web3.js": "^1.99.0",

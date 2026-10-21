@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "label": "current",
-  "generatedAt": "2026-10-20T16:26:33.247Z",
+  "generatedAt": "2026-10-21T13:38:38.924Z",
   "baseUrl": "http://127.0.0.1:4317/",
   "browser": {
     "executablePath": "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright\\chromium-1247\\chrome-win64\\chrome.exe",
@@ -15,13 +15,13 @@
       "status": 200,
       "desktop": {
         "meta": {
-          "title": "Trovane - Two paths in. One record out.",
+          "title": "Ledgiva - Two paths in. One record out.",
           "lang": "en",
           "h1Count": 1,
-          "bodyTextLength": 2546,
+          "bodyTextLength": 2556,
           "scrollWidth": 1440,
           "clientWidth": 1440,
-          "focusableCount": 34
+          "focusableCount": 39
         },
         "words": [
           {
@@ -425,6 +425,10 @@
             "count": 4
           },
           {
+            "word": "Ledgiva",
+            "count": 4
+          },
+          {
             "word": "liquidity",
             "count": 2
           },
@@ -813,10 +817,6 @@
             "count": 3
           },
           {
-            "word": "Trovane",
-            "count": 4
-          },
-          {
             "word": "Turn",
             "count": 1
           },
@@ -915,8 +915,24 @@
             "count": 1
           },
           {
-            "key": "aria-label=Post a brief",
+            "key": "aria-label=Guide",
             "count": 1
+          },
+          {
+            "key": "aria-label=Index, 4 records",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Ledgiva home",
+            "count": 1
+          },
+          {
+            "key": "aria-label=My briefs, 0 records",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Post a brief",
+            "count": 2
           },
           {
             "key": "aria-label=Primary navigation",
@@ -924,6 +940,10 @@
           },
           {
             "key": "aria-label=Publication colophon",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Quick access",
             "count": 1
           },
           {
@@ -943,6 +963,10 @@
             "count": 1
           },
           {
+            "key": "aria-label=Saved, 0 records",
+            "count": 1
+          },
+          {
             "key": "aria-label=Search briefs",
             "count": 1
           },
@@ -951,15 +975,7 @@
             "count": 1
           },
           {
-            "key": "aria-label=This edition at a glance",
-            "count": 1
-          },
-          {
             "key": "aria-label=Toggle navigation",
-            "count": 1
-          },
-          {
-            "key": "aria-label=Trovane home",
             "count": 1
           },
           {
@@ -969,7 +985,23 @@
         ],
         "links": [
           {
+            "href": "#activity",
+            "count": 1
+          },
+          {
             "href": "#brief-index",
+            "count": 1
+          },
+          {
+            "href": "#guide",
+            "count": 1
+          },
+          {
+            "href": "#index",
+            "count": 1
+          },
+          {
+            "href": "#saved",
             "count": 1
           }
         ],
@@ -987,134 +1019,138 @@
         "imageIssues": [],
         "interactiveIssues": [],
         "classTokens": [
-          "action-core",
-          "colophon",
-          "colophon-base",
-          "colophon-facts",
-          "colophon-fine",
-          "colophon-motto",
-          "colophon-top",
-          "colophon-word",
-          "document",
-          "figure-register",
-          "figure-row",
-          "is-active",
-          "is-current",
-          "jump-start",
-          "lede-acts",
-          "lede-copy",
-          "lede-prose",
-          "lede-spread",
-          "lede-title",
-          "marginalia",
-          "marginalia-copy",
-          "marginalia-foot",
-          "marginalia-head",
-          "mast-edition",
-          "mast-edition__stamp",
-          "mast-identity",
-          "mast-lockup",
+          "band-cell",
+          "band-kicker",
+          "band-label",
+          "band-note",
+          "band-value",
+          "board",
+          "board-foot",
+          "board-head",
+          "board-note",
+          "board-title",
+          "board-tools",
+          "card-copy",
+          "card-facts",
+          "card-foot",
+          "card-ground",
+          "card-keep",
+          "card-no",
+          "card-open",
+          "card-pool",
+          "card-state",
+          "card-title",
+          "card-top",
+          "card-topic",
+          "card-wall",
+          "dock",
+          "dock-key",
+          "dock-key--end",
+          "fact",
+          "fact-foot",
+          "fact-label",
+          "fact-strip",
+          "fact-value",
+          "facts-band",
+          "foot-base",
+          "foot-brand",
+          "foot-facts",
+          "foot-fine",
+          "foot-motto",
+          "foot-plate",
+          "is-chosen",
+          "is-lit",
+          "kicker",
+          "mast",
+          "mast-acts",
+          "mast-brand",
+          "mast-flag",
+          "mast-ident",
+          "mast-mark",
           "mast-motto",
-          "mast-plate",
-          "mast-sigil",
-          "mast-tools",
-          "mast-word",
-          "masthead",
-          "menu-glyph",
-          "observatory",
-          "overline",
-          "query-field",
-          "query-order",
-          "query-row",
-          "quiet-link",
-          "register",
-          "register-brief",
-          "register-copy",
-          "register-foot",
-          "register-keep",
-          "register-no",
-          "register-open",
-          "register-pool",
-          "register-row",
-          "register-state",
-          "register-stats",
-          "register-title",
-          "register-topic",
-          "register-when",
-          "registry-acts",
-          "registry-body",
-          "registry-head",
-          "registry-ledger",
-          "registry-note",
-          "registry-section",
-          "registry-title",
-          "route-count",
-          "route-item",
-          "route-line",
+          "mast-name",
+          "mast-side",
+          "note-copy",
+          "note-head",
+          "note-plate",
+          "poster-actions",
+          "poster-lede",
+          "poster-title",
+          "press",
+          "press-btn",
+          "press-foot",
+          "press-link",
+          "press-skip",
+          "query-bar",
+          "record-card",
+          "route-tile",
+          "route-wall",
+          "scene",
+          "scene--board",
+          "scene--open",
+          "scene-body",
+          "search-input",
+          "search-plate",
+          "sort-plate",
+          "sort-select",
+          "stage",
+          "stamp",
           "state-sample",
-          "summary-aside",
-          "summary-cluster",
-          "summary-figure",
-          "summary-figures",
-          "summary-note",
-          "text-link",
-          "topic-chip",
-          "topic-line",
-          "topic-rail",
-          "topic-rail__label",
-          "wallet-pill"
+          "sticker",
+          "sticker-group",
+          "sticker-label",
+          "sticker-row",
+          "tile-count",
+          "tile-label",
+          "wallet-tag"
         ],
         "fingerprint": [
           "a@5:0",
-          "article@11:2",
+          "a@7:1",
+          "a@7:2",
+          "article@10:4+",
+          "button@10:1",
+          "button@10:2",
+          "button@11:2",
           "button@12:2",
-          "button@12:3",
-          "button@7:0",
+          "button@6:1",
+          "button@6:2",
           "button@7:1",
-          "button@7:2",
-          "button@8:0",
           "button@8:1",
           "button@8:2",
           "button@9:0",
           "button@9:1",
-          "button@9:2",
-          "dd@10:0",
-          "dd@10:1",
-          "dd@11:0",
-          "dd@11:1",
           "dd@9:0",
-          "div@10:2",
+          "div@11:1",
+          "div@11:2",
           "div@3:1",
           "div@4:4+",
+          "div@5:4+",
           "div@6:2",
           "div@7:2",
-          "div@7:3",
           "div@7:4+",
           "div@8:2",
           "div@8:3",
-          "div@8:4+",
           "div@9:2",
+          "div@9:3",
+          "div@9:4+",
           "dl@7:4+",
-          "dl@8:3",
-          "dl@9:4+",
-          "dt@10:0",
-          "dt@11:0",
           "dt@9:0",
-          "em@15:0",
+          "em@13:0",
           "em@9:0",
           "footer@5:3",
-          "h1@8:2",
-          "h2@9:0",
+          "h1@8:1",
+          "h2@10:0",
           "header@5:2",
-          "header@7:2",
-          "i@10:0",
-          "img@8:0",
-          "input@9:0",
-          "label@8:2",
-          "li@10:1",
+          "i@9:0",
+          "img@7:0",
+          "input@10:0",
+          "label@9:2",
+          "li@9:1",
           "main@5:3",
           "nav@6:4+",
-          "ol@9:4+",
+          "ol@8:4+",
+          "p@10:0",
           "p@6:2",
           "p@8:0",
           "p@8:1",
@@ -1122,30 +1158,35 @@
           "p@9:2",
           "path@10:0",
           "path@11:0",
+          "path@12:0",
           "path@14:0",
+          "path@8:0",
           "path@9:0",
+          "section@6:1",
           "section@6:2",
-          "section@6:4+",
-          "select@9:4+",
+          "section@7:4+",
+          "section@8:4+",
+          "select@10:4+",
           "small@11:0",
-          "small@12:0",
           "span@10:0",
           "span@10:1",
+          "span@11:0",
+          "span@12:0",
+          "span@12:1",
+          "span@12:2",
           "span@13:0",
-          "span@13:3",
-          "span@14:0",
-          "span@14:2",
           "span@7:0",
+          "span@7:2",
           "span@8:0",
-          "span@8:2",
+          "span@8:1",
           "span@9:0",
-          "span@9:1",
           "strong@11:0",
-          "strong@15:0",
           "strong@7:0",
-          "sup@10:0",
+          "sup@11:0",
           "svg@10:1",
+          "svg@11:1",
           "svg@13:1",
+          "svg@7:1",
           "svg@8:1",
           "svg@9:1"
         ],
@@ -1153,111 +1194,89 @@
           {
             "tag": "header",
             "role": "",
-            "top": 26,
-            "left": 43,
-            "width": 1354,
-            "height": 137
+            "top": -2,
+            "left": 0,
+            "width": 1440,
+            "height": 90
           },
           {
             "tag": "main",
             "role": "",
-            "top": 197,
-            "left": 43,
-            "width": 1354,
-            "height": 1662
+            "top": 88,
+            "left": 0,
+            "width": 1440,
+            "height": 2756
           },
           {
             "tag": "nav",
             "role": "",
-            "top": 197,
-            "left": 43,
-            "width": 1354,
-            "height": 43
-          },
-          {
-            "tag": "div",
-            "role": "complementary",
-            "top": 332,
-            "left": 1075,
-            "width": 322,
-            "height": 350
-          },
-          {
-            "tag": "header",
-            "role": "",
-            "top": 867,
-            "left": 43,
-            "width": 1354,
-            "height": 132
-          },
-          {
-            "tag": "div",
-            "role": "complementary",
-            "top": 1235,
-            "left": 1011,
-            "width": 386,
-            "height": 451
+            "top": 116,
+            "left": 58,
+            "width": 1325,
+            "height": 136
           },
           {
             "tag": "footer",
             "role": "",
-            "top": 1892,
-            "left": 43,
-            "width": 1354,
-            "height": 206
+            "top": 2844,
+            "left": 0,
+            "width": 1440,
+            "height": 430
           }
         ],
         "colors": [
           {
-            "hex": "#f5f4fa",
-            "count": 96
+            "hex": "#161616",
+            "count": 151
           },
           {
-            "hex": "#7e7c92",
-            "count": 69
+            "hex": "#ffffff",
+            "count": 51
           },
           {
-            "hex": "#9a98ad",
-            "count": 32
+            "hex": "#fafaf9",
+            "count": 45
           },
           {
-            "hex": "#40b3ff",
-            "count": 20
+            "hex": "#6e625c",
+            "count": 28
           },
           {
-            "hex": "#00131f",
+            "hex": "#d4000a",
             "count": 10
           },
           {
-            "hex": "#d6d4e4",
+            "hex": "#2e2a27",
             "count": 7
           },
           {
-            "hex": "#a78bfa",
+            "hex": "#ff7a00",
             "count": 4
           },
           {
-            "hex": "#12121e",
-            "count": 3
+            "hex": "#ffe3d6",
+            "count": 4
           },
           {
-            "hex": "#000000",
-            "count": 1
+            "hex": "#ff0421",
+            "count": 3
           }
         ],
         "contrast": [],
-        "contrastChecked": 119,
+        "contrastChecked": 120,
         "headings": [
           {
             "tag": "h1",
-            "text": "Two paths in. One record out."
+            "text": "TWO PATHS IN. ONE RECORD OUT."
           },
           {
             "tag": "h2",
-            "text": "The brief index"
+            "text": "THE BRIEF INDEX"
           }
         ],
-        "navTargets": [],
+        "navTargets": [
+          ""
+        ],
         "overflow": {
           "documentOverflow": false,
           "offenders": []
@@ -1277,13 +1296,13 @@
       },
       "mobile": {
         "meta": {
-          "title": "Trovane - Two paths in. One record out.",
+          "title": "Ledgiva - Two paths in. One record out.",
           "lang": "en",
           "h1Count": 1,
-          "bodyTextLength": 2546,
+          "bodyTextLength": 2556,
           "scrollWidth": 390,
           "clientWidth": 390,
-          "focusableCount": 34
+          "focusableCount": 39
         },
         "words": [
           {
@@ -1687,6 +1706,10 @@
             "count": 4
           },
           {
+            "word": "Ledgiva",
+            "count": 4
+          },
+          {
             "word": "liquidity",
             "count": 2
           },
@@ -2075,10 +2098,6 @@
             "count": 3
           },
           {
-            "word": "Trovane",
-            "count": 4
-          },
-          {
             "word": "Turn",
             "count": 1
           },
@@ -2177,8 +2196,24 @@
             "count": 1
           },
           {
-            "key": "aria-label=Post a brief",
+            "key": "aria-label=Guide",
             "count": 1
+          },
+          {
+            "key": "aria-label=Index, 4 records",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Ledgiva home",
+            "count": 1
+          },
+          {
+            "key": "aria-label=My briefs, 0 records",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Post a brief",
+            "count": 2
           },
           {
             "key": "aria-label=Primary navigation",
@@ -2186,6 +2221,10 @@
           },
           {
             "key": "aria-label=Publication colophon",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Quick access",
             "count": 1
           },
           {
@@ -2205,6 +2244,10 @@
             "count": 1
           },
           {
+            "key": "aria-label=Saved, 0 records",
+            "count": 1
+          },
+          {
             "key": "aria-label=Search briefs",
             "count": 1
           },
@@ -2213,15 +2256,7 @@
             "count": 1
           },
           {
-            "key": "aria-label=This edition at a glance",
-            "count": 1
-          },
-          {
             "key": "aria-label=Toggle navigation",
-            "count": 1
-          },
-          {
-            "key": "aria-label=Trovane home",
             "count": 1
           },
           {
@@ -2231,7 +2266,23 @@
         ],
         "links": [
           {
+            "href": "#activity",
+            "count": 1
+          },
+          {
             "href": "#brief-index",
+            "count": 1
+          },
+          {
+            "href": "#guide",
+            "count": 1
+          },
+          {
+            "href": "#index",
+            "count": 1
+          },
+          {
+            "href": "#saved",
             "count": 1
           }
         ],
@@ -2249,134 +2300,138 @@
         "imageIssues": [],
         "interactiveIssues": [],
         "classTokens": [
-          "action-core",
-          "colophon",
-          "colophon-base",
-          "colophon-facts",
-          "colophon-fine",
-          "colophon-motto",
-          "colophon-top",
-          "colophon-word",
-          "document",
-          "figure-register",
-          "figure-row",
-          "is-active",
-          "is-current",
-          "jump-start",
-          "lede-acts",
-          "lede-copy",
-          "lede-prose",
-          "lede-spread",
-          "lede-title",
-          "marginalia",
-          "marginalia-copy",
-          "marginalia-foot",
-          "marginalia-head",
-          "mast-edition",
-          "mast-edition__stamp",
-          "mast-identity",
-          "mast-lockup",
+          "band-cell",
+          "band-kicker",
+          "band-label",
+          "band-note",
+          "band-value",
+          "board",
+          "board-foot",
+          "board-head",
+          "board-note",
+          "board-title",
+          "board-tools",
+          "card-copy",
+          "card-facts",
+          "card-foot",
+          "card-ground",
+          "card-keep",
+          "card-no",
+          "card-open",
+          "card-pool",
+          "card-state",
+          "card-title",
+          "card-top",
+          "card-topic",
+          "card-wall",
+          "dock",
+          "dock-key",
+          "dock-key--end",
+          "fact",
+          "fact-foot",
+          "fact-label",
+          "fact-strip",
+          "fact-value",
+          "facts-band",
+          "foot-base",
+          "foot-brand",
+          "foot-facts",
+          "foot-fine",
+          "foot-motto",
+          "foot-plate",
+          "is-chosen",
+          "is-lit",
+          "kicker",
+          "mast",
+          "mast-acts",
+          "mast-brand",
+          "mast-flag",
+          "mast-ident",
+          "mast-mark",
           "mast-motto",
-          "mast-plate",
-          "mast-sigil",
-          "mast-tools",
-          "mast-word",
-          "masthead",
-          "menu-glyph",
-          "observatory",
-          "overline",
-          "query-field",
-          "query-order",
-          "query-row",
-          "quiet-link",
-          "register",
-          "register-brief",
-          "register-copy",
-          "register-foot",
-          "register-keep",
-          "register-no",
-          "register-open",
-          "register-pool",
-          "register-row",
-          "register-state",
-          "register-stats",
-          "register-title",
-          "register-topic",
-          "register-when",
-          "registry-acts",
-          "registry-body",
-          "registry-head",
-          "registry-ledger",
-          "registry-note",
-          "registry-section",
-          "registry-title",
-          "route-count",
-          "route-item",
-          "route-line",
+          "mast-name",
+          "mast-side",
+          "note-copy",
+          "note-head",
+          "note-plate",
+          "poster-actions",
+          "poster-lede",
+          "poster-title",
+          "press",
+          "press-btn",
+          "press-foot",
+          "press-link",
+          "press-skip",
+          "query-bar",
+          "record-card",
+          "route-tile",
+          "route-wall",
+          "scene",
+          "scene--board",
+          "scene--open",
+          "scene-body",
+          "search-input",
+          "search-plate",
+          "sort-plate",
+          "sort-select",
+          "stage",
+          "stamp",
           "state-sample",
-          "summary-aside",
-          "summary-cluster",
-          "summary-figure",
-          "summary-figures",
-          "summary-note",
-          "text-link",
-          "topic-chip",
-          "topic-line",
-          "topic-rail",
-          "topic-rail__label",
-          "wallet-pill"
+          "sticker",
+          "sticker-group",
+          "sticker-label",
+          "sticker-row",
+          "tile-count",
+          "tile-label",
+          "wallet-tag"
         ],
         "fingerprint": [
           "a@5:0",
-          "article@11:2",
+          "a@7:1",
+          "a@7:2",
+          "article@10:4+",
+          "button@10:1",
+          "button@10:2",
+          "button@11:2",
           "button@12:2",
-          "button@12:3",
-          "button@7:0",
+          "button@6:1",
+          "button@6:2",
           "button@7:1",
-          "button@7:2",
-          "button@8:0",
           "button@8:1",
           "button@8:2",
           "button@9:0",
           "button@9:1",
-          "button@9:2",
-          "dd@10:0",
-          "dd@10:1",
-          "dd@11:0",
-          "dd@11:1",
           "dd@9:0",
-          "div@10:2",
+          "div@11:1",
+          "div@11:2",
           "div@3:1",
           "div@4:4+",
+          "div@5:4+",
           "div@6:2",
           "div@7:2",
-          "div@7:3",
           "div@7:4+",
           "div@8:2",
           "div@8:3",
-          "div@8:4+",
           "div@9:2",
+          "div@9:3",
+          "div@9:4+",
           "dl@7:4+",
-          "dl@8:3",
-          "dl@9:4+",
-          "dt@10:0",
-          "dt@11:0",
           "dt@9:0",
-          "em@15:0",
+          "em@13:0",
           "em@9:0",
           "footer@5:3",
-          "h1@8:2",
-          "h2@9:0",
+          "h1@8:1",
+          "h2@10:0",
           "header@5:2",
-          "header@7:2",
-          "i@10:0",
-          "img@8:0",
-          "input@9:0",
-          "label@8:2",
-          "li@10:1",
+          "i@9:0",
+          "img@7:0",
+          "input@10:0",
+          "label@9:2",
+          "li@9:1",
           "main@5:3",
           "nav@6:4+",
-          "ol@9:4+",
+          "ol@8:4+",
+          "p@10:0",
           "p@6:2",
           "p@8:0",
           "p@8:1",
@@ -2384,30 +2439,35 @@
           "p@9:2",
           "path@10:0",
           "path@11:0",
+          "path@12:0",
           "path@14:0",
+          "path@8:0",
           "path@9:0",
+          "section@6:1",
           "section@6:2",
-          "section@6:4+",
-          "select@9:4+",
+          "section@7:4+",
+          "section@8:4+",
+          "select@10:4+",
           "small@11:0",
-          "small@12:0",
           "span@10:0",
           "span@10:1",
+          "span@11:0",
+          "span@12:0",
+          "span@12:1",
+          "span@12:2",
           "span@13:0",
-          "span@13:3",
-          "span@14:0",
-          "span@14:2",
           "span@7:0",
+          "span@7:2",
           "span@8:0",
-          "span@8:2",
+          "span@8:1",
           "span@9:0",
-          "span@9:1",
           "strong@11:0",
-          "strong@15:0",
           "strong@7:0",
-          "sup@10:0",
+          "sup@11:0",
           "svg@10:1",
+          "svg@11:1",
           "svg@13:1",
+          "svg@7:1",
           "svg@8:1",
           "svg@9:1"
         ],
@@ -2415,111 +2475,89 @@
           {
             "tag": "header",
             "role": "",
-            "top": 14,
-            "left": 16,
-            "width": 358,
-            "height": 178
+            "top": 0,
+            "left": 0,
+            "width": 390,
+            "height": 254
           },
           {
             "tag": "main",
             "role": "",
-            "top": 208,
-            "left": 16,
-            "width": 358,
-            "height": 2749
+            "top": 254,
+            "left": 0,
+            "width": 390,
+            "height": 3783
           },
           {
             "tag": "nav",
             "role": "",
-            "top": 208,
-            "left": 16,
-            "width": 358,
-            "height": 43
-          },
-          {
-            "tag": "div",
-            "role": "complementary",
-            "top": 662,
-            "left": 16,
-            "width": 358,
-            "height": 343
-          },
-          {
-            "tag": "header",
-            "role": "",
-            "top": 1052,
-            "left": 16,
-            "width": 358,
-            "height": 165
-          },
-          {
-            "tag": "div",
-            "role": "complementary",
-            "top": 2489,
-            "left": 16,
-            "width": 358,
-            "height": 468
+            "top": 270,
+            "left": 18,
+            "width": 354,
+            "height": 236
           },
           {
             "tag": "footer",
             "role": "",
-            "top": 2973,
-            "left": 16,
-            "width": 358,
-            "height": 490
+            "top": 4037,
+            "left": 0,
+            "width": 390,
+            "height": 527
           }
         ],
         "colors": [
           {
-            "hex": "#f5f4fa",
-            "count": 96
+            "hex": "#161616",
+            "count": 151
           },
           {
-            "hex": "#7e7c92",
-            "count": 69
+            "hex": "#ffffff",
+            "count": 51
           },
           {
-            "hex": "#9a98ad",
-            "count": 32
+            "hex": "#fafaf9",
+            "count": 45
           },
           {
-            "hex": "#40b3ff",
-            "count": 20
+            "hex": "#6e625c",
+            "count": 28
           },
           {
-            "hex": "#00131f",
+            "hex": "#d4000a",
             "count": 10
           },
           {
-            "hex": "#d6d4e4",
+            "hex": "#2e2a27",
             "count": 7
           },
           {
-            "hex": "#a78bfa",
+            "hex": "#ff7a00",
             "count": 4
           },
           {
-            "hex": "#12121e",
-            "count": 3
+            "hex": "#ffe3d6",
+            "count": 4
           },
           {
-            "hex": "#000000",
-            "count": 1
+            "hex": "#ff0421",
+            "count": 3
           }
         ],
         "contrast": [],
-        "contrastChecked": 119,
+        "contrastChecked": 120,
         "headings": [
           {
             "tag": "h1",
-            "text": "Two paths in. One record out."
+            "text": "TWO PATHS IN. ONE RECORD OUT."
           },
           {
             "tag": "h2",
-            "text": "The brief index"
+            "text": "THE BRIEF INDEX"
           }
         ],
-        "navTargets": [],
+        "navTargets": [
+          ""
+        ],
         "overflow": {
           "documentOverflow": false,
           "offenders": []
@@ -2537,82 +2575,82 @@
           {
             "tag": "a",
             "text": "SKIP TO THE BRIEF INDEX",
-            "outlineStyle": "none",
+            "outlineStyle": "solid",
             "outlineWidth": "3px",
-            "outlineColor": "rgb(0, 0, 0)",
-            "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 3px, rgb(245, 244, 250) 0px 0px 0px 5px",
-            "borderColor": "rgb(0, 0, 0)",
-            "backgroundColor": "rgb(64, 179, 255)"
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(255, 255, 255)"
           },
           {
             "tag": "button",
-            "text": "Trovane home",
-            "outlineStyle": "none",
+            "text": "Ledgiva home",
+            "outlineStyle": "solid",
             "outlineWidth": "3px",
-            "outlineColor": "rgb(245, 244, 250)",
-            "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 2px, rgb(64, 179, 255) 0px 0px 0px 4px",
-            "borderColor": "rgb(245, 244, 250)",
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
             "backgroundColor": "rgba(0, 0, 0, 0)"
           },
           {
             "tag": "button",
             "text": "POST A BRIEF",
-            "outlineStyle": "none",
+            "outlineStyle": "solid",
             "outlineWidth": "3px",
-            "outlineColor": "rgb(0, 19, 31)",
-            "boxShadow": "rgba(64, 179, 255, 0.18) 0px 0px 70px 0px",
-            "borderColor": "rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgb(64, 179, 255)"
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "rgb(22, 22, 22) 4px 4px 0px 0px",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(212, 0, 10)"
           },
           {
             "tag": "button",
             "text": "Connect wallet",
-            "outlineStyle": "none",
+            "outlineStyle": "solid",
             "outlineWidth": "3px",
-            "outlineColor": "rgb(245, 244, 250)",
-            "boxShadow": "rgba(0, 0, 0, 0.737) 0px 0px 0px 1.4706px, rgba(64, 179, 255, 0.737) 0px 0px 0px 2.9412px",
-            "borderColor": "rgb(38, 37, 54)",
-            "backgroundColor": "rgb(18, 18, 30)"
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(255, 255, 255)"
           },
           {
-            "tag": "button",
-            "text": "Toggle navigation",
-            "outlineStyle": "none",
-            "outlineWidth": "3px",
-            "outlineColor": "rgb(154, 152, 173)",
-            "boxShadow": "rgba(0, 0, 0, 0.737) 0px 0px 0px 1.47416px, rgba(64, 179, 255, 0.737) 0px 0px 0px 2.94832px",
-            "borderColor": "rgb(38, 37, 54)",
-            "backgroundColor": "rgba(0, 0, 0, 0)"
-          },
-          {
-            "tag": "button",
+            "tag": "a",
             "text": "INDEX 4",
-            "outlineStyle": "none",
+            "outlineStyle": "solid",
             "outlineWidth": "3px",
-            "outlineColor": "rgb(245, 244, 250)",
-            "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 2px, rgb(64, 179, 255) 0px 0px 0px 4px",
-            "borderColor": "rgb(245, 244, 250) rgb(245, 244, 250) rgb(64, 179, 255)",
-            "backgroundColor": "rgba(0, 0, 0, 0)"
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(255, 255, 255) rgb(22, 22, 22) rgb(255, 255, 255) rgb(255, 255, 255)",
+            "backgroundColor": "rgb(22, 22, 22)"
           },
           {
-            "tag": "button",
+            "tag": "a",
             "text": "SAVED 0",
-            "outlineStyle": "none",
+            "outlineStyle": "solid",
             "outlineWidth": "3px",
-            "outlineColor": "rgb(154, 152, 173)",
-            "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 2px, rgb(64, 179, 255) 0px 0px 0px 4px",
-            "borderColor": "rgb(154, 152, 173) rgb(154, 152, 173) rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgba(0, 0, 0, 0)"
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(255, 255, 255)"
           },
           {
-            "tag": "button",
+            "tag": "a",
             "text": "MY BRIEFS 0",
-            "outlineStyle": "none",
+            "outlineStyle": "solid",
             "outlineWidth": "3px",
-            "outlineColor": "rgb(154, 152, 173)",
-            "boxShadow": "rgb(0, 0, 0) 0px 0px 0px 2px, rgb(64, 179, 255) 0px 0px 0px 4px",
-            "borderColor": "rgb(154, 152, 173) rgb(154, 152, 173) rgba(0, 0, 0, 0)",
-            "backgroundColor": "rgba(0, 0, 0, 0)"
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(255, 255, 255)"
+          },
+          {
+            "tag": "a",
+            "text": "GUIDE",
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(255, 255, 255)"
           }
         ],
         "visibleCount": 8,

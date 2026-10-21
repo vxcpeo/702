@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "meta": {
-    "projectName": "trovane",
-    "title": "trovane",
+    "projectName": "ledgiva",
+    "title": "ledgiva",
     "lang": "en"
   },
   "routes": [
@@ -30,7 +30,7 @@
       "count": 1
     },
     {
-      "value": "&copy; 2026 Trovane · an independent Solana testnet project",
+      "value": "&copy; 2026 Ledgiva · an independent Solana testnet project",
       "count": 1
     },
     {
@@ -298,6 +298,22 @@
       "count": 1
     },
     {
+      "value": "Ledgiva",
+      "count": 2
+    },
+    {
+      "value": "Ledgiva is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
+      "count": 1
+    },
+    {
+      "value": "Ledgiva is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
+      "count": 1
+    },
+    {
+      "value": "Ledgiva is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
+      "count": 1
+    },
+    {
       "value": "Loading evidence…",
       "count": 1
     },
@@ -326,7 +342,7 @@
       "count": 1
     },
     {
-      "value": "On this device only. Bookmarks are stored in local storage under the trovane-saved key, and older project keys migrate into it without clearing your list.",
+      "value": "On this device only. Bookmarks are stored in local storage under the ledgiva-saved key, and older project keys migrate into it without clearing your list.",
       "count": 1
     },
     {
@@ -378,7 +394,7 @@
       "count": 1
     },
     {
-      "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Trovane.",
+      "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Ledgiva.",
       "count": 1
     },
     {
@@ -478,7 +494,7 @@
       "count": 3
     },
     {
-      "value": "SOL, which has no intended monetary value. Trovane has no platform token, no investment return and no guaranteed payout.",
+      "value": "SOL, which has no intended monetary value. Ledgiva has no platform token, no investment return and no guaranteed payout.",
       "count": 1
     },
     {
@@ -575,22 +591,6 @@
     },
     {
       "value": "Topics",
-      "count": 1
-    },
-    {
-      "value": "Trovane",
-      "count": 2
-    },
-    {
-      "value": "Trovane is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
-      "count": 1
-    },
-    {
-      "value": "Trovane is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
-      "count": 1
-    },
-    {
-      "value": "Trovane is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
       "count": 1
     },
     {
@@ -1052,7 +1052,7 @@
     },
     {
       "kind": "interpolation",
-      "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Trovane-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
+      "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Ledgiva-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
       "count": 1
     },
     {

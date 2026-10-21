@@ -1,0 +1,12 @@
+{
+  "date": "2026-10-21T12:54:44.370Z",
+  "url": "http://127.0.0.1:42705/",
+  "identity": {},
+  "flows": [],
+  "viewports": [],
+  "accessibility": [],
+  "gates": [],
+  "errors": [],
+  "result": "failed",
+  "failure": "page.goto: net::ERR_CONNECTION_REFUSED at http://127.0.0.1:42705/\nCall log:\n\u001b[2m  - navigating to \"http://127.0.0.1:42705/\", waiting until \"networkidle\"\u001b[22m\n\n    at runUiQa (E:\\workspace\\chuangye\\solana\\702\\website\\scripts\\check-ui.mjs:106:27)\n    at async file:///E:/workspace/chuangye/solana/702/website/scripts/check-ui.mjs:462:20"
+}

@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-20T16:26:41.537Z",
+  "generatedAt": "2026-10-21T13:38:44.489Z",
   "project": {
     "root": "E:/workspace/chuangye/solana/702/website",
-    "name": "trovane",
+    "name": "ledgiva",
     "baseUrl": "http://127.0.0.1:4317/"
   },
   "passed": true,
@@ -19,33 +19,20 @@
     "sourceContract": {
       "passed": true,
       "issues": [],
-      "warnings": [],
-      "hash": "e01a6837d0475ea611cbf21414a24ec53ff45c1795e764802d08ad36ade2a00b"
+      "warnings": [
+        "attributes: \"name=plus\" count increased 9 -> 10",
+        "bindings: added \"attr:'#' + item.id\"",
+        "bindings: added \"attr:item.id === 'index' ? 'ledger' : item.id === 'saved' ? 'bookmark' : item.id === 'activity' ? 'wallet' : 'book'\"",
+        "bindings: added \"form:item.id === 'index' ? 'ledger' : item.id === 'saved' ? 'bookmark' : item.id === 'activity' ? 'wallet' : 'book'\"",
+        "bindings: added \"link:'#' + item.id\"",
+        "events: \"click:goPage(item.id)\" count increased 2 -> 3",
+        "events: \"click:startCreate\" count increased 3 -> 4"
+      ],
+      "hash": "5ff8d84d0492f12bab275c7c81b58f4b8ccac51461b83c5fe0a9ec5860a5befe"
     },
     "skeleton": {
       "passed": true,
       "original": {
-        "id": "ticker-stage",
-        "family": "linear",
-        "traits": {
-          "sidebar": false,
-          "topbar": false,
-          "cards": false,
-          "hero": false,
-          "table": false,
-          "grid": true,
-          "tabs": true,
-          "modal": true,
-          "charts": false,
-          "sticky": true,
-          "orbital": false,
-          "terminal": false,
-          "bento": false,
-          "ticker": true,
-          "gallery": false
-        }
-      },
-      "current": {
         "id": "document-flow",
         "family": "editorial",
         "traits": {
@@ -66,10 +53,31 @@
           "gallery": false
         }
       },
+      "current": {
+        "id": "gallery-scroll",
+        "family": "spatial",
+        "traits": {
+          "sidebar": false,
+          "topbar": false,
+          "cards": true,
+          "hero": false,
+          "table": false,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": false,
+          "sticky": true,
+          "orbital": false,
+          "terminal": false,
+          "bento": false,
+          "ticker": false,
+          "gallery": true
+        }
+      },
       "accent": {
-        "original": "#9945ff",
-        "current": "#40b3ff",
-        "deltaE": 85.09,
+        "original": "#40b3ff",
+        "current": "#8f4b00",
+        "deltaE": 105.32,
         "min": 30
       }
     },
@@ -80,12 +88,22 @@
         "skipped": false,
         "failures": [],
         "warnings": [
-          "aria attribute added: aria-label=This edition at a glance"
+          "aria attribute changed/removed: aria-label=This edition at a glance",
+          "aria attribute added: aria-label=Guide",
+          "aria attribute added: aria-label=Index, 4 records",
+          "aria attribute added: aria-label=My briefs, 0 records",
+          "aria attribute added: aria-label=Post a brief",
+          "aria attribute added: aria-label=Quick access",
+          "aria attribute added: aria-label=Saved, 0 records",
+          "link target added: #activity",
+          "link target added: #guide",
+          "link target added: #index",
+          "link target added: #saved"
         ],
         "structure": {
-          "fingerprintSimilarity": 0.268,
-          "landmarkSimilarity": 0.429,
-          "classOverlap": 0.007
+          "fingerprintSimilarity": 0.38,
+          "landmarkSimilarity": 0.571,
+          "classOverlap": 0.013
         },
         "content": {
           "missing": [],
@@ -119,10 +137,27 @@
   },
   "failures": [],
   "warnings": [
-    "/: aria attribute added: aria-label=This edition at a glance"
+    "attributes: \"name=plus\" count increased 9 -> 10",
+    "bindings: added \"attr:'#' + item.id\"",
+    "bindings: added \"attr:item.id === 'index' ? 'ledger' : item.id === 'saved' ? 'bookmark' : item.id === 'activity' ? 'wallet' : 'book'\"",
+    "bindings: added \"form:item.id === 'index' ? 'ledger' : item.id === 'saved' ? 'bookmark' : item.id === 'activity' ? 'wallet' : 'book'\"",
+    "bindings: added \"link:'#' + item.id\"",
+    "events: \"click:goPage(item.id)\" count increased 2 -> 3",
+    "events: \"click:startCreate\" count increased 3 -> 4",
+    "/: aria attribute changed/removed: aria-label=This edition at a glance",
+    "/: aria attribute added: aria-label=Guide",
+    "/: aria attribute added: aria-label=Index, 4 records",
+    "/: aria attribute added: aria-label=My briefs, 0 records",
+    "/: aria attribute added: aria-label=Post a brief",
+    "/: aria attribute added: aria-label=Quick access",
+    "/: aria attribute added: aria-label=Saved, 0 records",
+    "/: link target added: #activity",
+    "/: link target added: #guide",
+    "/: link target added: #index",
+    "/: link target added: #saved"
   ],
   "baseline": {
-    "generatedAt": "2026-10-20T16:05:28.577Z",
+    "generatedAt": "2026-10-21T13:12:54.421Z",
     "routes": [
       "/"
     ]

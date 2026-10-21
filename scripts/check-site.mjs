@@ -1,4 +1,4 @@
-// Release guards for the public Trovane site. No environment files are read.
+// Release guards for the public Ledgiva site. No environment files are read.
 import { access, readFile, readdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -25,10 +25,10 @@ async function listFiles(directory, prefix = "") {
 }
 const textExtensions = new Set([".html", ".vue", ".js", ".css", ".json", ".svg", ".txt"]);
 const blockedHosts = ["twitter.com", "x.com", "t.co"];
-const previousIdentity = /settiva|yovinx|tallyvein|quilsted|findelora|factrelle|inquedra|tessivra|vercairn|siftlane|citeward|civiquill|proofora|evidara|evidalume|buidlspur|bountelith|cairnora|veriqora|citevra|attestora/i;
+const previousIdentity = /settiva|yovinx|tallyvein|quilsted|findelora|factrelle|inquedra|tessivra|vercairn|siftlane|citeward|civiquill|proofora|evidara|evidalume|buidlspur|bountelith|cairnora|veriqora|citevra|attestora|trovane|vouchra/i;
 // Bookmark keys are the only place an earlier brand may survive, because the
 // migration path has to read the old keys to move a user's saved list forward.
-const legacyBookmarkKeys = "(?:settiva|yovinx|tallyvein|quilsted|buidlspur|citevra|attestora|evidalume|bountelith|findelora|factrelle|inquedra|tessivra|vercairn|siftlane|citeward|civiquill|proofora)-saved";
+const legacyBookmarkKeys = "(?:settiva|yovinx|tallyvein|quilsted|buidlspur|citevra|attestora|evidalume|bountelith|findelora|factrelle|inquedra|tessivra|vercairn|siftlane|citeward|civiquill|proofora|trovane)-saved";
 const withoutDeployedIdentity = text => text.replace(/\bEvidaraEscrow\b|\bEvidara:/g, 'deployed-contract-identity');
 function checkPublicCopy(text, label) {
   const displayCopy = withoutDeployedIdentity(text).replace(new RegExp(`(["'\`])${legacyBookmarkKeys}\\1`, "g"), '"legacy-bookmarks"');
@@ -47,7 +47,7 @@ async function checkDynamicLinks(site, label) {
   // Load the real exported URL guard without mounting Vue or reading local env.
   const source = (await readFile(path.join(site, "src/composables/useMissions.js"), "utf8"))
     .replace("from 'vue'", `from '${import.meta.resolve('vue')}'`)
-    .replace(/^import \{[\s\S]*?\} from ['"]\.\.\/config['"];\s*/m, "const APP_NAME = 'Trovane', LAMPORTS_PER_SOL = 1000000000n, SOLANA_CLUSTER = 'testnet', SOLANA_EXPLORER_URL = 'https://explorer.solana.com', SOLANA_NETWORK_NAME = 'Solana Testnet', SOLANA_PROGRAM_ID = '5ibhioLv21ShH9EXjRDkhygREtXqHHTZ6vtEC3DGgwDu', SOLANA_PROGRAM_READY = false, SOLANA_RPC_URL = 'https://api.testnet.solana.com', SOLANA_TOKEN_MINT = '', SOLANA_TOKEN_SYMBOL = 'TOKEN';\n")
+    .replace(/^import \{[\s\S]*?\} from ['"]\.\.\/config['"];\s*/m, "const APP_NAME = 'Ledgiva', LAMPORTS_PER_SOL = 1000000000n, SOLANA_CLUSTER = 'testnet', SOLANA_EXPLORER_URL = 'https://explorer.solana.com', SOLANA_NETWORK_NAME = 'Solana Testnet', SOLANA_PROGRAM_ID = '5ibhioLv21ShH9EXjRDkhygREtXqHHTZ6vtEC3DGgwDu', SOLANA_PROGRAM_READY = false, SOLANA_RPC_URL = 'https://api.testnet.solana.com', SOLANA_TOKEN_MINT = '', SOLANA_TOKEN_SYMBOL = 'TOKEN';\n")
     .replace("import { createSolanaProgramClient } from '../utils/solanaProgram';", "const createSolanaProgramClient = () => { throw new Error('Live client should not be created by the link guard.'); };");
   const { safeExternalUrl } = await import(`data:text/javascript;base64,${Buffer.from(source).toString("base64")}`);
   for (const host of blockedHosts) {
@@ -71,6 +71,9 @@ async function checkAsset(site, relativeFile, reference, kind = "asset") {
   check((await Promise.all(candidates.map(exists))).some(Boolean), `${path.relative(root, site) || "main"}/${relativeFile}: missing ${kind} ${value}`);
 }
 
+const sheetField = (await readFile(path.join(root, "src", "styles", "poster-press.css"), "utf8")).match(/--field:\s*(#[0-9a-fA-F]{3,8})/)?.[1] || "";
+check(/^#[0-9a-f]{6}$/i.test(sheetField), "poster-press.css: the --field token must declare the page colour");
+
 const trees = [];
 for (const site of [root, path.join(root, "a702")]) {
   const label = path.relative(root, site) || "main";
@@ -79,26 +82,57 @@ for (const site of [root, path.join(root, "a702")]) {
   const indexComponent = await readFile(path.join(site, "src", "components", "BriefIndex.vue"), "utf8");
   const config = await readFile(path.join(site, "src", "config.js"), "utf8");
   const manifest = JSON.parse(await readFile(path.join(site, "package.json"), "utf8"));
-  check(/<title>\s*Trovane\b[^<]*<\/title>/i.test(index), `${label}: title must use Trovane`);
-  check(/<meta\b[^>]*name=["']theme-color["'][^>]*content=["']#000000["']/i.test(index), `${label}: theme colour must match the dark field`);
-  check(/<meta\b[^>]*property=["']og:site_name["'][^>]*content=["']Trovane["']/i.test(index), `${label}: Open Graph site name must be Trovane`);
-  check(/aria-label=["']Trovane home["']/.test(app), `${label}: accessible home identity must use Trovane`);
-  check(/APP_NAME\s*=\s*["']Trovane["']/.test(config), `${label}: app configuration must use Trovane`);
-  check(manifest.name === "trovane", `${label}: package name must be trovane`);
-  check(/class=["']masthead["']/.test(app), `${label}: the documentary masthead must ship`);
-  check(/class=["']registry-section["']/.test(indexComponent), `${label}: the ledger registry must ship`);
-  check(/class=["']mast-identity["']/.test(app), `${label}: the masthead identity lockup must ship`);
-  for (const retiredClass of ["ticker", "ticker-chan", "deck", "deck-tools", "deck-menu", "beat", "beat-grid", "beat-note", "ledger-band", "ledger-row", "row-open", "row-keep", "index-deck", "index-bar", "edition-notice", "mast-row", "brand-key", "statement", "status-foot", "chan-chip", "rail-deck", "lookup"]) {
-    check(!new RegExp(`class=["'][^"']*\\b${retiredClass}\\b`).test(app), `${label}: retired ticker surface is still in App.vue: ${retiredClass}`);
+  check(/<title>\s*Ledgiva\b[^<]*<\/title>/i.test(index), `${label}: title must use Ledgiva`);
+  check(new RegExp(`<meta\\b[^>]*name=["']theme-color["'][^>]*content=["']${sheetField}["']`, "i").test(index), `${label}: theme colour must match the poster field ${sheetField}`);
+  check(/<meta\b[^>]*name=["']color-scheme["'][^>]*content=["']light["']/i.test(index), `${label}: the poster press is a light edition`);
+  check(/<meta\b[^>]*property=["']og:site_name["'][^>]*content=["']Ledgiva["']/i.test(index), `${label}: Open Graph site name must be Ledgiva`);
+  check(/aria-label=["']Ledgiva home["']/.test(app), `${label}: accessible home identity must use Ledgiva`);
+  check(/APP_NAME\s*=\s*["']Ledgiva["']/.test(config), `${label}: app configuration must use Ledgiva`);
+  check(manifest.name === "ledgiva", `${label}: package name must be ledgiva`);
+  check(/class=["']press["']/.test(app), `${label}: the poster press shell must ship`);
+  check(/class=["']mast["']/.test(app), `${label}: the poster masthead must ship`);
+  check(/class=["']route-wall["']/.test(app), `${label}: the poster route wall must ship`);
+  check(/class=["']dock["']/.test(app), `${label}: the floating dock must ship`);
+  check(/class=["']scene scene--board["']/.test(app), `${label}: the board scene must ship`);
+  check(/class=["']card-wall["']/.test(indexComponent), `${label}: the poster card wall must ship`);
+  check(/class=["']facts-band["']/.test(indexComponent), `${label}: the ink facts band must ship`);
+  for (const retiredClass of [
+    "masthead", "mast-edition", "mast-plate", "mast-identity", "mast-sigil", "mast-lockup", "mast-word", "mast-tools",
+    "route-line", "route-item", "route-count", "lede-spread", "lede-copy", "lede-title", "lede-prose", "lede-acts",
+    "marginalia", "figure-register", "figure-row", "colophon", "registry-section", "registry-head", "registry-body",
+    "registry-ledger", "register-row", "register-open", "register-no", "register-brief", "register-topic",
+    "register-title", "register-copy", "register-stats", "register-pool", "register-when", "register-state",
+    "register-keep", "register-foot", "summary-aside", "summary-figures", "summary-figure", "summary-note",
+    "dossier-file", "dossier-mast", "dossier-title", "dossier-facts", "pool-band", "pool-figure", "pool-number",
+    "split-bar", "split-track", "split-key", "dossier-columns", "dossier-main", "chapter-head", "chapter-no",
+    "chapter-title", "chapter-copy", "deliverable-list", "byline", "questionnaire", "entry-ask", "entry-lede",
+    "evidence-file", "evidence-head", "evidence-sig", "dossier-aside", "note-card", "guide-file", "guide-mast",
+    "guide-title", "step-register", "step-row", "step-index", "rule-chapter", "faq-ledger", "faq-item",
+    "contents-plate", "contents-head", "contents-item", "sheet-frame", "sheet-crest", "progress-track",
+    "stamp-topic", "sheet-note", "sheet-actions", "readout", "toast", "glyph-key", "quiet-link", "action-core",
+    "action-halo", "wallet-pill", "menu-glyph", "jump-start", "overline", "observatory", "document",
+  ]) {
+    check(!new RegExp(`class=["'][^"']*\\b${retiredClass}\\b`).test(app), `${label}: retired documentary surface is still in App.vue: ${retiredClass}`);
   }
-  for (const retiredClass of ["ledger-band", "ledger-row", "row-open", "row-keep", "index-deck", "index-bar", "chan-chip", "rail-deck", "lookup", "beat-grid"]) {
-    check(!new RegExp(`class=["'][^"']*\\b${retiredClass}\\b`).test(indexComponent), `${label}: retired ticker index surface is still in BriefIndex.vue: ${retiredClass}`);
+  for (const retiredClass of [
+    "registry-section", "registry-head", "registry-ledger", "registry-title", "registry-note", "registry-acts",
+    "query-row", "query-field", "query-clear", "query-order", "topic-line", "topic-rail", "topic-chip",
+    "summary-aside", "summary-figures", "summary-figure", "summary-note", "register", "register-row",
+    "register-open", "register-no", "register-brief", "register-topic", "register-title", "register-copy",
+    "register-stats", "register-pool", "register-when", "register-state", "register-keep", "register-foot",
+    "loading-ledger", "loading-row", "blank-slate", "overline",
+  ]) {
+    check(!new RegExp(`class=["'][^"']*\\b${retiredClass}\\b`).test(indexComponent), `${label}: retired ledger index surface is still in BriefIndex.vue: ${retiredClass}`);
   }
-  check(!/spectrum-deck\.css|settiva-ledger\.css/.test(indexComponent + app), `${label}: the retired presentation layer is still imported`);
-  for (const obsolete of ["meterial.txt", "src/abi.json", "src/EvidaraEscrow.abi.json", "src/styles/quilsted-workbench.css", "src/styles/evidalume.css", "src/styles/trovane-terminal.css", "src/components/ChainReadout.vue", "src/components/BriefRegistry.vue", "src/components/BriefInspector.vue"]) {
+  check(!/meridian-ledger\.css|spectrum-deck\.css|settiva-ledger\.css/.test(indexComponent + app), `${label}: the retired presentation layer is still imported`);
+  for (const obsolete of [
+    "meterial.txt", "src/abi.json", "src/EvidaraEscrow.abi.json", "src/styles/quilsted-workbench.css",
+    "src/styles/evidalume.css", "src/styles/trovane-terminal.css", "src/styles/meridian-ledger.css",
+    "src/components/ChainReadout.vue", "src/components/BriefRegistry.vue", "src/components/BriefInspector.vue",
+  ]) {
     check(!await exists(path.join(site, obsolete)), `${label}: obsolete material remains: ${obsolete}`);
   }
-  for (const asset of ["trovane-mark.svg", "trovane-seal.svg", "trovane-favicon.svg", "trovane-edition-social.png"]) {
+  for (const asset of ["ledgiva-mark.svg", "ledgiva-seal.svg", "ledgiva-favicon.svg", "ledgiva-edition-social.png"]) {
     check(await exists(path.join(site, "public", asset)), `${label}: required local asset is missing: ${asset}`);
   }
   for (const retired of [
@@ -154,26 +188,26 @@ const brandingKey = path.join(workspace, "key.txt.branding");
 if (await exists(brandingKey)) {
   const record = await readFile(brandingKey, "utf8");
   for (const [label, pattern] of [
-    ["brand name", /^Brand:\s*Trovane\s*$/m],
-    ["slug", /^Slug:\s*trovane\s*$/m],
+    ["brand name", /^Brand:\s*Ledgiva\s*$/m],
+    ["slug", /^Slug:\s*ledgiva\s*$/m],
     ["tagline", /^Tagline:\s*Two paths in\. One record out\.\s*$/m],
-    ["canonical domain", /^Canonical domain:\s*https:\/\/trovane\.xyz\/\s*$/m],
-    ["X handle", /^X:\s*@trovane\b/m],
+    ["canonical domain", /^Canonical domain:\s*https:\/\/ledgiva\.xyz\/\s*$/m],
+    ["X handle", /^X:\s*@ledgiva\b/m],
     ["testnet network", /^Network:\s*Solana testnet preview\s*$/m],
     ["no live token", /^Token:\s*no platform token or CA is live\s*$/m],
-  ]) check(pattern.test(record), `key.txt.branding: ${label} is missing or does not match the shipped Trovane identity`);
-  check(previousIdentity.test(record.replace(/\btrovane-/g, "")) === false, "key.txt.branding: obsolete brand remains");
+  ]) check(pattern.test(record), `key.txt.branding: ${label} is missing or does not match the shipped Ledgiva identity`);
+  check(previousIdentity.test(record.replace(/\bledgiva-/g, "")) === false, "key.txt.branding: obsolete brand remains");
 }
 const listedIdentity = await readFile(path.join(workspace, "list.txt"), "utf8");
-check(/^Brand:\s*Trovane\s*$/m.test(listedIdentity), "list.txt: public brand record must use Trovane");
-check(/^Canonical domain:\s*trovane\.xyz\s*$/m.test(listedIdentity), "list.txt: canonical domain must be trovane.xyz");
-check(/^X handle:\s*@trovane\s*$/m.test(listedIdentity), "list.txt: X handle must be @trovane");
+check(/^Brand:\s*Ledgiva\s*$/m.test(listedIdentity), "list.txt: public brand record must use Ledgiva");
+check(/^Canonical domain:\s*ledgiva\.xyz\s*$/m.test(listedIdentity), "list.txt: canonical domain must be ledgiva.xyz");
+check(/^X handle:\s*@ledgiva\s*$/m.test(listedIdentity), "list.txt: X handle must be @ledgiva");
 for (const site of [root, path.join(root, "a702")]) {
   for (const local of ["dist/key.txt", "dist/key.txt.branding", "public/key.txt", "public/key.txt.branding"]) {
     check(!await exists(path.join(site, local)), `${path.relative(root, site) || "main"}: local key material must never enter public output: ${local}`);
   }
 }
 if (failures.length) {
-  console.error(`Trovane site guard failed (${failures.length}/${checks} checks):\n${failures.map(message => `- ${message}`).join("\n")}`);
+  console.error(`Ledgiva site guard failed (${failures.length}/${checks} checks):\n${failures.map(message => `- ${message}`).join("\n")}`);
   process.exitCode = 1;
-} else console.log(`Trovane site guard passed: ${checks} checks; source/build branding, local assets, dynamic social-link policy and mirror consistency verified.`);
+} else console.log(`Ledgiva site guard passed: ${checks} checks; source/build branding, poster shell, local assets, dynamic social-link policy and mirror consistency verified.`);

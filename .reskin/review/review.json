@@ -1,9 +1,9 @@
 {
-  "base": "http://127.0.0.1:4318/",
+  "base": "http://127.0.0.1:56379/",
   "captures": [
     {
       "label": "01-index-desktop",
-      "title": "Trovane - Two paths in. One record out.",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -16,7 +16,7 @@
     },
     {
       "label": "02-guide-desktop",
-      "title": "Trovane - Two paths in. One record out.",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "How a brief becomes a record."
       ],
@@ -29,7 +29,7 @@
     },
     {
       "label": "03-saved-desktop",
-      "title": "Trovane - Two paths in. One record out.",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "Saved briefs"
       ],
@@ -42,7 +42,7 @@
     },
     {
       "label": "04-activity-desktop",
-      "title": "Trovane - Two paths in. One record out.",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "Briefs from this wallet"
       ],
@@ -55,7 +55,7 @@
     },
     {
       "label": "05-filtered-desktop",
-      "title": "Trovane - Two paths in. One record out.",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -68,7 +68,7 @@
     },
     {
       "label": "06-dossier-desktop",
-      "title": "Trovane - Two paths in. One record out.",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "What does a tokenized stock actually represent?"
       ],
@@ -81,7 +81,7 @@
     },
     {
       "label": "07-create-desktop",
-      "title": "Trovane - Two paths in. One record out.",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -93,8 +93,21 @@
       "overflow": false
     },
     {
-      "label": "08-index-mobile",
-      "title": "Trovane - Two paths in. One record out.",
+      "label": "08-review-desktop",
+      "title": "Ledgiva - Two paths in. One record out.",
+      "h1": [
+        "Two paths in.One record out."
+      ],
+      "nameless": [],
+      "noAlt": 0,
+      "scrollWidth": 1440,
+      "clientWidth": 1440,
+      "axe": [],
+      "overflow": false
+    },
+    {
+      "label": "09-index-mobile",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -106,8 +119,8 @@
       "overflow": false
     },
     {
-      "label": "09-contents-mobile",
-      "title": "Trovane - Two paths in. One record out.",
+      "label": "10-contents-mobile",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -119,8 +132,8 @@
       "overflow": false
     },
     {
-      "label": "10-dossier-mobile",
-      "title": "Trovane - Two paths in. One record out.",
+      "label": "11-dossier-mobile",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "What does a tokenized stock actually represent?"
       ],
@@ -132,8 +145,8 @@
       "overflow": false
     },
     {
-      "label": "11-create-mobile",
-      "title": "Trovane - Two paths in. One record out.",
+      "label": "12-create-mobile",
+      "title": "Ledgiva - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
