@@ -1,48 +1,84 @@
-# Reskin wireframe — Poster Optimism / Gallery Scroll
+# Wireframe — Cosmos Orbit / Documentary Ledger
 
-Project: `E:/workspace/chuangye/solana/702/website` · route `/` (one SPA route, state-driven views)
-Baseline: `.reskin/baseline/` (documentary ledger, dark #000000 / #40b3ff)
+Committed before implementation; recorded here as the shipped map. The selected
+direction is the one `choose-style.mjs` produced; nothing was substituted.
 
-## 1. New shell
+## Shell
 
-| Layer | Old (documentary ledger) | New (poster gallery) |
-|---|---|---|
-| Page root | `div.observatory` — issue line + masthead + route line + document + colophon | `div.press` — mast flag band, scene stack, colophon plate, floating dock |
-| Navigation | `nav.route-line` inside `main`, uppercase mono index line; mobile full-height `contents-plate` | `nav.route-wall` — four oversized poster tiles with printed numbers in the opening scene; plus a floating **dock** (icon keys, `aria-label` each) and a mobile `dock-sheet` under the "Contents" key |
-| Landmarks | header → main → nav → div[complementary] → header → div[complementary] → footer | header → main → nav(route-wall) → aside(note-plate) → footer → nav(dock) |
-| Main composition | 9-column lede + 3-column marginalia; 7/3 registry | full-bleed **scenes**: opening poster, board scene, closing plate |
-| Records | ruled ledger rows in a seven-column registry | poster **card wall** (2-column asymmetric), summary as an ink `fact-strip` band |
-| Dossier | file with four-fact register, numbered chapters | single print with a giant pool figure, sticker row, chapter blocks, margin notes |
-| Guide | field-guide file, numbered step register | three step plates in a snap rail, rules band, FAQ stack |
-| Overlays | floating sheet, contents plate | poster `dialog.sheet`, mobile `dock-sheet` |
-| Motion | 420 ms drift | 110 ms steps() snap, disabled under `prefers-reduced-motion` |
+`NightSheet` is the only shell. It is one component tree in `App.vue`:
 
-## 2. Route compositions
+```
+.chart                                   root, void field + signal glows + chart grid
+├─ a.chart-skip                          first focusable, revealed on focus
+├─ header.dateline                       3-column masthead
+│  ├─ button.imprint                     mark + wordmark + motto (goes home)
+│  ├─ div.dateline-facts                 edition stamp + cluster line
+│  └─ div.dateline-acts                  Post a brief + wallet key
+├─ nav.indexline                         4 route links + inline create key
+├─ div.chart-body                        grid 7fr / 3fr
+│  ├─ main.plate                         the scene (index | saved | activity | guide | dossier)
+│  └─ div.margin[role=complementary]     edition note + compass keys (sticky)
+├─ footer.colophon                       brand, four facts, fine print, back to top
+├─ template[v-if=mobileNav]              shade + nav#site-contents (contents sheet)
+├─ dialog.ledger-dialog                  draft sheet / rewards ledger
+└─ div.dispatch (0–2)                    wallet fault and notice strips
+```
 
-- `/` — `scene--open` (h1, lede, acts, route wall, editor's note) → `scene--board`
-  (search/sort, topic stickers, fact strip, card wall). `saved` and `activity`
-  reuse `scene--board` with the same cards (empty state keeps its copy).
-- dossier — `scene--print`: nav row, title block, sticker row, fact row, pool
-  figure + split bar, three chapters, margin notes. `id="dossier-title"` stays.
-- guide — `scene--guide`: title block, three step plates, rules band, FAQ stack.
-- dialog — `dialog.sheet` with poster head, progress strip and questionnaire.
+Navigation is the ruled index line under the masthead; the compass keys in the
+margin are a secondary rail and the mobile contents trigger. There is no dock,
+no route wall, no poster tile and no card wall.
 
-## 3. Components kept as content children
+## Route → composition
 
-`BriefIndex.vue`, `BriefDossier.vue`, `BriefGuide.vue` and `UiIcon.vue` keep their
-props, emits and script. Only their templates and classes change.
+| Scene | Composition |
+| --- | --- |
+| index (`/`) | `section.statement` (kicker, h1, lede, three actions) → `section.ledger-plate` → `BriefIndex` |
+| saved / activity | `section.statement--slim` (page kicker, h1, note) → the same `BriefIndex` in its view state |
+| guide | `section#guide` → `BriefGuide`: `div.guide-head`, `ol.stair` (three plates), two `section.creed` bands (rules grid, FAQ stack), `div.guide-acts` |
+| dossier | `section#scope` → `BriefDossier`: back line, head, tags, `dl.case-ledger`, `section.vault-plate`, `div.dossier-body` (three chapters + marginalia), actions, tx strip |
+| draft sheet | `dialog.ledger-dialog` → `div.dialog-head`, `div.progress-line`, `form.brief-form` (ruled questionnaire) or `div.preview-slip` |
+| rewards ledger | the same dialog with `div.reward-plate`, `code.account-line`, state strips |
 
-## 4. Tokens and breakpoints
+## Ledger composition (BriefIndex)
 
-New stylesheet `src/styles/poster-press.css`; `meridian-ledger.css` is removed
-from the tree and the render path. Tokens follow `.reskin/STYLE.md` (cream field,
-ink, red accent, orange secondary, zero radius, 2 px rules, 8 px hard shadow,
-Arial Black display, Courier New mono). Breakpoints: 1100 px (dock inset), 820 px
-(scenes stack, card wall single column), 520 px (mobile dock bar, type scale).
+```
+section#brief-index.ledger
+├─ div.ledger-head                       kicker / h2 / note + reload + create
+├─ div.query-rail[role=search]           search field, order select, reset
+├─ div.facet-line                        topic facets + standing facets (pills)
+├─ section.tally-line                    four cells (Records / Open / Pool / Cluster) + note
+├─ div.loadline | div.void | ol.ledger-rows + div.ledger-foot
+```
 
-## 5. Content contract
+Rows are `.entry-row` articles inside an ordered list: number, topic, title
+button, copy, figures (pool, deadline, standing), keep key. No cards, no grid of
+tiles, no sticker chips.
 
-Every visible string, binding, handler, attribute, form field and route stays
-byte-for-byte. The dock is icon-only at desktop (`aria-label` only); visible
-route labels render once in the route wall, so the desktop word multiset is
-unchanged.
+## Old components and CSS
+
+| Original | Fate |
+| --- | --- |
+| `src/styles/poster-press.css` | removed from the render path; archived under `.rebrand/previous/ledgiva-reskin-20261021/src-styles/` |
+| `App.vue` poster shell (`.press`, `.mast`, `.route-wall`, `.dock`) | replaced by `.chart`, `.dateline`, `.indexline`, `.margin`, `.compass`, `.colophon` |
+| `BriefIndex` board (`.board`, `.card-wall`, `.record-card`, `.facts-band`, `.sticker`) | replaced by `.ledger`, `.ledger-rows`, `.entry-row`, `.tally-line`, `.facet` |
+| `BriefDossier` print (`.print`, `.spread`, `.margin-rail`) | replaced by `.dossier`, `.chapter`, `.dossier-margin` |
+| `BriefGuide` guide (`.step-wall`, `.rules-band`, `.faq-stack`) | replaced by `.stair`, `.creed`, `.faq-stack` |
+| `UiIcon` | kept (presentational, decorative, `aria-hidden`); stroke weight 1.4 and comment only |
+
+Only three script hooks changed, all presentational: `.card-open` → `.entry-open`,
+`.dock-key[aria-controls]` → `.compass-key[aria-controls]`, `.sheet-body` →
+`.dialog-body`. Application logic, composables, Solana client, routes, ids,
+bindings, handlers and copy are untouched.
+
+## Tokens and breakpoints
+
+`src/styles/nightsheet.css` carries the tokens: `--void #050509`,
+`--abyss #0a0a12`, `--shell #12121e`, `--shell-lift #191927`,
+`--star #f5f4fa`, `--star-dim #9a98ad`, `--star-faint #87859f`,
+`--pulse #40b3ff`, `--violet #a78bfa`, `--filament #262536`,
+`--filament-lit #3b3a55`, `--good #5ce1a0`, `--bad #ff8a8a`.
+
+Breakpoints: 1080 px (plate and margin stack, marginalia moves below), 860 px
+(masthead two rows, stair and creed grids become single column, tally 2×2),
+620 px (single column masthead, row figures wrap under the title). Reduced-motion
+and forced-colours guards are included.

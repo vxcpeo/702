@@ -12,10 +12,10 @@ defineEmits(["start", "board"]);
 <template>
   <article id="guide" class="guide">
     <div class="guide-head">
-      <p class="kicker">Field guide · edition one</p>
+      <p class="rail-kicker">Field guide · edition one</p>
       <h1 id="guide-title" class="guide-title">How a brief becomes a record.</h1>
       <p class="guide-lede">
-        Ledgiva is a Solana bounty market for builder work, public evidence and
+        Colopha is a Solana bounty market for builder work, public evidence and
         creator-led review. A creator publishes a brief and funds a pool; builders
         answer with source-linked work; the creator reads every entry before a
         single unit is allocated.
@@ -26,29 +26,29 @@ defineEmits(["start", "board"]);
       </p>
     </div>
 
-    <ol class="step-wall" aria-label="How a brief moves">
-      <li class="step-plate">
-        <span class="step-num">01</span>
-        <h2 class="step-title">Write a narrow brief.</h2>
-        <p class="step-copy">
+    <ol class="stair" aria-label="How a brief moves">
+      <li class="stair-plate">
+        <span class="stair-no">01</span>
+        <h2 class="stair-title">Write a narrow brief.</h2>
+        <p class="stair-copy">
           Ask one focused question. Publish it at a public URL, set a deadline,
           and fund the reward pool on Solana testnet. The brief is the contract
           every contribution is read against.
         </p>
       </li>
-      <li class="step-plate">
-        <span class="step-num">02</span>
-        <h2 class="step-title">Submit verifiable evidence.</h2>
-        <p class="step-copy">
+      <li class="stair-plate">
+        <span class="stair-no">02</span>
+        <h2 class="stair-title">Submit verifiable evidence.</h2>
+        <p class="stair-copy">
           Cite primary sources, separate observation from assumption, and make
           your limitations as clear as your findings. Submit the public proof URL
           before the deadline.
         </p>
       </li>
-      <li class="step-plate">
-        <span class="step-num">03</span>
-        <h2 class="step-title">Read every entry, then close the record.</h2>
-        <p class="step-copy">
+      <li class="stair-plate">
+        <span class="stair-no">03</span>
+        <h2 class="stair-title">Read every entry, then close the record.</h2>
+        <p class="stair-copy">
           The creator allocates rewards to accepted contributions. Accepted
           contributors claim their allocation from the rewards ledger. A
           submission is never a guaranteed payment.
@@ -56,15 +56,15 @@ defineEmits(["start", "board"]);
       </li>
     </ol>
 
-    <section class="rules-band" aria-labelledby="rules-title">
-      <div class="rules-head">
+    <section class="creed" aria-labelledby="rules-title">
+      <div class="creed-head">
         <div>
-          <p class="kicker">Before you begin</p>
-          <h2 id="rules-title" class="rules-title">The rules of settlement.</h2>
+          <p class="rail-kicker">Before you begin</p>
+          <h2 id="rules-title" class="creed-title">The rules of settlement.</h2>
         </div>
       </div>
-      <div class="rules-grid">
-        <div class="rule-plate">
+      <div class="creed-grid">
+        <div class="creed-plate">
           <h3>Sample testnet data.</h3>
           <p>
             The index ships with illustrative briefs and testnet SOL that has no
@@ -72,17 +72,17 @@ defineEmits(["start", "board"]);
             transaction.
           </p>
         </div>
-        <div class="rule-plate">
+        <div class="creed-plate">
           <h3>Review is creator-led.</h3>
           <p>
             A submission is not a guaranteed payment. Additional funding is not an
             investment and is not an individually refundable deposit.
           </p>
         </div>
-        <div class="rule-plate">
+        <div class="creed-plate">
           <h3>An independent project.</h3>
           <p>
-            Ledgiva is built for Solana testnet and is not affiliated with,
+            Colopha is built for Solana testnet and is not affiliated with,
             endorsed by, or operated by Solana Labs. Keep private information
             off-chain.
           </p>
@@ -90,11 +90,11 @@ defineEmits(["start", "board"]);
       </div>
     </section>
 
-    <section class="rules-band" aria-labelledby="faq-title">
-      <div class="rules-head">
+    <section class="creed" aria-labelledby="faq-title">
+      <div class="creed-head">
         <div>
-          <p class="kicker">Common questions</p>
-          <h2 id="faq-title" class="rules-title">Frequently asked</h2>
+          <p class="rail-kicker">Common questions</p>
+          <h2 id="faq-title" class="creed-title">Frequently asked</h2>
         </div>
       </div>
       <div class="faq-stack">
@@ -114,7 +114,7 @@ defineEmits(["start", "board"]);
           </summary>
           <p class="faq-a">
             Rewards use {{ cluster }} SOL, which has no intended monetary value.
-            Ledgiva has no platform token, no investment return and no guaranteed
+            Colopha has no platform token, no investment return and no guaranteed
             payout.
           </p>
         </details>
@@ -144,18 +144,18 @@ defineEmits(["start", "board"]);
           </summary>
           <p class="faq-a">
             On this device only. Bookmarks are stored in local storage under the
-            ledgiva-saved key, and older project keys migrate into it without
+            colopha-saved key, and older project keys migrate into it without
             clearing your list.
           </p>
         </details>
       </div>
     </section>
 
-    <div class="guide-actions">
-      <button class="press-btn" type="button" @click="$emit('board')">
+    <div class="guide-acts">
+      <button class="chart-btn" type="button" @click="$emit('board')">
         Open the index<UiIcon name="arrow" :size="15" />
       </button>
-      <button class="press-btn press-btn--ghost" type="button" @click="$emit('start')">
+      <button class="chart-btn chart-btn--hollow" type="button" @click="$emit('start')">
         <UiIcon name="plus" :size="15" />Post a brief
       </button>
     </div>

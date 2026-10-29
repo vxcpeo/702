@@ -1,9 +1,9 @@
 {
-  "base": "http://127.0.0.1:60736/",
+  "base": "http://127.0.0.1:56255/",
   "captures": [
     {
       "label": "01-index-desktop",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -16,7 +16,7 @@
     },
     {
       "label": "02-guide-desktop",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "How a brief becomes a record."
       ],
@@ -29,7 +29,7 @@
     },
     {
       "label": "03-saved-desktop",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "Saved briefs"
       ],
@@ -42,7 +42,7 @@
     },
     {
       "label": "04-activity-desktop",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "Briefs from this wallet"
       ],
@@ -55,7 +55,7 @@
     },
     {
       "label": "05-filtered-desktop",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -68,7 +68,7 @@
     },
     {
       "label": "06-dossier-desktop",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "What does a tokenized stock actually represent?"
       ],
@@ -81,7 +81,7 @@
     },
     {
       "label": "07-create-desktop",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -94,7 +94,7 @@
     },
     {
       "label": "08-review-desktop",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -107,7 +107,7 @@
     },
     {
       "label": "09-index-mobile",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -120,7 +120,7 @@
     },
     {
       "label": "10-contents-mobile",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],
@@ -133,7 +133,7 @@
     },
     {
       "label": "11-dossier-mobile",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "What does a tokenized stock actually represent?"
       ],
@@ -146,7 +146,7 @@
     },
     {
       "label": "12-create-mobile",
-      "title": "Ledgiva - Two paths in. One record out.",
+      "title": "Colopha - Two paths in. One record out.",
       "h1": [
         "Two paths in.One record out."
       ],

@@ -75,7 +75,7 @@ const stateLabel = (mission) => {
   if (mission.expired) return "Ended";
   return "Open";
 };
-const stateClass = (mission) => `state-${stateLabel(mission).toLowerCase()}`;
+const phaseClass = (mission) => `phase-${stateLabel(mission).toLowerCase()}`;
 const deadlineText = (mission) => {
   if (mission.sample) return mission.difficulty || "Open brief";
   return mission.expired ? `${mission.deadline} · ended` : mission.deadline;
@@ -86,10 +86,10 @@ const pad = (value) => String(value).padStart(2, "0");
 </script>
 
 <template>
-  <section id="brief-index" class="board" aria-labelledby="index-title">
-    <div class="board-head">
-      <div>
-        <p class="kicker">
+  <section id="brief-index" class="ledger" aria-labelledby="index-title">
+    <div class="ledger-head">
+      <div class="ledger-lead">
+        <p class="rail-kicker">
           {{
             savedView
               ? "Your reading list"
@@ -98,12 +98,12 @@ const pad = (value) => String(value).padStart(2, "0");
                 : "The brief index"
           }}
         </p>
-        <h2 id="index-title" class="board-title">{{ viewTitle }}</h2>
-        <p class="board-note">{{ viewNote }}</p>
+        <h2 id="index-title" class="ledger-title">{{ viewTitle }}</h2>
+        <p class="ledger-note">{{ viewNote }}</p>
       </div>
-      <div class="board-tools">
+      <div class="ledger-tools">
         <button
-          class="press-link"
+          class="chart-link"
           type="button"
           :disabled="refreshing"
           @click="emit('retry')"
@@ -113,7 +113,7 @@ const pad = (value) => String(value).padStart(2, "0");
           }}
         </button>
         <button
-          class="press-btn"
+          class="chart-btn"
           type="button"
           aria-label="Post a brief"
           @click="emit('create')"
@@ -123,13 +123,13 @@ const pad = (value) => String(value).padStart(2, "0");
       </div>
     </div>
 
-    <div class="query-bar" role="search" aria-label="Filter the brief index">
-      <div class="search-plate">
-        <UiIcon name="search" :size="18" />
+    <div class="query-rail" role="search" aria-label="Filter the brief index">
+      <div class="query-field">
+        <UiIcon name="search" :size="17" />
         <input
           id="brief-search"
           ref="searchInput"
-          class="search-input"
+          class="query-input"
           type="search"
           :value="search"
           placeholder="Search titles, topics and scope"
@@ -139,7 +139,7 @@ const pad = (value) => String(value).padStart(2, "0");
         />
         <button
           v-if="search"
-          class="search-clear"
+          class="query-clear"
           type="button"
           aria-label="Clear search"
           @click="clearSearch"
@@ -147,11 +147,11 @@ const pad = (value) => String(value).padStart(2, "0");
           <UiIcon name="close" :size="14" />
         </button>
       </div>
-      <label class="sort-plate" for="brief-order">
+      <label class="order-field" for="brief-order">
         <span>Order</span>
         <select
           id="brief-order"
-          class="sort-select"
+          class="order-select"
           :value="sortBy"
           aria-label="Sort briefs"
           @change="emit('update:sortBy', $event.target.value)"
@@ -163,7 +163,7 @@ const pad = (value) => String(value).padStart(2, "0");
         </select>
       </label>
       <button
-        class="press-link"
+        class="chart-link"
         type="button"
         :disabled="!filtered"
         @click="emit('reset')"
@@ -172,15 +172,15 @@ const pad = (value) => String(value).padStart(2, "0");
       </button>
     </div>
 
-    <div class="sticker-row">
-      <div class="sticker-group" role="group" aria-label="Filter by topic">
-        <span class="sticker-label">Topics</span>
+    <div class="facet-line">
+      <div class="facet-set" role="group" aria-label="Filter by topic">
+        <span class="facet-label">Topics</span>
         <button
           v-for="topic in topics"
           :key="topic"
-          class="sticker"
+          class="facet"
           type="button"
-          :class="{ 'is-chosen': activeCategory === topic }"
+          :class="{ 'is-picked': activeCategory === topic }"
           :aria-pressed="activeCategory === topic"
           @click="emit('update:activeCategory', topic)"
         >
@@ -191,14 +191,14 @@ const pad = (value) => String(value).padStart(2, "0");
           }}</sup>
         </button>
       </div>
-      <div class="sticker-group" role="group" aria-label="Filter by state">
-        <span class="sticker-label">Standing</span>
+      <div class="facet-set" role="group" aria-label="Filter by state">
+        <span class="facet-label">Standing</span>
         <button
           v-for="option in statusOptions"
           :key="option.value"
-          class="sticker"
+          class="facet"
           type="button"
-          :class="{ 'is-chosen': statusFilter === option.value }"
+          :class="{ 'is-picked': statusFilter === option.value }"
           :aria-pressed="statusFilter === option.value"
           @click="emit('update:statusFilter', option.value)"
         >
@@ -207,29 +207,31 @@ const pad = (value) => String(value).padStart(2, "0");
       </div>
     </div>
 
-    <section class="facts-band" aria-labelledby="band-title">
-      <p id="band-title" class="band-kicker">This edition at a glance</p>
-      <div class="band-cell">
-        <span class="band-label">Records</span>
-        <span class="band-value">{{ pad(missions.length) }}</span>
-      </div>
-      <div class="band-cell">
-        <span class="band-label">Open</span>
-        <span class="band-value">{{ pad(openCount) }}<small>accepting evidence</small></span>
-      </div>
-      <div class="band-cell">
-        <span class="band-label">Illustrative pool</span>
-        <span class="band-value">{{ poolTotal }}<small>testnet SOL</small></span>
-      </div>
-      <div class="band-cell">
-        <span class="band-label">Cluster</span>
-        <span class="band-value">
-          {{ cluster.toUpperCase() }}<small>{{
-            configured ? "writes gated" : "preview only"
-          }}</small>
-        </span>
-      </div>
-      <p class="band-note">
+    <section class="tally-line" aria-labelledby="band-title">
+      <p id="band-title" class="tally-kicker">This edition at a glance</p>
+      <dl class="tally-cells">
+        <div class="tally-cell">
+          <dt class="tally-label">Records</dt>
+          <dd class="tally-value">{{ pad(missions.length) }}</dd>
+        </div>
+        <div class="tally-cell">
+          <dt class="tally-label">Open</dt>
+          <dd class="tally-value">{{ pad(openCount) }}<small>accepting evidence</small></dd>
+        </div>
+        <div class="tally-cell">
+          <dt class="tally-label">Illustrative pool</dt>
+          <dd class="tally-value">{{ poolTotal }}<small>testnet SOL</small></dd>
+        </div>
+        <div class="tally-cell">
+          <dt class="tally-label">Cluster</dt>
+          <dd class="tally-value">
+            {{ cluster.toUpperCase() }}<small>{{
+              configured ? "writes gated" : "preview only"
+            }}</small>
+          </dd>
+        </div>
+      </dl>
+      <p class="tally-note">
         <UiIcon name="info" :size="16" />
         <span
           ><strong>{{ filtered ? "Filtered view." : "Full index." }}</strong>
@@ -240,56 +242,54 @@ const pad = (value) => String(value).padStart(2, "0");
       </p>
     </section>
 
-    <div v-if="loading" class="skeleton-strip" role="status">
+    <div v-if="loading" class="loadline" role="status">
       <span class="sr-only">Loading briefs…</span>
-      <span v-for="n in 5" :key="n" class="skeleton-block" aria-hidden="true"></span>
+      <span v-for="n in 5" :key="n" class="load-block" aria-hidden="true"></span>
     </div>
 
-    <div v-else-if="loadError" class="board-empty" role="alert">
+    <div v-else-if="loadError" class="void" role="alert">
       <UiIcon name="info" :size="26" />
       <h3>The index could not be printed.</h3>
       <p>{{ loadError }}</p>
-      <button class="press-btn" type="button" @click="emit('retry')">
+      <button class="chart-btn" type="button" @click="emit('retry')">
         Try again<UiIcon name="refresh" :size="15" />
       </button>
     </div>
 
     <template v-else-if="missions.length">
-      <ol class="card-wall" aria-label="Briefs">
+      <ol class="ledger-rows" aria-label="Briefs">
         <li v-for="(mission, index) in missions" :key="mission.key || mission.id">
-          <article class="record-card">
-            <div class="card-top">
-              <span class="card-no">{{ pad(index + 1) }}</span>
-              <span class="card-topic">{{ mission.category }}</span>
+          <article class="entry-row">
+            <span class="entry-no">{{ pad(index + 1) }}</span>
+            <div class="entry-lead">
+              <span class="entry-topic">{{ mission.category }}</span>
+              <button
+                :ref="(element) => setEntry(element, index)"
+                class="entry-open"
+                type="button"
+                :data-key="mission.key || mission.id"
+                :aria-label="actionLabel(mission, index)"
+                @click="emit('open', mission)"
+                @keydown="handleEntryKey"
+              >
+                <span class="entry-title">{{ mission.title }}</span>
+                <span class="entry-copy">{{ mission.description }}</span>
+              </button>
             </div>
-            <button
-              :ref="(element) => setEntry(element, index)"
-              class="card-open"
-              type="button"
-              :data-key="mission.key || mission.id"
-              :aria-label="actionLabel(mission, index)"
-              @click="emit('open', mission)"
-              @keydown="handleEntryKey"
-            >
-              <span class="card-title">{{ mission.title }}</span>
-              <span class="card-copy">{{ mission.description }}</span>
-            </button>
-            <div class="card-ground">
-              <span class="card-pool"
+            <div class="entry-figures">
+              <span class="entry-pool"
                 >{{ poolText(mission) }}<em>{{ symbolText(mission) }}</em></span
               >
-              <span class="card-facts">
-                <span>{{ deadlineText(mission) }}</span>
-                <span class="card-state" :class="stateClass(mission)">{{
-                  stateLabel(mission)
-                }}</span>
-              </span>
+              <span class="entry-due">{{ deadlineText(mission) }}</span>
+              <span class="entry-state" :class="phaseClass(mission)">{{
+                stateLabel(mission)
+              }}</span>
             </div>
-            <div class="card-foot">
+            <div class="entry-keep">
               <button
-                class="card-keep"
+                class="keep-key"
                 type="button"
-                :class="{ 'is-kept': isSaved(mission) }"
+                :class="{ 'is-held': isSaved(mission) }"
                 :aria-pressed="isSaved(mission)"
                 :aria-label="`${
                   isSaved(mission) ? 'Remove' : 'Save'
@@ -305,7 +305,7 @@ const pad = (value) => String(value).padStart(2, "0");
           </article>
         </li>
       </ol>
-      <div class="board-foot" aria-live="polite">
+      <div class="ledger-foot" aria-live="polite">
         <span
           >{{ missions.length }}
           {{ missions.length === 1 ? "brief" : "briefs" }}
@@ -318,7 +318,7 @@ const pad = (value) => String(value).padStart(2, "0");
       </div>
     </template>
 
-    <div v-else class="board-empty">
+    <div v-else class="void">
       <UiIcon
         :name="filtered ? 'search' : savedView ? 'bookmark' : activityView ? 'wallet' : 'ledger'"
         :size="26"
@@ -339,24 +339,24 @@ const pad = (value) => String(value).padStart(2, "0");
           filtered
             ? "Clear the search, topic or standing filter and the full index returns."
             : savedView
-              ? "Keep a brief from any entry and it stays on this device under the Ledgiva-saved key."
+              ? "Keep a brief from any entry and it stays on this device under the Colopha-saved key."
               : activityView
                 ? "Connect the wallet you create briefs with, or post the first brief from this desk."
                 : viewNote || "Reload the samples or post the first brief to open the index."
         }}
       </p>
-      <button v-if="filtered" class="press-link" type="button" @click="emit('reset')">
+      <button v-if="filtered" class="chart-link" type="button" @click="emit('reset')">
         <UiIcon name="refresh" :size="14" />Reset view
       </button>
       <button
         v-else-if="activityView"
-        class="press-btn"
+        class="chart-btn"
         type="button"
         @click="emit('connect')"
       >
         <UiIcon name="wallet" :size="15" />Connect wallet
       </button>
-      <button v-else class="press-btn" type="button" @click="emit('create')">
+      <button v-else class="chart-btn" type="button" @click="emit('create')">
         <UiIcon name="plus" :size="15" />Post a brief
       </button>
     </div>

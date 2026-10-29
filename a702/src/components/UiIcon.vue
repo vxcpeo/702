@@ -1,10 +1,10 @@
-<script setup>
+﻿<script setup>
 defineProps({
   name: { type: String, default: "arrow" },
   size: { type: [Number, String], default: 18 },
 });
 /*
- * A fine-line icon family for the poster press: rounded caps, a 1.7 stroke on a
+ * A fine-line icon family for the night sheet: rounded caps, a 1.4 stroke on a
  * 24-unit grid, and no glyph borrowed from an earlier edition. Decorative only;
  * every control carries its own text or accessible name.
  */
@@ -39,7 +39,7 @@ const paths = {
     viewBox="0 0 24 24"
     fill="none"
     stroke="currentColor"
-    stroke-width="1.7"
+    stroke-width="1.4"
     stroke-linecap="round"
     stroke-linejoin="round"
     aria-hidden="true"

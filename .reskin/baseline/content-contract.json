@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "meta": {
-    "projectName": "ledgiva",
-    "title": "ledgiva",
+    "projectName": "colopha",
+    "title": "colopha",
     "lang": "en"
   },
   "routes": [
@@ -30,7 +30,7 @@
       "count": 1
     },
     {
-      "value": "&copy; 2026 Ledgiva · an independent Solana testnet project",
+      "value": "&copy; 2026 Colopha · an independent Solana testnet project",
       "count": 1
     },
     {
@@ -174,6 +174,22 @@
       "count": 2
     },
     {
+      "value": "Colopha",
+      "count": 2
+    },
+    {
+      "value": "Colopha is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
+      "count": 1
+    },
+    {
+      "value": "Colopha is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
+      "count": 1
+    },
+    {
+      "value": "Colopha is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
+      "count": 1
+    },
+    {
       "value": "Common questions",
       "count": 1
     },
@@ -298,22 +314,6 @@
       "count": 1
     },
     {
-      "value": "Ledgiva",
-      "count": 2
-    },
-    {
-      "value": "Ledgiva is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
-      "count": 1
-    },
-    {
-      "value": "Ledgiva is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
-      "count": 1
-    },
-    {
-      "value": "Ledgiva is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
-      "count": 1
-    },
-    {
       "value": "Loading evidence…",
       "count": 1
     },
@@ -342,7 +342,7 @@
       "count": 1
     },
     {
-      "value": "On this device only. Bookmarks are stored in local storage under the ledgiva-saved key, and older project keys migrate into it without clearing your list.",
+      "value": "On this device only. Bookmarks are stored in local storage under the colopha-saved key, and older project keys migrate into it without clearing your list.",
       "count": 1
     },
     {
@@ -394,7 +394,7 @@
       "count": 1
     },
     {
-      "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Ledgiva.",
+      "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Colopha.",
       "count": 1
     },
     {
@@ -494,7 +494,7 @@
       "count": 3
     },
     {
-      "value": "SOL, which has no intended monetary value. Ledgiva has no platform token, no investment return and no guaranteed payout.",
+      "value": "SOL, which has no intended monetary value. Colopha has no platform token, no investment return and no guaranteed payout.",
       "count": 1
     },
     {
@@ -751,7 +751,7 @@
     {
       "name": "name",
       "value": "plus",
-      "count": 9
+      "count": 10
     },
     {
       "name": "name",
@@ -832,6 +832,11 @@
     },
     {
       "kind": "attr",
+      "expr": "'#' + item.id",
+      "count": 1
+    },
+    {
+      "kind": "attr",
       "expr": "approvalFor(index)",
       "count": 1
     },
@@ -858,6 +863,11 @@
     {
       "kind": "attr",
       "expr": "filtered ? 'search' : savedView ? 'bookmark' : activityView ? 'wallet' : 'ledger'",
+      "count": 1
+    },
+    {
+      "kind": "attr",
+      "expr": "item.id === 'index' ? 'ledger' : item.id === 'saved' ? 'bookmark' : item.id === 'activity' ? 'wallet' : 'book'",
       "count": 1
     },
     {
@@ -903,6 +913,11 @@
     {
       "kind": "form",
       "expr": "filtered ? 'search' : savedView ? 'bookmark' : activityView ? 'wallet' : 'ledger'",
+      "count": 1
+    },
+    {
+      "kind": "form",
+      "expr": "item.id === 'index' ? 'ledger' : item.id === 'saved' ? 'bookmark' : item.id === 'activity' ? 'wallet' : 'book'",
       "count": 1
     },
     {
@@ -1052,7 +1067,7 @@
     },
     {
       "kind": "interpolation",
-      "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Ledgiva-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
+      "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Colopha-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
       "count": 1
     },
     {
@@ -1417,6 +1432,11 @@
     },
     {
       "kind": "link",
+      "expr": "'#' + item.id",
+      "count": 1
+    },
+    {
+      "kind": "link",
       "expr": "explorerLink(txHash)",
       "count": 3
     },
@@ -1620,7 +1640,7 @@
     {
       "event": "click",
       "handler": "goPage(item.id)",
-      "count": 2
+      "count": 3
     },
     {
       "event": "click",
@@ -1645,7 +1665,7 @@
     {
       "event": "click",
       "handler": "startCreate",
-      "count": 3
+      "count": 4
     },
     {
       "event": "click",
