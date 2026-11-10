@@ -81,7 +81,7 @@ const {
   transact,
 } = useMissions();
 
-const seal = import.meta.env.BASE_URL + "colopha-seal.svg";
+const seal = import.meta.env.BASE_URL + "navrel-seal.svg";
 /* The chart desk: a masthead, a ruled index line, one wide main plate and a
    margin that holds the edition note and the compass keys. A selected brief is
    printed as its own sheet; the draft and the rewards ledger are typeset into
@@ -263,7 +263,7 @@ function closeDetail() {
   const key = selected.value?.key || selected.value?.id;
   selected.value = null;
   nextTick(() => {
-    document.querySelectorAll(".entry-open").forEach((entry) => {
+    document.querySelectorAll(".bp-entry-open").forEach((entry) => {
       if (entry.dataset.key === String(key)) entry.focus();
     });
   });
@@ -329,7 +329,7 @@ function handleGlobalKey(event) {
   const surface = modalOpen.value
     ? dialog.value
     : mobileNav.value
-      ? document.querySelector("#site-contents")
+      ? document.querySelector("#bp-contents")
       : null;
   if (!surface) return;
   const buttons = [
@@ -383,8 +383,8 @@ async function reviewDraft() {
   if (!Object.keys(result.errors).length) {
     createStep.value = 2;
     await nextTick();
-    dialog.value?.querySelector(".dialog-body")?.scrollTo({ top: 0 });
-    dialog.value?.querySelector(".preview-slip h3")?.focus();
+    dialog.value?.querySelector(".bp-dialog-body")?.scrollTo({ top: 0 });
+    dialog.value?.querySelector(".bp-preview h3")?.focus();
   } else {
     await nextTick();
     dialog.value?.querySelector('[aria-invalid="true"]')?.focus();
@@ -404,7 +404,7 @@ function downloadBrief() {
   const text = [
     "# " + (f.title || "Untitled brief"),
     "",
-    "Colopha / " + f.category,
+    "Navrel / " + f.category,
     "",
     "## Bounty brief",
     f.description || "Add scope, primary sources and acceptance criteria here.",
@@ -426,7 +426,7 @@ function downloadBrief() {
   );
   const anchor = document.createElement("a");
   anchor.href = url;
-  anchor.download = "colopha-bounty-brief.md";
+  anchor.download = "navrel-bounty-brief.md";
   anchor.click();
   setTimeout(() => URL.revokeObjectURL(url), 1000);
   notify(
@@ -447,7 +447,7 @@ watch(modalOpen, async (open) => {
     await nextTick();
     if (previousFocus?.isConnected && previousFocus.getClientRects().length)
       previousFocus.focus();
-    else document.querySelector('.compass-key[aria-controls="site-contents"]')?.focus();
+    else document.querySelector('.bp-key[aria-controls="bp-contents"]')?.focus();
   }
 });
 watch(selected, (mission, previous) => {
@@ -458,7 +458,7 @@ watch(mobileNav, async (open) => {
   if (open) {
     navigationFocus = document.activeElement;
     await nextTick();
-    document.querySelector("#site-contents button")?.focus();
+    document.querySelector("#bp-contents button")?.focus();
   } else {
     await nextTick();
     if (!modalOpen.value && navigationFocus?.isConnected)
@@ -486,71 +486,144 @@ onBeforeUnmount(() => {
 </script>
 
 <template>
-  <div id="chart-top" class="chart">
+  <div id="bp-top" class="bp-shell">
     <a
-      class="chart-skip"
+      class="bp-skip"
       :href="page === 'guide' ? '#guide' : selected ? '#dossier-title' : '#brief-index'"
       :inert="mobileNav"
       >{{ page === "guide" ? "Skip to the field guide" : selected ? "Skip to the dossier" : "Skip to the brief index" }}</a
     >
 
-    <header class="dateline">
-      <button class="imprint" type="button" aria-label="Colopha home" @click="goHome">
-        <img class="imprint-mark" :src="seal" alt="" width="44" height="44" />
-        <span class="imprint-lines">
-          <span class="imprint-word">Colopha<i>.</i></span>
-          <span class="imprint-motto">Two paths in. One record out.</span>
-        </span>
-      </button>
-      <div class="dateline-facts">
-        <span class="dateline-stamp">The sample edition · no. 01</span>
-        <span class="dateline-cluster">{{ SOLANA_CLUSTER }} · {{ configured ? "writes gated" : "preview only" }}</span>
-      </div>
-      <div class="dateline-acts">
-        <button class="chart-btn" type="button" @click="startCreate">
-          Post a brief<UiIcon name="arrow" :size="14" />
-        </button>
-        <button
-          class="key-tag"
-          type="button"
-          :aria-label="
-            connecting
-              ? 'Connecting wallet'
-              : account
-                ? 'Open your rewards'
-                : 'Connect wallet'
-          "
-          :disabled="connecting"
-          @click="account ? openRewards() : connectWallet()"
-        >
-          <UiIcon name="wallet" :size="16" />
-          <span>{{ connecting ? "Connecting…" : shortAccount }}</span>
-        </button>
-      </div>
-    </header>
+    <div class="bp-split">
+      <aside class="bp-rail" aria-label="Narrative rail">
+        <div class="bp-brand">
+          <button
+            class="bp-brand-button"
+            type="button"
+            aria-label="Navrel home"
+            @click="goHome"
+          >
+            <img class="bp-brand-mark" :src="seal" alt="" width="44" height="44" />
+            <span class="bp-brand-word">Navrel<i>.</i></span>
+          </button>
+          <p class="bp-brand-motto">Two paths in. One record out.</p>
+          <div class="bp-brand-facts">
+            <span class="bp-brand-stamp">The sample edition · no. 01</span>
+            <span class="bp-brand-net"
+              >{{ SOLANA_CLUSTER }} · {{ configured ? "writes gated" : "preview only" }}</span
+            >
+          </div>
+        </div>
 
-    <nav class="indexline" aria-label="Primary navigation">
-      <a
-        v-for="item in navItems"
-        :key="item.id"
-        class="indexline-item"
-        :class="{ 'is-current': page === item.id }"
-        :href="'#' + item.id"
-        :aria-current="page === item.id ? 'page' : undefined"
-        @click="goPage(item.id)"
-      >
-        <span class="indexline-label">{{ item.label }}</span>
-        <span v-if="item.id !== 'guide'" class="indexline-count">{{ item.count }}</span>
-      </a>
-      <button class="indexline-open" type="button" aria-label="Post a brief" @click="startCreate">
-        <UiIcon name="plus" :size="14" />
-      </button>
-    </nav>
+        <nav class="bp-rail-nav" aria-label="Primary navigation">
+          <a
+            v-for="item in navItems"
+            :key="item.id"
+            class="bp-nav-row"
+            :class="{ 'is-on': page === item.id }"
+            :href="'#' + item.id"
+            :aria-current="page === item.id ? 'page' : undefined"
+            @click="goPage(item.id)"
+          >
+            <span class="bp-nav-label">{{ item.label }}</span>
+            <span v-if="item.id !== 'guide'" class="bp-nav-count">{{ item.count }}</span>
+          </a>
+          <button class="bp-nav-add" type="button" aria-label="Post a brief" @click="startCreate">
+            <UiIcon name="plus" :size="14" />
+          </button>
+        </nav>
 
-    <div class="chart-body">
-      <main id="main-content" class="plate">
+        <template v-if="!selected && page !== 'guide'">
+          <section v-if="page === 'index'" class="bp-rail-thesis" aria-labelledby="statement-title">
+            <p class="bp-eyebrow">A market for careful work</p>
+            <h1 id="statement-title" class="bp-display">
+              Two paths in.<em>One record out.</em>
+            </h1>
+            <p class="bp-lede">
+              Navrel is a Solana bounty market for focused research. Creators
+              publish a brief with a funded pool. Builders answer with
+              source-linked evidence. The creator reads every entry before a
+              single unit is allocated.
+            </p>
+            <div class="bp-thesis-actions">
+              <button class="bp-btn" type="button" @click="scrollToIndex">
+                Browse the index<UiIcon name="arrow" :size="15" />
+              </button>
+              <button class="bp-link" type="button" @click="startCreate">
+                Post a brief
+              </button>
+              <button class="bp-link" type="button" @click="goPage('guide')">
+                Read the field guide
+              </button>
+            </div>
+          </section>
+
+          <section v-else class="bp-rail-thesis" aria-labelledby="page-title">
+            <p class="bp-eyebrow">{{ page === "saved" ? "Your reading list" : "Wallet activity" }}</p>
+            <h1 id="page-title" class="bp-display">{{ pageTitle }}</h1>
+            <p class="bp-lede">{{ pageNote }}</p>
+          </section>
+        </template>
+        <div v-else class="bp-rail-motif" aria-hidden="true"></div>
+
+        <div class="bp-rail-actions">
+          <button class="bp-btn" type="button" @click="startCreate">
+            Post a brief<UiIcon name="arrow" :size="14" />
+          </button>
+          <button
+            class="bp-wallet"
+            type="button"
+            :aria-label="
+              connecting
+                ? 'Connecting wallet'
+                : account
+                  ? 'Open your rewards'
+                  : 'Connect wallet'
+            "
+            :disabled="connecting"
+            @click="account ? openRewards() : connectWallet()"
+          >
+            <UiIcon name="wallet" :size="16" />
+            <span>{{ connecting ? "Connecting…" : shortAccount }}</span>
+          </button>
+        </div>
+
+        <div class="bp-keys" role="group" aria-label="Quick access">
+          <button
+            v-for="item in navItems"
+            :key="`key-${item.id}`"
+            class="bp-key"
+            type="button"
+            :class="{ 'is-on': page === item.id }"
+            :data-label="item.label"
+            :aria-label="item.id === 'guide' ? item.label : `${item.label}, ${item.count} records`"
+            :aria-pressed="page === item.id"
+            @click="goPage(item.id)"
+          >
+            <UiIcon
+              :name="item.id === 'index' ? 'ledger' : item.id === 'saved' ? 'bookmark' : item.id === 'activity' ? 'wallet' : 'book'"
+              :size="16"
+            />
+          </button>
+          <button class="bp-key bp-key--add" type="button" aria-label="Post a brief" @click="startCreate">
+            <UiIcon name="plus" :size="16" />
+          </button>
+          <button
+            class="bp-key bp-key--menu"
+            type="button"
+            :aria-expanded="mobileNav"
+            aria-controls="bp-contents"
+            aria-label="Toggle navigation"
+            @click="mobileNav = !mobileNav"
+          >
+            <UiIcon name="menu" :size="16" />
+          </button>
+        </div>
+      </aside>
+
+      <main id="main-content" class="bp-stage">
         <template v-if="page === 'guide'">
-          <section id="guide" class="plate-scene" aria-labelledby="guide-title">
+          <section aria-labelledby="guide-title">
             <BriefGuide
               :configured="configured"
               :cluster="SOLANA_CLUSTER"
@@ -562,7 +635,7 @@ onBeforeUnmount(() => {
         </template>
 
         <template v-else-if="selected">
-          <section class="plate-scene" aria-labelledby="dossier-title">
+          <section aria-labelledby="dossier-title">
             <BriefDossier
               :mission="selected"
               :saved="isSaved(selected)"
@@ -607,157 +680,103 @@ onBeforeUnmount(() => {
         </template>
 
         <template v-else>
-          <section v-if="page === 'index'" class="statement" aria-labelledby="statement-title">
-            <p class="statement-kicker">A market for careful work</p>
-            <h1 id="statement-title" class="statement-title">
-              Two paths in.<em>One record out.</em>
-            </h1>
-            <p class="statement-lede">
-              Colopha is a Solana bounty market for focused research. Creators
-              publish a brief with a funded pool. Builders answer with
-              source-linked evidence. The creator reads every entry before a
-              single unit is allocated.
-            </p>
-            <div class="statement-acts">
-              <button class="chart-btn" type="button" @click="scrollToIndex">
-                Browse the index<UiIcon name="arrow" :size="15" />
-              </button>
-              <button class="chart-link" type="button" @click="startCreate">
-                Post a brief
-              </button>
-              <button class="chart-link" type="button" @click="goPage('guide')">
-                Read the field guide
-              </button>
-            </div>
-          </section>
-
-          <section v-else class="statement statement--slim" aria-labelledby="page-title">
-            <p class="statement-kicker">{{ page === "saved" ? "Your reading list" : "Wallet activity" }}</p>
-            <h1 id="page-title" class="statement-title">{{ pageTitle }}</h1>
-            <p class="statement-lede">{{ pageNote }}</p>
-          </section>
-
-          <section class="ledger-plate" aria-labelledby="index-title">
-            <BriefIndex
-              :search="search"
-              :active-category="activeCategory"
-              :status-filter="statusFilter"
-              :sort-by="sortBy"
-              :missions="registryItems"
-              :is-saved="isSaved"
-              :loading="loading"
-              :load-error="loadError"
-              :configured="configured"
-              :refreshing="loading"
-              :view-title="pageTitle"
-              :view-note="pageNote"
-              :topics="topics"
-              :topic-counts="topicCounts"
-              :status-options="statusOptions"
-              :filtered="anyFilters"
-              :cluster="SOLANA_CLUSTER"
-              :open-count="openCount"
-              :pool-total="poolTotal"
-              :saved-view="page === 'saved'"
-              :activity-view="page === 'activity'"
-              :wallet-connected="!!account"
-              @update:search="search = $event"
-              @update:activeCategory="activeCategory = $event"
-              @update:statusFilter="statusFilter = $event"
-              @update:sortBy="sortBy = $event"
-              @open="openDetails"
-              @save="handleSave"
-              @retry="anyFilters ? resetView() : refreshMissions()"
-              @reset="resetView()"
-              @create="startCreate"
-              @connect="connectWallet"
-            />
-          </section>
+          <BriefIndex
+            :search="search"
+            :active-category="activeCategory"
+            :status-filter="statusFilter"
+            :sort-by="sortBy"
+            :missions="registryItems"
+            :is-saved="isSaved"
+            :loading="loading"
+            :load-error="loadError"
+            :configured="configured"
+            :refreshing="loading"
+            :view-title="pageTitle"
+            :view-note="pageNote"
+            :topics="topics"
+            :topic-counts="topicCounts"
+            :status-options="statusOptions"
+            :filtered="anyFilters"
+            :cluster="SOLANA_CLUSTER"
+            :open-count="openCount"
+            :pool-total="poolTotal"
+            :saved-view="page === 'saved'"
+            :activity-view="page === 'activity'"
+            :wallet-connected="!!account"
+            @update:search="search = $event"
+            @update:activeCategory="activeCategory = $event"
+            @update:statusFilter="statusFilter = $event"
+            @update:sortBy="sortBy = $event"
+            @open="openDetails"
+            @save="handleSave"
+            @retry="anyFilters ? resetView() : refreshMissions()"
+            @reset="resetView()"
+            @create="startCreate"
+            @connect="connectWallet"
+          />
         </template>
       </main>
+    </div>
 
-      <div class="margin" role="complementary" aria-label="Edition notes">
-        <section class="edition" aria-label="Edition notice">
-          <p class="edition-head"><span>Editor's note</span></p>
-          <p class="edition-copy">
+    <section class="bp-band" aria-label="Edition notice">
+      <div class="bp-band-inner">
+        <div class="bp-band-lead">
+          <p class="bp-band-head"><span>Editor's note</span></p>
+          <p class="bp-band-copy">
             This is the sample edition. Four illustrative briefs show the shape
             of the market; no wallet is asked to sign and no transaction is
             sent.
           </p>
-          <dl class="edition-facts">
-            <div class="edition-fact">
-              <dt class="edition-label">Briefs</dt>
-              <dd class="edition-value">{{ String(missionItems.length).padStart(2, "0") }}</dd>
-            </div>
-            <div class="edition-fact">
-              <dt class="edition-label">Open</dt>
-              <dd class="edition-value">{{ String(openCount).padStart(2, "0") }}</dd>
-            </div>
-            <div class="edition-fact">
-              <dt class="edition-label">Pool</dt>
-              <dd class="edition-value">{{ poolTotal }}<small>SOL</small></dd>
-            </div>
-          </dl>
-          <p class="edition-foot">
+          <p class="bp-band-foot">
             {{ sampleFeed ? "Sample testnet data" : "Live read" }} · writes
             disabled
           </p>
-        </section>
-
-        <div class="compass" role="group" aria-label="Quick access">
-          <button
-            v-for="item in navItems"
-            :key="`compass-${item.id}`"
-            class="compass-key"
-            type="button"
-            :class="{ 'is-current': page === item.id }"
-            :data-label="item.label"
-            :aria-label="item.id === 'guide' ? item.label : `${item.label}, ${item.count} records`"
-            :aria-pressed="page === item.id"
-            @click="goPage(item.id)"
-          >
-            <UiIcon
-              :name="item.id === 'index' ? 'ledger' : item.id === 'saved' ? 'bookmark' : item.id === 'activity' ? 'wallet' : 'book'"
-              :size="18"
-            />
-          </button>
-          <button class="compass-key" type="button" aria-label="Post a brief" @click="startCreate">
-            <UiIcon name="plus" :size="18" />
-          </button>
-          <button
-            class="compass-key compass-key--last"
-            type="button"
-            :aria-expanded="mobileNav"
-            aria-controls="site-contents"
-            aria-label="Toggle navigation"
-            @click="mobileNav = !mobileNav"
-          >
-            <UiIcon name="menu" :size="18" />
-          </button>
         </div>
-      </div>
-    </div>
-
-    <footer class="colophon" aria-label="Publication colophon">
-      <div class="colophon-plate">
-        <p class="colophon-brand">Colopha<span>.</span></p>
-        <p class="colophon-motto">Two paths in. One record out.</p>
-        <dl class="colophon-facts">
-          <div><dt>Cluster</dt><dd>{{ SOLANA_CLUSTER }}</dd></div>
-          <div><dt>Program</dt><dd>{{ programLabel }}</dd></div>
-          <div><dt>Edition</dt><dd>{{ sampleFeed ? "Sample testnet data" : "Live read" }}</dd></div>
-          <div><dt>Network</dt><dd>Solana</dd></div>
+        <dl class="bp-band-facts">
+          <div class="bp-band-fact">
+            <dt class="bp-band-key">Briefs</dt>
+            <dd class="bp-band-figure">{{ String(missionItems.length).padStart(2, "0") }}</dd>
+          </div>
+          <div class="bp-band-fact">
+            <dt class="bp-band-key">Open</dt>
+            <dd class="bp-band-figure">{{ String(openCount).padStart(2, "0") }}</dd>
+          </div>
+          <div class="bp-band-fact">
+            <dt class="bp-band-key">Pool</dt>
+            <dd class="bp-band-figure">{{ poolTotal }}<small>SOL</small></dd>
+          </div>
         </dl>
       </div>
-      <p class="colophon-fine">
+    </section>
+
+    <footer class="bp-colophon" aria-label="Publication colophon">
+      <div class="bp-colophon-lead">
+        <p class="bp-colophon-brand">Navrel<span>.</span></p>
+        <p class="bp-colophon-motto">Two paths in. One record out.</p>
+      </div>
+      <dl class="bp-colophon-facts">
+        <div><dt>Cluster</dt><dd>{{ SOLANA_CLUSTER }}</dd></div>
+        <div><dt>Program</dt><dd>{{ programLabel }}</dd></div>
+        <div><dt>Edition</dt><dd>{{ sampleFeed ? "Sample testnet data" : "Live read" }}</dd></div>
+        <div><dt>Network</dt><dd>Solana</dd></div>
+      </dl>
+      <p class="bp-colophon-fine">
         <strong>NO WRITES</strong> · <strong>SAMPLE TESTNET DATA</strong> · Every
         record is an illustrative testnet brief. Rewards carry no intended monetary
         value, no platform token or CA is live, and no action on this page signs or
         sends a transaction.
       </p>
-      <div class="colophon-base">
-        <span>&copy; 2026 Colopha · an independent Solana testnet project</span>
-        <button class="chart-link" type="button" @click="backToTop">
+      <div class="bp-colophon-base">
+        <span>&copy; 2026 Navrel · an independent Solana testnet project</span>
+        <a
+          class="bp-colophon-x"
+          href="https://x.com/Navrel_site"
+          target="_blank"
+          rel="me noopener noreferrer"
+          aria-label="Navrel on X (@Navrel_site)"
+          >X · @Navrel_site<UiIcon name="external" :size="13" /></a
+        >
+        <button class="bp-link" type="button" @click="backToTop">
           Back to top<UiIcon name="arrowup" :size="14" />
         </button>
       </div>
@@ -765,17 +784,17 @@ onBeforeUnmount(() => {
 
     <template v-if="mobileNav">
       <button
-        class="contents-shade"
+        class="bp-shade"
         type="button"
         aria-label="Close navigation"
         @click="mobileNav = false"
       ></button>
-      <nav id="site-contents" class="contents" aria-label="Site navigation">
-        <div class="contents-plate">
-          <div class="contents-head">
+      <nav id="bp-contents" class="bp-contents" aria-label="Site navigation">
+        <div class="bp-contents-plate">
+          <div class="bp-contents-head">
             <span>Contents</span>
             <button
-              class="quiet-key"
+              class="bp-icon-btn"
               type="button"
               aria-label="Close menu"
               @click="mobileNav = false"
@@ -786,22 +805,22 @@ onBeforeUnmount(() => {
           <button
             v-for="item in navItems"
             :key="`row-${item.id}`"
-            class="contents-row"
+            class="bp-contents-row"
             type="button"
-            :class="{ 'is-current': page === item.id }"
+            :class="{ 'is-on': page === item.id }"
             @click="goPage(item.id)"
           >
             <span>{{ item.label }}</span>
             <small v-if="item.id !== 'guide'">{{ item.count }}</small>
           </button>
-          <button class="contents-row" type="button" @click="startCreate">
+          <button class="bp-contents-row" type="button" @click="startCreate">
             <span>Post a brief</span><UiIcon name="plus" :size="18" />
           </button>
-          <button class="contents-row" type="button" @click="account ? openRewards() : connectWallet()">
+          <button class="bp-contents-row" type="button" @click="account ? openRewards() : connectWallet()">
             <span>{{ account ? "Your rewards" : "Connect wallet" }}</span>
             <small>{{ account ? shortAccount : "Wallet" }}</small>
           </button>
-          <div class="contents-foot">
+          <div class="bp-contents-foot">
             <span>{{ SOLANA_CLUSTER }} · {{ configured ? "writes gated" : "preview only" }}</span>
             <span>{{ programLabel }}</span>
           </div>
@@ -811,19 +830,19 @@ onBeforeUnmount(() => {
 
     <dialog
       ref="dialog"
-      class="ledger-dialog"
+      class="bp-dialog"
       aria-labelledby="dialog-title"
       @cancel.prevent="closeAll"
       @click="(event) => event.target === dialog && closeAll()"
     >
-      <div v-if="modalOpen" class="dialog-plate">
-        <div class="dialog-head">
+      <div v-if="modalOpen" class="bp-dialog-plate">
+        <div class="bp-dialog-head">
           <div>
-            <p class="dialog-tag">{{ modalKicker }}</p>
-            <h2 id="dialog-title">{{ modalTitle }}</h2>
+            <p class="bp-dialog-tag">{{ modalKicker }}</p>
+            <h2 id="dialog-title" class="bp-dialog-title">{{ modalTitle }}</h2>
           </div>
           <button
-            class="quiet-key"
+            class="bp-icon-btn"
             type="button"
             aria-label="Close dialog"
             :disabled="busy"
@@ -832,11 +851,11 @@ onBeforeUnmount(() => {
             <UiIcon name="close" :size="18" />
           </button>
         </div>
-        <div class="dialog-body">
-          <div v-if="walletError" class="dialog-state is-broken" role="alert">
+        <div class="bp-dialog-body">
+          <div v-if="walletError" class="bp-state is-broken" role="alert">
             <p>{{ walletError }}</p>
             <button
-              class="chart-link"
+              class="bp-link"
               type="button"
               @click="connectWallet"
               :disabled="connecting"
@@ -846,21 +865,21 @@ onBeforeUnmount(() => {
           </div>
 
           <template v-if="createOpen">
-            <p class="dialog-lede">
+            <p class="bp-dialog-lede">
               Turn a focused question into an open brief. Define the scope, then
               review and fund it.
             </p>
-            <div class="progress-line" aria-label="Creation progress">
+            <div class="bp-steps" aria-label="Creation progress">
               <span :class="{ 'is-live': createStep === 1 }">01 · Shape the brief</span>
-              <span class="progress-rule" aria-hidden="true"></span>
+              <span class="bp-step-rule" aria-hidden="true"></span>
               <span :class="{ 'is-live': createStep === 2 }">02 · Review &amp; fund</span>
             </div>
-            <form v-if="createStep === 1" class="brief-form" @submit.prevent="reviewDraft">
-              <div class="entry">
-                <label class="entry-term" for="mission-title">What should this brief answer?</label>
+            <form v-if="createStep === 1" class="bp-form" @submit.prevent="reviewDraft">
+              <div class="bp-field">
+                <label class="bp-label" for="mission-title">What should this brief answer?</label>
                 <input
                   id="mission-title"
-                  class="field-line"
+                  class="bp-input"
                   :aria-invalid="!!formErrors.title"
                   :aria-describedby="formErrors.title ? 'error-title' : undefined"
                   v-model="missionForm.title"
@@ -868,44 +887,44 @@ onBeforeUnmount(() => {
                   placeholder="Give the brief a clear, narrow title"
                   required
                 />
-                <small class="entry-hint">Up to 96 UTF-8 bytes. Keep the question focused.</small>
+                <small class="bp-hint">Up to 96 UTF-8 bytes. Keep the question focused.</small>
               </div>
-              <div class="entry">
-                <label class="entry-term" for="mission-topic">Brief topic</label>
-                <select id="mission-topic" class="pick-line" v-model="missionForm.category">
+              <div class="bp-field">
+                <label class="bp-label" for="mission-topic">Brief topic</label>
+                <select id="mission-topic" class="bp-input" v-model="missionForm.category">
                   <option v-for="topic in topics.slice(1)" :key="topic">
                     {{ topic }}
                   </option>
                 </select>
               </div>
-              <div class="entry">
-                <label class="entry-term" for="mission-draft"
+              <div class="bp-field">
+                <label class="bp-label" for="mission-draft"
                   >Your working brief
-                  <span class="entry-hint">optional · stays in this page until you leave</span></label
+                  <span class="bp-hint">optional · stays in this page until you leave</span></label
                 >
                 <textarea
                   id="mission-draft"
-                  class="area-line"
+                  class="bp-input"
                   v-model="missionForm.description"
                   rows="4"
                   placeholder="Define the question, scope, primary sources, and what an accepted contribution should include."
                 ></textarea>
               </div>
-              <button class="chart-link" type="button" @click="downloadBrief">
+              <button class="bp-link" type="button" @click="downloadBrief">
                 <UiIcon name="download" :size="14" />Download your brief
               </button>
-              <div class="note-bar">
+              <div class="bp-notice">
                 <UiIcon name="info" :size="17" />
                 <p>
                   Publish your brief on a public host, then paste its URL below.
-                  Draft text is not uploaded or stored on-chain by Colopha.
+                  Draft text is not uploaded or stored on-chain by Navrel.
                 </p>
               </div>
-              <div class="entry">
-                <label class="entry-term" for="brief-uri">Public brief URL</label>
+              <div class="bp-field">
+                <label class="bp-label" for="brief-uri">Public brief URL</label>
                 <input
                   id="brief-uri"
-                  class="field-line"
+                  class="bp-input"
                   :aria-invalid="!!formErrors.uri"
                   :aria-describedby="formErrors.uri ? 'error-uri' : undefined"
                   v-model="missionForm.uri"
@@ -913,12 +932,12 @@ onBeforeUnmount(() => {
                   required
                 />
               </div>
-              <div class="twin-entry">
-                <div class="entry">
-                  <label class="entry-term" for="mission-reward">Brief pool · {{ rewardUnitLabel }}</label>
+              <div class="bp-twofield">
+                <div class="bp-field">
+                  <label class="bp-label" for="mission-reward">Brief pool · {{ rewardUnitLabel }}</label>
                   <input
                     id="mission-reward"
-                    class="field-line"
+                    class="bp-input"
                     :aria-invalid="!!formErrors.reward"
                     :aria-describedby="formErrors.reward ? 'error-reward' : undefined"
                     v-model="missionForm.reward"
@@ -927,11 +946,11 @@ onBeforeUnmount(() => {
                     required
                   />
                 </div>
-                <div class="entry">
-                  <label class="entry-term" for="mission-deadline">Deadline · your local time</label>
+                <div class="bp-field">
+                  <label class="bp-label" for="mission-deadline">Deadline · your local time</label>
                   <input
                     id="mission-deadline"
-                    class="field-line"
+                    class="bp-input"
                     :aria-invalid="!!formErrors.deadline"
                     :aria-describedby="formErrors.deadline ? 'error-deadline' : undefined"
                     v-model="missionForm.deadline"
@@ -941,7 +960,7 @@ onBeforeUnmount(() => {
                   />
                 </div>
               </div>
-              <ul v-if="Object.keys(formErrors).length" class="fault-list" role="alert">
+              <ul v-if="Object.keys(formErrors).length" class="bp-errors" role="alert">
                 <li
                   v-for="(error, field) in formErrors"
                   :key="field"
@@ -950,15 +969,15 @@ onBeforeUnmount(() => {
                   {{ error }}
                 </li>
               </ul>
-              <button class="chart-btn" type="submit">
+              <button class="bp-btn" type="submit">
                 Review brief<UiIcon name="arrow" :size="15" />
               </button>
             </form>
 
-            <div v-else class="preview-slip">
-              <span class="tag tag--signal">{{ missionForm.category }}</span>
-              <h3 tabindex="-1">{{ missionForm.title }}</h3>
-              <dl class="preview-index">
+            <div v-else class="bp-preview">
+              <span class="bp-tag">{{ missionForm.category }}</span>
+              <h3 tabindex="-1" class="bp-preview-title">{{ missionForm.title }}</h3>
+              <dl class="bp-preview-index">
                 <div>
                   <dt>Public brief</dt>
                   <dd>
@@ -979,18 +998,18 @@ onBeforeUnmount(() => {
                   <dd>{{ new Date(missionForm.deadline).toLocaleString() }}</dd>
                 </div>
               </dl>
-              <p>
+              <p class="bp-prose">
                 You will fund the reward pool and become this brief's reviewer.
                 Contributors rely on your published scope and acceptance criteria.
               </p>
-              <div v-if="!configured" class="note-bar">
+              <div v-if="!configured" class="bp-notice">
                 <UiIcon name="info" :size="17" />
                 <p>
                   Publishing is not available in this preview. Download your draft
                   to keep it for later.
                 </p>
               </div>
-              <ul v-if="Object.keys(formErrors).length" class="fault-list" role="alert">
+              <ul v-if="Object.keys(formErrors).length" class="bp-errors" role="alert">
                 <li
                   v-for="(error, field) in formErrors"
                   :key="field"
@@ -999,13 +1018,13 @@ onBeforeUnmount(() => {
                   {{ error }}
                 </li>
               </ul>
-              <div class="dialog-acts">
-                <button class="chart-btn chart-btn--hollow" type="button" @click="editDraft" :disabled="busy">
+              <div class="bp-dialog-acts">
+                <button class="bp-btn bp-btn--ghost" type="button" @click="editDraft" :disabled="busy">
                   <UiIcon name="arrowleft" :size="15" />Edit brief
                 </button>
                 <button
                   v-if="!configured"
-                  class="chart-btn"
+                  class="bp-btn"
                   type="button"
                   @click="downloadBrief"
                 >
@@ -1013,7 +1032,7 @@ onBeforeUnmount(() => {
                 </button>
                 <button
                   v-else
-                  class="chart-btn"
+                  class="bp-btn"
                   type="button"
                   @click="transact('create')"
                   :disabled="busy"
@@ -1026,26 +1045,26 @@ onBeforeUnmount(() => {
           </template>
 
           <template v-else-if="rewardsOpen">
-            <p class="dialog-lede">
+            <p class="bp-dialog-lede">
               A clear view of the work you have earned rewards for.
             </p>
-            <div v-if="!account" class="void-slip">
+            <div v-if="!account" class="bp-void-slip">
               <UiIcon name="wallet" :size="30" />
               <h3>Connect to see your rewards.</h3>
               <p>Use the wallet you contributed with on Solana testnet.</p>
-              <button class="chart-btn" type="button" @click="connectWallet" :disabled="connecting">
+              <button class="bp-btn" type="button" @click="connectWallet" :disabled="connecting">
                 {{ connecting ? "Connecting…" : "Connect wallet" }}
               </button>
             </div>
             <template v-else>
-              <code class="account-line">{{ account }}</code>
-              <div v-if="!correctChain" class="dialog-state is-murmur">
+              <code class="bp-account">{{ account }}</code>
+              <div v-if="!correctChain" class="bp-state">
                 <p>Switch to Solana testnet to view and claim your rewards.</p>
-                <button class="chart-btn chart-btn--hollow" type="button" @click="switchNetwork">
+                <button class="bp-btn bp-btn--ghost" type="button" @click="switchNetwork">
                   Switch network
                 </button>
               </div>
-              <div v-else-if="!configured" class="dialog-state is-murmur" role="status">
+              <div v-else-if="!configured" class="bp-state" role="status">
                 <p>
                   The Solana bounty program is live on testnet, but claimable
                   rewards cannot be read until a classic SPL reward mint is
@@ -1057,18 +1076,18 @@ onBeforeUnmount(() => {
                   {{ statsLoading ? "…" : amountText(walletBalance) }}
                   {{ SOLANA_CLUSTER }} SOL
                 </p>
-                <button class="chart-link" type="button" @click="updateWalletStats" :disabled="statsLoading">
+                <button class="bp-link" type="button" @click="updateWalletStats" :disabled="statsLoading">
                   <UiIcon name="refresh" :size="14" />Refresh wallet balance
                 </button>
               </div>
-              <div v-else-if="statsError" class="dialog-state is-broken" role="alert">
+              <div v-else-if="statsError" class="bp-state is-broken" role="alert">
                 <p>{{ statsError }}</p>
-                <button class="chart-link" type="button" @click="refreshAll">Try again</button>
+                <button class="bp-link" type="button" @click="refreshAll">Try again</button>
               </div>
-              <div v-else>
-                <div class="reward-plate">
-                  <p class="dialog-tag">Available to claim</p>
-                  <strong class="reward-figure" :title="claimableAmount + ' ' + rewardSymbol"
+              <div v-else class="bp-rewards">
+                <div class="bp-reward-plate">
+                  <p class="bp-dialog-tag">Available to claim</p>
+                  <strong class="bp-reward-num" :title="claimableAmount + ' ' + rewardSymbol"
                     >{{ statsLoading ? "…" : amountText(claimableAmount) }}
                     <small>{{ rewardSymbol }}</small></strong
                   >
@@ -1079,12 +1098,12 @@ onBeforeUnmount(() => {
                     {{ SOLANA_CLUSTER }} SOL
                   </p>
                 </div>
-                <p>
+                <p class="bp-prose">
                   Accepted contributions and returned unallocated funds appear
                   here. Claiming sends the balance to your connected wallet.
                 </p>
                 <button
-                  class="chart-btn"
+                  class="bp-btn"
                   type="button"
                   @click="transact('claim')"
                   :disabled="
@@ -1102,12 +1121,12 @@ onBeforeUnmount(() => {
                         : "No rewards to claim yet"
                   }}<UiIcon name="wallet" :size="15" />
                 </button>
-                <button class="chart-link" type="button" @click="refreshAll" :disabled="statsLoading || busy">
+                <button class="bp-link" type="button" @click="refreshAll" :disabled="statsLoading || busy">
                   <UiIcon name="refresh" :size="14" />Refresh balance
                 </button>
               </div>
             </template>
-            <p class="fine-note">
+            <p class="bp-fine">
               {{
                 configured
                   ? `The configured reward mint is on ${SOLANA_CLUSTER}; test assets have no intended monetary value.`
@@ -1118,11 +1137,11 @@ onBeforeUnmount(() => {
 
           <div
             v-if="txStatus !== 'idle' && (busy || txError || txHash)"
-            class="dialog-state is-murmur"
+            class="bp-state"
             :class="{ 'is-broken': txError }"
             :role="txError ? 'alert' : 'status'"
           >
-            <span v-if="busy" class="beat-dot"></span>
+            <span v-if="busy" class="bp-beat"></span>
             <UiIcon v-else :name="txError ? 'info' : 'check'" :size="16" />
             <p>
               {{
@@ -1142,7 +1161,7 @@ onBeforeUnmount(() => {
           </div>
           <div
             v-if="notice && noticeKind !== 'bookmark' && !txHash && !txError"
-            class="dialog-state is-murmur"
+            class="bp-state"
             role="status"
           >
             <p>{{ notice }}</p>
@@ -1151,14 +1170,14 @@ onBeforeUnmount(() => {
       </div>
     </dialog>
 
-    <div v-if="walletError && !modalOpen" class="dispatch is-broken" role="alert">
+    <div v-if="walletError && !modalOpen" class="bp-toast is-broken" role="alert">
       <UiIcon name="info" :size="17" />
       <p>{{ walletError }}</p>
-      <button class="quiet-key" type="button" aria-label="Dismiss wallet error" @click="walletError = ''">
+      <button class="bp-icon-btn" type="button" aria-label="Dismiss wallet error" @click="walletError = ''">
         <UiIcon name="close" :size="15" />
       </button>
     </div>
-    <div v-if="notice && !modalOpen && !walletError && !selected" class="dispatch" role="status">
+    <div v-if="notice && !modalOpen && !walletError && !selected" class="bp-toast" role="status">
       <UiIcon name="info" :size="17" />
       <p>
         {{ notice
@@ -1169,10 +1188,10 @@ onBeforeUnmount(() => {
           rel="noopener noreferrer"
           >View confirmed transaction ↗</a>
       </p>
-      <button v-if="canUndoSavedChange" class="chart-link dispatch-undo" type="button" @click="undoSavedChange">
+      <button v-if="canUndoSavedChange" class="bp-link bp-undo" type="button" @click="undoSavedChange">
         Undo
       </button>
-      <button class="quiet-key" type="button" aria-label="Dismiss notification" @click="dismissNotice">
+      <button class="bp-icon-btn" type="button" aria-label="Dismiss notification" @click="dismissNotice">
         <UiIcon name="close" :size="15" />
       </button>
     </div>

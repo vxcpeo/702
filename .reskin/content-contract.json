@@ -1,8 +1,8 @@
 {
   "schemaVersion": 1,
   "meta": {
-    "projectName": "colopha",
-    "title": "colopha",
+    "projectName": "navrel",
+    "title": "navrel",
     "lang": "en"
   },
   "routes": [
@@ -30,7 +30,7 @@
       "count": 1
     },
     {
-      "value": "&copy; 2026 Colopha · an independent Solana testnet project",
+      "value": "&copy; 2026 Navrel · an independent Solana testnet project",
       "count": 1
     },
     {
@@ -174,22 +174,6 @@
       "count": 2
     },
     {
-      "value": "Colopha",
-      "count": 2
-    },
-    {
-      "value": "Colopha is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
-      "count": 1
-    },
-    {
-      "value": "Colopha is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
-      "count": 1
-    },
-    {
-      "value": "Colopha is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
-      "count": 1
-    },
-    {
       "value": "Common questions",
       "count": 1
     },
@@ -322,6 +306,22 @@
       "count": 1
     },
     {
+      "value": "Navrel",
+      "count": 2
+    },
+    {
+      "value": "Navrel is a Solana bounty market for builder work, public evidence and creator-led review. A creator publishes a brief and funds a pool; builders answer with source-linked work; the creator reads every entry before a single unit is allocated.",
+      "count": 1
+    },
+    {
+      "value": "Navrel is a Solana bounty market for focused research. Creators publish a brief with a funded pool. Builders answer with source-linked evidence. The creator reads every entry before a single unit is allocated.",
+      "count": 1
+    },
+    {
+      "value": "Navrel is built for Solana testnet and is not affiliated with, endorsed by, or operated by Solana Labs. Keep private information off-chain.",
+      "count": 1
+    },
+    {
       "value": "Network",
       "count": 1
     },
@@ -342,7 +342,7 @@
       "count": 1
     },
     {
-      "value": "On this device only. Bookmarks are stored in local storage under the colopha-saved key, and older project keys migrate into it without clearing your list.",
+      "value": "On this device only. Bookmarks are stored in local storage under the navrel-saved key, and older project keys migrate into it without clearing your list.",
       "count": 1
     },
     {
@@ -394,7 +394,7 @@
       "count": 1
     },
     {
-      "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Colopha.",
+      "value": "Publish your brief on a public host, then paste its URL below. Draft text is not uploaded or stored on-chain by Navrel.",
       "count": 1
     },
     {
@@ -494,7 +494,7 @@
       "count": 3
     },
     {
-      "value": "SOL, which has no intended monetary value. Colopha has no platform token, no investment return and no guaranteed payout.",
+      "value": "SOL, which has no intended monetary value. Navrel has no platform token, no investment return and no guaranteed payout.",
       "count": 1
     },
     {
@@ -751,7 +751,7 @@
     {
       "name": "name",
       "value": "plus",
-      "count": 10
+      "count": 11
     },
     {
       "name": "name",
@@ -1067,7 +1067,7 @@
     },
     {
       "kind": "interpolation",
-      "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Colopha-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
+      "expr": "filtered ? \"Clear the search, topic or standing filter and the full index returns.\" : savedView ? \"Keep a brief from any entry and it stays on this device under the Navrel-saved key.\" : activityView ? \"Connect the wallet you create briefs with, or post the first brief from this desk.\" : viewNote || \"Reload the samples or post the first brief to open the index.\"",
       "count": 1
     },
     {
@@ -1665,7 +1665,7 @@
     {
       "event": "click",
       "handler": "startCreate",
-      "count": 4
+      "count": 5
     },
     {
       "event": "click",

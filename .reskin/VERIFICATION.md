@@ -1,17 +1,17 @@
 # Reskin verification — PASS
 
-Generated: 2026-10-22T15:38:54.880Z
+Generated: 2026-11-09T18:30:49.794Z
 
-- Project: **colopha**
+- Project: **navrel**
 - URL: http://127.0.0.1:4317/
-- Original skeleton: `gallery-scroll` (spatial)
-- New skeleton: `document-flow` (editorial)
-- Accent: #8f4b00 -> #40b3ff (105.32 ΔE; min 30)
-- Source contract: intact (`caf5eb3855b2`)
+- Original skeleton: `document-flow` (editorial)
+- New skeleton: `sidebar-workspace` (shell)
+- Accent: #40b3ff -> #0000ff (112.45 ΔE; min 30)
+- Source contract: intact (`d2be4022d8c3`)
 
 | Route | Result | DOM similarity | Landmark similarity | Axe serious | Screenshot |
 |---|---|---:|---:|---:|---|
-| `/` | PASS | 0.391 | 0.6 | 0 | [desktop](current/home-desktop.png) |
+| `/` | PASS | 0.297 | 0.6 | 0 | [desktop](current/home-desktop.png) |
 
 ## Blocking issues
 
@@ -19,10 +19,8 @@ Generated: 2026-10-22T15:38:54.880Z
 
 ## Warnings
 
-- attributes: "name=plus" count increased 10 -> 11
-- events: "click:startCreate" count increased 4 -> 5
-- /: aria attribute added: aria-label=Edition notes
-- /: aria attribute added: aria-label=Post a brief
+- /: aria attribute changed/removed: aria-label=Edition notes
+- /: aria attribute added: aria-label=Narrative rail
 
 ## Thresholds
 

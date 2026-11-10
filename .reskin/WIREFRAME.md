@@ -1,84 +1,46 @@
-# Wireframe — Cosmos Orbit / Documentary Ledger
+# Wiring plan — Cobalt Blueprint / Split Stage
 
-Committed before implementation; recorded here as the shipped map. The selected
-direction is the one `choose-style.mjs` produced; nothing was substituted.
+Selected by `choose-style.mjs` (seed `b00478b2…`). Original: `document-flow` / dark night sheet.
+New: **Cobalt Blueprint** (`base-cobalt`, optimistic-modern) × **Split Stage** (`split-stage`, spatial).
 
 ## Shell
 
-`NightSheet` is the only shell. It is one component tree in `App.vue`:
+- New shell: `.bp-shell` → `.bp-split` = sticky narrative rail (`.bp-rail`) + scrolling data stage (`.bp-stage`, one white sheet).
+- Below the split: a full-width `.bp-band` (edition notice + figures + foot) and the `.bp-colophon` footer.
+- Brand, route index, page thesis and the primary actions live in the rail; the rail is `position: sticky` and becomes a static top block below 1080 px.
+- Landmarks: `header[role=banner]` (rail brand), `nav` (rail route index), `main` (stage), `footer` (colophon); no complementary landmark — the edition margin moved into the full-width band.
+- Old shell elements removed from the render path: dateline masthead, index line, plate + margin grid, floating compass keys, ruled dialog.
+- Mobile: rail collapses above the stage; the route index becomes a horizontally scrollable strip; no drawer mirroring the old sidebar.
 
-```
-.chart                                   root, void field + signal glows + chart grid
-├─ a.chart-skip                          first focusable, revealed on focus
-├─ header.dateline                       3-column masthead
-│  ├─ button.imprint                     mark + wordmark + motto (goes home)
-│  ├─ div.dateline-facts                 edition stamp + cluster line
-│  └─ div.dateline-acts                  Post a brief + wallet key
-├─ nav.indexline                         4 route links + inline create key
-├─ div.chart-body                        grid 7fr / 3fr
-│  ├─ main.plate                         the scene (index | saved | activity | guide | dossier)
-│  └─ div.margin[role=complementary]     edition note + compass keys (sticky)
-├─ footer.colophon                       brand, four facts, fine print, back to top
-├─ template[v-if=mobileNav]              shade + nav#site-contents (contents sheet)
-├─ dialog.ledger-dialog                  draft sheet / rewards ledger
-└─ div.dispatch (0–2)                    wallet fault and notice strips
-```
+## Route mapping
 
-Navigation is the ruled index line under the masthead; the compass keys in the
-margin are a secondary rail and the mobile contents trigger. There is no dock,
-no route wall, no poster tile and no card wall.
+| View | Sticky rail (narrative) | Stage (data) |
+|---|---|---|
+| `/` index | brand + route index + thesis h1 (`statement-title`) + actions + wallet | `BriefIndex`: stage head, control strip, topic/standing chips, tally band, register rows |
+| saved / my briefs | brand + route index + page thesis (`page-title`, `pageTitle`, `pageNote`) + actions | `BriefIndex` in saved/activity mode |
+| guide | brand + route index + actions (sparse rail, motif only) | `BriefGuide`: guide head, numbered stair, creed rows, FAQ disclosures |
+| dossier (selected) | brand + route index + actions | `BriefDossier`: case bar, case head h1 (`dossier-title`), facts strip, vault band, three chapters, evidence rows, marginalia band |
 
-## Route → composition
+## Components
 
-| Scene | Composition |
-| --- | --- |
-| index (`/`) | `section.statement` (kicker, h1, lede, three actions) → `section.ledger-plate` → `BriefIndex` |
-| saved / activity | `section.statement--slim` (page kicker, h1, note) → the same `BriefIndex` in its view state |
-| guide | `section#guide` → `BriefGuide`: `div.guide-head`, `ol.stair` (three plates), two `section.creed` bands (rules grid, FAQ stack), `div.guide-acts` |
-| dossier | `section#scope` → `BriefDossier`: back line, head, tags, `dl.case-ledger`, `section.vault-plate`, `div.dossier-body` (three chapters + marginalia), actions, tx strip |
-| draft sheet | `dialog.ledger-dialog` → `div.dialog-head`, `div.progress-line`, `form.brief-form` (ruled questionnaire) or `div.preview-slip` |
-| rewards ledger | the same dialog with `div.reward-plate`, `code.account-line`, state strips |
-
-## Ledger composition (BriefIndex)
-
-```
-section#brief-index.ledger
-├─ div.ledger-head                       kicker / h2 / note + reload + create
-├─ div.query-rail[role=search]           search field, order select, reset
-├─ div.facet-line                        topic facets + standing facets (pills)
-├─ section.tally-line                    four cells (Records / Open / Pool / Cluster) + note
-├─ div.loadline | div.void | ol.ledger-rows + div.ledger-foot
-```
-
-Rows are `.entry-row` articles inside an ordered list: number, topic, title
-button, copy, figures (pool, deadline, standing), keep key. No cards, no grid of
-tiles, no sticker chips.
-
-## Old components and CSS
-
-| Original | Fate |
-| --- | --- |
-| `src/styles/poster-press.css` | removed from the render path; archived under `.rebrand/previous/ledgiva-reskin-20261021/src-styles/` |
-| `App.vue` poster shell (`.press`, `.mast`, `.route-wall`, `.dock`) | replaced by `.chart`, `.dateline`, `.indexline`, `.margin`, `.compass`, `.colophon` |
-| `BriefIndex` board (`.board`, `.card-wall`, `.record-card`, `.facts-band`, `.sticker`) | replaced by `.ledger`, `.ledger-rows`, `.entry-row`, `.tally-line`, `.facet` |
-| `BriefDossier` print (`.print`, `.spread`, `.margin-rail`) | replaced by `.dossier`, `.chapter`, `.dossier-margin` |
-| `BriefGuide` guide (`.step-wall`, `.rules-band`, `.faq-stack`) | replaced by `.stair`, `.creed`, `.faq-stack` |
-| `UiIcon` | kept (presentational, decorative, `aria-hidden`); stroke weight 1.4 and comment only |
-
-Only three script hooks changed, all presentational: `.card-open` → `.entry-open`,
-`.dock-key[aria-controls]` → `.compass-key[aria-controls]`, `.sheet-body` →
-`.dialog-body`. Application logic, composables, Solana client, routes, ids,
-bindings, handlers and copy are untouched.
+| Old | New |
+|---|---|
+| `App.vue` shell (chart desk) | `.bp-shell` split stage + edition band + colophon, same script hooks renamed (`bp-entry-open`, `bp-dialog-body`, `bp-draft-preview`, `bp-contents`, `bp-menu`) |
+| `BriefIndex.vue` ledger rows | stage head + control strip + chips + tally band + stacked register entries |
+| `BriefDossier.vue` dossier sheet | case file: case bar, facts strip, vault band with split rail, numbered chapters, two-up entry forms, evidence rows, marginalia band |
+| `BriefGuide.vue` stair/creed | numbered stair rows, creed rule rows, FAQ disclosures |
+| `UiIcon.vue` 1.4 round caps | 1.5 square-ish caps, same glyph names and counts |
+| `nightsheet.css` | **deleted from the tree**, replaced by `src/styles/blueprint.css` |
 
 ## Tokens and breakpoints
 
-`src/styles/nightsheet.css` carries the tokens: `--void #050509`,
-`--abyss #0a0a12`, `--shell #12121e`, `--shell-lift #191927`,
-`--star #f5f4fa`, `--star-dim #9a98ad`, `--star-faint #87859f`,
-`--pulse #40b3ff`, `--violet #a78bfa`, `--filament #262536`,
-`--filament-lit #3b3a55`, `--good #5ce1a0`, `--bad #ff8a8a`.
+- Token file: `src/styles/blueprint.css` (`--bp-*`), ground `#dde3e9`, sheet `#ffffff`, ink `#0a0b0d`, cobalt `#0000ff`, periwinkle `#7575ff`.
+- Type: Segoe UI display at 640 weight with −0.03em tracking, Segoe UI body, Cascadia Mono/Consolas labels.
+- Breakpoints: ≥1081 px split; 1080 px rail static + strip index; 760 px single column, stacked register; 520 px compact type and full-height dialog.
+- Texture: blueprint grid on the ground, cobalt hairlines, registration ticks; motion 170 ms, removed under `prefers-reduced-motion`.
 
-Breakpoints: 1080 px (plate and margin stack, marginalia moves below), 860 px
-(masthead two rows, stair and creed grids become single column, tally 2×2),
-620 px (single column masthead, row figures wrap under the title). Reduced-motion
-and forced-colours guards are included.
+## Content contract guardrails
+
+- Every static token moves, none is rewritten; one CSS `content: "\2014"` rule is kept (baseline token).
+- Bindings, handlers, icon names and form fields keep their exact counts; duplicated content is not introduced.
+- `#brief-index`, `#guide`, `#dossier-title`, `#contribute`, `#evidence-uri` stay (skip link and script targets).

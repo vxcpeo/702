@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "generatedAt": "2026-10-22T15:38:54.880Z",
+  "generatedAt": "2026-11-09T18:30:49.794Z",
   "project": {
     "root": "E:/workspace/chuangye/solana/702/website",
-    "name": "colopha",
+    "name": "navrel",
     "baseUrl": "http://127.0.0.1:4317/"
   },
   "passed": true,
@@ -19,36 +19,12 @@
     "sourceContract": {
       "passed": true,
       "issues": [],
-      "warnings": [
-        "attributes: \"name=plus\" count increased 10 -> 11",
-        "events: \"click:startCreate\" count increased 4 -> 5"
-      ],
-      "hash": "caf5eb3855b2a491f67fef146fe6a63b889673c75ec9a05af9d2d1acc7e51731"
+      "warnings": [],
+      "hash": "d2be4022d8c3f0893d496500270b84ca06471abcf1c3754e1faea6cbd5a193cb"
     },
     "skeleton": {
       "passed": true,
       "original": {
-        "id": "gallery-scroll",
-        "family": "spatial",
-        "traits": {
-          "sidebar": false,
-          "topbar": false,
-          "cards": true,
-          "hero": false,
-          "table": false,
-          "grid": true,
-          "tabs": true,
-          "modal": true,
-          "charts": false,
-          "sticky": true,
-          "orbital": false,
-          "terminal": false,
-          "bento": false,
-          "ticker": false,
-          "gallery": true
-        }
-      },
-      "current": {
         "id": "document-flow",
         "family": "editorial",
         "traits": {
@@ -69,10 +45,31 @@
           "gallery": false
         }
       },
+      "current": {
+        "id": "sidebar-workspace",
+        "family": "shell",
+        "traits": {
+          "sidebar": true,
+          "topbar": false,
+          "cards": false,
+          "hero": false,
+          "table": false,
+          "grid": true,
+          "tabs": true,
+          "modal": true,
+          "charts": true,
+          "sticky": true,
+          "orbital": false,
+          "terminal": false,
+          "bento": false,
+          "ticker": false,
+          "gallery": false
+        }
+      },
       "accent": {
-        "original": "#8f4b00",
-        "current": "#40b3ff",
-        "deltaE": 105.32,
+        "original": "#40b3ff",
+        "current": "#0000ff",
+        "deltaE": 112.45,
         "min": 30
       }
     },
@@ -83,13 +80,13 @@
         "skipped": false,
         "failures": [],
         "warnings": [
-          "aria attribute added: aria-label=Edition notes",
-          "aria attribute added: aria-label=Post a brief"
+          "aria attribute changed/removed: aria-label=Edition notes",
+          "aria attribute added: aria-label=Narrative rail"
         ],
         "structure": {
-          "fingerprintSimilarity": 0.391,
+          "fingerprintSimilarity": 0.297,
           "landmarkSimilarity": 0.6,
-          "classOverlap": 0
+          "classOverlap": 0.006
         },
         "content": {
           "missing": [],
@@ -123,13 +120,11 @@
   },
   "failures": [],
   "warnings": [
-    "attributes: \"name=plus\" count increased 10 -> 11",
-    "events: \"click:startCreate\" count increased 4 -> 5",
-    "/: aria attribute added: aria-label=Edition notes",
-    "/: aria attribute added: aria-label=Post a brief"
+    "/: aria attribute changed/removed: aria-label=Edition notes",
+    "/: aria attribute added: aria-label=Narrative rail"
   ],
   "baseline": {
-    "generatedAt": "2026-10-22T15:09:53.688Z",
+    "generatedAt": "2026-11-09T16:47:49.438Z",
     "routes": [
       "/"
     ]

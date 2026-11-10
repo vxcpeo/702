@@ -105,13 +105,13 @@ async function goContribute() {
 </script>
 
 <template>
-  <article class="dossier" aria-labelledby="dossier-title">
-    <div class="dossier-back">
-      <button class="chart-link" type="button" @click="emit('close')">
+  <article class="bp-case" aria-labelledby="dossier-title">
+    <div class="bp-case-bar">
+      <button class="bp-link" type="button" @click="emit('close')">
         <UiIcon name="arrowleft" :size="15" />Back to the index
       </button>
       <button
-        class="chart-btn chart-btn--hollow"
+        class="bp-btn bp-btn--line"
         type="button"
         :aria-pressed="saved"
         @click="emit('save', mission)"
@@ -122,40 +122,40 @@ async function goContribute() {
       </button>
     </div>
 
-    <div class="dossier-head">
-      <p class="rail-kicker">
+    <header class="bp-case-head">
+      <p class="bp-eyebrow">
         {{
           mission.sample
             ? "Sample dossier · illustrative record"
             : `Dossier no. ${mission.id}`
         }}
       </p>
-      <h1 id="dossier-title" class="dossier-title" tabindex="-1">
+      <h1 id="dossier-title" class="bp-case-title" tabindex="-1">
         {{ mission.title }}
       </h1>
-      <p class="dossier-standfirst">{{ mission.brief || mission.description }}</p>
-      <div class="dossier-tags">
-        <span class="tag">{{ mission.category }}</span>
-        <span class="tag tag--state" :class="phaseClass">{{ stateLabel }}</span>
+      <p class="bp-case-lede">{{ mission.brief || mission.description }}</p>
+      <div class="bp-tags">
+        <span class="bp-tag">{{ mission.category }}</span>
+        <span class="bp-tag bp-tag--state" :class="phaseClass">{{ stateLabel }}</span>
       </div>
-    </div>
+    </header>
 
     <div
       v-if="notice && noticeKind === 'bookmark'"
-      class="slip-strip"
+      class="bp-state"
       role="status"
     >
       <p>{{ notice }}</p>
       <button
         v-if="canUndoSavedChange"
-        class="chart-link"
+        class="bp-link"
         type="button"
         @click="emit('undo')"
       >
         Undo
       </button>
       <button
-        class="quiet-key"
+        class="bp-icon-btn"
         type="button"
         aria-label="Dismiss notification"
         @click="emit('dismiss')"
@@ -164,116 +164,114 @@ async function goContribute() {
       </button>
     </div>
 
-    <dl class="case-ledger">
-      <div class="case-item">
-        <dt>Record</dt>
-        <dd>{{ mission.sample ? "SAMPLE" : `#${mission.id}` }}</dd>
+    <dl class="bp-case-facts">
+      <div class="bp-fact">
+        <dt class="bp-fact-label">Record</dt>
+        <dd class="bp-fact-value">{{ mission.sample ? "SAMPLE" : `#${mission.id}` }}</dd>
       </div>
-      <div class="case-item">
-        <dt>Deadline</dt>
-        <dd>{{ mission.sample ? "Illustrative" : mission.deadline }}</dd>
+      <div class="bp-fact">
+        <dt class="bp-fact-label">Deadline</dt>
+        <dd class="bp-fact-value">{{ mission.sample ? "Illustrative" : mission.deadline }}</dd>
       </div>
-      <div class="case-item">
-        <dt>Evidence</dt>
-        <dd>
+      <div class="bp-fact">
+        <dt class="bp-fact-label">Evidence</dt>
+        <dd class="bp-fact-value">
           {{ mission.sample ? "None" : `${contributions.length} submitted` }}
         </dd>
       </div>
-      <div class="case-item">
-        <dt>Reviewer</dt>
-        <dd>{{ selectedIsCreator ? "This wallet" : "External signer" }}</dd>
+      <div class="bp-fact">
+        <dt class="bp-fact-label">Reviewer</dt>
+        <dd class="bp-fact-value">{{ selectedIsCreator ? "This wallet" : "External signer" }}</dd>
       </div>
     </dl>
 
-    <section class="vault-plate" aria-label="Reward pool">
-      <div class="vault-figure">
-        <p class="rail-kicker">
+    <section class="bp-vault" aria-label="Reward pool">
+      <div class="bp-vault-head">
+        <p class="bp-eyebrow">
           {{
             mission.sample
               ? "Illustrative pool · sample record"
               : "In escrow · available to allocate"
           }}
         </p>
-        <strong class="vault-number"
+        <strong class="bp-vault-num"
           >{{ amount(displayPool) }} <small>{{ mission.rewardSymbol || "SOL" }}</small></strong
         >
-        <p v-if="mission.sample" class="vault-note">
+        <p v-if="mission.sample" class="bp-vault-note">
           Illustrative pool {{ mission.reward }} SOL. Sample records hold no escrow
           and accept no transactions.
         </p>
       </div>
-      <div class="split-rail">
+      <div class="bp-vault-side">
         <div
-          class="split-track"
+          class="bp-split-bar"
           role="img"
           :aria-label="`Awarded ${amount(awarded)}, in escrow ${amount(escrow)}, allocation ${allocation} percent`"
         >
           <i
             v-if="awardedShare > 0"
-            class="split-a"
+            class="bp-split-a"
             :style="{ width: `${awardedShare}%` }"
           ></i>
           <i
             v-if="escrowShare > 0"
-            class="split-b"
+            class="bp-split-b"
             :style="{ width: `${escrowShare}%` }"
           ></i>
-          <i v-if="awardedShare + escrowShare <= 0" class="split-empty"></i>
+          <i v-if="awardedShare + escrowShare <= 0" class="bp-split-empty"></i>
         </div>
-        <div class="split-legend">
+        <div class="bp-vault-legend">
           <span :class="{ 'is-out': awarded <= 0 }"
-            ><i class="key-a"></i>Awarded <b>{{ amount(awarded) }}</b></span
+            ><i class="bp-legend-a"></i>Awarded <b>{{ amount(awarded) }}</b></span
           >
           <span :class="{ 'is-out': escrow <= 0 }"
-            ><i class="key-b"></i>Escrow <b>{{ amount(escrow) }}</b></span
+            ><i class="bp-legend-b"></i>Escrow <b>{{ amount(escrow) }}</b></span
           >
           <span :class="{ 'is-out': allocation <= 0 }"
-            ><i class="key-c"></i>Allocation <b>{{ allocation }}%</b></span
+            ><i class="bp-legend-c"></i>Allocation <b>{{ allocation }}%</b></span
           >
         </div>
       </div>
     </section>
 
-    <div class="dossier-body">
-      <div class="dossier-main">
-        <section id="scope" class="chapter" aria-labelledby="scope-title">
-          <div class="chapter-head">
-            <span class="chapter-no">01</span>
-            <h2 id="scope-title" class="chapter-title">Brief scope</h2>
-          </div>
-          <p class="chapter-copy">{{ mission.brief || mission.description }}</p>
-          <ul v-if="mission.deliverables?.length" class="check-list">
+    <div class="bp-case-body">
+      <section id="scope" class="bp-chapter" aria-labelledby="scope-title">
+        <span class="bp-chapter-no">01</span>
+        <div class="bp-chapter-main">
+          <h2 id="scope-title" class="bp-chapter-title">Brief scope</h2>
+          <p class="bp-prose">{{ mission.brief || mission.description }}</p>
+          <ul v-if="mission.deliverables?.length" class="bp-checklist">
             <li v-for="line in mission.deliverables" :key="line">
               <UiIcon name="check" :size="15" />{{ line }}
             </li>
           </ul>
-          <div v-if="mission.creator" class="sig-line">
+          <div v-if="mission.creator" class="bp-sig">
             <span>Bounty creator</span><code>{{ mission.creator }}</code>
           </div>
-          <p v-if="safeExternalUrl(mission.descriptionURI)" class="published-link">
+          <p v-if="safeExternalUrl(mission.descriptionURI)" class="bp-pub-link">
             <a
               :href="safeExternalUrl(mission.descriptionURI)"
               target="_blank"
               rel="noopener noreferrer"
-              class="inline-link"
+              class="bp-inline-link"
               >Read the published brief<UiIcon name="external" :size="14"
             /></a>
           </p>
-          <div class="chapter-acts">
-            <button class="chart-btn" type="button" @click="goContribute">
+          <div class="bp-chapter-acts">
+            <button class="bp-btn" type="button" @click="goContribute">
               Open contribution options<UiIcon name="arrow" :size="15" />
             </button>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="contribute" class="chapter" aria-labelledby="contribute-title">
-          <div class="chapter-head">
-            <span class="chapter-no">02</span>
-            <h2 id="contribute-title" class="chapter-title">Submit evidence &amp; fund the pool</h2>
-          </div>
+      <section id="contribute" class="bp-chapter" aria-labelledby="contribute-title">
+        <span class="bp-chapter-no">02</span>
+        <div class="bp-chapter-main">
+          <h2 id="contribute-title" class="bp-chapter-title">Submit evidence &amp; fund the pool</h2>
           <div
             v-if="!mission.sample && !selectedIsOpen"
-            class="slip-state is-murmur"
+            class="bp-state"
             role="status"
           >
             <p>
@@ -281,19 +279,19 @@ async function goContribute() {
               New funding and submissions are unavailable.
             </p>
           </div>
-          <div class="twin-entry">
-            <form class="entry-form" @submit.prevent="emit('submit')">
-              <p class="entry-step">Entry one</p>
-              <h3 class="entry-title">Submit proof</h3>
-              <p class="entry-copy">
+          <div class="bp-formgrid">
+            <form class="bp-entry-form" @submit.prevent="emit('submit')">
+              <p class="bp-form-step">Entry one</p>
+              <h3 class="bp-form-title">Submit proof</h3>
+              <p class="bp-form-copy">
                 Publish your findings, then link the public evidence for creator
                 review.
               </p>
-              <div class="entry">
-                <label class="entry-term" for="evidence-uri">Public evidence URL</label>
+              <div class="bp-field">
+                <label class="bp-label" for="evidence-uri">Public evidence URL</label>
                 <input
                   id="evidence-uri"
-                  class="field-line"
+                  class="bp-input"
                   :value="evidence"
                   placeholder="https://… or ipfs://…"
                   :aria-invalid="!!evidenceError"
@@ -303,15 +301,15 @@ async function goContribute() {
                   required
                   @input="emit('update:evidence', $event.target.value)"
                 />
-                <small id="evidence-help" class="entry-hint"
+                <small id="evidence-help" class="bp-hint"
                   >Use a permanent public URL. Keep personal information off-chain.</small
                 >
-                <p v-if="evidenceError" id="evidence-error" class="entry-fault">
+                <p v-if="evidenceError" id="evidence-error" class="bp-fault">
                   {{ evidenceError }}
                 </p>
               </div>
               <button
-                class="chart-btn"
+                class="bp-btn"
                 :disabled="mission.sample || !selectedIsOpen || busy"
               >
                 {{
@@ -322,18 +320,18 @@ async function goContribute() {
               </button>
             </form>
 
-            <form class="entry-form" @submit.prevent="emit('fund')">
-              <p class="entry-step">Entry two</p>
-              <h3 class="entry-title">Fund the pool</h3>
-              <p class="entry-copy">
+            <form class="bp-entry-form" @submit.prevent="emit('fund')">
+              <p class="bp-form-step">Entry two</p>
+              <h3 class="bp-form-title">Fund the pool</h3>
+              <p class="bp-form-copy">
                 Add to the reward pool. The creator controls allocations and any
                 unspent balance after the deadline.
               </p>
-              <div class="entry">
-                <label class="entry-term" for="fund-amount">Contribution · {{ rewardUnitLabel }}</label>
+              <div class="bp-field">
+                <label class="bp-label" for="fund-amount">Contribution · {{ rewardUnitLabel }}</label>
                 <input
                   id="fund-amount"
-                  class="field-line"
+                  class="bp-input"
                   inputmode="decimal"
                   placeholder="0.01"
                   :value="contribution"
@@ -342,12 +340,12 @@ async function goContribute() {
                   required
                   @input="emit('update:contribution', $event.target.value)"
                 />
-                <p v-if="contributionError" id="fund-error" class="entry-fault">
+                <p v-if="contributionError" id="fund-error" class="bp-fault">
                   {{ contributionError }}
                 </p>
               </div>
               <button
-                class="chart-btn chart-btn--hollow"
+                class="bp-btn bp-btn--line"
                 :disabled="mission.sample || !selectedIsOpen || busy"
               >
                 {{ activeTransaction === "fund" && busy ? "Funding…" : "Fund brief" }}
@@ -355,24 +353,24 @@ async function goContribute() {
               </button>
             </form>
           </div>
-        </section>
+        </div>
+      </section>
 
-        <section id="review" class="chapter" aria-labelledby="review-title">
-          <div class="chapter-head">
-            <span class="chapter-no">03</span>
-            <h2 id="review-title" class="chapter-title">Evidence and creator review</h2>
-          </div>
-          <div v-if="contributionsLoading" class="slip-state is-murmur" role="status">
-            <span class="beat-dot"></span>
+      <section id="review" class="bp-chapter" aria-labelledby="review-title">
+        <span class="bp-chapter-no">03</span>
+        <div class="bp-chapter-main">
+          <h2 id="review-title" class="bp-chapter-title">Evidence and creator review</h2>
+          <div v-if="contributionsLoading" class="bp-state" role="status">
+            <span class="bp-beat"></span>
             <p>Loading evidence…</p>
           </div>
-          <div v-else-if="contributionsError" class="slip-state is-broken" role="alert">
+          <div v-else-if="contributionsError" class="bp-state is-broken" role="alert">
             <p>{{ contributionsError }}</p>
-            <button class="chart-link" type="button" @click="emit('refresh')">
+            <button class="bp-link" type="button" @click="emit('refresh')">
               Try again
             </button>
           </div>
-          <div v-else-if="!contributions.length" class="void-slip">
+          <div v-else-if="!contributions.length" class="bp-void-slip">
             <UiIcon name="book" :size="24" />
             <h3>No evidence submitted yet.</h3>
             <p>
@@ -384,152 +382,158 @@ async function goContribute() {
             </p>
           </div>
           <template v-else>
-            <article
-              v-for="(item, index) in contributions"
-              :key="item.id ?? index"
-              class="proof-card"
-            >
-              <div class="proof-top">
-                <span>Entry {{ String(index + 1).padStart(2, "0") }}</span>
-                <span class="tag" :class="item.approvedByCreator ? 'tag--state' : ''">{{
-                  item.approvedByCreator ? "Allocated" : "Pending review"
-                }}</span>
-              </div>
-              <a
-                v-if="safeExternalUrl(item.evidenceURI)"
-                :href="safeExternalUrl(item.evidenceURI)"
-                target="_blank"
-                rel="noopener noreferrer"
-                class="proof-link"
-                >{{ item.evidenceURI }}<UiIcon name="external" :size="13"
-              /></a>
-              <p v-else>
-                Evidence URI is unavailable or uses an unsupported protocol.
-              </p>
-              <div class="sig-line">
-                <span>Contributor / reward recipient</span
-                ><code>{{ item.contributor }}</code>
-              </div>
-              <p v-if="item.approvedByCreator" class="alloc-line">
-                Allocated reward: <b>{{ item.approved }}</b> {{ rewardUnitLabel }}
-              </p>
-              <form
-                v-if="selectedIsCreator && !item.approvedByCreator"
-                class="alloc-form"
-                @submit.prevent="emit('approve', item.id ?? index, approvalFor(index))"
+            <div class="bp-proof-list">
+              <article
+                v-for="(item, index) in contributions"
+                :key="item.id ?? index"
+                class="bp-proof"
               >
-                <h4 class="alloc-title">Reward allocation</h4>
-                <div class="entry">
-                  <label class="entry-term" :for="`approval-amount-${index}`">Amount · {{ rewardUnitLabel }}</label>
-                  <div class="alloc-inline">
-                    <input
-                      :id="`approval-amount-${index}`"
-                      class="field-line"
-                      inputmode="decimal"
-                      placeholder="0.01"
-                      :value="approvalFor(index)"
-                      :aria-invalid="!!approvalError && isApproving(index)"
-                      :aria-describedby="
-                        approvalError && isApproving(index)
-                          ? `approval-error-${index}`
-                          : undefined
-                      "
-                      required
-                      @input="emit('update:approval', item.id ?? index, $event.target.value)"
-                    />
-                    <button class="chart-btn" :disabled="busy || !selectedIsOpen">
-                      {{ busy && isApproving(index) ? "Approving…" : "Approve" }}
-                    </button>
-                  </div>
-                  <p
-                    v-if="approvalError && isApproving(index)"
-                    :id="`approval-error-${index}`"
-                    class="entry-fault"
-                  >
-                    {{ approvalError }}
-                  </p>
+                <div class="bp-proof-head">
+                  <span>Entry {{ String(index + 1).padStart(2, "0") }}</span>
+                  <span class="bp-tag" :class="item.approvedByCreator ? 'bp-tag--state phase-open' : ''">{{
+                    item.approvedByCreator ? "Allocated" : "Pending review"
+                  }}</span>
                 </div>
-              </form>
-            </article>
+                <a
+                  v-if="safeExternalUrl(item.evidenceURI)"
+                  :href="safeExternalUrl(item.evidenceURI)"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="bp-proof-link"
+                  >{{ item.evidenceURI }}<UiIcon name="external" :size="13"
+                /></a>
+                <p v-else class="bp-prose">
+                  Evidence URI is unavailable or uses an unsupported protocol.
+                </p>
+                <div class="bp-sig">
+                  <span>Contributor / reward recipient</span
+                  ><code>{{ item.contributor }}</code>
+                </div>
+                <p v-if="item.approvedByCreator" class="bp-alloc-line">
+                  Allocated reward: <b>{{ item.approved }}</b> {{ rewardUnitLabel }}
+                </p>
+                <form
+                  v-if="selectedIsCreator && !item.approvedByCreator"
+                  class="bp-alloc"
+                  @submit.prevent="emit('approve', item.id ?? index, approvalFor(index))"
+                >
+                  <h4 class="bp-alloc-title">Reward allocation</h4>
+                  <div class="bp-field">
+                    <label class="bp-label" :for="`approval-amount-${index}`">Amount · {{ rewardUnitLabel }}</label>
+                    <div class="bp-alloc-row">
+                      <div class="bp-field">
+                        <input
+                          :id="`approval-amount-${index}`"
+                          class="bp-input"
+                          inputmode="decimal"
+                          placeholder="0.01"
+                          :value="approvalFor(index)"
+                          :aria-invalid="!!approvalError && isApproving(index)"
+                          :aria-describedby="
+                            approvalError && isApproving(index)
+                              ? `approval-error-${index}`
+                              : undefined
+                          "
+                          required
+                          @input="emit('update:approval', item.id ?? index, $event.target.value)"
+                        />
+                      </div>
+                      <button class="bp-btn" :disabled="busy || !selectedIsOpen">
+                        {{ busy && isApproving(index) ? "Approving…" : "Approve" }}
+                      </button>
+                    </div>
+                    <p
+                      v-if="approvalError && isApproving(index)"
+                      :id="`approval-error-${index}`"
+                      class="bp-fault"
+                    >
+                      {{ approvalError }}
+                    </p>
+                  </div>
+                </form>
+              </article>
+            </div>
           </template>
-          <div v-if="selectedIsCreator && !mission.sample" class="refund-plate">
-            <h3 class="entry-title">Unallocated funds</h3>
-            <p class="chapter-copy">
+          <div v-if="selectedIsCreator && !mission.sample" class="bp-refund">
+            <h3 class="bp-form-title">Unallocated funds</h3>
+            <p class="bp-prose">
               After the deadline, return any unallocated balance to the creator's
               reward-token account. Approved contribution rewards stay claimable
               separately.
             </p>
             <button
-              class="chart-btn chart-btn--hollow"
+              class="bp-btn bp-btn--ghost"
               :disabled="!selectedCanRefund || busy"
               type="button"
               @click="emit('refund')"
             >
               Return unallocated funds
             </button>
-            <small v-if="!selectedCanRefund" class="fine-note"
+            <small v-if="!selectedCanRefund" class="bp-fine"
               >Available to the creator after the deadline.</small
             >
           </div>
-        </section>
+        </div>
+      </section>
 
-        <div class="chapter-acts">
-          <button class="chart-btn chart-btn--hollow" type="button" @click="emit('download')">
-            <UiIcon name="download" :size="14" />Download draft
-          </button>
-          <button
-            class="chart-link"
-            type="button"
-            :aria-pressed="saved"
-            @click="emit('save', mission)"
-          >
-            <UiIcon name="bookmark" :size="14" />{{ saved ? "Remove" : "Save" }}
-          </button>
-          <button
-            class="chart-link"
-            type="button"
-            :disabled="busy"
-            @click="emit('refresh')"
-          >
-            <UiIcon name="refresh" :size="14" />Refresh
-          </button>
-        </div>
-        <div
-          v-if="txStatus !== 'idle' && (txError || txHash)"
-          class="slip-state is-murmur"
-          :class="{ 'is-broken': txError }"
-          :role="txError ? 'alert' : 'status'"
+      <div class="bp-case-foot">
+        <button class="bp-btn bp-btn--ghost" type="button" @click="emit('download')">
+          <UiIcon name="download" :size="14" />Download draft
+        </button>
+        <button
+          class="bp-link"
+          type="button"
+          :aria-pressed="saved"
+          @click="emit('save', mission)"
         >
-          <UiIcon :name="txError ? 'info' : 'check'" :size="16" />
-          <p>
-            {{ txError || "Transaction confirmed." }}
-            <a
-              v-if="explorerLink(txHash)"
-              :href="explorerLink(txHash)"
-              target="_blank"
-              rel="noopener noreferrer"
-              >View transaction ↗</a>
-          </p>
-        </div>
+          <UiIcon name="bookmark" :size="14" />{{ saved ? "Remove" : "Save" }}
+        </button>
+        <button
+          class="bp-link"
+          type="button"
+          :disabled="busy"
+          @click="emit('refresh')"
+        >
+          <UiIcon name="refresh" :size="14" />Refresh
+        </button>
+      </div>
+      <div
+        v-if="txStatus !== 'idle' && (txError || txHash)"
+        class="bp-state"
+        :class="{ 'is-broken': txError }"
+        :role="txError ? 'alert' : 'status'"
+      >
+        <UiIcon :name="txError ? 'info' : 'check'" :size="16" />
+        <p>
+          {{ txError || "Transaction confirmed." }}
+          <a
+            v-if="explorerLink(txHash)"
+            :href="explorerLink(txHash)"
+            target="_blank"
+            rel="noopener noreferrer"
+            >View transaction ↗</a>
+        </p>
       </div>
 
-      <div class="dossier-margin" role="complementary" aria-label="Marginalia">
-        <div class="margin-note">
+      <div class="bp-marginalia">
+        <div class="bp-note">
           <UiIcon name="quote" :size="19" />
-          <p>
-            <strong>Make your proof verifiable.</strong> Cite primary sources,
-            separate facts from interpretation, and make your limitations as clear
-            as your findings.
-          </p>
+          <div>
+            <p>
+              <strong>Make your proof verifiable.</strong> Cite primary sources,
+              separate facts from interpretation, and make your limitations as clear
+              as your findings.
+            </p>
+          </div>
         </div>
-        <div class="margin-note">
+        <div class="bp-note">
           <UiIcon name="info" :size="19" />
           <div>
             <p>
               <strong>Writes stay gated.</strong> The reward mint and deployed
               program schema must be verified before any instruction is enabled.
             </p>
-            <ul class="gate-list">
+            <ul class="bp-gate-list">
               <li>Reads: index, pool split, evidence list</li>
               <li>Gated: create, fund, submit, allocate, refund, claim</li>
             </ul>

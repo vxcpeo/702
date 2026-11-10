@@ -1,0 +1,2662 @@
+{
+  "schemaVersion": 1,
+  "label": "baseline",
+  "generatedAt": "2026-10-22T15:09:53.688Z",
+  "baseUrl": "http://127.0.0.1:4317/",
+  "browser": {
+    "executablePath": "C:\\Users\\Administrator\\AppData\\Local\\ms-playwright\\chromium-1247\\chrome-win64\\chrome.exe",
+    "playwrightSource": "project",
+    "axe": true
+  },
+  "pages": {
+    "/": {
+      "route": "/",
+      "url": "http://127.0.0.1:4317/",
+      "status": 200,
+      "desktop": {
+        "meta": {
+          "title": "Colopha - Two paths in. One record out.",
+          "lang": "en",
+          "h1Count": 1,
+          "bodyTextLength": 2556,
+          "scrollWidth": 1440,
+          "clientWidth": 1440,
+          "focusableCount": 39
+        },
+        "words": [
+          {
+            "word": "0",
+            "count": 4
+          },
+          {
+            "word": "0.05",
+            "count": 1
+          },
+          {
+            "word": "0.06",
+            "count": 1
+          },
+          {
+            "word": "0.08",
+            "count": 1
+          },
+          {
+            "word": "0.12",
+            "count": 1
+          },
+          {
+            "word": "0.31",
+            "count": 2
+          },
+          {
+            "word": "00",
+            "count": 2
+          },
+          {
+            "word": "01",
+            "count": 2
+          },
+          {
+            "word": "02",
+            "count": 1
+          },
+          {
+            "word": "03",
+            "count": 1
+          },
+          {
+            "word": "04",
+            "count": 3
+          },
+          {
+            "word": "1",
+            "count": 4
+          },
+          {
+            "word": "2026",
+            "count": 1
+          },
+          {
+            "word": "4",
+            "count": 5
+          },
+          {
+            "word": "5ibh…gwDu",
+            "count": 1
+          },
+          {
+            "word": "a",
+            "count": 14
+          },
+          {
+            "word": "A",
+            "count": 2
+          },
+          {
+            "word": "accepting",
+            "count": 1
+          },
+          {
+            "word": "action",
+            "count": 1
+          },
+          {
+            "word": "actually",
+            "count": 1
+          },
+          {
+            "word": "All",
+            "count": 2
+          },
+          {
+            "word": "allocated",
+            "count": 1
+          },
+          {
+            "word": "an",
+            "count": 4
+          },
+          {
+            "word": "and",
+            "count": 9
+          },
+          {
+            "word": "answer",
+            "count": 1
+          },
+          {
+            "word": "applications",
+            "count": 1
+          },
+          {
+            "word": "asked",
+            "count": 1
+          },
+          {
+            "word": "assets",
+            "count": 2
+          },
+          {
+            "word": "at",
+            "count": 1
+          },
+          {
+            "word": "Back",
+            "count": 1
+          },
+          {
+            "word": "before",
+            "count": 1
+          },
+          {
+            "word": "behind",
+            "count": 1
+          },
+          {
+            "word": "bounty",
+            "count": 1
+          },
+          {
+            "word": "brief",
+            "count": 11
+          },
+          {
+            "word": "briefs",
+            "count": 4
+          },
+          {
+            "word": "Briefs",
+            "count": 1
+          },
+          {
+            "word": "Browse",
+            "count": 1
+          },
+          {
+            "word": "builders",
+            "count": 1
+          },
+          {
+            "word": "Builders",
+            "count": 1
+          },
+          {
+            "word": "CA",
+            "count": 1
+          },
+          {
+            "word": "careful",
+            "count": 1
+          },
+          {
+            "word": "carry",
+            "count": 2
+          },
+          {
+            "word": "checklist",
+            "count": 1
+          },
+          {
+            "word": "Choose",
+            "count": 1
+          },
+          {
+            "word": "close",
+            "count": 1
+          },
+          {
+            "word": "Cluster",
+            "count": 2
+          },
+          {
+            "word": "Colopha",
+            "count": 4
+          },
+          {
+            "word": "Connect",
+            "count": 2
+          },
+          {
+            "word": "creator",
+            "count": 1
+          },
+          {
+            "word": "Creators",
+            "count": 1
+          },
+          {
+            "word": "custody",
+            "count": 1
+          },
+          {
+            "word": "data",
+            "count": 2
+          },
+          {
+            "word": "DATA",
+            "count": 1
+          },
+          {
+            "word": "disabled",
+            "count": 1
+          },
+          {
+            "word": "discovery",
+            "count": 1
+          },
+          {
+            "word": "does",
+            "count": 2
+          },
+          {
+            "word": "dossier",
+            "count": 2
+          },
+          {
+            "word": "each",
+            "count": 1
+          },
+          {
+            "word": "ecosystem",
+            "count": 1
+          },
+          {
+            "word": "Ecosystem",
+            "count": 2
+          },
+          {
+            "word": "edition",
+            "count": 3
+          },
+          {
+            "word": "Edition",
+            "count": 1
+          },
+          {
+            "word": "Editor's",
+            "count": 1
+          },
+          {
+            "word": "Ended",
+            "count": 1
+          },
+          {
+            "word": "entry",
+            "count": 1
+          },
+          {
+            "word": "equities",
+            "count": 1
+          },
+          {
+            "word": "every",
+            "count": 1
+          },
+          {
+            "word": "Every",
+            "count": 2
+          },
+          {
+            "word": "evidence",
+            "count": 3
+          },
+          {
+            "word": "Explore",
+            "count": 1
+          },
+          {
+            "word": "failure",
+            "count": 1
+          },
+          {
+            "word": "feed",
+            "count": 1
+          },
+          {
+            "word": "field",
+            "count": 2
+          },
+          {
+            "word": "financial",
+            "count": 1
+          },
+          {
+            "word": "focused",
+            "count": 1
+          },
+          {
+            "word": "for",
+            "count": 2
+          },
+          {
+            "word": "formation",
+            "count": 1
+          },
+          {
+            "word": "Four",
+            "count": 1
+          },
+          {
+            "word": "from",
+            "count": 1
+          },
+          {
+            "word": "full",
+            "count": 1
+          },
+          {
+            "word": "Full",
+            "count": 1
+          },
+          {
+            "word": "funded",
+            "count": 1
+          },
+          {
+            "word": "GATED",
+            "count": 1
+          },
+          {
+            "word": "glance",
+            "count": 1
+          },
+          {
+            "word": "go",
+            "count": 1
+          },
+          {
+            "word": "guide",
+            "count": 2
+          },
+          {
+            "word": "Guide",
+            "count": 1
+          },
+          {
+            "word": "here",
+            "count": 1
+          },
+          {
+            "word": "hours",
+            "count": 1
+          },
+          {
+            "word": "illustrative",
+            "count": 3
+          },
+          {
+            "word": "Illustrative",
+            "count": 2
+          },
+          {
+            "word": "in",
+            "count": 4
+          },
+          {
+            "word": "independent",
+            "count": 1
+          },
+          {
+            "word": "index",
+            "count": 5
+          },
+          {
+            "word": "Index",
+            "count": 1
+          },
+          {
+            "word": "infrastructure",
+            "count": 1
+          },
+          {
+            "word": "intended",
+            "count": 2
+          },
+          {
+            "word": "into",
+            "count": 1
+          },
+          {
+            "word": "is",
+            "count": 8
+          },
+          {
+            "word": "its",
+            "count": 1
+          },
+          {
+            "word": "Keep",
+            "count": 4
+          },
+          {
+            "word": "liquidity",
+            "count": 2
+          },
+          {
+            "word": "live",
+            "count": 1
+          },
+          {
+            "word": "Make",
+            "count": 1
+          },
+          {
+            "word": "Map",
+            "count": 1
+          },
+          {
+            "word": "market",
+            "count": 4
+          },
+          {
+            "word": "Market",
+            "count": 2
+          },
+          {
+            "word": "markets",
+            "count": 1
+          },
+          {
+            "word": "models",
+            "count": 1
+          },
+          {
+            "word": "modes",
+            "count": 1
+          },
+          {
+            "word": "monetary",
+            "count": 2
+          },
+          {
+            "word": "My",
+            "count": 1
+          },
+          {
+            "word": "network",
+            "count": 1
+          },
+          {
+            "word": "Network",
+            "count": 1
+          },
+          {
+            "word": "no",
+            "count": 7
+          },
+          {
+            "word": "NO",
+            "count": 1
+          },
+          {
+            "word": "note",
+            "count": 1
+          },
+          {
+            "word": "nothing",
+            "count": 1
+          },
+          {
+            "word": "of",
+            "count": 1
+          },
+          {
+            "word": "on",
+            "count": 1
+          },
+          {
+            "word": "One",
+            "count": 3
+          },
+          {
+            "word": "only",
+            "count": 3
+          },
+          {
+            "word": "open",
+            "count": 1
+          },
+          {
+            "word": "Open",
+            "count": 6
+          },
+          {
+            "word": "or",
+            "count": 3
+          },
+          {
+            "word": "Order",
+            "count": 1
+          },
+          {
+            "word": "out",
+            "count": 3
+          },
+          {
+            "word": "outside",
+            "count": 1
+          },
+          {
+            "word": "page",
+            "count": 1
+          },
+          {
+            "word": "paths",
+            "count": 4
+          },
+          {
+            "word": "permissions",
+            "count": 1
+          },
+          {
+            "word": "platform",
+            "count": 1
+          },
+          {
+            "word": "pool",
+            "count": 4
+          },
+          {
+            "word": "Pool",
+            "count": 1
+          },
+          {
+            "word": "Post",
+            "count": 3
+          },
+          {
+            "word": "practical",
+            "count": 1
+          },
+          {
+            "word": "preview",
+            "count": 2
+          },
+          {
+            "word": "price",
+            "count": 1
+          },
+          {
+            "word": "program",
+            "count": 2
+          },
+          {
+            "word": "Program",
+            "count": 1
+          },
+          {
+            "word": "project",
+            "count": 1
+          },
+          {
+            "word": "publish",
+            "count": 1
+          },
+          {
+            "word": "read",
+            "count": 2
+          },
+          {
+            "word": "Read",
+            "count": 1
+          },
+          {
+            "word": "reads",
+            "count": 2
+          },
+          {
+            "word": "record",
+            "count": 5
+          },
+          {
+            "word": "Records",
+            "count": 1
+          },
+          {
+            "word": "Reload",
+            "count": 1
+          },
+          {
+            "word": "represent",
+            "count": 1
+          },
+          {
+            "word": "research",
+            "count": 4
+          },
+          {
+            "word": "Reset",
+            "count": 1
+          },
+          {
+            "word": "review",
+            "count": 2
+          },
+          {
+            "word": "rewards",
+            "count": 1
+          },
+          {
+            "word": "Rewards",
+            "count": 1
+          },
+          {
+            "word": "rights",
+            "count": 1
+          },
+          {
+            "word": "risk",
+            "count": 1
+          },
+          {
+            "word": "Risk",
+            "count": 2
+          },
+          {
+            "word": "sample",
+            "count": 3
+          },
+          {
+            "word": "Sample",
+            "count": 7
+          },
+          {
+            "word": "SAMPLE",
+            "count": 1
+          },
+          {
+            "word": "samples",
+            "count": 1
+          },
+          {
+            "word": "Saved",
+            "count": 1
+          },
+          {
+            "word": "scope",
+            "count": 1
+          },
+          {
+            "word": "sends",
+            "count": 2
+          },
+          {
+            "word": "sent",
+            "count": 1
+          },
+          {
+            "word": "settlement",
+            "count": 1
+          },
+          {
+            "word": "shape",
+            "count": 1
+          },
+          {
+            "word": "shaping",
+            "count": 1
+          },
+          {
+            "word": "show",
+            "count": 1
+          },
+          {
+            "word": "sign",
+            "count": 1
+          },
+          {
+            "word": "signs",
+            "count": 2
+          },
+          {
+            "word": "single",
+            "count": 1
+          },
+          {
+            "word": "Skip",
+            "count": 1
+          },
+          {
+            "word": "SOL",
+            "count": 6
+          },
+          {
+            "word": "Solana",
+            "count": 4
+          },
+          {
+            "word": "source-linked",
+            "count": 1
+          },
+          {
+            "word": "spread",
+            "count": 1
+          },
+          {
+            "word": "Standing",
+            "count": 1
+          },
+          {
+            "word": "state",
+            "count": 2
+          },
+          {
+            "word": "stock",
+            "count": 1
+          },
+          {
+            "word": "structure",
+            "count": 2
+          },
+          {
+            "word": "Technical",
+            "count": 2
+          },
+          {
+            "word": "testnet",
+            "count": 8
+          },
+          {
+            "word": "TESTNET",
+            "count": 2
+          },
+          {
+            "word": "the",
+            "count": 11
+          },
+          {
+            "word": "The",
+            "count": 4
+          },
+          {
+            "word": "this",
+            "count": 2
+          },
+          {
+            "word": "This",
+            "count": 2
+          },
+          {
+            "word": "title",
+            "count": 2
+          },
+          {
+            "word": "to",
+            "count": 6
+          },
+          {
+            "word": "token",
+            "count": 1
+          },
+          {
+            "word": "tokenized",
+            "count": 2
+          },
+          {
+            "word": "Tokenized",
+            "count": 2
+          },
+          {
+            "word": "top",
+            "count": 1
+          },
+          {
+            "word": "topics",
+            "count": 1
+          },
+          {
+            "word": "Topics",
+            "count": 1
+          },
+          {
+            "word": "traditional",
+            "count": 1
+          },
+          {
+            "word": "transaction",
+            "count": 3
+          },
+          {
+            "word": "Turn",
+            "count": 1
+          },
+          {
+            "word": "Two",
+            "count": 3
+          },
+          {
+            "word": "understandable",
+            "count": 1
+          },
+          {
+            "word": "unit",
+            "count": 1
+          },
+          {
+            "word": "value",
+            "count": 2
+          },
+          {
+            "word": "view",
+            "count": 1
+          },
+          {
+            "word": "wallet",
+            "count": 2
+          },
+          {
+            "word": "What",
+            "count": 1
+          },
+          {
+            "word": "when",
+            "count": 1
+          },
+          {
+            "word": "Where",
+            "count": 1
+          },
+          {
+            "word": "with",
+            "count": 2
+          },
+          {
+            "word": "work",
+            "count": 1
+          },
+          {
+            "word": "writes",
+            "count": 1
+          },
+          {
+            "word": "WRITES",
+            "count": 1
+          }
+        ],
+        "attrs": [
+          {
+            "key": "aria-label=1. What does a tokenized stock actually represent?. Tokenized assets. Pool 0.08 SOL. State Sample",
+            "count": 1
+          },
+          {
+            "key": "aria-label=2. A field guide to the Solana ecosystem. Ecosystem. Pool 0.05 SOL. State Sample",
+            "count": 1
+          },
+          {
+            "key": "aria-label=3. Where does liquidity go when markets close?. Market structure. Pool 0.12 SOL. State Sample",
+            "count": 1
+          },
+          {
+            "key": "aria-label=4. Make program risk understandable. Risk research. Pool 0.06 SOL. State Sample",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Briefs",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Colopha home",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Connect wallet",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Edition notice",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Filter by state",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Filter by topic",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Filter the brief index",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Guide",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Index, 4 records",
+            "count": 1
+          },
+          {
+            "key": "aria-label=My briefs, 0 records",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Post a brief",
+            "count": 2
+          },
+          {
+            "key": "aria-label=Primary navigation",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Publication colophon",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Quick access",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Save A field guide to the Solana ecosystem to your saved list",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Save Make program risk understandable to your saved list",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Save What does a tokenized stock actually represent? to your saved list",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Save Where does liquidity go when markets close? to your saved list",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Saved, 0 records",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Search briefs",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Sort briefs",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Toggle navigation",
+            "count": 1
+          },
+          {
+            "key": "placeholder=Search titles, topics and scope",
+            "count": 1
+          }
+        ],
+        "links": [
+          {
+            "href": "#activity",
+            "count": 1
+          },
+          {
+            "href": "#brief-index",
+            "count": 1
+          },
+          {
+            "href": "#guide",
+            "count": 1
+          },
+          {
+            "href": "#index",
+            "count": 1
+          },
+          {
+            "href": "#saved",
+            "count": 1
+          }
+        ],
+        "forms": [
+          {
+            "key": "input::search",
+            "count": 1
+          },
+          {
+            "key": "select::select",
+            "count": 1
+          }
+        ],
+        "fieldIssues": [],
+        "imageIssues": [],
+        "interactiveIssues": [],
+        "classTokens": [
+          "band-cell",
+          "band-kicker",
+          "band-label",
+          "band-note",
+          "band-value",
+          "board",
+          "board-foot",
+          "board-head",
+          "board-note",
+          "board-title",
+          "board-tools",
+          "card-copy",
+          "card-facts",
+          "card-foot",
+          "card-ground",
+          "card-keep",
+          "card-no",
+          "card-open",
+          "card-pool",
+          "card-state",
+          "card-title",
+          "card-top",
+          "card-topic",
+          "card-wall",
+          "dock",
+          "dock-key",
+          "dock-key--end",
+          "fact",
+          "fact-foot",
+          "fact-label",
+          "fact-strip",
+          "fact-value",
+          "facts-band",
+          "foot-base",
+          "foot-brand",
+          "foot-facts",
+          "foot-fine",
+          "foot-motto",
+          "foot-plate",
+          "is-chosen",
+          "is-lit",
+          "kicker",
+          "mast",
+          "mast-acts",
+          "mast-brand",
+          "mast-flag",
+          "mast-ident",
+          "mast-mark",
+          "mast-motto",
+          "mast-name",
+          "mast-side",
+          "note-copy",
+          "note-head",
+          "note-plate",
+          "poster-actions",
+          "poster-lede",
+          "poster-title",
+          "press",
+          "press-btn",
+          "press-foot",
+          "press-link",
+          "press-skip",
+          "query-bar",
+          "record-card",
+          "route-tile",
+          "route-wall",
+          "scene",
+          "scene--board",
+          "scene--open",
+          "scene-body",
+          "search-input",
+          "search-plate",
+          "sort-plate",
+          "sort-select",
+          "stage",
+          "stamp",
+          "state-sample",
+          "sticker",
+          "sticker-group",
+          "sticker-label",
+          "sticker-row",
+          "tile-count",
+          "tile-label",
+          "wallet-tag"
+        ],
+        "fingerprint": [
+          "a@5:0",
+          "a@7:1",
+          "a@7:2",
+          "article@10:4+",
+          "button@10:1",
+          "button@10:2",
+          "button@11:2",
+          "button@12:2",
+          "button@6:1",
+          "button@6:2",
+          "button@7:1",
+          "button@8:1",
+          "button@8:2",
+          "button@9:0",
+          "button@9:1",
+          "dd@9:0",
+          "div@11:1",
+          "div@11:2",
+          "div@3:1",
+          "div@4:4+",
+          "div@5:4+",
+          "div@6:2",
+          "div@7:2",
+          "div@7:4+",
+          "div@8:2",
+          "div@8:3",
+          "div@9:2",
+          "div@9:3",
+          "div@9:4+",
+          "dl@7:4+",
+          "dt@9:0",
+          "em@13:0",
+          "em@9:0",
+          "footer@5:3",
+          "h1@8:1",
+          "h2@10:0",
+          "header@5:2",
+          "i@9:0",
+          "img@7:0",
+          "input@10:0",
+          "label@9:2",
+          "li@9:1",
+          "main@5:3",
+          "nav@6:4+",
+          "ol@8:4+",
+          "p@10:0",
+          "p@6:2",
+          "p@8:0",
+          "p@8:1",
+          "p@9:0",
+          "p@9:2",
+          "path@10:0",
+          "path@11:0",
+          "path@12:0",
+          "path@14:0",
+          "path@8:0",
+          "path@9:0",
+          "section@6:1",
+          "section@6:2",
+          "section@7:4+",
+          "section@8:4+",
+          "select@10:4+",
+          "small@11:0",
+          "span@10:0",
+          "span@10:1",
+          "span@11:0",
+          "span@12:0",
+          "span@12:1",
+          "span@12:2",
+          "span@13:0",
+          "span@7:0",
+          "span@7:2",
+          "span@8:0",
+          "span@8:1",
+          "span@9:0",
+          "strong@11:0",
+          "strong@7:0",
+          "sup@11:0",
+          "svg@10:1",
+          "svg@11:1",
+          "svg@13:1",
+          "svg@7:1",
+          "svg@8:1",
+          "svg@9:1"
+        ],
+        "landmarks": [
+          {
+            "tag": "header",
+            "role": "",
+            "top": -24,
+            "left": 0,
+            "width": 1440,
+            "height": 90
+          },
+          {
+            "tag": "main",
+            "role": "",
+            "top": 66,
+            "left": 0,
+            "width": 1440,
+            "height": 2900
+          },
+          {
+            "tag": "nav",
+            "role": "",
+            "top": 94,
+            "left": 58,
+            "width": 1325,
+            "height": 136
+          },
+          {
+            "tag": "footer",
+            "role": "",
+            "top": 2966,
+            "left": 0,
+            "width": 1440,
+            "height": 430
+          }
+        ],
+        "colors": [
+          {
+            "hex": "#161616",
+            "count": 151
+          },
+          {
+            "hex": "#ffffff",
+            "count": 51
+          },
+          {
+            "hex": "#fafaf9",
+            "count": 45
+          },
+          {
+            "hex": "#6e625c",
+            "count": 28
+          },
+          {
+            "hex": "#d4000a",
+            "count": 10
+          },
+          {
+            "hex": "#2e2a27",
+            "count": 7
+          },
+          {
+            "hex": "#ff7a00",
+            "count": 4
+          },
+          {
+            "hex": "#ffe3d6",
+            "count": 4
+          },
+          {
+            "hex": "#ff0421",
+            "count": 3
+          }
+        ],
+        "contrast": [],
+        "contrastChecked": 120,
+        "headings": [
+          {
+            "tag": "h1",
+            "text": "TWO PATHS IN. ONE RECORD OUT."
+          },
+          {
+            "tag": "h2",
+            "text": "THE BRIEF INDEX"
+          }
+        ],
+        "navTargets": [
+          ""
+        ],
+        "overflow": {
+          "documentOverflow": false,
+          "offenders": []
+        }
+      },
+      "axe": {
+        "skipped": true,
+        "violations": []
+      },
+      "consoleErrors": [],
+      "pageErrors": [],
+      "failedRequests": [],
+      "failedResponses": [],
+      "screenshots": {
+        "desktop": "baseline/home-desktop.png",
+        "mobile": "baseline/home-mobile.png"
+      },
+      "mobile": {
+        "meta": {
+          "title": "Colopha - Two paths in. One record out.",
+          "lang": "en",
+          "h1Count": 1,
+          "bodyTextLength": 2556,
+          "scrollWidth": 390,
+          "clientWidth": 390,
+          "focusableCount": 39
+        },
+        "words": [
+          {
+            "word": "0",
+            "count": 4
+          },
+          {
+            "word": "0.05",
+            "count": 1
+          },
+          {
+            "word": "0.06",
+            "count": 1
+          },
+          {
+            "word": "0.08",
+            "count": 1
+          },
+          {
+            "word": "0.12",
+            "count": 1
+          },
+          {
+            "word": "0.31",
+            "count": 2
+          },
+          {
+            "word": "00",
+            "count": 2
+          },
+          {
+            "word": "01",
+            "count": 2
+          },
+          {
+            "word": "02",
+            "count": 1
+          },
+          {
+            "word": "03",
+            "count": 1
+          },
+          {
+            "word": "04",
+            "count": 3
+          },
+          {
+            "word": "1",
+            "count": 4
+          },
+          {
+            "word": "2026",
+            "count": 1
+          },
+          {
+            "word": "4",
+            "count": 5
+          },
+          {
+            "word": "5ibh…gwDu",
+            "count": 1
+          },
+          {
+            "word": "a",
+            "count": 14
+          },
+          {
+            "word": "A",
+            "count": 2
+          },
+          {
+            "word": "accepting",
+            "count": 1
+          },
+          {
+            "word": "action",
+            "count": 1
+          },
+          {
+            "word": "actually",
+            "count": 1
+          },
+          {
+            "word": "All",
+            "count": 2
+          },
+          {
+            "word": "allocated",
+            "count": 1
+          },
+          {
+            "word": "an",
+            "count": 4
+          },
+          {
+            "word": "and",
+            "count": 9
+          },
+          {
+            "word": "answer",
+            "count": 1
+          },
+          {
+            "word": "applications",
+            "count": 1
+          },
+          {
+            "word": "asked",
+            "count": 1
+          },
+          {
+            "word": "assets",
+            "count": 2
+          },
+          {
+            "word": "at",
+            "count": 1
+          },
+          {
+            "word": "Back",
+            "count": 1
+          },
+          {
+            "word": "before",
+            "count": 1
+          },
+          {
+            "word": "behind",
+            "count": 1
+          },
+          {
+            "word": "bounty",
+            "count": 1
+          },
+          {
+            "word": "brief",
+            "count": 11
+          },
+          {
+            "word": "briefs",
+            "count": 4
+          },
+          {
+            "word": "Briefs",
+            "count": 1
+          },
+          {
+            "word": "Browse",
+            "count": 1
+          },
+          {
+            "word": "builders",
+            "count": 1
+          },
+          {
+            "word": "Builders",
+            "count": 1
+          },
+          {
+            "word": "CA",
+            "count": 1
+          },
+          {
+            "word": "careful",
+            "count": 1
+          },
+          {
+            "word": "carry",
+            "count": 2
+          },
+          {
+            "word": "checklist",
+            "count": 1
+          },
+          {
+            "word": "Choose",
+            "count": 1
+          },
+          {
+            "word": "close",
+            "count": 1
+          },
+          {
+            "word": "Cluster",
+            "count": 2
+          },
+          {
+            "word": "Colopha",
+            "count": 4
+          },
+          {
+            "word": "Connect",
+            "count": 2
+          },
+          {
+            "word": "creator",
+            "count": 1
+          },
+          {
+            "word": "Creators",
+            "count": 1
+          },
+          {
+            "word": "custody",
+            "count": 1
+          },
+          {
+            "word": "data",
+            "count": 2
+          },
+          {
+            "word": "DATA",
+            "count": 1
+          },
+          {
+            "word": "disabled",
+            "count": 1
+          },
+          {
+            "word": "discovery",
+            "count": 1
+          },
+          {
+            "word": "does",
+            "count": 2
+          },
+          {
+            "word": "dossier",
+            "count": 2
+          },
+          {
+            "word": "each",
+            "count": 1
+          },
+          {
+            "word": "ecosystem",
+            "count": 1
+          },
+          {
+            "word": "Ecosystem",
+            "count": 2
+          },
+          {
+            "word": "edition",
+            "count": 3
+          },
+          {
+            "word": "Edition",
+            "count": 1
+          },
+          {
+            "word": "Editor's",
+            "count": 1
+          },
+          {
+            "word": "Ended",
+            "count": 1
+          },
+          {
+            "word": "entry",
+            "count": 1
+          },
+          {
+            "word": "equities",
+            "count": 1
+          },
+          {
+            "word": "every",
+            "count": 1
+          },
+          {
+            "word": "Every",
+            "count": 2
+          },
+          {
+            "word": "evidence",
+            "count": 3
+          },
+          {
+            "word": "Explore",
+            "count": 1
+          },
+          {
+            "word": "failure",
+            "count": 1
+          },
+          {
+            "word": "feed",
+            "count": 1
+          },
+          {
+            "word": "field",
+            "count": 2
+          },
+          {
+            "word": "financial",
+            "count": 1
+          },
+          {
+            "word": "focused",
+            "count": 1
+          },
+          {
+            "word": "for",
+            "count": 2
+          },
+          {
+            "word": "formation",
+            "count": 1
+          },
+          {
+            "word": "Four",
+            "count": 1
+          },
+          {
+            "word": "from",
+            "count": 1
+          },
+          {
+            "word": "full",
+            "count": 1
+          },
+          {
+            "word": "Full",
+            "count": 1
+          },
+          {
+            "word": "funded",
+            "count": 1
+          },
+          {
+            "word": "GATED",
+            "count": 1
+          },
+          {
+            "word": "glance",
+            "count": 1
+          },
+          {
+            "word": "go",
+            "count": 1
+          },
+          {
+            "word": "guide",
+            "count": 2
+          },
+          {
+            "word": "Guide",
+            "count": 1
+          },
+          {
+            "word": "here",
+            "count": 1
+          },
+          {
+            "word": "hours",
+            "count": 1
+          },
+          {
+            "word": "illustrative",
+            "count": 3
+          },
+          {
+            "word": "Illustrative",
+            "count": 2
+          },
+          {
+            "word": "in",
+            "count": 4
+          },
+          {
+            "word": "independent",
+            "count": 1
+          },
+          {
+            "word": "index",
+            "count": 5
+          },
+          {
+            "word": "Index",
+            "count": 1
+          },
+          {
+            "word": "infrastructure",
+            "count": 1
+          },
+          {
+            "word": "intended",
+            "count": 2
+          },
+          {
+            "word": "into",
+            "count": 1
+          },
+          {
+            "word": "is",
+            "count": 8
+          },
+          {
+            "word": "its",
+            "count": 1
+          },
+          {
+            "word": "Keep",
+            "count": 4
+          },
+          {
+            "word": "liquidity",
+            "count": 2
+          },
+          {
+            "word": "live",
+            "count": 1
+          },
+          {
+            "word": "Make",
+            "count": 1
+          },
+          {
+            "word": "Map",
+            "count": 1
+          },
+          {
+            "word": "market",
+            "count": 4
+          },
+          {
+            "word": "Market",
+            "count": 2
+          },
+          {
+            "word": "markets",
+            "count": 1
+          },
+          {
+            "word": "models",
+            "count": 1
+          },
+          {
+            "word": "modes",
+            "count": 1
+          },
+          {
+            "word": "monetary",
+            "count": 2
+          },
+          {
+            "word": "My",
+            "count": 1
+          },
+          {
+            "word": "network",
+            "count": 1
+          },
+          {
+            "word": "Network",
+            "count": 1
+          },
+          {
+            "word": "no",
+            "count": 7
+          },
+          {
+            "word": "NO",
+            "count": 1
+          },
+          {
+            "word": "note",
+            "count": 1
+          },
+          {
+            "word": "nothing",
+            "count": 1
+          },
+          {
+            "word": "of",
+            "count": 1
+          },
+          {
+            "word": "on",
+            "count": 1
+          },
+          {
+            "word": "One",
+            "count": 3
+          },
+          {
+            "word": "only",
+            "count": 3
+          },
+          {
+            "word": "open",
+            "count": 1
+          },
+          {
+            "word": "Open",
+            "count": 6
+          },
+          {
+            "word": "or",
+            "count": 3
+          },
+          {
+            "word": "Order",
+            "count": 1
+          },
+          {
+            "word": "out",
+            "count": 3
+          },
+          {
+            "word": "outside",
+            "count": 1
+          },
+          {
+            "word": "page",
+            "count": 1
+          },
+          {
+            "word": "paths",
+            "count": 4
+          },
+          {
+            "word": "permissions",
+            "count": 1
+          },
+          {
+            "word": "platform",
+            "count": 1
+          },
+          {
+            "word": "pool",
+            "count": 4
+          },
+          {
+            "word": "Pool",
+            "count": 1
+          },
+          {
+            "word": "Post",
+            "count": 3
+          },
+          {
+            "word": "practical",
+            "count": 1
+          },
+          {
+            "word": "preview",
+            "count": 2
+          },
+          {
+            "word": "price",
+            "count": 1
+          },
+          {
+            "word": "program",
+            "count": 2
+          },
+          {
+            "word": "Program",
+            "count": 1
+          },
+          {
+            "word": "project",
+            "count": 1
+          },
+          {
+            "word": "publish",
+            "count": 1
+          },
+          {
+            "word": "read",
+            "count": 2
+          },
+          {
+            "word": "Read",
+            "count": 1
+          },
+          {
+            "word": "reads",
+            "count": 2
+          },
+          {
+            "word": "record",
+            "count": 5
+          },
+          {
+            "word": "Records",
+            "count": 1
+          },
+          {
+            "word": "Reload",
+            "count": 1
+          },
+          {
+            "word": "represent",
+            "count": 1
+          },
+          {
+            "word": "research",
+            "count": 4
+          },
+          {
+            "word": "Reset",
+            "count": 1
+          },
+          {
+            "word": "review",
+            "count": 2
+          },
+          {
+            "word": "rewards",
+            "count": 1
+          },
+          {
+            "word": "Rewards",
+            "count": 1
+          },
+          {
+            "word": "rights",
+            "count": 1
+          },
+          {
+            "word": "risk",
+            "count": 1
+          },
+          {
+            "word": "Risk",
+            "count": 2
+          },
+          {
+            "word": "sample",
+            "count": 3
+          },
+          {
+            "word": "Sample",
+            "count": 7
+          },
+          {
+            "word": "SAMPLE",
+            "count": 1
+          },
+          {
+            "word": "samples",
+            "count": 1
+          },
+          {
+            "word": "Saved",
+            "count": 1
+          },
+          {
+            "word": "scope",
+            "count": 1
+          },
+          {
+            "word": "sends",
+            "count": 2
+          },
+          {
+            "word": "sent",
+            "count": 1
+          },
+          {
+            "word": "settlement",
+            "count": 1
+          },
+          {
+            "word": "shape",
+            "count": 1
+          },
+          {
+            "word": "shaping",
+            "count": 1
+          },
+          {
+            "word": "show",
+            "count": 1
+          },
+          {
+            "word": "sign",
+            "count": 1
+          },
+          {
+            "word": "signs",
+            "count": 2
+          },
+          {
+            "word": "single",
+            "count": 1
+          },
+          {
+            "word": "Skip",
+            "count": 1
+          },
+          {
+            "word": "SOL",
+            "count": 6
+          },
+          {
+            "word": "Solana",
+            "count": 4
+          },
+          {
+            "word": "source-linked",
+            "count": 1
+          },
+          {
+            "word": "spread",
+            "count": 1
+          },
+          {
+            "word": "Standing",
+            "count": 1
+          },
+          {
+            "word": "state",
+            "count": 2
+          },
+          {
+            "word": "stock",
+            "count": 1
+          },
+          {
+            "word": "structure",
+            "count": 2
+          },
+          {
+            "word": "Technical",
+            "count": 2
+          },
+          {
+            "word": "testnet",
+            "count": 8
+          },
+          {
+            "word": "TESTNET",
+            "count": 2
+          },
+          {
+            "word": "the",
+            "count": 11
+          },
+          {
+            "word": "The",
+            "count": 4
+          },
+          {
+            "word": "this",
+            "count": 2
+          },
+          {
+            "word": "This",
+            "count": 2
+          },
+          {
+            "word": "title",
+            "count": 2
+          },
+          {
+            "word": "to",
+            "count": 6
+          },
+          {
+            "word": "token",
+            "count": 1
+          },
+          {
+            "word": "tokenized",
+            "count": 2
+          },
+          {
+            "word": "Tokenized",
+            "count": 2
+          },
+          {
+            "word": "top",
+            "count": 1
+          },
+          {
+            "word": "topics",
+            "count": 1
+          },
+          {
+            "word": "Topics",
+            "count": 1
+          },
+          {
+            "word": "traditional",
+            "count": 1
+          },
+          {
+            "word": "transaction",
+            "count": 3
+          },
+          {
+            "word": "Turn",
+            "count": 1
+          },
+          {
+            "word": "Two",
+            "count": 3
+          },
+          {
+            "word": "understandable",
+            "count": 1
+          },
+          {
+            "word": "unit",
+            "count": 1
+          },
+          {
+            "word": "value",
+            "count": 2
+          },
+          {
+            "word": "view",
+            "count": 1
+          },
+          {
+            "word": "wallet",
+            "count": 2
+          },
+          {
+            "word": "What",
+            "count": 1
+          },
+          {
+            "word": "when",
+            "count": 1
+          },
+          {
+            "word": "Where",
+            "count": 1
+          },
+          {
+            "word": "with",
+            "count": 2
+          },
+          {
+            "word": "work",
+            "count": 1
+          },
+          {
+            "word": "writes",
+            "count": 1
+          },
+          {
+            "word": "WRITES",
+            "count": 1
+          }
+        ],
+        "attrs": [
+          {
+            "key": "aria-label=1. What does a tokenized stock actually represent?. Tokenized assets. Pool 0.08 SOL. State Sample",
+            "count": 1
+          },
+          {
+            "key": "aria-label=2. A field guide to the Solana ecosystem. Ecosystem. Pool 0.05 SOL. State Sample",
+            "count": 1
+          },
+          {
+            "key": "aria-label=3. Where does liquidity go when markets close?. Market structure. Pool 0.12 SOL. State Sample",
+            "count": 1
+          },
+          {
+            "key": "aria-label=4. Make program risk understandable. Risk research. Pool 0.06 SOL. State Sample",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Briefs",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Colopha home",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Connect wallet",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Edition notice",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Filter by state",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Filter by topic",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Filter the brief index",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Guide",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Index, 4 records",
+            "count": 1
+          },
+          {
+            "key": "aria-label=My briefs, 0 records",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Post a brief",
+            "count": 2
+          },
+          {
+            "key": "aria-label=Primary navigation",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Publication colophon",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Quick access",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Save A field guide to the Solana ecosystem to your saved list",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Save Make program risk understandable to your saved list",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Save What does a tokenized stock actually represent? to your saved list",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Save Where does liquidity go when markets close? to your saved list",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Saved, 0 records",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Search briefs",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Sort briefs",
+            "count": 1
+          },
+          {
+            "key": "aria-label=Toggle navigation",
+            "count": 1
+          },
+          {
+            "key": "placeholder=Search titles, topics and scope",
+            "count": 1
+          }
+        ],
+        "links": [
+          {
+            "href": "#activity",
+            "count": 1
+          },
+          {
+            "href": "#brief-index",
+            "count": 1
+          },
+          {
+            "href": "#guide",
+            "count": 1
+          },
+          {
+            "href": "#index",
+            "count": 1
+          },
+          {
+            "href": "#saved",
+            "count": 1
+          }
+        ],
+        "forms": [
+          {
+            "key": "input::search",
+            "count": 1
+          },
+          {
+            "key": "select::select",
+            "count": 1
+          }
+        ],
+        "fieldIssues": [],
+        "imageIssues": [],
+        "interactiveIssues": [],
+        "classTokens": [
+          "band-cell",
+          "band-kicker",
+          "band-label",
+          "band-note",
+          "band-value",
+          "board",
+          "board-foot",
+          "board-head",
+          "board-note",
+          "board-title",
+          "board-tools",
+          "card-copy",
+          "card-facts",
+          "card-foot",
+          "card-ground",
+          "card-keep",
+          "card-no",
+          "card-open",
+          "card-pool",
+          "card-state",
+          "card-title",
+          "card-top",
+          "card-topic",
+          "card-wall",
+          "dock",
+          "dock-key",
+          "dock-key--end",
+          "fact",
+          "fact-foot",
+          "fact-label",
+          "fact-strip",
+          "fact-value",
+          "facts-band",
+          "foot-base",
+          "foot-brand",
+          "foot-facts",
+          "foot-fine",
+          "foot-motto",
+          "foot-plate",
+          "is-chosen",
+          "is-lit",
+          "kicker",
+          "mast",
+          "mast-acts",
+          "mast-brand",
+          "mast-flag",
+          "mast-ident",
+          "mast-mark",
+          "mast-motto",
+          "mast-name",
+          "mast-side",
+          "note-copy",
+          "note-head",
+          "note-plate",
+          "poster-actions",
+          "poster-lede",
+          "poster-title",
+          "press",
+          "press-btn",
+          "press-foot",
+          "press-link",
+          "press-skip",
+          "query-bar",
+          "record-card",
+          "route-tile",
+          "route-wall",
+          "scene",
+          "scene--board",
+          "scene--open",
+          "scene-body",
+          "search-input",
+          "search-plate",
+          "sort-plate",
+          "sort-select",
+          "stage",
+          "stamp",
+          "state-sample",
+          "sticker",
+          "sticker-group",
+          "sticker-label",
+          "sticker-row",
+          "tile-count",
+          "tile-label",
+          "wallet-tag"
+        ],
+        "fingerprint": [
+          "a@5:0",
+          "a@7:1",
+          "a@7:2",
+          "article@10:4+",
+          "button@10:1",
+          "button@10:2",
+          "button@11:2",
+          "button@12:2",
+          "button@6:1",
+          "button@6:2",
+          "button@7:1",
+          "button@8:1",
+          "button@8:2",
+          "button@9:0",
+          "button@9:1",
+          "dd@9:0",
+          "div@11:1",
+          "div@11:2",
+          "div@3:1",
+          "div@4:4+",
+          "div@5:4+",
+          "div@6:2",
+          "div@7:2",
+          "div@7:4+",
+          "div@8:2",
+          "div@8:3",
+          "div@9:2",
+          "div@9:3",
+          "div@9:4+",
+          "dl@7:4+",
+          "dt@9:0",
+          "em@13:0",
+          "em@9:0",
+          "footer@5:3",
+          "h1@8:1",
+          "h2@10:0",
+          "header@5:2",
+          "i@9:0",
+          "img@7:0",
+          "input@10:0",
+          "label@9:2",
+          "li@9:1",
+          "main@5:3",
+          "nav@6:4+",
+          "ol@8:4+",
+          "p@10:0",
+          "p@6:2",
+          "p@8:0",
+          "p@8:1",
+          "p@9:0",
+          "p@9:2",
+          "path@10:0",
+          "path@11:0",
+          "path@12:0",
+          "path@14:0",
+          "path@8:0",
+          "path@9:0",
+          "section@6:1",
+          "section@6:2",
+          "section@7:4+",
+          "section@8:4+",
+          "select@10:4+",
+          "small@11:0",
+          "span@10:0",
+          "span@10:1",
+          "span@11:0",
+          "span@12:0",
+          "span@12:1",
+          "span@12:2",
+          "span@13:0",
+          "span@7:0",
+          "span@7:2",
+          "span@8:0",
+          "span@8:1",
+          "span@9:0",
+          "strong@11:0",
+          "strong@7:0",
+          "sup@11:0",
+          "svg@10:1",
+          "svg@11:1",
+          "svg@13:1",
+          "svg@7:1",
+          "svg@8:1",
+          "svg@9:1"
+        ],
+        "landmarks": [
+          {
+            "tag": "header",
+            "role": "",
+            "top": 0,
+            "left": 0,
+            "width": 390,
+            "height": 254
+          },
+          {
+            "tag": "main",
+            "role": "",
+            "top": 254,
+            "left": 0,
+            "width": 390,
+            "height": 3783
+          },
+          {
+            "tag": "nav",
+            "role": "",
+            "top": 270,
+            "left": 18,
+            "width": 354,
+            "height": 236
+          },
+          {
+            "tag": "footer",
+            "role": "",
+            "top": 4037,
+            "left": 0,
+            "width": 390,
+            "height": 527
+          }
+        ],
+        "colors": [
+          {
+            "hex": "#161616",
+            "count": 151
+          },
+          {
+            "hex": "#ffffff",
+            "count": 51
+          },
+          {
+            "hex": "#fafaf9",
+            "count": 45
+          },
+          {
+            "hex": "#6e625c",
+            "count": 28
+          },
+          {
+            "hex": "#d4000a",
+            "count": 10
+          },
+          {
+            "hex": "#2e2a27",
+            "count": 7
+          },
+          {
+            "hex": "#ff7a00",
+            "count": 4
+          },
+          {
+            "hex": "#ffe3d6",
+            "count": 4
+          },
+          {
+            "hex": "#ff0421",
+            "count": 3
+          }
+        ],
+        "contrast": [],
+        "contrastChecked": 120,
+        "headings": [
+          {
+            "tag": "h1",
+            "text": "TWO PATHS IN. ONE RECORD OUT."
+          },
+          {
+            "tag": "h2",
+            "text": "THE BRIEF INDEX"
+          }
+        ],
+        "navTargets": [
+          ""
+        ],
+        "overflow": {
+          "documentOverflow": false,
+          "offenders": []
+        }
+      },
+      "mobileNav": {
+        "opened": false,
+        "targets": [
+          ""
+        ],
+        "reachable": true
+      },
+      "focus": {
+        "samples": [
+          {
+            "tag": "a",
+            "text": "SKIP TO THE BRIEF INDEX",
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(255, 255, 255)"
+          },
+          {
+            "tag": "button",
+            "text": "Colopha home",
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgba(0, 0, 0, 0)"
+          },
+          {
+            "tag": "button",
+            "text": "POST A BRIEF",
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "rgb(22, 22, 22) 4px 4px 0px 0px",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(212, 0, 10)"
+          },
+          {
+            "tag": "button",
+            "text": "Connect wallet",
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(255, 255, 255)"
+          },
+          {
+            "tag": "a",
+            "text": "INDEX 4",
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(255, 255, 255) rgb(22, 22, 22) rgb(255, 255, 255) rgb(255, 255, 255)",
+            "backgroundColor": "rgb(22, 22, 22)"
+          },
+          {
+            "tag": "a",
+            "text": "SAVED 0",
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(255, 255, 255)"
+          },
+          {
+            "tag": "a",
+            "text": "MY BRIEFS 0",
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(255, 255, 255)"
+          },
+          {
+            "tag": "a",
+            "text": "GUIDE",
+            "outlineStyle": "solid",
+            "outlineWidth": "3px",
+            "outlineColor": "rgb(212, 0, 10)",
+            "boxShadow": "none",
+            "borderColor": "rgb(22, 22, 22)",
+            "backgroundColor": "rgb(255, 255, 255)"
+          }
+        ],
+        "visibleCount": 8,
+        "passed": true
+      }
+    }
+  },
+  "inventoryHash": "566ff31764277bc1af0a446617b4e6ea8689368280c26badc0a636058a615f6a"
+}

@@ -1,6 +1,6 @@
-# Reskin inventory — colopha
+# Reskin inventory — navrel
 
-Generated: 2026-10-22T15:07:19.598Z
+Generated: 2026-11-09T16:47:26.795Z
 
 ## Project
 
@@ -15,12 +15,12 @@ Generated: 2026-10-22T15:07:19.598Z
 
 ## Original skeleton
 
-- Archetype: **gallery-scroll** (spatial)
-- Traits: cards, grid, tabs, modal, sticky, gallery
+- Archetype: **document-flow** (editorial)
+- Traits: cards, grid, tabs, modal, charts, sticky
 - Max template depth: 9
 - Top-level tags: div, article, article, section, svg
 
-The replacement skeleton must not be `gallery-scroll` and must not be in the same family (`spatial`).
+The replacement skeleton must not be `document-flow` and must not be in the same family (`editorial`).
 
 ## Routes
 
@@ -28,14 +28,14 @@ The replacement skeleton must not be `gallery-scroll` and must not be in the sam
 
 ## Palette (most used first)
 
-`#fafaf9` (14) · `#ffeceb` (4) · `#161616` (3) · `#12100f` (1) · `#1e6b47` (1) · `#2e2a27` (1) · `#6e625c` (1) · `#8f4b00` (1) · `#a80008` (1) · `#b00016` (1)
+`#12121e` (9) · `#40b3ff` (8) · `#0a0a12` (5) · `#050509` (4) · `#000000` (3) · `#5ce1a0` (3) · `#ff8a8a` (3) · `#02121d` (2) · `#08080e` (1) · `#0b6e9e` (1)
 
 ## Content lock
 
 - Static visible text tokens: **188**
 - Binding expressions: **167**
-- Event handlers: **69**
-- Contract hash: `566ff31764277bc1af0a446617b4e6ea8689368280c26badc0a636058a615f6a`
+- Event handlers: **70**
+- Contract hash: `d2be4022d8c3f0893d496500270b84ca06471abcf1c3754e1faea6cbd5a193cb`
 
 Everything in `.reskin/content-contract.json` is immutable: visible copy, placeholders, labels, routes, link targets, asset sources, bindings, handlers, API endpoints and i18n values. A reskin may move these tokens to new markup but may not rewrite, remove or hide them.
 

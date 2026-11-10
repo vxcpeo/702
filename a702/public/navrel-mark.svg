@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Navrel</title>
+  <desc id="desc">The Navrel mark printed on cool paper: two ink stems and one cobalt diagonal set between them, the relay that carries a brief in at the left stem and an evidence record out at the right.</desc>
+  <rect width="256" height="256" fill="#DDE3E9"/>
+  <polygon points="91.04,45.28 91.04,85.76 164.96,210.72 164.96,170.24" fill="#0000FF"/>
+  <polygon points="66.4,45.28 91.04,45.28 91.04,210.72 66.4,210.72 50.56,194.88 50.56,61.12" fill="#0A0B0D"/>
+  <polygon points="164.96,45.28 189.6,45.28 205.44,61.12 205.44,194.88 189.6,210.72 164.96,210.72" fill="#0A0B0D"/>
+</svg>

@@ -1,5 +1,5 @@
 /**
- * State-by-state review of the reskinned Colopha site.
+ * State-by-state review of the reskinned Navrel site.
  *
  * The pipeline verifies the single static route "/"; this script exercises the
  * state-driven views and overlays that route can show, auditing each for one h1,
@@ -77,33 +77,33 @@ async function main() {
   await page.waitForTimeout(400);
   await audit(page, '01-index-desktop');
 
-  await page.locator('.indexline-item').filter({ hasText: 'Guide' }).click();
+  await page.locator('.bp-nav-row').filter({ hasText: 'Guide' }).click();
   await page.waitForTimeout(350);
   await audit(page, '02-guide-desktop');
 
-  await page.locator('.indexline-item').filter({ hasText: 'Saved' }).click();
+  await page.locator('.bp-nav-row').filter({ hasText: 'Saved' }).click();
   await page.waitForTimeout(300);
   await audit(page, '03-saved-desktop');
 
-  await page.locator('.indexline-item').filter({ hasText: 'My briefs' }).click();
+  await page.locator('.bp-nav-row').filter({ hasText: 'My briefs' }).click();
   await page.waitForTimeout(300);
   await audit(page, '04-activity-desktop');
 
-  await page.locator('.indexline-item').filter({ hasText: 'Index' }).click();
+  await page.locator('.bp-nav-row').filter({ hasText: 'Index' }).click();
   await page.waitForTimeout(300);
   await page.locator('#brief-search').fill('liquidity');
   await page.waitForTimeout(350);
   await audit(page, '05-filtered-desktop');
-  await page.locator('.query-rail .chart-link').click();
+  await page.locator('.bp-toolbar .bp-link').click();
   await page.waitForTimeout(250);
 
-  await page.locator('.entry-open').first().click();
+  await page.locator('.bp-entry-open').first().click();
   await page.waitForTimeout(400);
   await audit(page, '06-dossier-desktop');
 
-  await page.locator('.dossier-back .chart-link').click();
+  await page.locator('.bp-case-bar .bp-link').click();
   await page.waitForTimeout(300);
-  await page.locator('.dateline-acts .chart-btn').click();
+  await page.locator('.bp-rail-actions .bp-btn').click();
   await page.waitForTimeout(450);
   await audit(page, '07-create-desktop');
 
@@ -112,10 +112,10 @@ async function main() {
   await page.locator('#mission-reward').fill('0.05');
   const soon = new Date(Date.now() + 86400000 * 3).toISOString().slice(0, 16);
   await page.locator('#mission-deadline').fill(soon);
-  await page.locator('.brief-form .chart-btn[type="submit"]').click();
+  await page.locator('.bp-form .bp-btn[type="submit"]').click();
   await page.waitForTimeout(350);
   await audit(page, '08-review-desktop');
-  await page.locator('.dialog-head .quiet-key').click();
+  await page.locator('.bp-dialog-head .bp-icon-btn').click();
   await page.waitForTimeout(250);
 
   await desktop.close();
@@ -127,22 +127,22 @@ async function main() {
   await m.waitForTimeout(400);
   await audit(m, '09-index-mobile');
 
-  await m.locator('.compass-key[aria-label="Toggle navigation"]').click();
+  await m.locator('.bp-key[aria-label="Toggle navigation"]').click();
   await m.waitForTimeout(300);
   await audit(m, '10-contents-mobile');
-  await m.locator('.contents-head .quiet-key').click();
+  await m.locator('.bp-contents-head .bp-icon-btn').click();
   await m.waitForTimeout(250);
 
-  await m.locator('.entry-open').first().click();
+  await m.locator('.bp-entry-open').first().click();
   await m.waitForTimeout(400);
   await audit(m, '11-dossier-mobile');
-  await m.locator('.dossier-back .chart-link').click();
+  await m.locator('.bp-case-bar .bp-link').click();
   await m.waitForTimeout(300);
 
   await m.getByRole('button', { name: 'Post a brief', exact: true }).first().click();
   await m.waitForTimeout(450);
   await audit(m, '12-create-mobile');
-  await m.locator('.dialog-head .quiet-key').click();
+  await m.locator('.bp-dialog-head .bp-icon-btn').click();
   await mobile.close();
 
   await browser.close();

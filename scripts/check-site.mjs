@@ -1,4 +1,4 @@
-// Release guards for the public Colopha site. No environment files are read.
+// Release guards for the public Navrel site. No environment files are read.
 import { access, readFile, readdir } from "node:fs/promises";
 import { fileURLToPath } from "node:url";
 import path from "node:path";
@@ -25,23 +25,28 @@ async function listFiles(directory, prefix = "") {
 }
 const textExtensions = new Set([".html", ".vue", ".js", ".css", ".json", ".svg", ".txt"]);
 const blockedHosts = ["twitter.com", "x.com", "t.co"];
+const canonicalX = "https://x.com/Navrel_site";
 // Every retired identity, including the one this round replaced. The guard
 // rejects any of them anywhere in the shipped source, build or file names.
-const previousIdentity = /settiva|yovinx|tallyvein|quilsted|findelora|factrelle|inquedra|tessivra|vercairn|siftlane|citeward|civiquill|proofora|evidara|evidalume|buidlspur|bountelith|cairnora|veriqora|citevra|attestora|trovane|vouchra|ledgiva/i;
+const previousIdentity = /settiva|yovinx|tallyvein|quilsted|findelora|factrelle|inquedra|tessivra|vercairn|siftlane|citeward|civiquill|proofora|evidara|evidalume|buidlspur|bountelith|cairnora|veriqora|citevra|attestora|trovane|vouchra|ledgiva|colopha/i;
 // Bookmark keys are the only place an earlier brand may survive, because the
 // migration path has to read the old keys to move a user's saved list forward.
-const legacyBookmarkKeys = "(?:settiva|yovinx|tallyvein|quilsted|buidlspur|citevra|attestora|evidalume|bountelith|findelora|factrelle|inquedra|tessivra|vercairn|siftlane|citeward|civiquill|proofora|trovane|ledgiva)-saved";
+const legacyBookmarkKeys = "(?:settiva|yovinx|tallyvein|quilsted|buidlspur|citevra|attestora|evidalume|bountelith|findelora|factrelle|inquedra|tessivra|vercairn|siftlane|citeward|civiquill|proofora|trovane|ledgiva|colopha)-saved";
 const withoutDeployedIdentity = text => text.replace(/\bEvidaraEscrow\b|\bEvidara:/g, 'deployed-contract-identity');
 const withoutLegacybookmarkKeys = text => text.replace(new RegExp(`(["'\`])${legacyBookmarkKeys}\\1`, "g"), '"legacy-bookmarks"');
 function checkPublicCopy(text, label) {
   const displayCopy = withoutLegacybookmarkKeys(withoutDeployedIdentity(text));
   check(!previousIdentity.test(displayCopy), `${label}: obsolete brand remains outside bookmark migration keys`);
+  check(!/navrel\.xyz/i.test(displayCopy), `${label}: stale navrel.xyz domain remains`);
+  check(!/@navrel(?![\w])/i.test(displayCopy), `${label}: stale @navrel handle remains`);
   const normalized = text.replace(/\\\//g, "/");
   for (const match of normalized.matchAll(/(?:https?:)?\/\/[^\s<>"'`\\)]+/gi)) {
     try {
       const url = new URL(match[0].startsWith("//") ? `https:${match[0]}` : match[0]);
       const host = url.hostname.toLowerCase().replace(/\.+$/, "");
-      check(!blockedHosts.some(blocked => host === blocked || host.endsWith(`.${blocked}`)), `${label}: prohibited social URL ${match[0]}`);
+      const isCanonicalX = url.protocol === "https:" && host === "x.com" &&
+        url.pathname.replace(/\/+$/, "").toLowerCase() === "/navrel_site" && !url.search && !url.hash;
+      check(!blockedHosts.some(blocked => host === blocked || host.endsWith(`.${blocked}`)) || isCanonicalX, `${label}: prohibited social URL ${match[0]}`);
     } catch { /* Other checks handle local asset references. */ }
   }
   check(!/<meta\b[^>]*(?:name|property)\s*=\s*["']twitter:/i.test(text), `${label}: Twitter metadata must be absent`);
@@ -50,7 +55,7 @@ async function checkDynamicLinks(site, label) {
   // Load the real exported URL guard without mounting Vue or reading local env.
   const source = (await readFile(path.join(site, "src/composables/useMissions.js"), "utf8"))
     .replace("from 'vue'", `from '${import.meta.resolve('vue')}'`)
-    .replace(/^import \{[\s\S]*?\} from ['"]\.\.\/config['"];\s*/m, "const APP_NAME = 'Colopha', LAMPORTS_PER_SOL = 1000000000n, SOLANA_CLUSTER = 'testnet', SOLANA_EXPLORER_URL = 'https://explorer.solana.com', SOLANA_NETWORK_NAME = 'Solana Testnet', SOLANA_PROGRAM_ID = '5ibhioLv21ShH9EXjRDkhygREtXqHHTZ6vtEC3DGgwDu', SOLANA_PROGRAM_READY = false, SOLANA_RPC_URL = 'https://api.testnet.solana.com', SOLANA_TOKEN_MINT = '', SOLANA_TOKEN_SYMBOL = 'TOKEN';\n")
+    .replace(/^import \{[\s\S]*?\} from ['"]\.\.\/config['"];\s*/m, "const APP_NAME = 'Navrel', LAMPORTS_PER_SOL = 1000000000n, SOLANA_CLUSTER = 'testnet', SOLANA_EXPLORER_URL = 'https://explorer.solana.com', SOLANA_NETWORK_NAME = 'Solana Testnet', SOLANA_PROGRAM_ID = '5ibhioLv21ShH9EXjRDkhygREtXqHHTZ6vtEC3DGgwDu', SOLANA_PROGRAM_READY = false, SOLANA_RPC_URL = 'https://api.testnet.solana.com', SOLANA_TOKEN_MINT = '', SOLANA_TOKEN_SYMBOL = 'TOKEN';\n")
     .replace("import { createSolanaProgramClient } from '../utils/solanaProgram';", "const createSolanaProgramClient = () => { throw new Error('Live client should not be created by the link guard.'); };");
   const { safeExternalUrl } = await import(`data:text/javascript;base64,${Buffer.from(source).toString("base64")}`);
   for (const host of blockedHosts) {
@@ -74,8 +79,8 @@ async function checkAsset(site, relativeFile, reference, kind = "asset") {
   check((await Promise.all(candidates.map(exists))).some(Boolean), `${path.relative(root, site) || "main"}/${relativeFile}: missing ${kind} ${value}`);
 }
 
-const sheetField = (await readFile(path.join(root, "src", "styles", "nightsheet.css"), "utf8")).match(/--void:\s*(#[0-9a-fA-F]{3,8})/)?.[1] || "";
-check(/^#[0-9a-f]{6}$/i.test(sheetField), "nightsheet.css: the --void token must declare the page colour");
+const sheetField = (await readFile(path.join(root, "src", "styles", "blueprint.css"), "utf8")).match(/--bp-ground:\s*(#[0-9a-fA-F]{6})/)?.[1] || "";
+check(/^#[0-9a-f]{6}$/i.test(sheetField), "blueprint.css: the --bp-ground token must declare the page colour");
 
 const trees = [];
 for (const site of [root, path.join(root, "a702")]) {
@@ -86,25 +91,39 @@ for (const site of [root, path.join(root, "a702")]) {
   const guideComponent = await readFile(path.join(site, "src", "components", "BriefGuide.vue"), "utf8");
   const config = await readFile(path.join(site, "src", "config.js"), "utf8");
   const manifest = JSON.parse(await readFile(path.join(site, "package.json"), "utf8"));
-  check(/<title>\s*Colopha\b[^<]*<\/title>/i.test(index), `${label}: title must use Colopha`);
-  check(new RegExp(`<meta\\b[^>]*name=["']theme-color["'][^>]*content=["']${sheetField}["']`, "i").test(index), `${label}: theme colour must match the night field ${sheetField}`);
-  check(/<meta\b[^>]*name=["']color-scheme["'][^>]*content=["']dark["']/i.test(index), `${label}: the night sheet is a dark edition`);
-  check(/<meta\b[^>]*property=["']og:site_name["'][^>]*content=["']Colopha["']/i.test(index), `${label}: Open Graph site name must be Colopha`);
-  check(/aria-label=["']Colopha home["']/.test(app), `${label}: accessible home identity must use Colopha`);
-  check(/APP_NAME\s*=\s*["']Colopha["']/.test(config), `${label}: app configuration must use Colopha`);
-  check(manifest.name === "colopha", `${label}: package name must be colopha`);
-  check(/class=["']chart["']/.test(app), `${label}: the night-sheet shell must ship`);
-  check(/class=["']dateline["']/.test(app), `${label}: the ruled masthead must ship`);
-  check(/class=["']indexline["']/.test(app), `${label}: the index line must ship`);
-  check(/class=["']chart-body["']/.test(app), `${label}: the plate-and-margin grid must ship`);
-  check(/class=["']margin["'][^>]*role=["']complementary["']|role=["']complementary["'][^>]*aria-label=["']Edition notes["']/.test(app), `${label}: the marginal edition note must ship as a complementary landmark`);
-  check(/class=["']ledger-dialog["']/.test(app), `${label}: the ledger dialog must ship`);
-  check(/class=["']compass["']/.test(app), `${label}: the compass keys must ship`);
-  check(/class=["']ledger["'][^>]*aria-labelledby=["']index-title["']/.test(indexComponent), `${label}: the ruled ledger must ship`);
-  check(/class=["']entry-row["']/.test(indexComponent), `${label}: ledger rows must ship`);
-  check(/class=["']tally-line["']/.test(indexComponent), `${label}: the tally line must ship`);
-  check(/class=["']stair["']/.test(guideComponent), `${label}: the numbered stair must ship`);
-  check(/class=["']creed["']/.test(guideComponent), `${label}: the creed sections must ship`);
+  check(/<title>\s*Navrel\b[^<]*<\/title>/i.test(index), `${label}: title must use Navrel`);
+  check(new RegExp(`<meta\\b[^>]*name=["']theme-color["'][^>]*content=["']${sheetField}["']`, "i").test(index), `${label}: theme colour must match the paper field ${sheetField}`);
+  check(/<meta\b[^>]*name=["']color-scheme["'][^>]*content=["']light["']/i.test(index), `${label}: the blueprint is a light edition`);
+  check(/<meta\b[^>]*property=["']og:site_name["'][^>]*content=["']Navrel["']/i.test(index), `${label}: Open Graph site name must be Navrel`);
+  check(/aria-label=["']Navrel home["']/.test(app), `${label}: accessible home identity must use Navrel`);
+  check(/APP_NAME\s*=\s*["']Navrel["']/.test(config), `${label}: app configuration must use Navrel`);
+  check(manifest.name === "navrel", `${label}: package name must be navrel`);
+  check(index.includes('<link rel="canonical" href="https://navrel.site/"/>'), `${label}: canonical URL must use navrel.site`);
+  check(index.includes('<meta property="og:url" content="https://navrel.site/"/>'), `${label}: Open Graph URL must use navrel.site`);
+  check(index.includes('<meta property="og:image" content="https://navrel.site/navrel-edition-social.png"/>'), `${label}: Open Graph image must use navrel.site`);
+  check(index.includes(`<link rel="me" href="${canonicalX}"/>`), `${label}: canonical X identity link is missing`);
+  check(index.includes(`<meta property="og:see_also" content="${canonicalX}"/>`), `${label}: Open Graph X link is missing`);
+  const xAnchor = app.match(/<a\b[^>]*href="https:\/\/x\.com\/Navrel_site"[^>]*>/)?.[0] || "";
+  check(xAnchor !== "", `${label}: the colophon must link to ${canonicalX}`);
+  check(/\brel="[^"]*\bme\b/.test(xAnchor), `${label}: the X link must declare rel="me"`);
+  check(/\btarget="_blank"/.test(xAnchor), `${label}: the X link must open in a new tab`);
+  check(/@Navrel_site/.test(app), `${label}: the visible X handle must be @Navrel_site`);
+  check(/class=["']bp-shell["']/.test(app), `${label}: the blueprint shell must ship`);
+  check(/class=["']bp-split["']/.test(app), `${label}: the split stage must ship`);
+  check(/<aside[^>]*class=["']bp-rail["']/.test(app), `${label}: the sticky narrative rail must ship`);
+  check(/class=["']bp-stage["']/.test(app), `${label}: the data sheet must ship`);
+  check(/class=["']bp-band["']/.test(app), `${label}: the edition band must ship`);
+  check(/<footer[^>]*class=["']bp-colophon["']/.test(app), `${label}: the colophon must ship`);
+  check(/class=["']bp-keys["']/.test(app), `${label}: the route keys must ship`);
+  check(/class=["']bp-dialog["']/.test(app), `${label}: the draft sheet dialog must ship`);
+  check(/id=["']bp-contents["']/.test(app), `${label}: the contents sheet must ship`);
+  check(/class=["']bp-index["'][^>]*aria-labelledby=["']index-title["']/.test(indexComponent), `${label}: the register sheet must ship`);
+  check(/class=["']bp-register["']/.test(indexComponent), `${label}: register rows must ship`);
+  check(/class=["']bp-entry["']/.test(indexComponent), `${label}: register entries must ship`);
+  check(/class=["']bp-tally["']/.test(indexComponent), `${label}: the tally band must ship`);
+  check(/class=["']bp-stair["']/.test(guideComponent), `${label}: the numbered stair must ship`);
+  check(/class=["']bp-creed["']/.test(guideComponent), `${label}: the creed sections must ship`);
+  check(!/nightsheet\.css/.test(app + indexComponent + guideComponent), `${label}: the retired night sheet is still imported`);
   for (const retiredClass of [
     // The poster press (previous edition). Distinctive names only: a bare word
     // such as "fact" would also match the new "case-ledger" vocabulary.
@@ -128,6 +147,15 @@ for (const site of [root, path.join(root, "a702")]) {
     "register-when", "register-state", "register-keep", "register-foot", "summary-aside", "summary-figures",
     "summary-figure", "dossier-file", "evidence-file", "guide-file", "step-register", "faq-ledger", "action-halo",
     "action-core", "observatory", "jump-start", "menu-glyph", "glyph-key",
+    // The night sheet (previous edition).
+    "chart", "chart-body", "chart-btn", "chart-link", "chart-skip", "dateline", "imprint", "indexline",
+    "plate-scene", "statement-title", "statement-kicker", "ledger-plate", "ledger-rows", "ledger-foot",
+    "query-rail", "facet-line", "facet-set", "facet-label", "loadline", "load-block", "entry-row",
+    "keep-key", "edition-copy", "edition-facts", "edition-head", "compass-key", "quiet-key",
+    "progress-line", "progress-rule", "brief-form", "field-line", "pick-line", "area-line",
+    "twin-entry", "fault-list", "note-bar", "dispatch-undo", "slip-strip", "slip-state",
+    "case-ledger", "case-item", "dossier-back", "dossier-head", "dossier-standfirst",
+    "dossier-tags", "dossier-body", "dossier-margin",
   ]) {
     check(!new RegExp(`class=["'][^"']*\\b${retiredClass}\\b`).test(app + indexComponent + guideComponent), `${label}: retired surface is still in the source: ${retiredClass}`);
   }
@@ -135,11 +163,12 @@ for (const site of [root, path.join(root, "a702")]) {
   for (const obsolete of [
     "meterial.txt", "src/abi.json", "src/EvidaraEscrow.abi.json", "src/styles/quilsted-workbench.css",
     "src/styles/evidalume.css", "src/styles/trovane-terminal.css", "src/styles/meridian-ledger.css",
+    "src/styles/nightsheet.css",
     "src/components/ChainReadout.vue", "src/components/BriefRegistry.vue", "src/components/BriefInspector.vue",
   ]) {
     check(!await exists(path.join(site, obsolete)), `${label}: obsolete material remains: ${obsolete}`);
   }
-  for (const asset of ["colopha-mark.svg", "colopha-seal.svg", "colopha-favicon.svg", "colopha-edition-social.png"]) {
+  for (const asset of ["navrel-mark.svg", "navrel-seal.svg", "navrel-favicon.svg", "navrel-edition-social.png"]) {
     check(await exists(path.join(site, "public", asset)), `${label}: required local asset is missing: ${asset}`);
   }
   for (const retired of [
@@ -188,33 +217,24 @@ for (const file of ["index.html", "vite.config.js", "package-lock.json"]) {
   const [main, mirror] = await Promise.all([root, path.join(root, "a702")].map(site => readFile(path.join(site, file))));
   check(main.equals(mirror), `${file}: mirror content differs; run npm run sync:mirror`);
 }
-// Workspace brand record: the selected identity must stay consistent with the
-// shipped site and must never be distributed.
+// Workspace brand registry: the selected identity must stay consistent with the
+// shipped site and must never be distributed. brand.txt is the one registry of
+// current and historical names; key material stays outside the repository.
 const workspace = path.dirname(root);
-const brandingKey = path.join(workspace, "key.txt.branding");
-if (await exists(brandingKey)) {
-  const record = await readFile(brandingKey, "utf8");
-  for (const [label, pattern] of [
-    ["brand name", /^Brand:\s*Colopha\s*$/m],
-    ["slug", /^Slug:\s*colopha\s*$/m],
-    ["tagline", /^Tagline:\s*Two paths in\. One record out\.\s*$/m],
-    ["canonical domain", /^Canonical domain:\s*https:\/\/colopha\.xyz\/\s*$/m],
-    ["X handle", /^X:\s*@colopha\b/m],
-    ["testnet network", /^Network:\s*Solana testnet preview\s*$/m],
-    ["no live token", /^Token:\s*no platform token or CA is live\s*$/m],
-  ]) check(pattern.test(record), `key.txt.branding: ${label} is missing or does not match the shipped Colopha identity`);
-  check(previousIdentity.test(withoutLegacybookmarkKeys(record)) === false, "key.txt.branding: obsolete brand remains");
-}
-const listedIdentity = await readFile(path.join(workspace, "list.txt"), "utf8");
-check(/^Brand:\s*Colopha\s*$/m.test(listedIdentity), "list.txt: public brand record must use Colopha");
-check(/^Canonical domain:\s*colopha\.xyz\s*$/m.test(listedIdentity), "list.txt: canonical domain must be colopha.xyz");
-check(/^X handle:\s*@colopha\s*$/m.test(listedIdentity), "list.txt: X handle must be @colopha");
+const registryPath = path.join(workspace, "brand.txt");
+check(await exists(registryPath), "brand.txt: the workspace brand registry is missing");
+const registryText = await exists(registryPath) ? await readFile(registryPath, "utf8") : "";
+const currentBrand = (registryText.match(/^current:\s*(.+)$/m)?.[1] || "").trim();
+const historyBrands = [...registryText.matchAll(/^history:\s*(.+)$/gm)].map(match => match[1].trim()).filter(Boolean);
+check(currentBrand === "Navrel", "brand.txt: current brand must match the shipped Navrel identity");
+check(registryText.match(/^current:/gm)?.length === 1, "brand.txt: exactly one current brand line is required");
+check(historyBrands.some(name => name.toLowerCase() === "ledgiva"), "brand.txt: the previous brand must stay in history");
 for (const site of [root, path.join(root, "a702")]) {
   for (const local of ["dist/key.txt", "dist/key.txt.branding", "public/key.txt", "public/key.txt.branding"]) {
     check(!await exists(path.join(site, local)), `${path.relative(root, site) || "main"}: local key material must never enter public output: ${local}`);
   }
 }
 if (failures.length) {
-  console.error(`Colopha site guard failed (${failures.length}/${checks} checks):\n${failures.map(message => `- ${message}`).join("\n")}`);
+  console.error(`Navrel site guard failed (${failures.length}/${checks} checks):\n${failures.map(message => `- ${message}`).join("\n")}`);
   process.exitCode = 1;
-} else console.log(`Colopha site guard passed: ${checks} checks; source/build branding, night-sheet shell, local assets, dynamic social-link policy and mirror consistency verified.`);
+} else console.log(`Navrel site guard passed: ${checks} checks; source/build branding, navrel.site metadata, the canonical @Navrel_site link, blueprint shell, local assets, dynamic social-link policy and mirror consistency verified.`);
